@@ -1,0 +1,14 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model UserInfo
+@{
+    <form asp-antiforgery="true" asp-controller="Account" asp-action="LoginDo">
+        User name: <input name="username" type="text" value="qqq" />
+        Password: <input name="password" type="password" value="111" />
+        <input name="submit" value="Login" type="submit" />
+        <input type="hidden" name="returnUrl" value="@TempData["returnUrl"]" />
+    </form>
+}
