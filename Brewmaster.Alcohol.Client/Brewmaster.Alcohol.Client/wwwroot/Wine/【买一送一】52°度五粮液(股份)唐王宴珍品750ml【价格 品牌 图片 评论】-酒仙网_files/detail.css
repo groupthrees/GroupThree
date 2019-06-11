@@ -1,0 +1,88 @@
+
+.d-header .inCartForDetail {
+	display: none;
+}
+
+.d-header-fix .inCartForDetail {
+	display: block;
+	_display: none;
+}
+
+.inCartForDetail {
+	background: #c33;
+	width: 110px;
+	height: 48px;
+	display: block;
+	position: absolute;
+	right: -1px;
+	top: -1px;
+	color: #fff;
+	line-height: 48px;
+	text-align: center;
+	font-family: "Microsoft YaHei";
+	font-size: 0;
+	cursor: pointer
+}
+
+.inCartForDetail:hover {
+	color: #fff;
+	text-decoration: none
+}
+
+.inCartForDetail i {
+	background-position: -149px -63px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 15px;
+	height: 15px
+}
+
+.inCartForDetail span {
+	font-size: 12px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 5px
+}
+
+/* 价格说明 */
+.price-list{ position: relative; padding-left: 10px;}
+.price-list i{ position: absolute; top:10px; left: 1px; width:3px; height: 3px; background: #666; -webkit-border-radius: 50%; border-radius: 50%;}
+.price-list span{ font-size:12px; display:block;}
+
+
+/*津贴*/
+/*津贴2019.02.27*/
+.jtIcon{ background:url("http://test70misc.jiuxian.com/images/detail_v2.0/jtIcon.png") no-repeat 0 0;}
+.jt-list{ float: left;height: 19px;  color: #cc3333; line-height: 19px;  overflow: hidden; cursor: pointer;}
+.jt-list span{ color:#666; margin-left: 5px;}
+.jt-list span em{ font-family:'宋体'; font-style: normal; margin-left: 3px;}
+.jt-pop-box{ width:320px; position: fixed; top: 50%; left: 50%; -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%); z-index: 1000; display: none;}
+.jt-close{ background-position:0 -24px; width: 25px; height: 42px; display:block; cursor: pointer; position: absolute; top: -42px; right: 18px;}
+.jt-pop-top{ height: 10px; background: #941e21; border-radius: 15px 15px 15px 15px; border: 10px solid #cb3434; width: 300px;}
+.jt-pop-info{ background: #fef6f6; width:292px; height: 214px; margin: 0 auto; position:relative; top: -15px; -webkit-box-shadow: 0 0 15px rgba(204,51,51,0.15); box-shadow: 0 0 15px rgba(204,51,51,0.15);}
+.swiper-container { width: 292px;	margin: 0 auto;	position: relative;	overflow: hidden;	list-style: none;	padding: 0;	z-index: 1}
+.swiper-wrapper {	position: relative;	width: 100%;	height: 100%;	z-index: 1;	display: -webkit-box;	display: -webkit-flex;	display: -ms-flexbox;	display: flex;	-webkit-transition-property: -webkit-transform;	transition-property: -webkit-transform;	-o-transition-property: transform;	transition-property: transform;	transition-property: transform,-webkit-transform;	-webkit-box-sizing: content-box;	box-sizing: content-box}
+.swiper-slide { width: 100%; height: 214px; overflow: hidden;	-webkit-flex-shrink: 0;	-ms-flex-negative: 0;	flex-shrink: 0;position: relative;	-webkit-transition-property: -webkit-transform;	transition-property: -webkit-transform;	-o-transition-property: transform;	transition-property: transform;	transition-property: transform,-webkit-transform;}
+.swiper-button-next i{background-position: -41px -26px; display: block; width: 8px;height: 15px; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);}
+.swiper-button-prev i{background-position: -32px -26px; display: block; width: 8px;height: 15px; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);}
+.swiper-button-next,.swiper-button-prev {position: absolute;top: 0; width: 15px; height: 100%; z-index: 10;cursor: pointer;}
+.swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled {	opacity: 0;cursor: auto;pointer-events: none}
+.swiper-button-prev,.swiper-container-rtl .swiper-button-next {	left: -20px;right: auto;}
+.swiper-button-next,.swiper-container-rtl .swiper-button-prev {	right: -20px;left: auto;}
+.jt-yy{ background-position: 0 0; width: 292px; height: 24px; position: absolute; top: 0; left: 0; z-index: 10;}
+.jt-price-box{ height:147px; border-bottom: 1px dashed #ffc7c7;}
+.jt-price{ text-align: center; color: #cc3333; font-size: 24px; line-height: 1; padding: 30px 0 15px 0;}
+.jt-price span{ font-size: 44px;}
+.jt-condition{ line-height: 23px; color: #666666; font-size: 14px; text-align: center; padding: 0 24px;}
+.jt-btn{ background: #cc3333; height: 34px; width: 200px; text-align: center; line-height: 34px; font-size: 14px; color: #fff; -webkit-border-radius: 17px 17px 17px 17px; border-radius: 17px 17px 17px 17px; margin: 16px auto 0; cursor: pointer;}
+/*限购样式*/
+.priceBox .infoPri .limitProduct{ color:#666; font-size: 14px; padding-left:5px; line-height: 40px;}
+.bayBtnBox .infoBuy .buyApp{ border:1px solid #cc3333; background:#cc3333; color:#fff;}
+.appToast{ width:280px; position: fixed; top: 50%; left: 50%; -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%); z-index: 10000; display: none;}
+.appToastClose{ background-position:0 -24px; width: 25px; height: 42px; display:block; cursor: pointer; position: absolute; top: -35px; right: 18px;}
+.appToastTop{ height: 10px; background: #941e21; border-radius: 15px 15px 15px 15px; border: 10px solid #cb3434; width: 260px;}
+.appToastInfo{ background: #fff; width:232px; padding-top: 22px; height: 192px; margin: 0 auto; position:relative; top: -15px; -webkit-box-shadow: 0 0 15px rgba(204,51,51,0.15); box-shadow: 0 0 15px rgba(204,51,51,0.15); -webkit-border-bottom-left-radius: 60px; border-bottom-left-radius: 60px; -webkit-border-bottom-right-radius: 60px; border-bottom-right-radius: 60px;}
+.appToastYy{ background-position: 0 0; width: 232px; height: 24px; position: absolute; top: 0; left: 0; z-index: 10;}
+.appToast .appToastCode{ width: 146px; height: 146px; font-size: 0; margin: 0 auto;}
+.appToast .appToastCode img{ width:100%; height: auto;}
+.appToast p{ text-align:center; font-size: 14px; color: #cc3333; height: 20px; line-height: 20px; margin-top: 10px;}
