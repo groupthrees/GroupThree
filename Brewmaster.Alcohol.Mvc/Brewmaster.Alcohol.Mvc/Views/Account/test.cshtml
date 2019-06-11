@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>test</title>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+</head>
+<body>
+</body>
+</html>
+<script>
+            $(function () {
+                test();
+            })
+
+            function test() {
+                alert(44)
+                $.ajax({
+                    type: "get",
+                    url: "http://localhost:50169/api/Default/Get?id=4",
+                    success: function (data) {
+                        alert(data);
+                    }
+                })
+
+            }
+</script>
