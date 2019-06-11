@@ -14,6 +14,10 @@ namespace Brewmaster.Alcohol.Client.Controllers
 {
     public class HomeController : BaseController
     {
+        public IActionResult HomePage()
+        {
+            return View();
+        }
 
         public IActionResult test()
         {
