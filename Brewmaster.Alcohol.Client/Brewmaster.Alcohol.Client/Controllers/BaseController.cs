@@ -26,6 +26,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
                     var tmpuserInfo = RedisHelper.Get<UserInfo>(User.Identity.Name);
                     return tmpuserInfo;
                 }
+
                 return null;
             }
         }
