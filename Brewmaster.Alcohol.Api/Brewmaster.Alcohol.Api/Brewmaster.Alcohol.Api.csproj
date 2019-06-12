@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\商品查询\" />
-    <Folder Include="Controllers\新文件夹\" />
+    <Compile Remove="Controllers\商品查询\**" />
+    <Content Remove="Controllers\商品查询\**" />
+    <EmbeddedResource Remove="Controllers\商品查询\**" />
+    <None Remove="Controllers\商品查询\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
