@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Brewmaster.Alcohol.Model;
 
+using Brewmaster.Alcohol.Model.Dto;
+
 namespace Brewmaster.Alcohol.IRepository
 {
     public interface IGoodsRepository
@@ -24,5 +26,11 @@ namespace Brewmaster.Alcohol.IRepository
         List<Goods> GetGoodsAll(string goodsName, string typeName, string goodsDegree, int priceNow, string brandName,
             string placeName, string aromaName, int pageIndex, int pageSize, ref int totalCount);
 
+
+        /// <summary>
+        /// 显示商品
+        /// </summary>
+        /// <returns></returns>
+        List<GoodsDto> getGoodslist();
     }
 }
