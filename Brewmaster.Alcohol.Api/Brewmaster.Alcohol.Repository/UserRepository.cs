@@ -14,7 +14,7 @@ namespace Brewmaster.Alcohol.Repository
     {
 
         //数据库连接
-        private static string connStr = "Server=127.0.0.1;Database=tvData;Uid=root;Pwd=root;";
+        private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=wangsenyu;Pwd=123456;";
 
         /// <summary>
         /// 注册
@@ -23,7 +23,10 @@ namespace Brewmaster.Alcohol.Repository
         /// <returns></returns>
         public int Resigt(Users users)
         {
-           
+            using ()
+            {
+
+            }
         }
     }
 }
