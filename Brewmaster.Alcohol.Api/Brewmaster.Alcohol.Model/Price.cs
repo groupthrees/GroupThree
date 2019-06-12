@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Brewmaster.Alcohol.Model
 {
+    /// <summary>
+    /// 商品价格表
+    /// </summary>
     public class Price
     {
         /// <summary>

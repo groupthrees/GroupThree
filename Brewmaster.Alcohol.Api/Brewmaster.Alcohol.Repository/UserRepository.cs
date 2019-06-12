@@ -25,7 +25,7 @@ namespace Brewmaster.Alcohol.Repository
         {
             using (SqlConnection conn =new SqlConnection(connStr))
             {
-                string sql = $"insert into Users(UsersName,UsersPwd)  values ({users.UsersName},{users.UsersPwd})";
+                string sql = string.Format("insert into Users(UsersName,UsersPwd)  values ('{0}','{1}')",users.UsersName,users.UsersPwd);
                 var result = conn.Execute(sql);
                 return result;
             }

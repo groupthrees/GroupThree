@@ -11,6 +11,7 @@ namespace Brewmaster.Alcohol.Repository
 {
     public class GoodsRepository : IGoodsRepository
     {
+
         //数据库连接
         private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=fantaotao;Pwd=123456;";
 
@@ -59,5 +60,6 @@ namespace Brewmaster.Alcohol.Repository
             }
             return list;
         }
+
     }
 }
