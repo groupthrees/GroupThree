@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Brewmaster.Alcohol.Model
 {
+
+    /// <summary>
+    /// 用户表
+    /// </summary>
     public class Users
     {
         /// <summary>
