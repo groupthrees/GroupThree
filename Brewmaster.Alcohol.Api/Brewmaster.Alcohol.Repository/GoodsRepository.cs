@@ -6,6 +6,5 @@ namespace Brewmaster.Alcohol.Repository
 {
     class GoodsRepository
     {
-
     }
 }
