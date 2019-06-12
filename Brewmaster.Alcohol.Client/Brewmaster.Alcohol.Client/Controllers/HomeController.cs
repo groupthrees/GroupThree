@@ -14,13 +14,12 @@ namespace Brewmaster.Alcohol.Client.Controllers
 {
     public class HomeController : BaseController
     {
-<<<<<<< HEAD
-=======
+
         public IActionResult HomePage()
         {
             return View();
         }
->>>>>>> db2ec04c972d80f83cadd3e31b5de358bbe48056
+
 
         public IActionResult test()
         {
