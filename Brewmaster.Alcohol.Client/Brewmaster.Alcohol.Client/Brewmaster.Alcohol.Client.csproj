@@ -5,6 +5,40 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\alert.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\base.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\chat.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\easing.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\icon3.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\jquery.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\jquery_002.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\mba.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\mqtt.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\mqtt31.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\mv.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\mvl.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\my_order.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\ntkfstat.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\o_code.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\position.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\public.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\p_code.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\recommend_99.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\region.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\seallogo.dll" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\sidenav.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\skipmobileweb.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\Slider.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\turn_bottom.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\usercenter-web-pc.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\usercenter.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\userCenterCtrlWidth.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\userinfo.php" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\visittrack.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\zh_cn.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
