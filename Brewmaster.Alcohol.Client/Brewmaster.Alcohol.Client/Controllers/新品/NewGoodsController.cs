@@ -8,7 +8,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.新品
 {
     public class NewGoodsController : Controller
     {
-        public IActionResult Index()
+        public IActionResult NewGoodsIndex()
         {
             return View();
         }
