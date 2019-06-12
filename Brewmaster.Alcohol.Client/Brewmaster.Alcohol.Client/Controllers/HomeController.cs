@@ -47,6 +47,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
             ViewData["Message"] = "允许匿名登录的页面";
 
             return View();
+            //return View();
         }
 
         public IActionResult Contact()
