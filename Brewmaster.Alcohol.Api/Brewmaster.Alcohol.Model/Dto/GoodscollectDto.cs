@@ -5,16 +5,16 @@ using System.Text;
 namespace Brewmaster.Alcohol.Model
 {
     //商品详情页 Dto
-    public class GoodscollectDto
+    /// <summary>
+    /// 详情页 dto
+    /// </summary>
+    public class Picture_carousel
     {
-        //是否收藏
-        public int IsCollect { get; set; }
-        //下方图片放大
-        public imgs img { get; set; }
+        public List<img> Imgs;
+        public int Conllect { get; set; }
     }
-  public  class imgs
+    public class img
     {
-
-        public List<string> img { get; set; }
+        public string Image_Url { get; set; }
     }
 }
