@@ -1,10 +1,19 @@
+<<<<<<< HEAD
+<Project Sdk="Microsoft.NET.Sdk.Web">
+=======
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+>>>>>>> db2ec04c972d80f83cadd3e31b5de358bbe48056
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+=======
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\alert.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\base.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\bonus.js" />
@@ -92,6 +101,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+>>>>>>> db2ec04c972d80f83cadd3e31b5de358bbe48056
   </ItemGroup>
 
   <ItemGroup>
