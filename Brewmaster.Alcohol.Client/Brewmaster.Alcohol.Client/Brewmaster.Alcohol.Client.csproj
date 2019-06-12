@@ -1,10 +1,41 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\alert.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\base.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\bonus.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\easing.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\icon3.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\jquery.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\jquery_002.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\mba.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\mv.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\mvl.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\o_code.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\position.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\public.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\p_code.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\recommend_99.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\region.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\seallogo.dll" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\sidenav.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\skipmobileweb.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\Slider.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\turn_bottom.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\usercenter-web-pc.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\usercenter.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\userCenterCtrlWidth.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\visittrack.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\alert.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\base.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\collect.js" />

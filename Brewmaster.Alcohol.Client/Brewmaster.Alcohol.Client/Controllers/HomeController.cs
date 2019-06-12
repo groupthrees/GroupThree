@@ -14,10 +14,12 @@ namespace Brewmaster.Alcohol.Client.Controllers
 {
     public class HomeController : BaseController
     {
+
         public IActionResult HomePage()
         {
             return View();
         }
+
 
         public IActionResult test()
         {
@@ -27,8 +29,8 @@ namespace Brewmaster.Alcohol.Client.Controllers
         public IActionResult Index()
         {
             //测试HttpClient调用Api
-            var i = GetProductById();
-            ViewBag.l = i;
+            //var i = GetProductById();
+            //ViewBag.l = i;
             return View();
         }
 
