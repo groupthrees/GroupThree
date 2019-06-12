@@ -28,14 +28,13 @@ namespace Brewmaster.Alcohol.Api
         {
             // 注册接口和实现类的映射关系  
             services.AddScoped<ITestRepository, TestRepository>();
-
             //自动生成 设置MVC 兼容性版本
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //注册跨域服务，允许所有来源
             services.AddCors(options =>
                 options.AddPolicy("AllowAnyCors",
-                p => p.AllowAnyOrigin())
-                );
+                p => p.WithOrigins().AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials())
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
