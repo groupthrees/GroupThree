@@ -66,13 +66,11 @@ namespace Brewmaster.Alcohol.Client.Controllers
         {
             return View(); 
         }
-<<<<<<< HEAD
-=======
+
 
         public IActionResult Jiu()
         {
             return View();
         }
->>>>>>> db2ec04c972d80f83cadd3e31b5de358bbe48056
     }
 }
