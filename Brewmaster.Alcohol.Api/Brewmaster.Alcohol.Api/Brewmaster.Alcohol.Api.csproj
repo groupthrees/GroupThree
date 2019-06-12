@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Controllers\商品查询\" />
+    <Folder Include="Controllers\新文件夹\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
