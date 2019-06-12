@@ -1,7 +1,6 @@
 
 <Project Sdk="Microsoft.NET.Sdk.Web">
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
->>>>>>> db2ec04c972d80f83cadd3e31b5de358bbe48056
+
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
