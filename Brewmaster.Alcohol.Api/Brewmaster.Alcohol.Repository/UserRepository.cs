@@ -10,7 +10,7 @@ namespace Brewmaster.Alcohol.Repository
     /// <summary>
     /// 用户实现接口层
     /// </summary>
-    public class UserRepository : UserIRepository
+    public class UserRepository : IUserRepository
     {
 
         //数据库连接
@@ -23,9 +23,11 @@ namespace Brewmaster.Alcohol.Repository
         /// <returns></returns>
         public int Resigt(Users users)
         {
-            using ()
+            using (SqlConnection conn =new SqlConnection(connStr))
             {
-
+                string sql = $"insert into Users(UsersName,UsersPwd)  values ({users.UsersName},{users.UsersPwd})";
+                var result = conn.Execute(sql);
+                return result;
             }
         }
     }

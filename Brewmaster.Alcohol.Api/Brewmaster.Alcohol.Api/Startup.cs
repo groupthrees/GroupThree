@@ -28,7 +28,7 @@ namespace Brewmaster.Alcohol.Api
         {
             // 注册接口和实现类的映射关系  
             services.AddScoped<ITestRepository, TestRepository>();
-
+            services.AddScoped<IUserRepository, UserRepository>();
             //自动生成 设置MVC 兼容性版本
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //注册跨域服务，允许所有来源

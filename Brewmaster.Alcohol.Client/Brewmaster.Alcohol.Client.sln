@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brewmaster.Alcohol.Client", "Brewmaster.Alcohol.Client\Brewmaster.Alcohol.Client.csproj", "{AD5DA44B-A5E9-4A63-8DA5-D0603E3230DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewmaster.Alcohol.Client", "Brewmaster.Alcohol.Client\Brewmaster.Alcohol.Client.csproj", "{AD5DA44B-A5E9-4A63-8DA5-D0603E3230DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brewmaster.Alcohol.Catch", "Brewmaster.Alcohol.Catch\Brewmaster.Alcohol.Catch.csproj", "{A1FBE2B1-EE5E-4763-9EB1-A9107578A6C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewmaster.Alcohol.Catch", "Brewmaster.Alcohol.Catch\Brewmaster.Alcohol.Catch.csproj", "{A1FBE2B1-EE5E-4763-9EB1-A9107578A6C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

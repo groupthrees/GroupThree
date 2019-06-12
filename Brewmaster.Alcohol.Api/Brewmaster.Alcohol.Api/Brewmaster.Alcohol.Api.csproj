@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Brewmaster.Alcohol.IRepository\Brewmaster.Alcohol.IRepository.csproj" />
+    <ProjectReference Include="..\Brewmaster.Alcohol.Model\Brewmaster.Alcohol.Model.csproj" />
     <ProjectReference Include="..\Brewmaster.Alcohol.Repository\Brewmaster.Alcohol.Repository.csproj" />
   </ItemGroup>
 
