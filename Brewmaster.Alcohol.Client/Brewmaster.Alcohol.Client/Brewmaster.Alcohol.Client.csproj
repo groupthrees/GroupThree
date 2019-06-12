@@ -5,6 +5,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\alert.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\base.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\collect.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\easing.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\icon3.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\jquery.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\jquery_002.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\mba.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\mv.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\mvl.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\o_code.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\position.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\public.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\p_code.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\recommend_99.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\region.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\seallogo.dll" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\sidenav.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\skipmobileweb.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\Slider.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\turn_bottom.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\usercenter-web-pc.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\usercenter.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\userCenterCtrlWidth.js" />
+    <None Include="wwwroot\Wine\我的酒仙网 %29 我的收藏_files\visittrack.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\alert.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\base.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\chat.js" />
