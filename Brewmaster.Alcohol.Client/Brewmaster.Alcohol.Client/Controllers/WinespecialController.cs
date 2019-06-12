@@ -8,7 +8,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
 {
     public class WinespecialController : Controller
     {
-        public IActionResult Index()
+        public IActionResult WinespecialIndex()
         {
             return View();
         }
