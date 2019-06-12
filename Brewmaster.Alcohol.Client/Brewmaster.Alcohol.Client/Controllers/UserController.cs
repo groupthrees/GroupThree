@@ -17,5 +17,10 @@ namespace Brewmaster.Alcohol.Client.Controllers
         {
             return View();
         }
+
+        public IActionResult Password()
+        {
+            return View();
+        }
     }
 }
