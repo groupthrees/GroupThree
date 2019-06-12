@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\商品查询\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
