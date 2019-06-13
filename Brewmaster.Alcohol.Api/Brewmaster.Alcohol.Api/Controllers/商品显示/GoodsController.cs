@@ -28,6 +28,7 @@ namespace Brewmaster.Alcohol.Api.Controllers.商品显示
         {
             _GoodsRepository = GoodsRepository;
         }
+
         /// <summary>
         /// 首页商品显示
         /// </summary>
