@@ -34,6 +34,7 @@
     <script src="~/Wine/酒-商品搜索-酒仙网_files/coupon_search.js" type="text/javascript"></script>
 
 
+
     <script type="text/javascript">
         // 优惠券信息
         window.jxsearch = {};
@@ -45,16 +46,7 @@
                 CouponSearchPcJs.getCartInfoByCouponId(window.jxsearch._couponId);
             }
 
-            // 促销
-            SearchPcJs.getPriceAndClubPrice();
-            SearchPcJs.getProductPromos();
-            SearchPcJs.getProductStocks();
-            SearchPcJs.getProductMarks();
-            //SearchPcJs.getSearchAdv();
-            //SearchPcJs.getPopRecommendProducts();
-            //SearchPcJs.getProductComments();
-        });
-    </script>
+
 
 
     <script type="text/javascript" async="" charset="utf-8" src="~/Wine/酒-商品搜索-酒仙网_files/ntkfstat.js"></script>
@@ -67,6 +59,7 @@
 <body>
     <div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>
 
+ 
     <!-- 全站公共url变量 -->
     <script type="text/javascript">
         window.jxdomain = {
@@ -108,8 +101,13 @@
         //获取区域ID并存储到Cookie
         var userArray = getCookie("user_province"); userArray = userArray.split("_"); if (userArray[0] == "" || userArray[0] == undefined) { var url_kc = window.jxdomain.pub + "/getOrgionByRequest.htm?t=" + new Date().getTime(); var proxy_url = "/httpProxyAccess.htm?t=" + new Date().getTime(); jQuery.ajax({ type: "POST", url: proxy_url, data: { target: url_kc }, dataType: "json", success: function (data) { var orgionId = "2"; if (data) { orgionId = data.orgionId } if (orgionId == "") { orgionId = "2" } userArray[0] = orgionId; setCookie("user_province", orgionId, 12); var sa1 = returnArrya(1, orgionId); $(".ajax_deli_city").text(sa1[1]) } }) } else { try { var sa1 = returnArrya(1, userArray[0]); $(".ajax_deli_city").text(sa1[1]) } catch (e) { setCookie("user_province", "2", 12); $(".ajax_deli_city").text("北京") } };
         var header1200 = ""; var header1000 = "";
+ 
+   
 
-    </script>
+    <script src="~/Wine/酒-商品搜索-酒仙网_files/skipmobileweb.js"></script>
+ 
+
+
     <div class="topHeader">
         <div class="topHeaderCon">
             <div class="topHeaderLeft" name="_new_login_status_panel">
@@ -214,6 +212,7 @@
                 </div>
 
 
+ 
                 <script>
 
                     var defaultKey = '';
@@ -250,6 +249,9 @@
                     });
                 </script>
             </div><div class="headerProtect"><a rel="nofollow"></a><a rel="nofollow"></a><a rel="nofollow"></a></div>
+ 
+    
+ 
         </div>
     </div>
     <!--页头end--><!--导航-->
@@ -885,6 +887,7 @@
             </div>
         </div>
     </div>
+ 
     <script type="text/javascript">
         $(function () {
             //循环取出主类目
@@ -946,6 +949,10 @@
         });
     </script>
     <script type="text/javascript">var ids = '84242,42144,55440,48711,78615,75449,78693,71789,69193,35194,33691,48981,89385,43055,121,32857,43166,16807,3372,39511,70734,64111,67444,49255,50947,74175,3360,51268,17340,10147,38358,85474,73491,32343,40126,53008,69944,55984,17673,11714,35138,25813,44872,34255,32673,39080,39512,44874,49683,87731,9099,78043,3113,84203,45826,32517,38883,25907,46888,88368,';</script>
+ 
+ 
+    
+ 
 
     <div class="clear"><a name="v2"></a></div>
     <!-- 通栏广告位begin -->
@@ -1136,6 +1143,7 @@
                 <!--排序end-->
                 <!-- 商品列表begin -->
                 <!-- 搜索结果显示 start -->
+ 
                 <div class="proListSearch">
                     <ul class="clearfix">
                         <li product-box="84242">
@@ -1415,133 +1423,53 @@
                                 <div class="seller">
                                     <a id="shopProId_48981" sid="1446" href="http://shop.jiuxian.com/index-1446.htm" target="_blank"><i class="sIcon"></i><span>潭酒官方旗舰店</span></a>
                                 </div>
+ 
+                
+                <!-- 搜索结果显示 end -->
+                <!-- 搜索少/无结果 热销产品 start -->
+                <div class="proListSearch hotList">
+                    <div class="hotProductTitle"><span>热销产品</span></div>
+                    <div class="hotProduct" id="recomm_direct_201">
+ 
 
-                                <div id="activity_48981" class="cuxiao">
-                                    <i class="smoldIcon"></i>							<span class="yh">多买多优惠</span>
-                                </div>
+                    </div>
+                </div>
+             
+            </div>
 
-                                <div class="buyArea clearfix" id="addcart_48981" style="">
-                                    <div class="edit">
-                                        <a class="decrease off" href="javascript:;">-</a>
-                                        <input type="text" gid="48981" gname="【品鉴小酒】45° 潭酒 仙潭特曲（2016款） 固态纯粮 浓香型白酒 125ml" id="InputNum48981" onkeyup="changeNum(this.value,48981)" value="1" name="" />
-                                        <a class="increase" href="javascript:;">+</a>
-                                    </div>
-                                    <a class="cart sIcon prtlt_btn2" href="javascript:;">加入购物车</a>
-                                </div>
-                                <div class="buyArea clearfix" id="buyover_48981" style="display:none;">
-                                    <div class="edit">
-                                        <a class="increaseNot off" href="javascript:;">-</a><span>1</span><a class="decreaseNot off" href="javascript:;">+</a>
-                                    </div>
-                                    <a name="_buyover" class="lack sIcon" pidflag="48981" href="javascript:void(0)">到货通知</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li product-box="89385" style="z-index: 15;">
-                            <div class="frameA" style="display: none;"><div class="frameB left"></div><div class="frameB right"></div><div class="frameB top"></div><div class="frameB bottom"></div></div>
-                            <div class="content clearfix">
-                                <div class="collect_box">
-                                    <span class="collect collect2" id="cell_89385" style="display: none;"><i></i>收藏</span>
-                                    <a class="img clearfix" href="http://www.jiuxian.com/goods-89385.html" title="酒具套装（酒杯*2+醒酒器）+肯迪醒（韩国原装进口）100ml" target="_blank">
-                                        <img proimgid="89385" src="~/Wine/酒-商品搜索-酒仙网_files/6f2c1aa8e14a40a1add2f4095c3a787d4.jpg" alt="酒具套装（酒杯*2+醒酒器）+肯迪醒（韩国原装进口）100ml" title="酒具套装（酒杯*2+醒酒器）+肯迪醒（韩国原装进口）100ml" />
-                                        <span id="mark_89385" class="sIcon cxtag tj" style="display:none"></span>
-                                    </a>
-                                </div>
+ 
 
-                                <div class="priceArea clearfix">
-                                    <p class="price" id="product_89385">¥<span>49.00</span></p>
-                                    <p class="clubPrice" id="product_clubPrice_89385"><span></span></p>
-                                </div>
-                                <div class="proName">
-                                    <a href="http://www.jiuxian.com/goods-89385.html" title="酒具套装（酒杯*2+醒酒器）+肯迪醒（韩国原装进口）100ml" target="_blank">
-                                        酒具套装（酒杯*2+醒酒器）+肯迪醒（韩国原装进口）100ml <span id="promote_89385" class="slogan">饮酒伴侣，酒前酒后 轻松应酬，酒桌省心套装，一步到位</span>
-                                    </a>
-                                </div>
-                                <div class="judgeAdv clearfix">
-                                    <a class="judge" href="http://www.jiuxian.com/goods-89385.html#answerArea" title="" target="_blank"><span>21170</span>评价</a>
-                                </div>
+        </div>
+    </div>
 
-                                <div class="seller">
-                                </div>
 
-                                <div id="activity_89385" class="cuxiao">
-                                    <i class="projx sIcon"></i>											<span class="yh">限时抢购</span>
-                                </div>
 
-                                <div class="buyArea clearfix" id="addcart_89385" style="">
-                                    <div class="edit">
-                                        <a class="decrease off" href="javascript:;">-</a>
-                                        <input type="text" gid="89385" gname="酒具套装（酒杯*2+醒酒器）+肯迪醒（韩国原装进口）100ml" id="InputNum89385" onkeyup="changeNum(this.value,89385)" value="1" name="" />
-                                        <a class="increase" href="javascript:;">+</a>
-                                    </div>
-                                    <a class="cart sIcon prtlt_btn2" href="javascript:;">加入购物车</a>
-                                </div>
-                                <div class="buyArea clearfix" id="buyover_89385" style="display:none;">
-                                    <div class="edit">
-                                        <a class="increaseNot off" href="javascript:;">-</a><span>1</span><a class="decreaseNot off" href="javascript:;">+</a>
-                                    </div>
-                                    <a name="_buyover" class="lack sIcon" pidflag="89385" href="javascript:void(0)">到货通知</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li product-box="43055">
-                            <div class="frameA"><div class="frameB left"></div><div class="frameB right"></div><div class="frameB top"></div><div class="frameB bottom"></div></div>
-                            <div class="content clearfix">
-                                <div class="collect_box">
-                                    <span class="collect collect2" id="cell_43055" style="display: none;"><i></i>收藏</span>
-                                    <a class="img clearfix" href="http://www.jiuxian.com/goods-43055.html" title="法国朗格巴顿原酒进口红酒赤霞珠干红葡萄酒750ml*1" target="_blank">
-                                        <img proimgid="43055" src="~/Wine/酒-商品搜索-酒仙网_files/1d7521bf321d4de0a4bc5288add5d07a4.jpg" alt="法国朗格巴顿原酒进口红酒赤霞珠干红葡萄酒750ml*1" title="法国朗格巴顿原酒进口红酒赤霞珠干红葡萄酒750ml*1" />
-                                        <span id="mark_43055" class="sIcon cxtag tj" style="display:none"></span>
-                                    </a>
-                                </div>
+ 
 
-                                <div class="priceArea clearfix">
-                                    <p class="price" id="product_43055">¥<span>19.00</span></p>
-                                    <p class="clubPrice" id="product_clubPrice_43055"><span></span></p>
-                                </div>
-                                <div class="proName">
-                                    <a href="http://www.jiuxian.com/goods-43055.html" title="法国朗格巴顿原酒进口红酒赤霞珠干红葡萄酒750ml*1" target="_blank">
-                                        法国朗格巴顿原酒进口红酒赤霞珠干红葡萄酒750ml*1 <span id="promote_43055" class="slogan">特价秒杀不限量！超级套装4瓶酒加四件套酒具包邮到手108，限量500套抢完即止！将本商品加入购物车，查看购物车， 在购物车里的本商品下面有【超值换购】，点开后选择里面的换购商品，里面的红酒白酒都是超低秒杀活动价，选择您喜欢的商品一起购买，让您优惠一次享个够</span>
-                                    </a>
-                                </div>
-                                <div class="judgeAdv clearfix">
-                                    <a class="judge" href="http://www.jiuxian.com/goods-43055.html#answerArea" title="" target="_blank"><span>1677</span>评价</a>
-                                </div>
+    <style type="text/css">
+        .footerBotLeft .footerInfo {
+            margin-left: -8px;
+        }
 
-                                <div class="seller">
-                                    <a id="shopProId_43055" sid="1181" href="http://shop.jiuxian.com/index-1181.htm" target="_blank"><i class="sIcon"></i><span>澳法酒类精品店</span></a>
-                                </div>
+        .footerBotLeft p {
+            font-family: Arial, Helvetica, sans-serif, "宋体";
+        }
 
-                                <div id="activity_43055" class="cuxiao">
-                                    <span class="yh">抄底价</span><span class="yh">超级套装</span><span class="yh">超值换购</span>
-                                </div>
+        .footerBotLeft .footerInfo a {
+            color: #666;
+        }
 
-                                <div class="buyArea clearfix" id="addcart_43055" style="">
-                                    <div class="edit">
-                                        <a class="decrease off" href="javascript:;">-</a>
-                                        <input type="text" gid="43055" gname="法国朗格巴顿原酒进口红酒赤霞珠干红葡萄酒750ml*1" id="InputNum43055" onkeyup="changeNum(this.value,43055)" value="1" name="" />
-                                        <a class="increase" href="javascript:;">+</a>
-                                    </div>
-                                    <a class="cart sIcon prtlt_btn2" href="javascript:;">加入购物车</a>
-                                </div>
-                                <div class="buyArea clearfix" id="buyover_43055" style="display:none;">
-                                    <div class="edit">
-                                        <a class="increaseNot off" href="javascript:;">-</a><span>1</span><a class="decreaseNot off" href="javascript:;">+</a>
-                                    </div>
-                                    <a name="_buyover" class="lack sIcon" pidflag="43055" href="javascript:void(0)">到货通知</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li product-box="121">
-                            <div class="frameA"><div class="frameB left"></div><div class="frameB right"></div><div class="frameB top"></div><div class="frameB bottom"></div></div>
-                            <div class="content clearfix">
-                                <div class="collect_box">
-                                    <span class="collect collect2" id="cell_121" style="display: none;"><i></i>收藏</span>
-                                    <a class="img clearfix" href="http://www.jiuxian.com/goods-121.html" title="53°黄盖玻瓶汾酒475ml" target="_blank">
-                                        <img proimgid="121" src="~/Wine/酒-商品搜索-酒仙网_files/6531ff35cdef4070a1e6af4e4246e19c4.jpg" alt="53°黄盖玻瓶汾酒475ml" title="53°黄盖玻瓶汾酒475ml" />
-                                        <span id="mark_121" class="sIcon cxtag tj" style="display:none"></span>
-                                    </a>
-                                </div>
+        .footerBotLeft .copyright {
+            color: #666;
+        }
+    </style>
+    <!--页脚end-->
+    <!-- 邮件订阅  start-->
+    
+    <!-- 邮件订阅  end-->
+    
 
+ 
                                 <div class="priceArea clearfix">
                                     <p class="price" id="product_121">¥<span>43.00</span></p>
                                     <p class="clubPrice" id="product_clubPrice_121"><span></span></p>
@@ -3815,6 +3743,18 @@
 
     });
     </script>
+ 
+    <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/recommend_99.js"></script>
+    <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/p_code.js"></script>
+    <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/FAI84qYjQk.txt"></script>
+    <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/o_code.js"></script>
+    <!--99click(统计)-->
+    
+    <!-- mediav(访客找回) -->
+   
+
+
+ 
 
 </body>
 </html>
