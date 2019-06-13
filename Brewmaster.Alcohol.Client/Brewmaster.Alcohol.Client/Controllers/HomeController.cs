@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Brewmaster.Alcohol.Catch;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Brewmaster.Alcohol.Client.Controllers
 {
@@ -18,7 +20,10 @@ namespace Brewmaster.Alcohol.Client.Controllers
         public IActionResult Index()
         {
             var list = client.GetApiResult("get", "Goods/getgoodslist", null);
-            return Json(list);
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+            settings.ContractResolver = new DefaultContractResolver();
+            return Json(list, settings);
         }
     }
 }
+
