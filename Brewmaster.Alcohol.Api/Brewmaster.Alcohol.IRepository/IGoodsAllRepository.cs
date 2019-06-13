@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Brewmaster.Alcohol.Model;
-using Brewmaster.Alcohol.Model.Dto;
 using Brewmaster.Alcohol.Model.Dto.搜索商品Dto;
 
 namespace Brewmaster.Alcohol.IRepository
