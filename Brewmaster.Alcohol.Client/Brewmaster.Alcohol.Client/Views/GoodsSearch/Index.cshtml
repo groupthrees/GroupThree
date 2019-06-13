@@ -33,25 +33,25 @@
 
 
     <script type="text/javascript">
-	// 优惠券信息
-	window.jxsearch={};
-    window.jxsearch._couponId = '';
-	$(function(){
-		// 优惠券
-		if(window.jxsearch._couponId){
-			CouponSearchPcJs.getCouponInfo(window.jxsearch._couponId);
-			CouponSearchPcJs.getCartInfoByCouponId(window.jxsearch._couponId);
-		}
+        // 优惠券信息
+        window.jxsearch={};
+        window.jxsearch._couponId = '';
+        $(function(){
+            // 优惠券
+            if(window.jxsearch._couponId){
+                CouponSearchPcJs.getCouponInfo(window.jxsearch._couponId);
+                CouponSearchPcJs.getCartInfoByCouponId(window.jxsearch._couponId);
+            }
 
-		// 促销
-		SearchPcJs.getPriceAndClubPrice();
-		SearchPcJs.getProductPromos();
-		SearchPcJs.getProductStocks();
-		SearchPcJs.getProductMarks();
-		//SearchPcJs.getSearchAdv();
-		//SearchPcJs.getPopRecommendProducts();
-		//SearchPcJs.getProductComments();
-	});
+            // 促销
+            SearchPcJs.getPriceAndClubPrice();
+            SearchPcJs.getProductPromos();
+            SearchPcJs.getProductStocks();
+            SearchPcJs.getProductMarks();
+            //SearchPcJs.getSearchAdv();
+            //SearchPcJs.getPopRecommendProducts();
+            //SearchPcJs.getProductComments();
+        });
     </script>
 
 
@@ -67,45 +67,45 @@
 
     <!-- 全站公共url变量 -->
     <script type="text/javascript">
-    window.jxdomain={
-        misc:"http://misc.jiuxian.com",
-        list:"http://list.jiuxian.com",
-        pub:"http://public.jiuxian.com",
-        detail:"http://www.jiuxian.com",
-        home:"http://www.jiuxian.com",
-        wine:"http://wine.jiuxian.com",
-        spirits:"http://spirits.jiuxian.com",
-        clear:"http://clear.jiuxian.com",
-        tuan:"http://tuan.jiuxian.com",
-        tehui:"http://tehui.jiuxian.com",
-        happy:"http://www.jiuxian.com",
-        special:"http://special.jiuxian.com",
-        sale:"http://sale.jiuxian.com",
-        brand:"http://brand.jiuxian.com",
-        dingzhi:"http://dingzhi.jiuxian.com",
-        order:"http://order.jiuxian.com",
-        pay:"https://pay.jiuxian.com",
-        cart:"http://cart.jiuxian.com",
-        login:"https://login.jiuxian.com",
-        member:"http://member.jiuxian.com",
-        jifen:"http://jifen.jiuxian.com",
-        help:"http://help.jiuxian.com",
-        cps:"http://cps.jiuxian.com",
-        iosapi:"http://iosapi.jiuxian.com",
-        info:"http://info.jiuxian.com",
-        shop:"http://shop.jiuxian.com",
-        forum:"http://forum.jiuxian.com",
-        act:"http://act.jiuxian.com",
-        miaosha:"http://miaosha.jiuxian.com"
-    };
+        window.jxdomain={
+            misc:"http://misc.jiuxian.com",
+            list:"http://list.jiuxian.com",
+            pub:"http://public.jiuxian.com",
+            detail:"http://www.jiuxian.com",
+            home:"http://www.jiuxian.com",
+            wine:"http://wine.jiuxian.com",
+            spirits:"http://spirits.jiuxian.com",
+            clear:"http://clear.jiuxian.com",
+            tuan:"http://tuan.jiuxian.com",
+            tehui:"http://tehui.jiuxian.com",
+            happy:"http://www.jiuxian.com",
+            special:"http://special.jiuxian.com",
+            sale:"http://sale.jiuxian.com",
+            brand:"http://brand.jiuxian.com",
+            dingzhi:"http://dingzhi.jiuxian.com",
+            order:"http://order.jiuxian.com",
+            pay:"https://pay.jiuxian.com",
+            cart:"http://cart.jiuxian.com",
+            login:"https://login.jiuxian.com",
+            member:"http://member.jiuxian.com",
+            jifen:"http://jifen.jiuxian.com",
+            help:"http://help.jiuxian.com",
+            cps:"http://cps.jiuxian.com",
+            iosapi:"http://iosapi.jiuxian.com",
+            info:"http://info.jiuxian.com",
+            shop:"http://shop.jiuxian.com",
+            forum:"http://forum.jiuxian.com",
+            act:"http://act.jiuxian.com",
+            miaosha:"http://miaosha.jiuxian.com"
+        };
     </script>
 
     <script src="~/Wine/酒-商品搜索-酒仙网_files/skipmobileweb.js"></script>
     <script type="text/javascript">isMobile();</script>
     <script type="text/javascript">
-//获取区域ID并存储到Cookie
-var userArray=getCookie("user_province");userArray=userArray.split("_");if(userArray[0]==""||userArray[0]==undefined){var url_kc=window.jxdomain.pub+"/getOrgionByRequest.htm?t="+new Date().getTime();var proxy_url="/httpProxyAccess.htm?t="+new Date().getTime();jQuery.ajax({type:"POST",url:proxy_url,data:{target:url_kc},dataType:"json",success:function(data){var orgionId="2";if(data){orgionId=data.orgionId}if(orgionId==""){orgionId="2"}userArray[0]=orgionId;setCookie("user_province",orgionId,12);var sa1=returnArrya(1,orgionId);$(".ajax_deli_city").text(sa1[1])}})}else{try{var sa1=returnArrya(1,userArray[0]);$(".ajax_deli_city").text(sa1[1])}catch(e){setCookie("user_province","2",12);$(".ajax_deli_city").text("北京")}};
-var header1200 = ""; var header1000 = "";
+        //获取区域ID并存储到Cookie
+        var userArray=getCookie("user_province");userArray=userArray.split("_");if(userArray[0]==""||userArray[0]==undefined){var url_kc=window.jxdomain.pub+"/getOrgionByRequest.htm?t="+new Date().getTime();var proxy_url="/httpProxyAccess.htm?t="+new Date().getTime();jQuery.ajax({type:"POST",url:proxy_url,data:{target:url_kc},dataType:"json",success:function(data){var orgionId="2";if(data){orgionId=data.orgionId}if(orgionId==""){orgionId="2"}userArray[0]=orgionId;setCookie("user_province",orgionId,12);var sa1=returnArrya(1,orgionId);$(".ajax_deli_city").text(sa1[1])}})}else{try{var sa1=returnArrya(1,userArray[0]);$(".ajax_deli_city").text(sa1[1])}catch(e){setCookie("user_province","2",12);$(".ajax_deli_city").text("北京")}};
+        var header1200 = ""; var header1000 = "";
 
     </script>
     <div class="topHeader">
@@ -189,14 +189,14 @@ var header1200 = ""; var header1000 = "";
             </div>
 
             <script type="text/javascript">
-	//临时 调整页头位置
-	$(function() {
-		//临时 调整页头位置URL
-		try {
-			changeHeaderUrl();
-		} catch (e) {
-		}
-	});
+                //临时 调整页头位置
+                $(function() {
+                    //临时 调整页头位置URL
+                    try {
+                        changeHeaderUrl();
+                    } catch (e) {
+                    }
+                });
             </script>
 
             <div class="headerSearch">
@@ -247,38 +247,38 @@ var header1200 = ""; var header1000 = "";
 
                 <script>
 
-		var defaultKey = '';
+                    var defaultKey = '';
 
-		$(function() {
-			//搜索框默认值
-			function searchback(data) {
-				if (data == null || data == undefined) {
-					return;
-				}
-				var key = $("#wd").val();
-				if (key == '') {
-					if (data && data != null && data != '') {
-						$("#wd").val(data);
-						//搜索页底部搜索框
-						$("#bottomKeys").val(data);
-						defaultKey = data;
-					}
-				}
-			}
+                    $(function() {
+                        //搜索框默认值
+                        function searchback(data) {
+                            if (data == null || data == undefined) {
+                                return;
+                            }
+                            var key = $("#wd").val();
+                            if (key == '') {
+                                if (data && data != null && data != '') {
+                                    $("#wd").val(data);
+                                    //搜索页底部搜索框
+                                    $("#bottomKeys").val(data);
+                                    defaultKey = data;
+                                }
+                            }
+                        }
 
-			setTimeout(function() {
+                        setTimeout(function() {
 
-				jQuery.get("http://list.jiuxian.com" + "/selectSearchDefaultKey.htm?t=" + new Date().getTime(),
-						{ "name" : "searchBoxDefaultKey" },
-						function(d) {
-							if (d == undefined){
-								return;
-							}
-							searchback(d.defaultSearchKey);
-						}, "json");
-			}, 1000);
+                            jQuery.get("http://list.jiuxian.com" + "/selectSearchDefaultKey.htm?t=" + new Date().getTime(),
+                                { "name" : "searchBoxDefaultKey" },
+                                function(d) {
+                                    if (d == undefined){
+                                        return;
+                                    }
+                                    searchback(d.defaultSearchKey);
+                                }, "json");
+                        }, 1000);
 
-		});
+                    });
                 </script>
             </div><div class="headerProtect"><a rel="nofollow"></a><a rel="nofollow"></a><a rel="nofollow"></a></div>
         </div>
@@ -1161,69 +1161,69 @@ var header1200 = ""; var header1000 = "";
         </div>
     </div>
     <script type="text/javascript">
-$(function(){
+        $(function(){
 //循环取出主类目
-var tahH = $("h3[name=tagH]");
-tahH.each(function(i){
-var pathName = $(this).attr("pathName");
-var tmpnowactstr = '';
-if(pathName.indexOf('|')>0)
-{
-if(i==4){
-tmpnowactstr += "<i class='publicIcon health'></i>";
-}else if(i==5){
-tmpnowactstr += "<i class='publicIcon wineTools'></i>";
-}
-var urlVals = $(this).attr("url");
-var urlLists = urlVals.split("|");
-var valList = pathName.split("|");
-for(var j=0;j<valList.length;j++)
-{
-var vlName = valList[j];
-var urlPath = urlLists[j];
-if(j<valList.length-1)
-{
-tmpnowactstr += '<a target="_blank" href='+urlPath+'>'+vlName+'</a>/';
-}else{
-tmpnowactstr += '<a target="_blank" href='+urlPath+'>'+vlName+'</a>';
-}
-}
-if(''!=tmpnowactstr)
-{
-jQuery("#_nowactstr"+(parseInt(i)+parseInt(1))).find("h3").html(tmpnowactstr).show();
-}
-}
-else
-{
-if(i==0){
-tmpnowactstr = "<i class='publicIcon seleWine'></i>"+tmpnowactstr;
-}else if(i==1){
-tmpnowactstr = "<i class='publicIcon liquor'></i>"+tmpnowactstr;
-}else if(i==2){
-tmpnowactstr = "<i class='publicIcon wine'></i>"+tmpnowactstr;
-}else if(i==3){
-tmpnowactstr = "<i class='publicIcon yang'></i>"+tmpnowactstr;
-}else if(i==4){
-tmpnowactstr = "<i class='publicIcon health'></i>"+tmpnowactstr;
-}else if(i==5){
-tmpnowactstr = "<i class='publicIcon wineTools'></i>"+tmpnowactstr;
-}
-var urlVals = $(this).attr("url");
-tmpnowactstr += '<a target="_blank" href='+urlVals+'>'+pathName+'</a>';
-if(''!=tmpnowactstr)
-{
-jQuery("#_nowactstr"+(parseInt(i)+parseInt(1))).find("h3").html(tmpnowactstr).show();
-}}
-});
+            var tahH = $("h3[name=tagH]");
+            tahH.each(function(i){
+                var pathName = $(this).attr("pathName");
+                var tmpnowactstr = '';
+                if(pathName.indexOf('|')>0)
+                {
+                    if(i==4){
+                        tmpnowactstr += "<i class='publicIcon health'></i>";
+                    }else if(i==5){
+                        tmpnowactstr += "<i class='publicIcon wineTools'></i>";
+                    }
+                    var urlVals = $(this).attr("url");
+                    var urlLists = urlVals.split("|");
+                    var valList = pathName.split("|");
+                    for(var j=0;j<valList.length;j++)
+                    {
+                        var vlName = valList[j];
+                        var urlPath = urlLists[j];
+                        if(j<valList.length-1)
+                        {
+                            tmpnowactstr += '<a target="_blank" href='+urlPath+'>'+vlName+'</a>/';
+                        }else{
+                            tmpnowactstr += '<a target="_blank" href='+urlPath+'>'+vlName+'</a>';
+                        }
+                    }
+                    if(''!=tmpnowactstr)
+                    {
+                        jQuery("#_nowactstr"+(parseInt(i)+parseInt(1))).find("h3").html(tmpnowactstr).show();
+                    }
+                }
+                else
+                {
+                    if(i==0){
+                        tmpnowactstr = "<i class='publicIcon seleWine'></i>"+tmpnowactstr;
+                    }else if(i==1){
+                        tmpnowactstr = "<i class='publicIcon liquor'></i>"+tmpnowactstr;
+                    }else if(i==2){
+                        tmpnowactstr = "<i class='publicIcon wine'></i>"+tmpnowactstr;
+                    }else if(i==3){
+                        tmpnowactstr = "<i class='publicIcon yang'></i>"+tmpnowactstr;
+                    }else if(i==4){
+                        tmpnowactstr = "<i class='publicIcon health'></i>"+tmpnowactstr;
+                    }else if(i==5){
+                        tmpnowactstr = "<i class='publicIcon wineTools'></i>"+tmpnowactstr;
+                    }
+                    var urlVals = $(this).attr("url");
+                    tmpnowactstr += '<a target="_blank" href='+urlVals+'>'+pathName+'</a>';
+                    if(''!=tmpnowactstr)
+                    {
+                        jQuery("#_nowactstr"+(parseInt(i)+parseInt(1))).find("h3").html(tmpnowactstr).show();
+                    }}
+            });
 //临时 调整导航位置URL
-try{changeNavUrl();}catch (e) {}
-});
-$(".menuCon-list li").bind('mouseenter',function(){
-var index = $(".menuCon-list li").index($(this));
-$(".menuCon-list li").removeClass("on");
-$(this).addClass("on");
-$(this).parents(".menuCon-list").find("p").hide().eq(index).show();
-});
+            try{changeNavUrl();}catch (e) {}
+        });
+        $(".menuCon-list li").bind('mouseenter',function(){
+            var index = $(".menuCon-list li").index($(this));
+            $(".menuCon-list li").removeClass("on");
+            $(this).addClass("on");
+            $(this).parents(".menuCon-list").find("p").hide().eq(index).show();
+        });
     </script>
     <script type="text/javascript">var ids = '84242,42144,55440,48711,78615,75449,78693,71789,69193,35194,33691,48981,89385,43055,121,32857,43166,16807,3372,39511,70734,64111,67444,49255,50947,74175,3360,51268,17340,10147,38358,85474,73491,32343,40126,53008,69944,55984,17673,11714,35138,25813,44872,34255,32673,39080,39512,44874,49683,87731,9099,78043,3113,84203,45826,32517,38883,25907,46888,88368,';</script>
 
@@ -1261,10 +1261,10 @@ $(this).parents(".menuCon-list").find("p").hide().eq(index).show();
                 <!-- 此处按酒种加载筛选条件 -->
 
                 <script type="text/javascript">
-function nofind(o){
-	o.src= "http://misc.jiuxian.com/img/sr_rt_shop.png";
-	o.onerror=null; //控制不要一直跳动
-}
+                    function nofind(o){
+                        o.src= "http://misc.jiuxian.com/img/sr_rt_shop.png";
+                        o.onerror=null; //控制不要一直跳动
+                    }
                 </script>
 
                 <!--店铺信息begin-->
@@ -4438,42 +4438,42 @@ function nofind(o){
     <!--快递停发弹窗end-->
 
     <script type="text/javascript">
-$(function(){
-	//显示已选择的商品
-	$('.prodSwitch').bind('click',function(){
-		var $this = $(this);
-		if($this.hasClass('show')){
-			$this.removeClass('show');
-			$('.selectedProd').hide();
-		}else{
-			$this.addClass('show');
-			$('.selectedProd').show();
-		}
+        $(function(){
+            //显示已选择的商品
+            $('.prodSwitch').bind('click',function(){
+                var $this = $(this);
+                if($this.hasClass('show')){
+                    $this.removeClass('show');
+                    $('.selectedProd').hide();
+                }else{
+                    $this.addClass('show');
+                    $('.selectedProd').show();
+                }
 
-	});
+            });
 //	$('.selectedProd').slider();
 
-	$("#rsCartButbay").bind("click",function(){
-        window.location.href="http://cart.jiuxian.com";
-	});
-})
+            $("#rsCartButbay").bind("click",function(){
+                window.location.href="http://cart.jiuxian.com";
+            });
+        })
     </script>
 
     <script type="text/javascript">
-	// 价格回调函数
-	function handleListPrice(priceData){
-		priceData =eval("("+priceData+")");
-	    for (var proId in priceData) {
-	        var proPrices = priceData[proId];
-	        $(".buy_"+proId).html('￥' + proPrices);
-	    }
-	}
+        // 价格回调函数
+        function handleListPrice(priceData){
+            priceData =eval("("+priceData+")");
+            for (var proId in priceData) {
+                var proPrices = priceData[proId];
+                $(".buy_"+proId).html('￥' + proPrices);
+            }
+        }
     </script>
 
     <script type="text/javascript">
-	if("undefined"!=typeof ids && "undefined"!=ids && ids!=""){
-		getProductActPrice(ids,'handleListPrice');
-	}
+        if("undefined"!=typeof ids && "undefined"!=ids && ids!=""){
+            getProductActPrice(ids,'handleListPrice');
+        }
     </script>
 
     <!--到货通知弹窗begin-->
@@ -4481,177 +4481,177 @@ $(function(){
     <!--到货通知弹窗end-->
 
     <script type="text/javascript">
-<!-- 处理输入价格回显 -->
-var price=$.trim($("#price").val());
-if(price.indexOf("|")>=0){
-	var priceMinMax = price.split("|");
-	var minPrice=priceMinMax[0];
-	var maxPrice=priceMinMax[1];
-	if(minPrice != 0){
-		$("#minPrice").val(minPrice);
-	}
-	if(maxPrice != 0){
-		$("#maxPrice").val(maxPrice);
-	}
-}
+        <!-- 处理输入价格回显 -->
+        var price=$.trim($("#price").val());
+        if(price.indexOf("|")>=0){
+            var priceMinMax = price.split("|");
+            var minPrice=priceMinMax[0];
+            var maxPrice=priceMinMax[1];
+            if(minPrice != 0){
+                $("#minPrice").val(minPrice);
+            }
+            if(maxPrice != 0){
+                $("#maxPrice").val(maxPrice);
+            }
+        }
 <!-- 处理搜索跳转的关键词 -->
-var key=$("#key").val();
-if(key!=""){
-	$("#wd").val(key);
-	$("#bottomKey").val(key);
-};
+        var key=$("#key").val();
+        if(key!=""){
+            $("#wd").val(key);
+            $("#bottomKey").val(key);
+        };
 <!-- 结果中搜索 -->
-function extSearch(){
-	var extKey=$.trim($("#extKey").val());
-	if(extKey==""||extKey=="在结果中查找"){
-		alert("请输入关键词");
-		return
-	}
-	String.prototype.replaceAll=function(s1,s2){
-		return this.replace(new RegExp(s1,"gm"),s2);
-	};
-	var nowUrl=decodeURI(location.href);
-	nowUrl=nowUrl.replaceAll("#v2","");
-	var targetUrl="";
-	if(nowUrl.indexOf("extKey=")>=0){
-		var oldExtKey=$.trim($("#extKey-old").val());
-		targetUrl=nowUrl.replaceAll("extKey="+oldExtKey,"extKey="+extKey);
-	}else{
-		if(nowUrl.indexOf("?")>=0){
-			targetUrl=nowUrl+"&extKey="+extKey;
-		}else{
-			targetUrl=nowUrl+"?extKey="+extKey;
-		}
-	}
-	window.location.href=targetUrl
-}
+            function extSearch(){
+                var extKey=$.trim($("#extKey").val());
+                if(extKey==""||extKey=="在结果中查找"){
+                    alert("请输入关键词");
+                    return
+                }
+                String.prototype.replaceAll=function(s1,s2){
+                    return this.replace(new RegExp(s1,"gm"),s2);
+                };
+                var nowUrl=decodeURI(location.href);
+                nowUrl=nowUrl.replaceAll("#v2","");
+                var targetUrl="";
+                if(nowUrl.indexOf("extKey=")>=0){
+                    var oldExtKey=$.trim($("#extKey-old").val());
+                    targetUrl=nowUrl.replaceAll("extKey="+oldExtKey,"extKey="+extKey);
+                }else{
+                    if(nowUrl.indexOf("?")>=0){
+                        targetUrl=nowUrl+"&extKey="+extKey;
+                    }else{
+                        targetUrl=nowUrl+"?extKey="+extKey;
+                    }
+                }
+                window.location.href=targetUrl
+            }
 
-try{
-	window._JX_INFO = window._JX_INFO || [];
-			_JX_INFO.push(["search","酒"," true "]);
-		_JX_INFO.push(["AB",""]);
-}catch(e){}
+        try{
+            window._JX_INFO = window._JX_INFO || [];
+            _JX_INFO.push(["search","酒"," true "]);
+            _JX_INFO.push(["AB",""]);
+        }catch(e){}
     </script>
 
     <script type="text/javascript">
 
-	// 关键词
-	var _ozprm = '';
-	var _keyword =  null ;
-	var _extKey =  null ;
-	var _cgName =  null ;
+        // 关键词
+        var _ozprm = '';
+        var _keyword =  null ;
+        var _extKey =  null ;
+        var _cgName =  null ;
 
-	if(_keyword){
-		_ozprm = 'searchArg1='+_keyword;
-	} else {
-		_ozprm = 'searchArg1='+_cgName;
-	}
-	if(_extKey){
-		if(_ozprm){
-			_ozprm += '&searchArg2='+_extKey;
-		}else{
-			// 优惠券搜索情况下
-			_ozprm = 'searchArg1='+_extKey;
-		}
-	}
+        if(_keyword){
+            _ozprm = 'searchArg1='+_keyword;
+        } else {
+            _ozprm = 'searchArg1='+_cgName;
+        }
+        if(_extKey){
+            if(_ozprm){
+                _ozprm += '&searchArg2='+_extKey;
+            }else{
+                // 优惠券搜索情况下
+                _ozprm = 'searchArg1='+_extKey;
+            }
+        }
 
-	// 优惠券id
-	var _couponFlag = false;
-	var _couponId =  null ;
-	if(_couponId){
-		_couponFlag = true;
-	}
-	//debugger;
+        // 优惠券id
+        var _couponFlag = false;
+        var _couponId =  null ;
+        if(_couponId){
+            _couponFlag = true;
+        }
+        //debugger;
 
-	// 命中总数
-	var _count = 22074;
-	var recommend_99_Args = {'pageName':'search','productIds':['-'],'count':_count,'couponFlag':_couponFlag};
+        // 命中总数
+        var _count = 22074;
+        var recommend_99_Args = {'pageName':'search','productIds':['-'],'count':_count,'couponFlag':_couponFlag};
 
-	$("#ynProduct").bind("click",function(){
-    	//获取当前网址，如： http://localhost:8083/XXX/XXX/XXX.htm
-        var wwwPath=window.document.location.href;
-        //获取主机地址后目录，如： xxx/xxx/xxx.htm
-        var pathName=window.document.location.pathname;
-        var pos=wwwPath.indexOf(pathName);
-        //获取主机地址，如： http://localhost:8083
-        var hostPaht=wwwPath.substring(0,pos);
-		if($(this).attr("checked")){
-			window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&yn=1&area=2";
-		}else{
-			window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&area=2";
-		}
-	});
-	$("#jxDeliver").bind("click",function(){
-    	//获取当前网址，如： http://localhost:8083/XXX/XXX/XXX.htm
-        var wwwPath=window.document.location.href;
-        //获取主机地址后目录，如： xxx/xxx/xxx.htm
-        var pathName=window.document.location.pathname;
-        var pos=wwwPath.indexOf(pathName);
-        //获取主机地址，如： http://localhost:8083
-        var hostPaht=wwwPath.substring(0,pos);
-		if($(this).attr("checked")){
-			window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&jxDeliver=1&area=2";
-		}else{
-			window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&area=2";
-		}
-	});
-	$("#clubProduct").bind("click",function(){
-    	//获取当前网址，如： http://localhost:8083/XXX/XXX/XXX.htm
-        var wwwPath=window.document.location.href;
-        //获取主机地址后目录，如： xxx/xxx/xxx.htm
-        var pathName=window.document.location.pathname;
-        var pos=wwwPath.indexOf(pathName);
-        //获取主机地址，如： http://localhost:8083
-        var hostPaht=wwwPath.substring(0,pos);
-		if($(this).attr("checked")){
-			window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&clubFlag=1&area=2";
-		}else{
-			window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&area=2";
-		}
-	});
-	$("#selectionProduct").bind("click",function(){
-    	//获取当前网址，如： http://localhost:8083/XXX/XXX/XXX.htm
-        var wwwPath=window.document.location.href;
-        //获取主机地址后目录，如： xxx/xxx/xxx.htm
-        var pathName=window.document.location.pathname;
-        var pos=wwwPath.indexOf(pathName);
-        //获取主机地址，如： http://localhost:8083
-        var hostPaht=wwwPath.substring(0,pos);
-		if($(this).attr("checked")){
-			window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&selectionFlag=1&area=2";
-		}else{
-			window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&area=2";
-		}
-	});
-	function initRespal(){ //切换地址，刷新页
-		//location.reload();
-	    var wwwPath=window.document.location.href;
-        //获取主机地址之后的目录，如： xxx/xxx/xxx.htm
-        var pathName=window.document.location.pathname;
-        var pos=wwwPath.indexOf(pathName);
-        //获取主机地址，如： http://localhost:8083
-        var hostPaht=wwwPath.substring(0,pos);
-		var area = $(".h5_dptctdrp a").eq(0).attr("pid");
-		var str1;
-		if($("#ynProduct").attr("checked")){
-			str1="/search.htm?v=2&key=%E9%85%92&yn=1&area=2";
-		}else{
-			str1="/search.htm?v=2&key=%E9%85%92&area=2";
-		}
-		var str2=str1.substring(str1.indexOf("area="),str1.length);
+        $("#ynProduct").bind("click",function(){
+            //获取当前网址，如： http://localhost:8083/XXX/XXX/XXX.htm
+            var wwwPath=window.document.location.href;
+            //获取主机地址后目录，如： xxx/xxx/xxx.htm
+            var pathName=window.document.location.pathname;
+            var pos=wwwPath.indexOf(pathName);
+            //获取主机地址，如： http://localhost:8083
+            var hostPaht=wwwPath.substring(0,pos);
+            if($(this).attr("checked")){
+                window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&yn=1&area=2";
+            }else{
+                window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&area=2";
+            }
+        });
+        $("#jxDeliver").bind("click",function(){
+            //获取当前网址，如： http://localhost:8083/XXX/XXX/XXX.htm
+            var wwwPath=window.document.location.href;
+            //获取主机地址后目录，如： xxx/xxx/xxx.htm
+            var pathName=window.document.location.pathname;
+            var pos=wwwPath.indexOf(pathName);
+            //获取主机地址，如： http://localhost:8083
+            var hostPaht=wwwPath.substring(0,pos);
+            if($(this).attr("checked")){
+                window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&jxDeliver=1&area=2";
+            }else{
+                window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&area=2";
+            }
+        });
+        $("#clubProduct").bind("click",function(){
+            //获取当前网址，如： http://localhost:8083/XXX/XXX/XXX.htm
+            var wwwPath=window.document.location.href;
+            //获取主机地址后目录，如： xxx/xxx/xxx.htm
+            var pathName=window.document.location.pathname;
+            var pos=wwwPath.indexOf(pathName);
+            //获取主机地址，如： http://localhost:8083
+            var hostPaht=wwwPath.substring(0,pos);
+            if($(this).attr("checked")){
+                window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&clubFlag=1&area=2";
+            }else{
+                window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&area=2";
+            }
+        });
+        $("#selectionProduct").bind("click",function(){
+            //获取当前网址，如： http://localhost:8083/XXX/XXX/XXX.htm
+            var wwwPath=window.document.location.href;
+            //获取主机地址后目录，如： xxx/xxx/xxx.htm
+            var pathName=window.document.location.pathname;
+            var pos=wwwPath.indexOf(pathName);
+            //获取主机地址，如： http://localhost:8083
+            var hostPaht=wwwPath.substring(0,pos);
+            if($(this).attr("checked")){
+                window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&selectionFlag=1&area=2";
+            }else{
+                window.location.href=hostPaht+"/search.htm?v=2&key=%E9%85%92&area=2";
+            }
+        });
+        function initRespal(){ //切换地址，刷新页
+            //location.reload();
+            var wwwPath=window.document.location.href;
+            //获取主机地址之后的目录，如： xxx/xxx/xxx.htm
+            var pathName=window.document.location.pathname;
+            var pos=wwwPath.indexOf(pathName);
+            //获取主机地址，如： http://localhost:8083
+            var hostPaht=wwwPath.substring(0,pos);
+            var area = $(".h5_dptctdrp a").eq(0).attr("pid");
+            var str1;
+            if($("#ynProduct").attr("checked")){
+                str1="/search.htm?v=2&key=%E9%85%92&yn=1&area=2";
+            }else{
+                str1="/search.htm?v=2&key=%E9%85%92&area=2";
+            }
+            var str2=str1.substring(str1.indexOf("area="),str1.length);
 
-		if(str2.indexOf("&")>0){
-		    areaStr = str1.substring(str1.indexOf("area="),str2.indexOf("&")+str1.indexOf("area="));
-			str1 = str1.replace(areaStr,"area="+area);
-		}else if(str2.indexOf("#")>0){
-			areaStr = str1.substring(str1.indexOf("area="),str2.indexOf("#")+str1.indexOf("area="));
-			str1 =  str1.replace(areaStr,"area="+area);
-		}else{
-			areaStr = str1.substring(str1.indexOf("area="),str1.length);
-			str1 =  str1.replace(areaStr,"area="+area);
-		}
-		window.location.href=hostPaht+str1;
-	}
+            if(str2.indexOf("&")>0){
+                areaStr = str1.substring(str1.indexOf("area="),str2.indexOf("&")+str1.indexOf("area="));
+                str1 = str1.replace(areaStr,"area="+area);
+            }else if(str2.indexOf("#")>0){
+                areaStr = str1.substring(str1.indexOf("area="),str2.indexOf("#")+str1.indexOf("area="));
+                str1 =  str1.replace(areaStr,"area="+area);
+            }else{
+                areaStr = str1.substring(str1.indexOf("area="),str1.length);
+                str1 =  str1.replace(areaStr,"area="+area);
+            }
+            window.location.href=hostPaht+str1;
+        }
 
     </script>
     <!--页脚-->
@@ -4795,18 +4795,18 @@ try{
                         <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/seallogo.dll"></script>
                         <script id="kx_script" async="" cid="kx_verify" src="~/Wine/酒-商品搜索-酒仙网_files/icon3.js" size="0"></script><span id="kx_verify" style="float: left; padding-right: 6px; display: inline-block; position: relative; width: 128px; height: 47px;"><a id="kx_verify_link" href="https://ss.knet.cn/verifyseal.dll?sn=2011040600100007749&amp;a=1&amp;pa=0.25187358734459464" tabindex="-1" target="_blank" kx_type="图标式" rel="nofollow"><img src="~/Wine/酒-商品搜索-酒仙网_files/cnnic.png" style="border:0; position: absolute; top: 0px; left: 0px;" w="128" h="47" oncontextmenu="return false;" alt="可信网站" width="128" height="47" /></a></span>
                         <script type="text/javascript">
-            (function() {
-              var _kxs = document.createElement('script');
-              _kxs.id = 'kx_script';
-              _kxs.async = true;
-              _kxs.setAttribute('cid', 'kx_verify');
-              _kxs.src = ('https:' == document.location.protocol
-                      ? 'https://ss.knet.cn' : 'http://rr.knet.cn')
-                      + '/static/js/icon3.js?sn=2011040600100007749&tp=icon3';
-              _kxs.setAttribute('size', 0);
-              var _kx = document.getElementById('kx_verify');
-              _kx.parentNode.insertBefore(_kxs, _kx);
-            })();
+                            (function() {
+                                var _kxs = document.createElement('script');
+                                _kxs.id = 'kx_script';
+                                _kxs.async = true;
+                                _kxs.setAttribute('cid', 'kx_verify');
+                                _kxs.src = ('https:' == document.location.protocol
+                                        ? 'https://ss.knet.cn' : 'http://rr.knet.cn')
+                                    + '/static/js/icon3.js?sn=2011040600100007749&tp=icon3';
+                                _kxs.setAttribute('size', 0);
+                                var _kx = document.getElementById('kx_verify');
+                                _kx.parentNode.insertBefore(_kxs, _kx);
+                            })();
                         </script>
                         <a href="http://img01.jiuxian.com/img1/nsy/icp01.jpg" target="_blank" rel="nofollow"><img src="~/Wine/酒-商品搜索-酒仙网_files/copyBot03.jpg" width="128" height="47" /></a>
 
@@ -4851,124 +4851,124 @@ try{
     <!--页脚end-->
     <!-- 邮件订阅  start-->
     <script type="text/javascript">
-  jQuery(function() {
-    jQuery("#subscribe_but")
-            .bind(
+        jQuery(function() {
+            jQuery("#subscribe_but")
+                .bind(
                     "click",
                     function() {
-                      var subscribeEmail = jQuery("#subscribe_email").val();
-                      if (subscribeEmail == "" || subscribeEmail == "请输入您的邮箱") {
-                        alert("请输入您的邮箱！")
-                      } else {
-                        var regemail = /^[\w\-\.]+?[\w\-]+?(\.\w+?)+?$/;
-                        if (subscribeEmail.length > 30) {
-                          alert("请输入正确的邮箱")
+                        var subscribeEmail = jQuery("#subscribe_email").val();
+                        if (subscribeEmail == "" || subscribeEmail == "请输入您的邮箱") {
+                            alert("请输入您的邮箱！")
                         } else {
-                          if (!subscribeEmail.match(regemail)) {
-                            alert("请输入正确的邮箱")
-                          } else {
-                            var proxy_url = "/httpProxyAccess.htm?t="
-                                    + new Date().getTime();
-                            var sub_request_url = "http://public.jiuxian.com/saveUserSubscribeInfos.htm";
-                            jQuery.post(proxy_url, {
-                              target: sub_request_url,
-                              emailAddress: subscribeEmail
-                            }, function(data) {
-                              if (data != null) {
-                                if (data.code == 1) {
-                                  alert("订阅促销信息成功。")
-                                } else {
-                                  if (data.code == 0) {
+                            var regemail = /^[\w\-\.]+?[\w\-]+?(\.\w+?)+?$/;
+                            if (subscribeEmail.length > 30) {
+                                alert("请输入正确的邮箱")
+                            } else {
+                                if (!subscribeEmail.match(regemail)) {
                                     alert("请输入正确的邮箱")
-                                  } else {
-                                    if (data.code == 2) {
-                                      alert("该Email地址已经订阅过促销信息！")
-                                    } else {
-                                      if (data.code == 3) {
-                                        alert("对不起，订阅失败！")
-                                      }
-                                    }
-                                  }
+                                } else {
+                                    var proxy_url = "/httpProxyAccess.htm?t="
+                                        + new Date().getTime();
+                                    var sub_request_url = "http://public.jiuxian.com/saveUserSubscribeInfos.htm";
+                                    jQuery.post(proxy_url, {
+                                        target: sub_request_url,
+                                        emailAddress: subscribeEmail
+                                    }, function(data) {
+                                        if (data != null) {
+                                            if (data.code == 1) {
+                                                alert("订阅促销信息成功。")
+                                            } else {
+                                                if (data.code == 0) {
+                                                    alert("请输入正确的邮箱")
+                                                } else {
+                                                    if (data.code == 2) {
+                                                        alert("该Email地址已经订阅过促销信息！")
+                                                    } else {
+                                                        if (data.code == 3) {
+                                                            alert("对不起，订阅失败！")
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }, "JSON")
                                 }
-                              }
-                            }, "JSON")
-                          }
+                            }
                         }
-                      }
                     })
-  });
+        });
     </script>
     <!-- 邮件订阅  end-->
     <script>
-  //用户登录信息
-  function profileback(data) {
-    var str = window.location + "";
-    if (str.indexOf("http://cart.jiuxian.com/") != -1
-            || str.indexOf("https://pay.jiuxian.com/") != -1
-            || str.indexOf("http://order.jiuxian.com/") != -1) {
-      var _login_status_panel = $("li[name='_login_status_panel']");
-    } else {
-      var _login_status_panel = $(".topHeaderLeft[name='_new_login_status_panel']");
-    }
-    if (data.jx_user_name) {
-      var old_jx_user_name = stripscript(data.jx_user_name);
-      var jx_user_name;
-      if (old_jx_user_name != cut_str(old_jx_user_name, 10)) {
-        jx_user_name = cut_str(old_jx_user_name, 10)
-      } else {
-        jx_user_name = data.jx_user_name
-      }
+        //用户登录信息
+        function profileback(data) {
+            var str = window.location + "";
+            if (str.indexOf("http://cart.jiuxian.com/") != -1
+                || str.indexOf("https://pay.jiuxian.com/") != -1
+                || str.indexOf("http://order.jiuxian.com/") != -1) {
+                var _login_status_panel = $("li[name='_login_status_panel']");
+            } else {
+                var _login_status_panel = $(".topHeaderLeft[name='_new_login_status_panel']");
+            }
+            if (data.jx_user_name) {
+                var old_jx_user_name = stripscript(data.jx_user_name);
+                var jx_user_name;
+                if (old_jx_user_name != cut_str(old_jx_user_name, 10)) {
+                    jx_user_name = cut_str(old_jx_user_name, 10)
+                } else {
+                    jx_user_name = data.jx_user_name
+                }
 
-      if (str.indexOf("http://cart.jiuxian.com/") != -1
-    		  || str.indexOf("https://pay.jiuxian.com/") != -1
-              || str.indexOf("http://order.jiuxian.com/") != -1) {
-        _login_status_panel
-                .html("<span> hi，<span class='userName' title='" + old_jx_user_name + "'>"
-                        + jx_user_name
-                        + "</span><span><a href='https://login.jiuxian.com/logout.htm' class='cartlogout'>退出</a><a class='newsNum' href='http://member.jiuxian.com/jxcircle/info_center-0.htm' target='_blank'><em>消息</em><i class='mesNum'></i></a><a class='newsNum' href='http://member.jiuxian.com/purse/my_gold_coin-1.htm' target='_blank'><em>金币</em><i class='mesNum'></i></a></span></span><i></i>")
-      } else {
-        _login_status_panel
-                .html("<div class='clearfix'><p class='greeting'><em>hi，</em><span>"
-                        + jx_user_name
-                        + "</span></p><a class='headerExit' href='https://login.jiuxian.com/logout.htm'>退出</a><a class='newsNum' href='http://member.jiuxian.com/jxcircle/info_center-0.htm' target='_blank'><em>消息</em><i class='mesNum'></i></a><a class='newsNum' href='http://member.jiuxian.com/purse/my_gold_coin-1.htm' target='_blank'><em>金币</em><i class='mesNum'></i></a></div>");
-      }
-      showMesNum();
+                if (str.indexOf("http://cart.jiuxian.com/") != -1
+                    || str.indexOf("https://pay.jiuxian.com/") != -1
+                    || str.indexOf("http://order.jiuxian.com/") != -1) {
+                    _login_status_panel
+                        .html("<span> hi，<span class='userName' title='" + old_jx_user_name + "'>"
+                            + jx_user_name
+                            + "</span><span><a href='https://login.jiuxian.com/logout.htm' class='cartlogout'>退出</a><a class='newsNum' href='http://member.jiuxian.com/jxcircle/info_center-0.htm' target='_blank'><em>消息</em><i class='mesNum'></i></a><a class='newsNum' href='http://member.jiuxian.com/purse/my_gold_coin-1.htm' target='_blank'><em>金币</em><i class='mesNum'></i></a></span></span><i></i>")
+                } else {
+                    _login_status_panel
+                        .html("<div class='clearfix'><p class='greeting'><em>hi，</em><span>"
+                            + jx_user_name
+                            + "</span></p><a class='headerExit' href='https://login.jiuxian.com/logout.htm'>退出</a><a class='newsNum' href='http://member.jiuxian.com/jxcircle/info_center-0.htm' target='_blank'><em>消息</em><i class='mesNum'></i></a><a class='newsNum' href='http://member.jiuxian.com/purse/my_gold_coin-1.htm' target='_blank'><em>金币</em><i class='mesNum'></i></a></div>");
+                }
+                showMesNum();
 
-    }
-    if (data.jx_user_id) {
-      _ozuid = data.jx_user_id
-    }
-    //购物车数量
-    if (data.jxcart_nums) {
-      if (data.jxcart_nums > 999) {
-        $(".jx_car_num").text("999+")
-        if ($("#side_goods_count") != null) {
-          $("#side_goods_count").text("999+");
+            }
+            if (data.jx_user_id) {
+                _ozuid = data.jx_user_id
+            }
+            //购物车数量
+            if (data.jxcart_nums) {
+                if (data.jxcart_nums > 999) {
+                    $(".jx_car_num").text("999+")
+                    if ($("#side_goods_count") != null) {
+                        $("#side_goods_count").text("999+");
+                    }
+                } else {
+                    $(".jx_car_num").text(data.jxcart_nums);
+                    if ($("#side_goods_count") != null) {
+                        $("#side_goods_count").text(data.jxcart_nums);
+                    }
+                }
+            }
         }
-      } else {
-        $(".jx_car_num").text(data.jxcart_nums);
-        if ($("#side_goods_count") != null) {
-          $("#side_goods_count").text(data.jxcart_nums);
-        }
-      }
-    }
-  }
 
-  $(function() {
-    setTimeout(function() {
-      jQuery.post("/addJXCenterCookie.htm", {
+        $(function() {
+            setTimeout(function() {
+                jQuery.post("/addJXCenterCookie.htm", {
 
-      }, function(d) {
-        if (d == undefined) { return; }
-        profileback(d);
-      }, "json");
-    }, 1000);
-  });
+                }, function(d) {
+                    if (d == undefined) { return; }
+                    profileback(d);
+                }, "json");
+            }, 1000);
+        });
     </script>
 
     <script type="text/javascript">
-  //99click用户ID变量赋值
-  var _ozuid = getUserId();
+        //99click用户ID变量赋值
+        var _ozuid = getUserId();
     </script>
     <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/recommend_99.js"></script>
     <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/p_code.js"></script>
@@ -4976,109 +4976,116 @@ try{
     <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/o_code.js"></script>
     <!--99click(统计)-->
     <script type="text/javascript">
-  var _mvq = _mvq || [];
-  _mvq.push(["$setAccount", "m-471-1"]);
-  _mvq.push(["$logConversion"]);
-  (function() {
-    var mvl = document.createElement("script");
-    mvl.type = "text/javascript";
-    mvl.async = true;
-    mvl.src = ("https:" == document.location.protocol
-            ? "https://static-ssl.mediav.com/mvl.js"
-            : "http://static.mediav.com/mvl.js");
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(mvl, s)
-  })();
+        var _mvq = _mvq || [];
+        _mvq.push(["$setAccount", "m-471-1"]);
+        _mvq.push(["$logConversion"]);
+        (function() {
+            var mvl = document.createElement("script");
+            mvl.type = "text/javascript";
+            mvl.async = true;
+            mvl.src = ("https:" == document.location.protocol
+                ? "https://static-ssl.mediav.com/mvl.js"
+                : "http://static.mediav.com/mvl.js");
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(mvl, s)
+        })();
     </script>
     <!-- mediav(访客找回) -->
     <script type="text/javascript">
 
 
-	<!--
-	(function (d) {
-	window._JX_INFO = window._JX_INFO || [];
-	_JX_INFO.push(["userId",getUserId()]);
+        <!--
+        (function (d) {
+            window._JX_INFO = window._JX_INFO || [];
+            _JX_INFO.push(["userId",getUserId()]);
 
-	})(document);
-	//-->
-
-
-    (function (d) {
-        window._JX_INFO = window._JX_INFO || [];
-        _JX_INFO.push(["userId",getUserId()]);
-        var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//misc.jiuxian.com/js/visittrack.min.js";
-        var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
-    })(document);
+        })(document);
+        //-->
 
 
+        (function (d) {
+            window._JX_INFO = window._JX_INFO || [];
+            _JX_INFO.push(["userId",getUserId()]);
+            var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//misc.jiuxian.com/js/visittrack.min.js";
+            var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
+        })(document);
 
-  //BFD begin
-  /*var bfd_on = bfd_on || "true";
-  var bfd_client_id = bfd_client_id || "Ctest_jiuxian";
-  if (bfd_on == "true") {
-    window["_BFD"] = window["_BFD"] || {};
-    _BFD.client_id = bfd_client_id;
-    if (window.getWareIdByRgnId) {
-      _BFD.city = getWareIdByRgnId();
-    }
-    _BFD.script = document.createElement("script");
-    _BFD.script.type = "text/javascript";
-    _BFD.script.async = true;
-    _BFD.script.charset = "utf-8";
-    _BFD.script.src = (('https:' == document.location.protocol
-            ? 'https://ssl-static1' : 'http://static1') + '.bfdcdn.com/service/jiuxianwang/jiuxianwang.js');
-    document.getElementsByTagName("head")[0].appendChild(_BFD.script);
-  }*/
 
-  var dmt_on = dmt_on || "true";
-  if (dmt_on == "true") {
-    try {
-      var dmtTracker = _dmt.init("mfn", "S-000168-01");
-      dmtTracker._setTrack(dmtJsHost + '://mdt.dmtrck.com');
-      dmtTracker._trackSpotLight();
-    } catch (err) {
-    }
-  }
 
-  //消息数量start
-  function showMesNum() {
-    var proxy_url = "/httpProxyAccess.htm?date=" + new Date().getTime();
-    jQuery.ajax({
-      type: 'post',
-      url: proxy_url,
-      data: {
-        target: "http://member.jiuxian.com/getUserMessageNums.htm"
-      },
-      dataType: 'json',
-      success: function(data) {
-        if (data != null) {
-          if (data.returnCode == "1") {
-            if (data.messageNums > 0) {
-              $('.mesNum').eq(0).text(data.messageNums);
-            } else {
-              $('.mesNum').eq(0).text("0");
-            }
-            if (data.usableGold > 0) {
-              $('.mesNum').eq(1).text(data.usableGold);
-            } else {
-              $('.mesNum').eq(1).text("0");
-            }
-          } else {
-            $('.mesNum').eq(0).text("0");
-            $('.mesNum').eq(1).text("0");
+        //BFD begin
+        /*var bfd_on = bfd_on || "true";
+        var bfd_client_id = bfd_client_id || "Ctest_jiuxian";
+        if (bfd_on == "true") {
+          window["_BFD"] = window["_BFD"] || {};
+          _BFD.client_id = bfd_client_id;
+          if (window.getWareIdByRgnId) {
+            _BFD.city = getWareIdByRgnId();
           }
+          _BFD.script = document.createElement("script");
+          _BFD.script.type = "text/javascript";
+          _BFD.script.async = true;
+          _BFD.script.charset = "utf-8";
+          _BFD.script.src = (('https:' == document.location.protocol
+                  ? 'https://ssl-static1' : 'http://static1') + '.bfdcdn.com/service/jiuxianwang/jiuxianwang.js');
+          document.getElementsByTagName("head")[0].appendChild(_BFD.script);
+        }*/
+
+        var dmt_on = dmt_on || "true";
+        if (dmt_on == "true") {
+            try {
+                var dmtTracker = _dmt.init("mfn", "S-000168-01");
+                dmtTracker._setTrack(dmtJsHost + '://mdt.dmtrck.com');
+                dmtTracker._trackSpotLight();
+            } catch (err) {
+            }
         }
 
-      }
-    });
-  }
-  <!-- 消息数量end -->
+        //消息数量start
+        function showMesNum() {
+            var proxy_url = "/httpProxyAccess.htm?date=" + new Date().getTime();
+            jQuery.ajax({
+                type: 'post',
+                url: proxy_url,
+                data: {
+                    target: "http://member.jiuxian.com/getUserMessageNums.htm"
+                },
+                dataType: 'json',
+                success: function(data) {
+                    if (data != null) {
+                        if (data.returnCode == "1") {
+                            if (data.messageNums > 0) {
+                                $('.mesNum').eq(0).text(data.messageNums);
+                            } else {
+                                $('.mesNum').eq(0).text("0");
+                            }
+                            if (data.usableGold > 0) {
+                                $('.mesNum').eq(1).text(data.usableGold);
+                            } else {
+                                $('.mesNum').eq(1).text("0");
+                            }
+                        } else {
+                            $('.mesNum').eq(0).text("0");
+                            $('.mesNum').eq(1).text("0");
+                        }
+                    }
+
+                }
+            });
+        }
+        <!-- 消息数量end -->
     </script>
     <div class="rightSidebarBox">
         <script src="~/Wine/酒-商品搜索-酒仙网_files/sidebarExist.js" type="text/javascript"></script>
     </div>
 
+<script>
+            new Vue({
+            el: "#brandAll",
+            data: {
 
+            }
+            })
+</script>
 
 </body>
 </html>
