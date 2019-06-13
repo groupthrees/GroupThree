@@ -6,9 +6,8 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using Brewmaster.Alcohol.IRepository;
 using Brewmaster.Alcohol.Model;
-using Dapper;
+
 
 namespace Brewmaster.Alcohol.Repository
 {
@@ -18,6 +17,10 @@ namespace Brewmaster.Alcohol.Repository
         //数据库连接
         private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=huakunkun;Pwd=123456;";
 
+        /// <summary>
+        /// 首页显示
+        /// </summary>
+        /// <returns></returns>
         public List<GoodsDto> getGoodslist()
         {
             using (SqlConnection conn = new SqlConnection(connStr))
