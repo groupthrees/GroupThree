@@ -1405,17 +1405,17 @@
 
                         <div class="indexTabConWrap">
                             <div name="__home_daohang_tab1" class="indexTabCon" style="display: none;">
-                                <ul class="clearfix" id="goodsdata">
+                                <ul class="clearfix" id="goodsdate">
                                     <li v-for="item in goodslist">
 
-                                        <div class="indexTabTit">
-                                            <a href="http://www.jiuxian.com/goods-3360.html?src=4766&amp;source=51" target="_blank" title="{{GoodsName}}">
+                                        <div class="indexTabTit" v-model="data.GoodsName">
+                                            <a href="http://www.jiuxian.com/goods-3360.html?src=4766&amp;source=51" target="_blank" title="{{GoodsName}}" >
                                                 <i class="zhenxuan"></i>
                                                 {{GoodsName}}
                                             </a>
                                         </div>
                                         <div class="indexTabPrice homegoodPrice">
-                                            <strong goodid="3360" class="jxIndex_nowPrice_3360">{{item.PriceNow}}</strong><span><em clubgoodid="3360"></em><i class="clubIcon"></i></span>
+                                            <strong goodid="3360" class="jxIndex_nowPrice_3360" v-model="data.GoodsName">{{item.PriceNow}}</strong><span><em clubgoodid="3360"></em><i class="clubIcon"></i></span>
                                         </div>
                                     </li>
 
@@ -3276,11 +3276,8 @@
         methods: {
             goods: function () {
                 axios.get("@Url.Action("Index", "Home")").then((response) => {
-                    this.goodslist = [];
-                    for (var i = 0; i < respo.data.Goodslist.length; i++) {
-                        this.goodslist.push(response.data.Goodslist[i]);
-                    }
-
+                    this.goodslist = response.data;
+                  
                 })
             }
         }

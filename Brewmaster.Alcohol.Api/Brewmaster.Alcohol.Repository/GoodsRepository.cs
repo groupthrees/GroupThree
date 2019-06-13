@@ -3,11 +3,10 @@ using Brewmaster.Alcohol.Model.Dto;
 using Dapper;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using Brewmaster.Alcohol.Model;
-
+using MySql.Data.MySqlClient;
 
 namespace Brewmaster.Alcohol.Repository
 {
@@ -23,7 +22,7 @@ namespace Brewmaster.Alcohol.Repository
         /// <returns></returns>
         public List<GoodsDto> getGoodslist()
         {
-            using (SqlConnection conn = new SqlConnection(connStr))
+            using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 var sql = "select * from goods join price on goods.Id=price.Goodsid";
                 var query = conn.Query<GoodsDto>(sql).ToList();
