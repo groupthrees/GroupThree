@@ -30,6 +30,8 @@ namespace Brewmaster.Alcohol.Api
             services.AddScoped<ITestRepository, TestRepository>();
 
             services.AddScoped<IUserRepository, UserRepository>();
+            //首页商品显示
+            services.AddScoped<IGoodsRepository, GoodsRepository>();
 
             services.AddScoped<IGoodsAllRepository, GoodsAllRepository>();
 
