@@ -25,7 +25,7 @@ namespace Brewmaster.Alcohol.Repository
         {
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                var sql = "select * from goods join price on goods.Id=price.Goodsid join picture on goods.Id=picture.Goodsid";
+                var sql = "select * from goods join price on goods.Id=price.Goodsid";
                 var query = conn.Query<GoodsDto>(sql).ToList();
                 return query;
             }
