@@ -8,7 +8,7 @@
 <head>
     <script id="_1560217529226_7599" src="%E9%85%92%E4%BB%99%E7%BD%91-%E7%99%BB%E5%BD%95-%E6%B3%A8%E5%86%8C_files/detect.json"></script>
     <script type="text/javascript" async="" charset="utf-8" src="%E9%85%92%E4%BB%99%E7%BD%91-%E7%99%BB%E5%BD%95-%E6%B3%A8%E5%86%8C_files/pushData.txt"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="~/Wine/酒仙网-登录-注册_files/visittrack.js"></script>
     <script src="~/Wine/酒仙网-登录-注册_files/fm.js"></script>
     <script src="~/Wine/酒仙网-登录-注册_files/passport-web-pc.js"></script>
@@ -25,9 +25,10 @@
     <script src="~/Wine/酒仙网-登录-注册_files/reg-login.js"></script>
     <script src="~/Wine/酒仙网-登录-注册_files/analytics.js"></script>
     <script src="~/Wine/酒仙网-登录-注册_files/base.js"></script>
-    
 
-     
+
+    <script src="~/js/vue.js"></script>
+    <script src="~/js/axios.js"></script>
 
 </head>
 <body>
@@ -41,59 +42,104 @@
                     </p>
                     <a class="jx-topic">   <img src="~/Wine/酒仙网-登录-注册_files/slogan.jpg" /></a>
                 </div>
-            
+
                 <div class="jx-reg">欢迎来到酒仙网！<a id="regOrLogin" href="/User/Regist">免费注册</a></div>
             </div>
         </div>
-        <!--头部 结束-->
-        <!--内容开始-->
+    </div>
+    <!--头部 结束-->
+    <!--内容开始-->
 
- 
-        <input type="hidden" id="tt" value="">
-        <input type="hidden" id="ss" value="">
 
-            <!--内容-->
+    <input type="hidden" id="tt" value="" />
+    <input type="hidden" id="ss" value="" />
+
+    <!--内容-->
     <div class="jx-main-bg" style="background:url(https://img10.jiuxian.com/bill/2019/0610/7950bdb1c2e4467287541c6d63e10c19.jpg) no-repeat center top;">
-         <div class="jx-main">
-             <div class="jx-content loginbd clearfix">
-                    <a class="picFoucs" href="http://shop.jiuxian.com/brand-382/activity-3616.htm?source=3" target="_blank"></a>
-                    <div class="jx-contentbd">
-                                <a class="jx-ewmLoginLink"><i></i></a><a class="jx-pcLoginLink"><i></i></a>
-                         <div class="loginCon">
-                             <div class="loginTit clearfix">
-                                 <a href="javascript:;" class="userLogin on">帐号登录</a>
-                             </div>
-                             <div class="loginType loginUsual">
-                                 <div>
-                                     <table>
-                                         <tr>
-                                             <td><b>用户名</b></td>
-                                             <td><input id="userName" class="text" type="text" /></td>
-                                         </tr>
-                                 
-                                         <tr>
-                                             <td><b>密码</b></td>
-                                             <td><input maxlength="20" id="password" class="text" type="password" /></td>
-                                         </tr>
-                                     </table>
+        <div class="jx-main">
+            <div class="jx-content loginbd clearfix">
+                <a class="picFoucs" href="http://shop.jiuxian.com/brand-382/activity-3616.htm?source=3" target="_blank"></a>
+                <div class="jx-contentbd">
+                    <a class="jx-ewmLoginLink"><i></i></a><a class="jx-pcLoginLink"><i></i></a>
+                    <div class="loginCon">
+                        <div class="loginTit clearfix">
+                            <a href="javascript:;" class="userLogin on">帐号登录</a>
+                        </div>
+                        <div class="loginType loginUsual" id="app">
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td><b>用户名</b></td>
+                                        <td><input id="userName" class="text" type="text" v-model="UsersName" /></td>
+                                    </tr>
 
-                                 </div>
-                            
-                                 <div class="loginBtn">
-                                     <input name="bi_Usuallogin" type="button" id="save" value="登&nbsp;&nbsp;录" />
-                                 </div>
-                                 <div class="moreChoice clearfix">
+                                    <tr>
+                                        <td><b>密码</b></td>
+                                        <td><input maxlength="20" id="password" class="text" type="password" v-model="UsersPwd"  /></td>
+                                    </tr>
+                                </table>
 
-                                     <a class="freeReg" href="/User/Regist">免费注册</a>
-                                     <a class="forgetPwd" id="foget" href="Password">忘记密码</a>
-                                 </div>
-                             </div>
-                         </div>
+                            </div>
+
+                            <div class="loginBtn">
+                                <input name="bi_Usuallogin" type="button" id="save" v-on:click="addUser()"  value="登录" />
+                            </div>
+                            <div class="moreChoice clearfix">
+
+                                <a class="freeReg" href="/User/Regist">免费注册</a>
+                                <a class="forgetPwd" id="foget" href="Password">忘记密码</a>
+                            </div>
+                        </div>
                     </div>
-             </div> 
-         </div>
+                </div>
+            </div>
+        </div>
     </div>
 
- </body>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                UsersName: "",
+                UsersPwd: "",
+            },
+  
+            methods: {
+                addUser: function () {
+                    if (!this.UsersName) {
+                        alert('用户名不能为空');
+                        return false;
+                    }
+                    if (!this.UsersPwd) {
+                        alert('密码不能为空');
+                        return false;
+                    }
+
+                    var params = new URLSearchParams();
+                    params.append('UsersName', this.UsersName);
+                    params.append('UsersPwd', this.UsersPwd);
+
+
+                    axios.post("/User/Login", params).then((response) => {
+                     
+                        alert("登录成功")
+
+                    }, (response) => {
+                        alert(response.status);
+                    }
+                    ).catch(function (response) {
+                        alert(response);
+                    });
+                }
+            }
+        });
+
+
+    </script>
+
+
+
+
+</body>
  
 </html>

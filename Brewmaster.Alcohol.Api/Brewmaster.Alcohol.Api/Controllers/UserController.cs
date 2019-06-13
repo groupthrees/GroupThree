@@ -39,5 +39,19 @@ namespace Brewmaster.Alcohol.Api.Controllers
             int result = _UserRepository.Resigt(users);
             return result;
         }
+
+
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <param name="UserPwd"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public object Login(string UsersName, string UsersPwd)
+        {
+            object result = _UserRepository.Login(UsersName, UsersPwd);
+            return result;
+        }
     }
 }

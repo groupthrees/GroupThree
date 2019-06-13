@@ -17,6 +17,22 @@ namespace Brewmaster.Alcohol.Repository
         private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=wangsenyu;Pwd=123456;";
 
         /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <param name="UserPwd"></param>
+        /// <returns></returns>
+        public object Login(string UsersName, string UsersPwd)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = string.Format("select count(1) from Users where UsersName='{0}' and UsersPwd='{1}'",UsersName,UsersPwd);
+                object result = conn.ExecuteScalar(sql);
+                return result;
+            }
+        }
+
+        /// <summary>
         /// 注册
         /// </summary>
         /// <param name="users"></param>

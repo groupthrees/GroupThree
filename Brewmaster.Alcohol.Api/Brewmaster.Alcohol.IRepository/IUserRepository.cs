@@ -14,6 +14,12 @@ namespace Brewmaster.Alcohol.IRepository
         /// <returns></returns>
         int Resigt(Users users);
 
-
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="LoginName"></param>
+        /// <param name="LoginPwd"></param>
+        /// <returns></returns>
+        object Login(string UserName, string UserPwd);
     }
 }
