@@ -35,6 +35,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
            
             int result = int.Parse(new ApiHelper().GetApiResult("post", "User/Resigt", user));
             return result;
+
         }
 
         #endregion
@@ -46,7 +47,22 @@ namespace Brewmaster.Alcohol.Client.Controllers
         }
         #endregion
 
+        public IActionResult  test()
+        {
+            return View();
+        }
 
-    
+        [HttpPost]
+        public int test22(student stu)
+        {
+            return 9;
+        }
+
     }
+
+    public class student
+    {
+            public int id { get; set; }
+    }
+
 }

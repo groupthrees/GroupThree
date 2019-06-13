@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>test</title>
+    <script src="~/js/vue.js"></script>
+    <script src="~/js/axios.js"></script>
+</head>
+<body>
+    <div id="div">
+        <button v-on:click="add">add   订单</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#div",
+            data: {},
+            methods: {
+                add: function () {
+
+                    let stu = new URLSearchParams()
+                    stu.append('id', 99)
+
+                    //axios.post("/user/test22", { stu: stu }).then((res) => {
+                    //    alert(99)
+                    //})
+
+                    //import Qs from 'qs'
+                    //var data = Qs.stringify({ "id": "12" });
+                    //this.$http.post('/getMatterList.do', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then((res) => {
+                    //    console.log(res)
+                    //})
+                    axios.post('@Url.Action("test22", "User")', { stu: {id:"12"} }, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(
+                        (response) => {
+                            alert("添加成功")
+                          
+                         
+                        }
+                    );
+
+                }
+
+               
+            }
+        })
+    </script>
+</body>
+</html>
