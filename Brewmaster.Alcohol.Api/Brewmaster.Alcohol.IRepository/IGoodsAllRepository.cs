@@ -23,6 +23,7 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="pageSize"></param>
         /// <returns></returns>
         GoodsAllListPage GetGoodsAll(string goodsName, string goodsDegree, int priceNow, string brandName,
-            string placeName, string aromaName, int pageIndex, int pageSize);
+            string placeName, string aromaName,string typeName, int pageIndex, int pageSize);
+
     }
 }

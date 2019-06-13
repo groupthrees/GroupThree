@@ -34,6 +34,11 @@ namespace Brewmaster.Alcohol.Api
             services.AddScoped<IGoodsRepository, GoodsRepository>();
 
             services.AddScoped<IGoodsAllRepository, GoodsAllRepository>();
+            //查询一级商品名称
+            services.AddScoped<IGoodsTypeRepository, GoodsTypeRepository>();
+            //查询品牌名称
+            services.AddScoped<IBrandRepository, BrandRepository>();
+
 
             //自动生成 设置MVC 兼容性版本
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
