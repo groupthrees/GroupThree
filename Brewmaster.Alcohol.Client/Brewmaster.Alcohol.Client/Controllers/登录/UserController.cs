@@ -18,6 +18,13 @@ namespace Brewmaster.Alcohol.Client.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public int Login(string UsersName, string UsersPwd)
+        {
+            int result = int.Parse(new ApiHelper().GetApiResult("post", "User/Login?UsersName="+UsersName+ " &UsersPwd"+UsersPwd));
+            return result;
+        }
         #endregion
 
         #region 注册
@@ -32,10 +39,8 @@ namespace Brewmaster.Alcohol.Client.Controllers
         [HttpPost]
         public int Regist(Users user)
         {
-
             int result = int.Parse(new ApiHelper().GetApiResult("post", "User/Resigt", user));
             return result;
-
         }
 
         #endregion

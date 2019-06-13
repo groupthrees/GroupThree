@@ -25,8 +25,7 @@
     <script src="~/Wine/酒仙网-免费注册_files/analytics.js"></script>
     <script src="~/Wine/酒仙网-免费注册_files/base.js"></script>
 
-    @*<script src="~/Script/vue.js"></script>
-        <script src="~/Script/axios.js"></script>*@
+
 
     <script src="~/js/vue.js"></script>
     <script src="~/js/axios.js"></script>
@@ -126,7 +125,7 @@
                     var params = new URLSearchParams();
                     params.append('UsersName', this.UsersName);
                     params.append('UsersPwd', this.UsersPwd);
-                    axios.post("/User/Regist", params).then((response) => {                        alert("注册成功")
+                    axios.post("/User/Regist", params).then((response) => {                        alert("登录成功")
                     }, (response) => {
                         alert(response.status);
                     }
