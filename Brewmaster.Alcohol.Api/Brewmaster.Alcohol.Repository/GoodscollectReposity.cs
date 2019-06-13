@@ -24,7 +24,11 @@ namespace Brewmaster.Alcohol.Repository
             string sql1 = $"select * from collection where GoodsId={goodsId} and UsersId={id}";
             //根据商品Id查询该商品的图片
             string sql2 = $"select pictureUrl from picture where GoodsId={goodsId} ";
-            string sql3 = $"select * from ";
+            string sql3 = $@"select goods.*,Aroma.AromaName,place.PlaceName,brand.BrandName from goods 
+                            join price on goods.Id = price.Goodsid
+                            join Aroma ON Aroma.GoodsId = goods.Id
+                            join Place on Place.GoodsId = goods.Id
+                            join brand on brand.GoodsId = goods.Id  where goods.id={goodsId} ";
             using (MySqlConnection con=new MySqlConnection(connStr))
             {
 
