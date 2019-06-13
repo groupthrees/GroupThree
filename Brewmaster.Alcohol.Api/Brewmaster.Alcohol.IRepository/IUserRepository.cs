@@ -13,5 +13,7 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="users"></param>
         /// <returns></returns>
         int Resigt(Users users);
+
+
     }
 }

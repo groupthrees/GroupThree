@@ -30,9 +30,9 @@ namespace Brewmaster.Alcohol.Client.Controllers
             return View();
         }
         [HttpPost]
-        public  int Regist(Users user)
+        public int Regist(Users user)
         {
-           
+
             int result = int.Parse(new ApiHelper().GetApiResult("post", "User/Resigt", user));
             return result;
 
@@ -47,22 +47,6 @@ namespace Brewmaster.Alcohol.Client.Controllers
         }
         #endregion
 
-        public IActionResult  test()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public int test22(student stu)
-        {
-            return 9;
-        }
-
-    }
-
-    public class student
-    {
-            public int id { get; set; }
     }
 
 }

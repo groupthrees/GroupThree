@@ -100,7 +100,7 @@
 
 
                                     <div class="regAccBut clearfix">
-                                        <div class="regInputBox"><input name="bi_phone_register" class="regSub" type="button" id="phoneSubit" v-on:click="addUser()" value="立&nbsp;即&nbsp;注&nbsp;册" /></div>
+                                        <div class="regInputBox"><input name="bi_phone_register" class="regSub" type="button" id="phoneSubit" v-on:click="addUser()" value="立即注册" /></div>
                                     </div>
                                 </li>
                             </ul>
@@ -115,33 +115,28 @@
 
     </div>
     <script type="text/javascript">
-
-          var vm = new Vue({
+        var vm = new Vue({
             el: "#app",
             data: {
                 UsersName: "",
                 UsersPwd: "",
             },
             methods: {
-                addUser: function () {
-                    axios.post('@Url.Action("Regist", "User")', { user: { UsersName: this.UsersName, UsersPwd: this.UsersPwd } }).then(
-                        (response) => {
-                            alert("注册成功")
-
-
-                        },
-                        (response) => {
-                            alert(response.status);
-                        }
+                addUser: function () {
+                    var params = new URLSearchParams();
+                    params.append('UsersName', this.UsersName);
+                    params.append('UsersPwd', this.UsersPwd);
+                    axios.post("/User/Regist", params).then((response) => {                        alert("注册成功")
+                    }, (response) => {
+                        alert(response.status);
+                    }
                     ).catch(function (response) {
                         alert(response);
                     });
-                },
-
-
-            },
-
+                }
+            }
         });
+      
  
     </script>
 
