@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\搜索商品\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

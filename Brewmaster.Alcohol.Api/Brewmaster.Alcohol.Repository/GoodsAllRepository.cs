@@ -6,8 +6,9 @@ using System.Text;
 using Brewmaster.Alcohol.IRepository;
 using Brewmaster.Alcohol.Model;
 using Brewmaster.Alcohol.Model.Dto;
+using Brewmaster.Alcohol.Model.Dto.搜索商品Dto;
 using Dapper;
-
+using  MySql.Data.MySqlClient;
 namespace Brewmaster.Alcohol.Repository
 {
    public  class GoodsAllRepository:IGoodsAllRepository
@@ -27,12 +28,11 @@ namespace Brewmaster.Alcohol.Repository
         /// <param name="aromaName"></param>
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
-        /// <param name="totalCount"></param>
         /// <returns></returns>
-        public List<GoodsAll> GetGoodsAll(string goodsName, string goodsDegree, int priceNow, string brandName, string placeName, string aromaName, int pageIndex, int pageSize, ref int totalCount)
+      public GoodsAllListPage GetGoodsAll(string goodsName, string goodsDegree, int priceNow, string brandName, string placeName, string aromaName, int pageIndex, int pageSize)
         {
-            List<GoodsAll> list = new List<GoodsAll>();
-            using (SqlConnection conn = new SqlConnection(connStr))
+            GoodsAllListPage goodsAllListPage = new GoodsAllListPage();
+            using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 string sql = "select * from Goods inner join Price on Goods.Id=Price.GoodsId inner join Brand on Brand.GoodsId = Goods.Id inner join Place on Place.GoodsId = Goods.Id inner join Aroma on Aroma.GoodsId = Goods.Id where 1 =1";
                 string sqlCount =
@@ -69,10 +69,12 @@ namespace Brewmaster.Alcohol.Repository
                 }
 
                 sql = sql + $" limit ({pageIndex - 1}*{pageSize}),{pageSize}";
-                list = conn.Query<GoodsAll>(sql).ToList();
-                totalCount = conn.ExecuteScalar<int>(sqlCount);
+                var result = conn.Query<GoodsAll>(sql).ToList();
+                goodsAllListPage.GoodsAll = result;
+                goodsAllListPage.Total = conn.ExecuteScalar<int>(sqlCount);
+
             }
-            return list;
+            return goodsAllListPage;
         }
     }
 }

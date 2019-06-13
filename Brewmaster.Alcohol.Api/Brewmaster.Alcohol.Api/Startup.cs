@@ -31,6 +31,8 @@ namespace Brewmaster.Alcohol.Api
 
             services.AddScoped<IUserRepository, UserRepository>();
 
+            services.AddScoped<IGoodsAllRepository, GoodsAllRepository>();
+
             //自动生成 设置MVC 兼容性版本
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //注册跨域服务，允许所有来源

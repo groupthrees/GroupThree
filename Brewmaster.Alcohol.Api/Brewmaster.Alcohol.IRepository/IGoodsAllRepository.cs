@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Brewmaster.Alcohol.Model;
 using Brewmaster.Alcohol.Model.Dto;
+using Brewmaster.Alcohol.Model.Dto.搜索商品Dto;
 
 namespace Brewmaster.Alcohol.IRepository
 {
@@ -20,9 +21,8 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="aromaName">商品香型</param>
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
-        /// <param name="totalCount"></param>
         /// <returns></returns>
-        List<GoodsAll> GetGoodsAll(string goodsName, string goodsDegree, int priceNow, string brandName,
-            string placeName, string aromaName, int pageIndex, int pageSize, ref int totalCount);
+        GoodsAllListPage GetGoodsAll(string goodsName, string goodsDegree, int priceNow, string brandName,
+            string placeName, string aromaName, int pageIndex, int pageSize);
     }
 }
