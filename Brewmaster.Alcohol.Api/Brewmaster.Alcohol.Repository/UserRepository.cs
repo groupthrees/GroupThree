@@ -4,7 +4,7 @@ using Brewmaster.Alcohol.IRepository;
 using Brewmaster.Alcohol.Model;
 using Dapper;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 namespace Brewmaster.Alcohol.Repository
 {
     /// <summary>
@@ -23,12 +23,14 @@ namespace Brewmaster.Alcohol.Repository
         /// <returns></returns>
         public int Resigt(Users users)
         {
-            using (SqlConnection conn =new SqlConnection(connStr))
+            using (MySqlConnection conn =new MySqlConnection(connStr))
             {
                 string sql = string.Format("insert into Users(UsersName,UsersPwd)  values ('{0}','{1}')",users.UsersName,users.UsersPwd);
                 var result = conn.Execute(sql);
                 return result;
             }
         }
+
+
     }
 }

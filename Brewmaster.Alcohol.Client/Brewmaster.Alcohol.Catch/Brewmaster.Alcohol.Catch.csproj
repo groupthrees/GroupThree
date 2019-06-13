@@ -14,6 +14,12 @@
     <Reference Include="ServiceStack.ServiceInterface">
       <HintPath>..\Brewmaster.Alcohol.Client\Dlls\ServiceStack.ServiceInterface.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\Brewmaster.Alcohol.Client\Dlls\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\Brewmaster.Alcohol.Client\Dlls\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -59,7 +59,13 @@ namespace Brewmaster.Alcohol.Api
 
             //允许跨域访问
             app.UseCors("AllowAnyCors");
-            app.UseMvc();
+           
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=User}/{action=Resigt}/{id?}");
+            });
         }
     }
 }

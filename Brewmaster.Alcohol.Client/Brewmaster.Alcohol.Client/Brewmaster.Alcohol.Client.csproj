@@ -101,4 +101,8 @@
     <ProjectReference Include="..\Brewmaster.Alcohol.Catch\Brewmaster.Alcohol.Catch.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Script\" />
+  </ItemGroup>
+
 </Project>
