@@ -6,6 +6,8 @@ using Brewmaster.Alcohol.Model;
 using Dapper;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using System.Linq;
+
 namespace Brewmaster.Alcohol.Repository
 {
     public class GoodscollectReposity : IGoodsCollectReposity
@@ -20,6 +22,7 @@ namespace Brewmaster.Alcohol.Repository
         /// <returns></returns>
         public  GoodscollectDto GetGoodscollectDto(int id, int goodsId)
         {
+            GoodscollectDto goodscollectDto = new GoodscollectDto();
             //是否收藏
             string sql1 = $"select * from collection where GoodsId={goodsId} and UsersId={id}";
             //根据商品Id查询该商品的图片
@@ -31,7 +34,9 @@ namespace Brewmaster.Alcohol.Repository
                             join brand on brand.GoodsId = goods.Id  where goods.id={goodsId} ";
             using (MySqlConnection con=new MySqlConnection(connStr))
             {
-
+                goodscollectDto.Conllect = con.ExecuteScalar<int>(sql1);
+                goodscollectDto.Imgs = con.Query<img>(sql2).ToList();
+                goodscollectDto.Goods = con.QueryFirst<GoodsDto1>(sql2);
             }
             return null;
         }
