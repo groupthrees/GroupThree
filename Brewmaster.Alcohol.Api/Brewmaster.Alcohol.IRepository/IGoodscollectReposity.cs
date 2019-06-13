@@ -7,12 +7,14 @@ namespace Brewmaster.Alcohol.IRepository
     /// <summary>
     /// 商品详情页接口
     /// </summary>
- public   interface IGoodscollectReposity
+ public   interface IGoodsCollectReposity
     {
         /// <summary>
         /// 商品详情页显示
         /// </summary>
+        /// <param name="id">用户id</param>
+        /// <param name="goodsId">商品Id</param>
         /// <returns></returns>
-        GoodscollectDto GetGoodscollectDto();
+        GoodscollectDto GetGoodscollectDto(int id,int goodsId);
     }
 }
