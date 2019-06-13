@@ -8,7 +8,7 @@ namespace Brewmaster.Alcohol.Model
     /// <summary>
     /// 详情页 dto
     /// </summary>
-    public class Picture_carousel
+    public class GoodscollectDto
     {
         //图片
         public List<img> Imgs;
