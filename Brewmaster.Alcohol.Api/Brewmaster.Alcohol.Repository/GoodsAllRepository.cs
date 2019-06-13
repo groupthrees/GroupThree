@@ -68,7 +68,7 @@ namespace Brewmaster.Alcohol.Repository
                     sqlCount = sqlCount + $" and AromaName like '%{aromaName}%'";
                 }
 
-                sql = sql + $" limit ({pageIndex - 1}*{pageSize}),{pageSize}";
+                sql = sql + $" limit {(pageIndex - 1)*pageSize},{pageSize}";
                 var result = conn.Query<GoodsAll>(sql).ToList();
                 goodsAllListPage.GoodsAll = result;
                 goodsAllListPage.Total = conn.ExecuteScalar<int>(sqlCount);
