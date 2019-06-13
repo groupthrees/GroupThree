@@ -10,8 +10,11 @@ namespace Brewmaster.Alcohol.Model
     /// </summary>
     public class Picture_carousel
     {
+        //图片
         public List<img> Imgs;
+        //是否收藏
         public int Conllect { get; set; }
+        public Goods Goods { get; set; }
     }
     public class img
     {
