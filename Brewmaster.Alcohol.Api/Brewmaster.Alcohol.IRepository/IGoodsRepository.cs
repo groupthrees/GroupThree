@@ -9,9 +9,6 @@ namespace Brewmaster.Alcohol.IRepository
 {
     public interface IGoodsRepository
     {
-       
-
-
         /// <summary>
         /// 显示商品
         /// </summary>
