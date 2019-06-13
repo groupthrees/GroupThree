@@ -12,7 +12,7 @@ namespace Brewmaster.Alcohol.Model.Dto
         /// </summary>
         public int Id
         {
-            get; set;    
+            get; set;
         }
         /// <summary>
         /// 商品名称
@@ -56,7 +56,6 @@ namespace Brewmaster.Alcohol.Model.Dto
         /// </summary>
         public int PriceNow
         {
-
             get; set;
         }
     }
