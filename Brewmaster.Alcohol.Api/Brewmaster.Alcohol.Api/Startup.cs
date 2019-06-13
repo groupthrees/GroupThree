@@ -28,16 +28,18 @@ namespace Brewmaster.Alcohol.Api
         {
             // 注册接口和实现类的映射关系  
             services.AddScoped<ITestRepository, TestRepository>();
-
+            //用户
             services.AddScoped<IUserRepository, UserRepository>();
             //首页商品显示
             services.AddScoped<IGoodsRepository, GoodsRepository>();
-
+            //查询页面
             services.AddScoped<IGoodsAllRepository, GoodsAllRepository>();
             //查询一级商品名称
             services.AddScoped<IGoodsTypeRepository, GoodsTypeRepository>();
             //查询品牌名称
             services.AddScoped<IBrandRepository, BrandRepository>();
+            //查询产地名称
+            services.AddScoped<IPlaceRepository, PlaceRepository>();
 
 
             //自动生成 设置MVC 兼容性版本
