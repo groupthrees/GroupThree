@@ -18,11 +18,11 @@ namespace Brewmaster.Alcohol.Client.Controllers
             return View();
         }
 
-        [HttpPost("Login")]
+        [HttpPost]
         public int Login(string UsersName, string UsersPwd)
         {
             
-            int result =Convert.ToInt32(new ApiHelper().GetApiResult("post", "User/Login?UsersName="+UsersName+ " &UsersPwd"+UsersPwd));
+            int result =Convert.ToInt32(new ApiHelper().GetApiResult("post", "User/Login?UsersName="+UsersName+ " &UsersPwd="+UsersPwd));
             return result;
         }
         #endregion
@@ -36,7 +36,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
         {
             return View();
         }
-        [HttpPost("Regist")]
+        [HttpPost]
         public int Regist(Users user)
         {
             int result = int.Parse(new ApiHelper().GetApiResult("post", "User/Resigt", user));

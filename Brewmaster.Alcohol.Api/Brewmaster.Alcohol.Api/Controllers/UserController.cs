@@ -10,7 +10,7 @@ using Brewmaster.Alcohol.Repository;
 using Brewmaster.Alcohol.Model;
 namespace Brewmaster.Alcohol.Api.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {

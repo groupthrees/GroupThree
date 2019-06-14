@@ -121,9 +121,12 @@
 
 
                     axios.post("/User/Login", params).then((response) => {
-                     
+                        console.log(response)
+                        if (response.data > 0) {
                         alert("登录成功");
                         location.href = '/Home/HomePage';
+                        }
+                        alert(no);
 
                     }, (response) => {
                         alert(response.status);
