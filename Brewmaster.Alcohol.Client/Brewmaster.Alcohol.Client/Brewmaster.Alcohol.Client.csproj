@@ -111,6 +111,7 @@
 
   <ItemGroup>
     <Folder Include="Script\" />
+    <Folder Include="Views\GoodsSearch\" />
   </ItemGroup>
 
 </Project>
