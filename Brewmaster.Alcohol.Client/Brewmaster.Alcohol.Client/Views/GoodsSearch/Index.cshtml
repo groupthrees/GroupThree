@@ -1,11 +1,8 @@
-﻿
-﻿
+﻿﻿
 @{
-                /**/
-
-                Layout = null;
-
+    Layout = null;
 }
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -42,22 +39,7 @@
 
 
 
-    <script type="text/javascript">
-        // 优惠券信息
-        window.jxsearch = {};
-        window.jxsearch._couponId = '';
-        $(function () {
-            // 优惠券
-            if (window.jxsearch._couponId) {
-                CouponSearchPcJs.getCouponInfo(window.jxsearch._couponId);
-                CouponSearchPcJs.getCartInfoByCouponId(window.jxsearch._couponId);
-            }
-
- 
-
-
-
-            <script type="text/javascript" async="" charset="utf-8" src="~/Wine/酒-商品搜索-酒仙网_files/ntkfstat.js"></script>
+    
     <script type="text/javascript" async="async" charset="utf-8" src="~/Wine/酒-商品搜索-酒仙网_files/userinfo.php"></script>
     <script type="text/javascript" async="async" charset="utf-8" src="~/Wine/酒-商品搜索-酒仙网_files/zh_cn.js" data-requiremodule="lang"></script>
     <script type="text/javascript" async="async" charset="utf-8" src="~/Wine/酒-商品搜索-酒仙网_files/chat.js" data-requiremodule="chatManage"></script>
@@ -76,9 +58,7 @@
 
 
 
-                                        //获取区域ID并存储到Cookie
-var userArray = getCookie("user_province"); userArray = userArray.split("_"); if (userArray[0] == "" || userArray[0] == undefined) { var url_kc = window.jxdomain.pub + "/getOrgionByRequest.htm?t=" + new Date().getTime(); var proxy_url = "/httpProxyAccess.htm?t=" + new Date().getTime(); jQuery.ajax({type: "POST", url: proxy_url, data: {target: url_kc }, dataType: "json", success: function (data) { var orgionId = "2"; if (data) {orgionId = data.orgionId} if (orgionId == "") {orgionId = "2"} userArray[0] = orgionId; setCookie("user_province", orgionId, 12); var sa1 = returnArrya(1, orgionId); $(".ajax_deli_city").text(sa1[1]) } }) } else { try { var sa1 = returnArrya(1, userArray[0]); $(".ajax_deli_city").text(sa1[1]) } catch (e) {setCookie("user_province", "2", 12); $(".ajax_deli_city").text("北京") } };
-                            var header1200 = ""; var header1000 = "";
+
 
 
 
@@ -225,7 +205,7 @@ var userArray = getCookie("user_province"); userArray = userArray.split("_"); if
 
                     var defaultKey = '';
 
-                        $(function () {
+                            $(function () {
                         //搜索框默认值
                         function searchback(data) {
                             if (data == null || data == undefined) {
@@ -242,7 +222,7 @@ var userArray = getCookie("user_province"); userArray = userArray.split("_"); if
                             }
                         }
 
-                            setTimeout(function () {
+                                setTimeout(function () {
 
                         jQuery.get("http://list.jiuxian.com" + "/selectSearchDefaultKey.htm?t=" + new Date().getTime(),
                             { "name": "searchBoxDefaultKey" },
@@ -1410,10 +1390,11 @@ var userArray = getCookie("user_province"); userArray = userArray.split("_"); if
                     <!-- 此处按酒种加载筛选条件 -->
 
                     <script type="text/javascript">
-                        function nofind(o) {
+
+                                function nofind(o) {
                             o.src = "http://misc.jiuxian.com/img/sr_rt_shop.png";
-                            o.onerror = null; //控制不要一直跳动
-                        }
+                        o.onerror = null; //控制不要一直跳动
+                    }
                     </script>
 
                     <!--店铺信息begin-->
@@ -1704,7 +1685,7 @@ var userArray = getCookie("user_province"); userArray = userArray.split("_"); if
                                 <a class="open" href="">展开<i></i></a>
                             </div>
                         </div>
- 
+
                     </div>
 
                     <!-- 通用分类end -->
@@ -1774,7 +1755,7 @@ var userArray = getCookie("user_province"); userArray = userArray.split("_"); if
                                 <div class="frameA"><div class="frameB left"></div><div class="frameB right"></div><div class="frameB top"></div><div class="frameB bottom"></div></div>
                                 <div class="content clearfix">
                                     <div class="collect_box">
-                                       
+
                                         <span class="collect collect2" id="cell_84242" style="display: none;"><i></i>收藏</span>
                                         <a class="img clearfix" href="http://www.jiuxian.com/goods-84242.html" title="西班牙安徒生·夜莺干红葡萄酒750ml" target="_blank">
                                             <img proimgid="84242" src="~/Wine/酒-商品搜索-酒仙网_files/8ff27752af0d4358a8456913a00502d64.jpg" alt="西班牙安徒生·夜莺干红葡萄酒750ml" title="西班牙安徒生·夜莺干红葡萄酒750ml" />
@@ -1827,36 +1808,34 @@ var userArray = getCookie("user_province"); userArray = userArray.split("_"); if
                 </div>
 
 
-            <style type="text/css">
-                .footerBotLeft .footerInfo {
-                    margin-left: -8px;
-                }
+                <style type="text/css">
+                    .footerBotLeft .footerInfo {
+                        margin-left: -8px;
+                    }
 
-                .footerBotLeft p {
-                    font-family: Arial, Helvetica, sans-serif, "宋体";
-                }
+                    .footerBotLeft p {
+                        font-family: Arial, Helvetica, sans-serif, "宋体";
+                    }
 
-                .footerBotLeft .footerInfo a {
-                    color: #666;
-                }
+                    .footerBotLeft .footerInfo a {
+                        color: #666;
+                    }
 
-                .footerBotLeft .copyright {
-                    color: #666;
-                }
-            </style>
-
-
-
-            <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/recommend_99.js"></script>
-            <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/p_code.js"></script>
-            <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/FAI84qYjQk.txt"></script>
-            <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/o_code.js"></script>
+                    .footerBotLeft .copyright {
+                        color: #666;
+                    }
+                </style>
 
 
 
-                </div>
+                <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/recommend_99.js"></script>
+                <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/p_code.js"></script>
+                <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/FAI84qYjQk.txt"></script>
+                <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/o_code.js"></script>
 
 
+
+            </div>
 
 
 
@@ -1864,316 +1843,316 @@ var userArray = getCookie("user_province"); userArray = userArray.split("_"); if
 
 
 
-                <div class="srpWrap">
-                    <div class="srp clearfix">
-
-                        <!-- 优惠券信息 start-->
-                        <div class="topCoupon clearfix" style="display: none">
-                            <div class="coupInfo">
-                                <div class="coupSum"><b>￥</b><span id="couponPrice"></span></div>
-                                <div class="info"><p class="t"><span id="qualificationPrice"></span></p><p class="pro" id="instructions"></p></div>
-
-                            </div>
-                            <!-- 优惠券信息 end-->
-                            <!--主内容begin-->
-                            <div class="main-srp">
-                                <!--面包屑begin-->
-                                <div class="breadcrumb">
-                                    <div class="line"></div>
-                                    <div class="crumb clearfix">
-                                        <div class="new_topNum"><em>相关产品</em><span>22074</span><em>件</em></div>
-                                        <i class="square"></i><a class="level level1" href="http://list.jiuxian.com/search.htm?key=%E9%85%92" title="全部">全部</a> <i class="arrow"></i> <a class="level level2" href="http://list.jiuxian.com/search.htm?key=%E9%85%92" title=" 酒 "> 酒  </a> <i class="arrow"></i>
-                                        <div class="search clearfix">
-                                            <input type="text" id="extKey" onkeydown="if (event.keyCode==13){extSearch();}" value=" 在结果中查找 " />
-                                            <input type="hidden" id="extKey-old" value="" />
-                                            <input type="hidden" id="key" value="酒" /><a href="javascript:extSearch()"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--面包屑end-->
-                                <!-- 此处按酒种加载筛选条件 -->
-
-                                <script type="text/javascript">
 
 
+            <div class="srpWrap">
+                <div class="srp clearfix">
 
-
-                                                                function nofind(o) {
-                                        o.src = "http://misc.jiuxian.com/img/sr_rt_shop.png";
-                                    o.onerror = null; //控制不要一直跳动
-                                }
-                                </script>
-
-                                <!--店铺信息begin-->
-                                <!--店铺信息end-->
-                                <!-- 通用分类begin -->
-                                <!-- 已选择begin -->
-                                <div class="alreadyS clearfix" style="display:none">
-                                    <p class="title">你已选择：</p>
-                                    <div class="options clearfix">
-                                    </div>
-                                    <a class="trash clearfix" href="http://list.jiuxian.com/search.htm?key=%E9%85%92"><i></i><span>清除条件</span></a>
-                                </div>
-                                <!-- 已选择end -->
-
-                                <div class="select">
-                                    <!-- 相关分类begin -->
-                                    <div class="headline clearfix">
-                                        <div class="proLeft">相关分类</div>
-                                        <div class="proRight">
-                                            <ul class="clearfix">
-                                                @foreach (var item in ViewBag.list)
-                                                {
-                                                    <li><a href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;cg=1&amp;area=2" title="白酒">@item.TypeName</a></li>
-                                                }
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- 相关分类 end -->
-                                    <!-- 品牌begin -->
-                                    <div class="brandS clearfix">
-                                        <div class="title">
-                                            <p>品牌</p>
-                                            <div class="innerSearch clearfix">
-                                                <a href="javascript:;"></a><input type="text" />
-                                            </div>
-                                        </div>
-                                        <div class="frameR clearfix">
-                                            <div class="frameC">
-                                                <div class="letterS">
-                                                    <ul class="clearfix">
-                                                        <li><a class="all" href="javascript:;">全部品牌</a></li>
-                                                        <li><a class="letter" href="javascript:;">A</a></li>
-                                                        <li><a class="letter" href="javascript:;">B</a></li>
-                                                        <li><a class="letter" href="javascript:;">C</a></li>
-                                                        <li><a class="letter" href="javascript:;">D</a></li>
-                                                        <li><a class="letter" href="javascript:;">E</a></li>
-                                                        <li><a class="letter" href="javascript:;">F</a></li>
-                                                        <li><a class="letter" href="javascript:;">G</a></li>
-                                                        <li><a class="letter" href="javascript:;">H</a></li>
-                                                        <li><a class="letter" href="javascript:;">I</a></li>
-                                                        <li><a class="letter" href="javascript:;">J</a></li>
-                                                        <li><a class="letter" href="javascript:;">K</a></li>
-                                                        <li><a class="letter" href="javascript:;">L</a></li>
-                                                        <li><a class="letter" href="javascript:;">M</a></li>
-                                                        <li><a class="letter" href="javascript:;">N</a></li>
-                                                        <li><a class="letter" href="javascript:;">O</a></li>
-                                                        <li><a class="letter" href="javascript:;">P</a></li>
-                                                        <li><a class="letter" href="javascript:;">Q</a></li>
-                                                        <li><a class="letter" href="javascript:;">R</a></li>
-                                                        <li><a class="letter" href="javascript:;">S</a></li>
-                                                        <li><a class="letter" href="javascript:;">T</a></li>
-                                                        <li><a class="letter" href="javascript:;">U</a></li>
-                                                        <li><a class="letter" href="javascript:;">V</a></li>
-                                                        <li><a class="letter" href="javascript:;">W</a></li>
-                                                        <li><a class="letter" href="javascript:;">X</a></li>
-                                                        <li><a class="letter" href="javascript:;">Y</a></li>
-                                                        <li><a class="letter" href="javascript:;">Z</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="brandAll" id="brandAll">
-                                                    <ul class="clearfix">
-                                                        @foreach (var item in ViewBag.data)
-                                                        {
-                                                            <li c="M"><a href="http://list.jiuxian.com/search.htm?                      v=2&amp;key=%E9%85%92&amp;bd=1&amp;area=2">@item.BrandName</a></li>
-                                                        }
-
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- 品牌end -->
-                                    <!-- 国家begin -->
-                                    <!-- 国家end -->
-                                    <!-- 产区begin -->
-                                    <!-- 产区end -->
-                                    <!-- 子产区begin -->
-                                    <!-- 子产区end -->
-                                    <!-- 类型begin -->
-                                    <!-- 类型end -->
-                                    <!-- 子类型 选择begin -->
-                                    <!-- 子类型选择end -->
-                                    <!-- 适用场景begin -->
-                                    <!-- 适用场景end -->
-                                </div>
-
-                                <!-- 通用分类end -->
-                                <!--排序begin-->
-                                <div class="order" id="order">
-                                    <ul class="clearfix">
-                                        <li class="tab  first "><a rel="nofollow" href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;area=2" title="默认排序">默认排序</a></li>
-                                        <li class="tab"><a rel="nofollow" href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;od=1&amp;area=2" title=" 默认 ">销量 <i></i> </a></li>
-                                        <li class="tab jg"><a rel="nofollow" href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;od=2&amp;by=1&amp;area=2" title=" 默认 ">价格 <i style="background-position: -86px -108px; "></i> </a></li>
-                                        <li class="tab"><a rel="nofollow" href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;od=3&amp;area=2" title=" 默认 ">评价 <i></i> </a></li>
-                                        <li class="tab sjsj"><a rel="nofollow" href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;od=4&amp;area=2" title=" 默认 ">上架时间 <i></i> </a></li>
-                                        <li class="priceArea clearfix" pricearea="0">
-                                            <span class="left clearfix"><i>¥</i><input type="text" id="minPrice" /></span><span class="zhi"></span>
-                                            <span class="right clearfix"><i>¥</i><input type="text" id="maxPrice" /></span><span class="sure"><a class="ok" href="javascript:;" rel="nofollow">确定</a></span>
-                                        </li>
-
-                                        <input type="hidden" value="" id="price" />
-                                        <input type="hidden" value="" id="AB" />
-                                        <input type="hidden" value="" id="ruleKey" />
-                                        <input type="hidden" value="" id="assKey" />
-
-                                        <li class="page clearfix">
-                                            <p><span class="cur">1</span><span>/</span><span class="total">368</span></p>
-                                            <a class="btn prev" href="javascript:;" style="background-position: 0px -142px; "></a>
-                                            <a class="btn next" href="http://list.jiuxian.com/search.htm?pageNum=2&amp;key=%E9%85%92&amp;area=" style="background-position: -35px -142px; "></a>
-                                        </li>
-                                    </ul>
-
-                                    <div class="new_distBox">
-                                        <div class="new_adress">
-                                            <div class="dOrder-city" id="_shdz">
-                                                <div class="set-tit">配送到</div>
-                                                <a href="javascript:;" class="dOrder-city-sel">
-                                                    <b pid="2">北京</b>
-                                                    <b pid="52">北京市</b>
-                                                    <b pid="500">东城区</b>
-                                                    <i></i>
-                                                </a>
-                                                <span id="respNubs"></span>
-
-                                                <!-- 送货地址 -->
-                                                <div class="depit_citydrp" style="display:none;">
-                                                    <h5 class="h5_dptctdrp">
-                                                        <a href="javascript:;" pid="2"><em>北京</em><i></i></a><!-- 省 -->
-                                                        <a href="javascript:;" pid="52"><em>北京市</em><i></i></a><!-- 市 -->
-                                                        <a href="javascript:;" pid="500"><em>东城区</em><i></i></a><!-- 县 -->
-                                                    </h5>
-                                                    <ul class="dptctdrp_list dptctdrp_list2"><li style="padding:0px 0px;"><a href="javascript:;" pid="2">北京</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="3">安徽省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="4">福建省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="5">甘肃省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="6">广东省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="7">广西省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="8">贵州省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="9">海南省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="10">河北省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="11">河南省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="12">黑龙江省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="13">湖北省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="14">湖南省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="15">吉林省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="16">江苏省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="17">江西省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="18">辽宁省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="19">内蒙古省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="20">宁夏</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="21">青海省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="22">山东省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="23">山西省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="24">陕西省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="25">上海</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="26">四川省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="27">天津</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="28">西藏</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="29">新疆</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="30">云南省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="31">浙江省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="32">重庆</a></li></ul><!-- 省名 -->
-                                                    <ul style="display: none;" class="dptctdrp_list"><li style="padding:0px 0px;"><a href="javascript:;" pid="52">北京市</a></li></ul><!-- 省会名 -->
-                                                    <ul style="display: none;" class="dptctdrp_list"><li style="padding:0px 0px;"><a href="javascript:;" pid="500">东城区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="501">西城区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="502">海淀区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="503">朝阳区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="504">崇文区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="505">宣武区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="506">丰台区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="507">石景山区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="508">房山区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="509">门头沟区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="510">通州区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="511">顺义区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="512">昌平区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="513">怀柔区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="514">平谷区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="515">大兴区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="516">密云县</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="517">延庆县</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="3451">其它区</a></li></ul><!-- 县名 -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <label class="new_lab"><input type="checkbox" id="jxDeliver" />&nbsp;酒仙配送</label>
-                                        <label class="new_lab"><input type="checkbox" id="clubProduct" />&nbsp;CLUB会员价</label>
-                                        <label class="new_lab"><input type="checkbox" id="selectionProduct" />&nbsp;酒仙甄选</label>
-                                        <label class="new_lab"><input type="checkbox" id="ynProduct" />&nbsp;仅显示有货</label>
-                                    </div>
-                                </div>
-
-                                <!--排序end-->
-                                <!-- 商品列表begin -->
-                                <!-- 搜索结果显示 start -->
-
-                                <div class="proListSearch">
-                                    <ul class="clearfix">
-
-
-                                        <li product-box="78693">
-                                            <div class="frameA"><div class="frameB left"></div><div class="frameB right"></div><div class="frameB top"></div><div class="frameB bottom"></div></div>
-                                            <div class="content clearfix">
-                                                <div class="collect_box">
-                                                    <span class="collect collect2" id="cell_78693" style="display: none;"><i></i>收藏</span>
-                                                    <a class="img clearfix" href="http://www.jiuxian.com/goods-78693.html" title="酒具套装" target="_blank">
-                                                        <img proimgid="78693" src="~/Wine/酒-商品搜索-酒仙网_files/143973e5331246fc895b5dc28a04602c4.jpg" alt="酒具套装" title="酒具套装" />
-                                                        <span id="mark_78693" class="sIcon cxtag tj" style="display:none"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="priceArea clearfix">
-                                                    <p class="price" id="product_78693">¥<span>39.00</span></p>
-                                                    <p class="clubPrice" id="product_clubPrice_78693"><span></span></p>
-                                                </div>
-                                                <div class="proName">
-                                                    <a href="http://www.jiuxian.com/goods-78693.html" title="酒具套装" target="_blank">
-                                                        酒具套装 <span id="promote_78693" class="slogan">实用酒具套装</span>
-                                                    </a>
-                                                </div>
-                                                <div class="judgeAdv clearfix">
-                                                    <a class="judge" href="http://www.jiuxian.com/goods-78693.html#answerArea" title="" target="_blank"><span>16808</span>评价</a>
-                                                </div>
-
-                                                <div class="seller">
-                                                </div>
-
-                                                <div id="activity_78693" class="cuxiao">
-                                                    <i class="projx sIcon"></i>
-                                                    <span class="yh">限时抢购</span>
-                                                </div>
-
-                                                <div class="buyArea clearfix" id="addcart_78693" style="">
-                                                    <div class="edit">
-                                                        <a class="decrease off" href="javascript:;">-</a>
-                                                        <input type="text" gid="78693" gname="酒具套装" id="InputNum78693" onkeyup="changeNum(this.value,78693)" value="1" name="" />
-                                                        <a class="increase" href="javascript:;">+</a>
-                                                    </div>
-                                                    <a class="cart sIcon prtlt_btn2" href="javascript:;">加入购物车</a>
-                                                </div>
-
-                                            </div>
-                                        </li>
-                                    </ul>
-
-
-                                </div>
-
-
-
-
-
-                                <style type="text/css">
-                                    .footerBotLeft .footerInfo {
-                                        margin-left: -8px;
-                                    }
-
-                                    .footerBotLeft p {
-                                        font-family: Arial, Helvetica, sans-serif, "宋体";
-                                    }
-
-                                    .footerBotLeft .footerInfo a {
-                                        color: #666;
-                                    }
-
-                                    .footerBotLeft .copyright {
-                                        color: #666;
-                                    }
-                                </style>
-                                <!--页脚end-->
-                                <!-- 邮件订阅  start-->
-                                <!-- 邮件订阅  end-->
-                                <!-- 搜索结果显示 end -->
-                                <!-- 搜索少/无结果 热销产品 start -->
-                                <div class="proListSearch hotList">
-                                    <div class="hotProductTitle"><span>热销产品</span></div>
-                                    <div class="hotProduct" id="recomm_direct_201">
-
-                                    </div>
-                                </div>
-                                <!-- 搜索少/无结果 热销产品 end -->
-                                <!-- 商品列表end -->
-                                <!-- 翻页/搜索 -->
-                                <!-- 翻页/搜索 end-->
-                                <!-- 优惠券购物车已选商品 -->
-                                <div class="bSettlementWrap" style="display: none;">
-                                    <div class="bSettlement" style="position: absolute;">
-                                        <div class="setInfo">
-                                            <p class="info"><a class="prodSwitch" href="javascript:;"><span><em id="selectCount"></em></span><i id="arrow"></i></a><span class="subtotal">小计 ：<em id="cartAmount">￥0.00</em></span></p>
-                                            <p class="pro" id="cartTip"></p>
-                                        </div>
-                                        <div class="setbtn" id="rsCartButbay">去购物车结算</div>
-                                        <div class="selectedProd clearfix">
-                                            <div class="prodPrev" style="display:none;"><i></i></div>
-                                            <div class="prodList">
-                                                <ul class="clearfix" id="producList"></ul>
-                                            </div>
-                                            <div class="prodNext"><i></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/recommend_99.js"></script>
-                            <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/p_code.js"></script>
-                            <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/FAI84qYjQk.txt"></script>
-                            <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/o_code.js"></script>
-
+                    <!-- 优惠券信息 start-->
+                    <div class="topCoupon clearfix" style="display: none">
+                        <div class="coupInfo">
+                            <div class="coupSum"><b>￥</b><span id="couponPrice"></span></div>
+                            <div class="info"><p class="t"><span id="qualificationPrice"></span></p><p class="pro" id="instructions"></p></div>
 
                         </div>
+                        <!-- 优惠券信息 end-->
+                        <!--主内容begin-->
+                        <div class="main-srp">
+                            <!--面包屑begin-->
+                            <div class="breadcrumb">
+                                <div class="line"></div>
+                                <div class="crumb clearfix">
+                                    <div class="new_topNum"><em>相关产品</em><span>22074</span><em>件</em></div>
+                                    <i class="square"></i><a class="level level1" href="http://list.jiuxian.com/search.htm?key=%E9%85%92" title="全部">全部</a> <i class="arrow"></i> <a class="level level2" href="http://list.jiuxian.com/search.htm?key=%E9%85%92" title=" 酒 "> 酒  </a> <i class="arrow"></i>
+                                    <div class="search clearfix">
+                                        <input type="text" id="extKey" onkeydown="if (event.keyCode==13){extSearch();}" value=" 在结果中查找 " />
+                                        <input type="hidden" id="extKey-old" value="" />
+                                        <input type="hidden" id="key" value="酒" /><a href="javascript:extSearch()"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--面包屑end-->
+                            <!-- 此处按酒种加载筛选条件 -->
+
+                            <script type="text/javascript">
+
+
+
+
+
+                                                                                function nofind(o) {
+                                    o.src = "http://misc.jiuxian.com/img/sr_rt_shop.png";
+                                o.onerror = null; //控制不要一直跳动
+                            }
+                            </script>
+
+                            <!--店铺信息begin-->
+                            <!--店铺信息end-->
+                            <!-- 通用分类begin -->
+                            <!-- 已选择begin -->
+                            <div class="alreadyS clearfix" style="display:none">
+                                <p class="title">你已选择：</p>
+                                <div class="options clearfix">
+                                </div>
+                                <a class="trash clearfix" href="http://list.jiuxian.com/search.htm?key=%E9%85%92"><i></i><span>清除条件</span></a>
+                            </div>
+                            <!-- 已选择end -->
+
+                            <div class="select">
+                                <!-- 相关分类begin -->
+                                <div class="headline clearfix">
+                                    <div class="proLeft">相关分类</div>
+                                    <div class="proRight">
+                                        <ul class="clearfix">
+                                            @foreach (var item in ViewBag.list)
+                                            {
+                                                <li><a href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;cg=1&amp;area=2" title="白酒">@item.TypeName</a></li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- 相关分类 end -->
+                                <!-- 品牌begin -->
+                                <div class="brandS clearfix">
+                                    <div class="title">
+                                        <p>品牌</p>
+                                        <div class="innerSearch clearfix">
+                                            <a href="javascript:;"></a><input type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="frameR clearfix">
+                                        <div class="frameC">
+                                            <div class="letterS">
+                                                <ul class="clearfix">
+                                                    <li><a class="all" href="javascript:;">全部品牌</a></li>
+                                                    <li><a class="letter" href="javascript:;">A</a></li>
+                                                    <li><a class="letter" href="javascript:;">B</a></li>
+                                                    <li><a class="letter" href="javascript:;">C</a></li>
+                                                    <li><a class="letter" href="javascript:;">D</a></li>
+                                                    <li><a class="letter" href="javascript:;">E</a></li>
+                                                    <li><a class="letter" href="javascript:;">F</a></li>
+                                                    <li><a class="letter" href="javascript:;">G</a></li>
+                                                    <li><a class="letter" href="javascript:;">H</a></li>
+                                                    <li><a class="letter" href="javascript:;">I</a></li>
+                                                    <li><a class="letter" href="javascript:;">J</a></li>
+                                                    <li><a class="letter" href="javascript:;">K</a></li>
+                                                    <li><a class="letter" href="javascript:;">L</a></li>
+                                                    <li><a class="letter" href="javascript:;">M</a></li>
+                                                    <li><a class="letter" href="javascript:;">N</a></li>
+                                                    <li><a class="letter" href="javascript:;">O</a></li>
+                                                    <li><a class="letter" href="javascript:;">P</a></li>
+                                                    <li><a class="letter" href="javascript:;">Q</a></li>
+                                                    <li><a class="letter" href="javascript:;">R</a></li>
+                                                    <li><a class="letter" href="javascript:;">S</a></li>
+                                                    <li><a class="letter" href="javascript:;">T</a></li>
+                                                    <li><a class="letter" href="javascript:;">U</a></li>
+                                                    <li><a class="letter" href="javascript:;">V</a></li>
+                                                    <li><a class="letter" href="javascript:;">W</a></li>
+                                                    <li><a class="letter" href="javascript:;">X</a></li>
+                                                    <li><a class="letter" href="javascript:;">Y</a></li>
+                                                    <li><a class="letter" href="javascript:;">Z</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="brandAll" id="brandAll">
+                                                <ul class="clearfix">
+                                                    @foreach (var item in ViewBag.data)
+                                                    {
+                                                        <li c="M"><a href="http://list.jiuxian.com/search.htm?                      v=2&amp;key=%E9%85%92&amp;bd=1&amp;area=2">@item.BrandName</a></li>
+                                                    }
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 品牌end -->
+                                <!-- 国家begin -->
+                                <!-- 国家end -->
+                                <!-- 产区begin -->
+                                <!-- 产区end -->
+                                <!-- 子产区begin -->
+                                <!-- 子产区end -->
+                                <!-- 类型begin -->
+                                <!-- 类型end -->
+                                <!-- 子类型 选择begin -->
+                                <!-- 子类型选择end -->
+                                <!-- 适用场景begin -->
+                                <!-- 适用场景end -->
+                            </div>
+
+                            <!-- 通用分类end -->
+                            <!--排序begin-->
+                            <div class="order" id="order">
+                                <ul class="clearfix">
+                                    <li class="tab  first "><a rel="nofollow" href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;area=2" title="默认排序">默认排序</a></li>
+                                    <li class="tab"><a rel="nofollow" href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;od=1&amp;area=2" title=" 默认 ">销量 <i></i> </a></li>
+                                    <li class="tab jg"><a rel="nofollow" href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;od=2&amp;by=1&amp;area=2" title=" 默认 ">价格 <i style="background-position: -86px -108px; "></i> </a></li>
+                                    <li class="tab"><a rel="nofollow" href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;od=3&amp;area=2" title=" 默认 ">评价 <i></i> </a></li>
+                                    <li class="tab sjsj"><a rel="nofollow" href="http://list.jiuxian.com/search.htm?v=2&amp;key=%E9%85%92&amp;od=4&amp;area=2" title=" 默认 ">上架时间 <i></i> </a></li>
+                                    <li class="priceArea clearfix" pricearea="0">
+                                        <span class="left clearfix"><i>¥</i><input type="text" id="minPrice" /></span><span class="zhi"></span>
+                                        <span class="right clearfix"><i>¥</i><input type="text" id="maxPrice" /></span><span class="sure"><a class="ok" href="javascript:;" rel="nofollow">确定</a></span>
+                                    </li>
+
+                                    <input type="hidden" value="" id="price" />
+                                    <input type="hidden" value="" id="AB" />
+                                    <input type="hidden" value="" id="ruleKey" />
+                                    <input type="hidden" value="" id="assKey" />
+
+                                    <li class="page clearfix">
+                                        <p><span class="cur">1</span><span>/</span><span class="total">368</span></p>
+                                        <a class="btn prev" href="javascript:;" style="background-position: 0px -142px; "></a>
+                                        <a class="btn next" href="http://list.jiuxian.com/search.htm?pageNum=2&amp;key=%E9%85%92&amp;area=" style="background-position: -35px -142px; "></a>
+                                    </li>
+                                </ul>
+
+                                <div class="new_distBox">
+                                    <div class="new_adress">
+                                        <div class="dOrder-city" id="_shdz">
+                                            <div class="set-tit">配送到</div>
+                                            <a href="javascript:;" class="dOrder-city-sel">
+                                                <b pid="2">北京</b>
+                                                <b pid="52">北京市</b>
+                                                <b pid="500">东城区</b>
+                                                <i></i>
+                                            </a>
+                                            <span id="respNubs"></span>
+
+                                            <!-- 送货地址 -->
+                                            <div class="depit_citydrp" style="display:none;">
+                                                <h5 class="h5_dptctdrp">
+                                                    <a href="javascript:;" pid="2"><em>北京</em><i></i></a><!-- 省 -->
+                                                    <a href="javascript:;" pid="52"><em>北京市</em><i></i></a><!-- 市 -->
+                                                    <a href="javascript:;" pid="500"><em>东城区</em><i></i></a><!-- 县 -->
+                                                </h5>
+                                                <ul class="dptctdrp_list dptctdrp_list2"><li style="padding:0px 0px;"><a href="javascript:;" pid="2">北京</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="3">安徽省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="4">福建省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="5">甘肃省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="6">广东省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="7">广西省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="8">贵州省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="9">海南省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="10">河北省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="11">河南省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="12">黑龙江省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="13">湖北省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="14">湖南省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="15">吉林省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="16">江苏省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="17">江西省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="18">辽宁省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="19">内蒙古省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="20">宁夏</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="21">青海省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="22">山东省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="23">山西省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="24">陕西省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="25">上海</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="26">四川省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="27">天津</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="28">西藏</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="29">新疆</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="30">云南省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="31">浙江省</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="32">重庆</a></li></ul><!-- 省名 -->
+                                                <ul style="display: none;" class="dptctdrp_list"><li style="padding:0px 0px;"><a href="javascript:;" pid="52">北京市</a></li></ul><!-- 省会名 -->
+                                                <ul style="display: none;" class="dptctdrp_list"><li style="padding:0px 0px;"><a href="javascript:;" pid="500">东城区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="501">西城区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="502">海淀区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="503">朝阳区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="504">崇文区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="505">宣武区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="506">丰台区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="507">石景山区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="508">房山区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="509">门头沟区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="510">通州区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="511">顺义区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="512">昌平区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="513">怀柔区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="514">平谷区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="515">大兴区</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="516">密云县</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="517">延庆县</a></li><li style="padding:0px 0px;"><a href="javascript:;" pid="3451">其它区</a></li></ul><!-- 县名 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label class="new_lab"><input type="checkbox" id="jxDeliver" />&nbsp;酒仙配送</label>
+                                    <label class="new_lab"><input type="checkbox" id="clubProduct" />&nbsp;CLUB会员价</label>
+                                    <label class="new_lab"><input type="checkbox" id="selectionProduct" />&nbsp;酒仙甄选</label>
+                                    <label class="new_lab"><input type="checkbox" id="ynProduct" />&nbsp;仅显示有货</label>
+                                </div>
+                            </div>
+
+                            <!--排序end-->
+                            <!-- 商品列表begin -->
+                            <!-- 搜索结果显示 start -->
+
+                            <div class="proListSearch">
+                                <ul class="clearfix">
+
+
+                                    <li product-box="78693">
+                                        <div class="frameA"><div class="frameB left"></div><div class="frameB right"></div><div class="frameB top"></div><div class="frameB bottom"></div></div>
+                                        <div class="content clearfix">
+                                            <div class="collect_box">
+                                                <span class="collect collect2" id="cell_78693" style="display: none;"><i></i>收藏</span>
+                                                <a class="img clearfix" href="http://www.jiuxian.com/goods-78693.html" title="酒具套装" target="_blank">
+                                                    <img proimgid="78693" src="~/Wine/酒-商品搜索-酒仙网_files/143973e5331246fc895b5dc28a04602c4.jpg" alt="酒具套装" title="酒具套装" />
+                                                    <span id="mark_78693" class="sIcon cxtag tj" style="display:none"></span>
+                                                </a>
+                                            </div>
+
+                                            <div class="priceArea clearfix">
+                                                <p class="price" id="product_78693">¥<span>39.00</span></p>
+                                                <p class="clubPrice" id="product_clubPrice_78693"><span></span></p>
+                                            </div>
+                                            <div class="proName">
+                                                <a href="http://www.jiuxian.com/goods-78693.html" title="酒具套装" target="_blank">
+                                                    酒具套装 <span id="promote_78693" class="slogan">实用酒具套装</span>
+                                                </a>
+                                            </div>
+                                            <div class="judgeAdv clearfix">
+                                                <a class="judge" href="http://www.jiuxian.com/goods-78693.html#answerArea" title="" target="_blank"><span>16808</span>评价</a>
+                                            </div>
+
+                                            <div class="seller">
+                                            </div>
+
+                                            <div id="activity_78693" class="cuxiao">
+                                                <i class="projx sIcon"></i>
+                                                <span class="yh">限时抢购</span>
+                                            </div>
+
+                                            <div class="buyArea clearfix" id="addcart_78693" style="">
+                                                <div class="edit">
+                                                    <a class="decrease off" href="javascript:;">-</a>
+                                                    <input type="text" gid="78693" gname="酒具套装" id="InputNum78693" onkeyup="changeNum(this.value,78693)" value="1" name="" />
+                                                    <a class="increase" href="javascript:;">+</a>
+                                                </div>
+                                                <a class="cart sIcon prtlt_btn2" href="javascript:;">加入购物车</a>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+
+
+
+
+                            <style type="text/css">
+                                .footerBotLeft .footerInfo {
+                                    margin-left: -8px;
+                                }
+
+                                .footerBotLeft p {
+                                    font-family: Arial, Helvetica, sans-serif, "宋体";
+                                }
+
+                                .footerBotLeft .footerInfo a {
+                                    color: #666;
+                                }
+
+                                .footerBotLeft .copyright {
+                                    color: #666;
+                                }
+                            </style>
+                            <!--页脚end-->
+                            <!-- 邮件订阅  start-->
+                            <!-- 邮件订阅  end-->
+                            <!-- 搜索结果显示 end -->
+                            <!-- 搜索少/无结果 热销产品 start -->
+                            <div class="proListSearch hotList">
+                                <div class="hotProductTitle"><span>热销产品</span></div>
+                                <div class="hotProduct" id="recomm_direct_201">
+
+                                </div>
+                            </div>
+                            <!-- 搜索少/无结果 热销产品 end -->
+                            <!-- 商品列表end -->
+                            <!-- 翻页/搜索 -->
+                            <!-- 翻页/搜索 end-->
+                            <!-- 优惠券购物车已选商品 -->
+                            <div class="bSettlementWrap" style="display: none;">
+                                <div class="bSettlement" style="position: absolute;">
+                                    <div class="setInfo">
+                                        <p class="info"><a class="prodSwitch" href="javascript:;"><span><em id="selectCount"></em></span><i id="arrow"></i></a><span class="subtotal">小计 ：<em id="cartAmount">￥0.00</em></span></p>
+                                        <p class="pro" id="cartTip"></p>
+                                    </div>
+                                    <div class="setbtn" id="rsCartButbay">去购物车结算</div>
+                                    <div class="selectedProd clearfix">
+                                        <div class="prodPrev" style="display:none;"><i></i></div>
+                                        <div class="prodList">
+                                            <ul class="clearfix" id="producList"></ul>
+                                        </div>
+                                        <div class="prodNext"><i></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/recommend_99.js"></script>
+                        <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/p_code.js"></script>
+                        <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/FAI84qYjQk.txt"></script>
+                        <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/o_code.js"></script>
 
 
                     </div>
@@ -2182,12 +2161,15 @@ var userArray = getCookie("user_province"); userArray = userArray.split("_"); if
                 </div>
 
 
-
             </div>
+
+
 
         </div>
 
     </div>
+
+
 
     <style type="text/css">
         .footerBotLeft .footerInfo {
@@ -2210,10 +2192,7 @@ var userArray = getCookie("user_province"); userArray = userArray.split("_"); if
 
 
 
-
-        </div>
-
-    </div>
+ 
 
 
     <script type="text/javascript" src="~/Wine/酒-商品搜索-酒仙网_files/recommend_99.js"></script>
@@ -2226,8 +2205,7 @@ var userArray = getCookie("user_province"); userArray = userArray.split("_"); if
 
 
 
-
-    </div>
+ 
 
 
 </body>
