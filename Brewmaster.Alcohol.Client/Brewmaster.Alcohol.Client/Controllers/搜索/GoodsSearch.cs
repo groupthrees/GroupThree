@@ -37,5 +37,6 @@ namespace Brewmaster.Alcohol.Client.Controllers
              List<GoodsType> list = JsonConvert.DeserializeObject<List<GoodsType>>(str);
             return list;
         }
+
     }
 }
