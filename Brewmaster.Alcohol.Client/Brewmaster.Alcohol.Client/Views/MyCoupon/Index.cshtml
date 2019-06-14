@@ -6,6 +6,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/modernizr-2.8.3.js"></script>
+
+
     <script type="text/javascript" async="" charset="utf-8" src="~/Wine/我的酒仙网 ) 我的优惠券_files/pushData.txt"></script>
     <script type="text/javascript" async="" src="~/Wine/我的酒仙网 ) 我的优惠券_files/mv.js"></script>
     <script type="text/javascript" async="" src="~/Wine/我的酒仙网 ) 我的优惠券_files/mba.js"></script>
@@ -55,101 +59,77 @@
 </head>
 <body>
 
-   
+
 
     <script src="~/Wine/我的酒仙网 ) 我的优惠券_files/skipmobileweb.js"></script>
     <script type="text/javascript">isMobile();</script>
-    
-    
-    
- 
-    
-    
-       
-        <div>
-            <div class="rightTit"><h2><i></i>我的优惠券</h2></div>
-            <div class="rightCon">
-                <div class="right-content">
-                    <div class="inputBox" id="allInput">
-                        <b>优惠券序列号：</b>
-                        <div class="codeNum"><input type="text" name="bonus_sn" id="bonus_sn" autocomplete="off" /><p class="valuePopC">请输入优惠券序列号</p></div>
-                        <div class="codeYzm"><input type="text" name="cap" id="cap" autocomplete="off" /><p class="valuePopY">验证码</p></div>
-                        <div class="yzmImg"><img id="checkCodeId" src="~/Wine/我的酒仙网 ) 我的优惠券_files/getCheckCode.jpg" onclick="changeCheckCode();" /></div>
-                        <span>看不清？</span>
-                        <a href="javascript:void(0);" onclick="javascript:changeCheckCode();">换一张</a>
-                        <div id="active" class="codeBtn">激活优惠券</div>
-                    </div>
-                    <div class="accCode"><span class="accNotic"><i></i><span>请输入优惠券序列号</span></span><span class="accNotic accNoticCode"><i></i><span>请输入验证码</span></span></div>
+    <div>
+        <div class="rightTit"><h2><i></i>我的优惠券</h2></div>
+        <div class="rightCon">
+            <div class="right-content">
+                <div class="inputBox" id="allInput">
+                    <b>优惠券序列号：</b>
+                    <div class="codeNum"><input type="text" name="bonus_sn" id="bonus_sn" autocomplete="off" /><p class="valuePopC">请输入优惠券序列号</p></div>
+                    <div class="codeYzm"><input type="text" name="cap" id="cap" autocomplete="off" /><p class="valuePopY">验证码</p></div>
+                    <div class="yzmImg"><img id="checkCodeId" src="~/Wine/我的酒仙网 ) 我的优惠券_files/getCheckCode.jpg" onclick="changeCheckCode();" /></div>
+                    <span>看不清？</span>
+                    <a href="javascript:void(0);" onclick="javascript:changeCheckCode();">换一张</a>
+                    <div id="active" class="codeBtn">激活优惠券</div>
                 </div>
-                <div class="myRedBox">
-                    <div class="myRedTit clearfix">
-                        <ul>
-                            <li id="unused" class="reduce wrapinner" onclick="javascript:document.getElementById('11').click();">未使用</li>
-                            <li id="used" class="reduce" onclick="javascript:document.getElementById('12').click();">已使用</li>
-                            <li id="offeffect" class="reduce" onclick="javascript:document.getElementById('13').click();">已过期</li>
-                        </ul>
-                        <a id="11" href="http://member.jiuxian.com/purse/my_coupon-11.htm" display:none=""></a>
-                        <a id="12" href="http://member.jiuxian.com/purse/my_coupon-12.htm" display:none=""></a>
-                        <a id="13" href="http://member.jiuxian.com/purse/my_coupon-13.htm" display:none=""></a>
-                        <span class="Instruction clearfix"><a href="http://help.jiuxian.com/view-2-114.htm" target="_blank">优惠券使用说明</a><i></i></span>
-                    </div>
-                    <div class="rightCon-content">
-                        <table style=" border:1px solid #e4e4e4; border-top:none; width:100%;" cellspacing="0" cellpadding="0" border="0">
-                            <tbody>
-                                <tr class="rightCon-trth">
-                                    <th class="li1">名称</th>
-                                    <th class="li2">面值</th>
-                                    <th class="li3">类型</th>
-                                    <th class="li4">序列号</th>
-                                    <th class="li5">有效期</th>
-                                    <th class="li6">适用终端</th>
-                                </tr>
-                                <tr class="rightCon-tr first">
-                                    <td><a href="http://list.jiuxian.com/search.htm?couponId=107474"> 限拉蒙酒仙甄选旗舰店全品类使用</a></td>
-                                    <td class="li2"> ￥5 </td>
-                                    <td class="li3">直减券</td>
-                                    <td class="li4">ypwdqgrekwpg</td>
-                                    <td class="li5">2019-06-06 至<br />2019-06-22</td>
-                                    <td class="li6">
-                                        <div class="jiaobiao"><img src="~/Wine/我的酒仙网 ) 我的优惠券_files/coupon_new.png" width="48" height="34" /></div>
-                                        移动、PC通用
-                                    </td>
-                                </tr>
-                                <tr class="rightCon-tr">
-                                    <td><a href="http://list.jiuxian.com/search.htm?couponId=107474"> 限拉蒙酒仙甄选旗舰店全品类使用</a></td>
-                                    <td class="li2"> ￥5 </td>
-                                    <td class="li3">直减券</td>
-                                    <td class="li4">69591lf5fusw</td>
-                                    <td class="li5">2019-06-06 至<br />2019-06-22</td>
-                                    <td class="li6">
-                                        <div class="jiaobiao"><img src="~/Wine/我的酒仙网 ) 我的优惠券_files/coupon_new.png" width="48" height="34" /></div>
-                                        移动、PC通用
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <div class="accCode"><span class="accNotic"><i></i><span>请输入优惠券序列号</span></span><span class="accNotic accNoticCode"><i></i><span>请输入验证码</span></span></div>
             </div>
-            <div class="uPageBox clearfix">
+            <div class="myRedBox">
+                <div class="myRedTit clearfix">
+                    <ul>
+                        <li id="unused" class="reduce wrapinner" onclick="javascript:document.getElementById('11').click();">未使用</li>
+                        <li id="used" class="reduce" onclick="javascript:document.getElementById('12').click();">已使用</li>
+                        <li id="offeffect" class="reduce" onclick="javascript:document.getElementById('13').click();">已过期</li>
+                    </ul>
+                    <a id="11" href="http://member.jiuxian.com/purse/my_coupon-11.htm" display:none=""></a>
+                    <a id="12" href="http://member.jiuxian.com/purse/my_coupon-12.htm" display:none=""></a>
+                    <a id="13" href="http://member.jiuxian.com/purse/my_coupon-13.htm" display:none=""></a>
+                    <span class="Instruction clearfix"><a href="http://help.jiuxian.com/view-2-114.htm" target="_blank">优惠券使用说明</a><i></i></span>
+                </div>
+                <div class="rightCon-content">
+                   
+                    <table style=" border:1px solid #e4e4e4; border-top:none; width:100%;" cellspacing="0" cellpadding="0" border="0">
+                        <thead>
+                            <tr class="rightCon-trth">
+                                <th class="li1">名称</th>
+                                <th class="li2">优惠金额</th>
+                                <th class="li3">满足金额</th>
+                                <th class="li4">截止时间</th>
+                            </tr>
+                        </thead>
+                        <tbody id="await">
 
-                <div class="uPageBox clearfix">
-                    <div class="uPage clearfix">
-                        <a href="javascript:void(0);" class="uPrevpage">上一页</a>
+                      
 
-
-                        <a class="num on">1</a>
-
-                        <a href="javascript:void(0)" class="uNnextpage">下一页</a>
-                    </div>
+                        </tbody>
+                    </table>
+                    <a href="javascript:void(0)" onclick="first()">首页</a>
+                    <a href="javascript:void(0)" onclick="prve()">上一页</a>
+                    <a href="javascript:void(0)" onclick="next()">下一页</a>
+                    <a href="javascript:void(0)" onclick="last()">尾页</a>
                 </div>
             </div>
         </div>
-   
-    <!-- 右侧 -->
- 
-    
+        <div class="uPageBox clearfix">
 
+            <div class="uPageBox clearfix">
+                <div class="uPage clearfix">
+                    <a href="javascript:void(0);" class="uPrevpage">上一页</a>
+
+
+                    <a class="num on">1</a>
+
+                    <a href="javascript:void(0)" class="uNnextpage">下一页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右侧 -->
     <style type="text/css">
         .footerBotLeft .footerInfo {
             margin-left: -8px;
@@ -167,9 +147,75 @@
             color: #666;
         }
     </style>
-    
-    
 
-    
+
 </body>
 </html>
+
+<script>
+
+    var pageIndex = 1;
+    var pageSize = 3;
+    var total = 0;
+
+    $(function () {
+
+        getCoupon(pageIndex);
+
+    })
+
+    function getCoupon(index) {
+    
+        $.ajax({
+            type: "get",
+            url: 'http://localhost:50169/api/Coupon/Getcouponlist',
+            data: { id:1, pageIndex: index, pageSize: pageSize },
+            success: function (result) {
+                var tmphtml = "";
+                $("#await").empty();
+                for (var i = 0; i < result.couponList.length; i++) {
+                    //var endTime = dateFormat(result.couponList[i].couponEndTime);
+                    tmphtml += "<tr>";
+                    tmphtml += "<td>" + result.couponList[i].couponName + "</td>";
+                    tmphtml += "<td>" + result.couponList[i].couponMoney + "</td>";
+                    tmphtml += "<td>" + result.couponList[i].couponCondition  + "</td>";
+                    tmphtml += "<td>" + result.couponList[i].couponEndTime + "</td>";
+                    tmphtml += "</tr>";
+                }
+                $("#await").append(tmphtml);
+
+                total = result.Total;
+            }
+        })
+    }
+   
+    //查询
+    function search() {
+        getCoupon(pageIndex);
+    }
+
+    //首页
+    function first() {
+        pageIndex = 1;
+        getCoupon(pageIndex);
+    }
+
+    //上页
+    function prve() {
+        pageIndex = pageIndex > 1 ? pageIndex - 1 : 1;
+        getCoupon(pageIndex);
+    }
+
+    //下页
+    function next() {
+        var nums = Math.ceil(total / pageSize);
+        pageIndex = pageIndex < nums ? pageIndex + 1 : pageIndex;
+        getCoupon(pageIndex);
+    }
+
+    //尾页
+    function last() {
+        pageIndex = Math.ceil(total / pageSize);
+        getCoupon(pageIndex);
+    }
+</script>
