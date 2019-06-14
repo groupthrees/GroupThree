@@ -102,6 +102,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\新文件夹\" />
     <Folder Include="Script\" />
   </ItemGroup>
 
