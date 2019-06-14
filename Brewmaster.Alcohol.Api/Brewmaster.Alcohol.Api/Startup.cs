@@ -40,8 +40,8 @@ namespace Brewmaster.Alcohol.Api
             services.AddScoped<IBrandRepository, BrandRepository>();
             //查询产地名称
             services.AddScoped<IPlaceRepository, PlaceRepository>();
-
-
+            //商品详情页
+            services.AddScoped<IGoodsCollectReposity,GoodscollectReposity>();
             //自动生成 设置MVC 兼容性版本
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //注册跨域服务，允许所有来源
