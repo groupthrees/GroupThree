@@ -51,5 +51,8 @@ namespace Brewmaster.Alcohol.Model
         {
             get; set;
         }
+
+        public int UsersId { get; set; }
+
     }
 }

@@ -44,6 +44,11 @@ namespace Brewmaster.Alcohol.Api
             services.AddScoped<IPlaceRepository, PlaceRepository>();
             //商品详情页
             services.AddScoped<IGoodsCollectReposity,GoodscollectReposity>();
+            //订单页面
+            services.AddScoped<IIndentRepository, IndentRepository>();
+            //收藏页面
+            services.AddScoped<ICollectionRepository, CollectionRepository>();
+
             //我的优惠券
             services.AddScoped<ICouponRepository, CouponRepository>();
 
