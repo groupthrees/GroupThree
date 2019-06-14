@@ -17,6 +17,13 @@ namespace Brewmaster.Alcohol.Model
             get; set;
         }
         /// <summary>
+        /// 名称
+        /// </summary>
+        public string CouponName
+        {
+            get; set;
+        }
+        /// <summary>
         /// 优惠金额
         /// </summary>
         public int CouponMoney
