@@ -44,6 +44,10 @@ namespace Brewmaster.Alcohol.Api
             services.AddScoped<IPlaceRepository, PlaceRepository>();
             //商品详情页
             services.AddScoped<IGoodsCollectReposity,GoodscollectReposity>();
+            //订单页面
+            services.AddScoped<IIndentRepository, IndentRepository>();
+            //收藏页面
+            services.AddScoped<ICollectionRepository, CollectionRepository>();
 
 
             // Register the Swagger generator, defining 1 or more Swagger documents
