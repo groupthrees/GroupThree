@@ -6,6 +6,14 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+
+  <ItemGroup>
+    <Compile Remove="Controllers\新文件夹商品详情\**" />
+    <Content Remove="Controllers\新文件夹商品详情\**" />
+    <EmbeddedResource Remove="Controllers\新文件夹商品详情\**" />
+    <None Remove="Controllers\新文件夹商品详情\**" />
+  </ItemGroup>
+
   <ItemGroup>
  
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\alert.js" />
@@ -94,7 +102,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.1" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 
   <ItemGroup>
@@ -102,7 +110,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\新文件夹\" />
     <Folder Include="Script\" />
   </ItemGroup>
 
