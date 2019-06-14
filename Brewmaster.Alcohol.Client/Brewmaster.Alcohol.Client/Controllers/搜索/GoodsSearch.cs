@@ -17,8 +17,8 @@ namespace Brewmaster.Alcohol.Client.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            //ViewBag.data=GetBrand();
-           // ViewBag.list=GetGoodsType();
+            ViewBag.data=GetBrand();
+            ViewBag.list=GetGoodsType();
             return View();
         }
 
@@ -37,6 +37,5 @@ namespace Brewmaster.Alcohol.Client.Controllers
              List<GoodsType> list = JsonConvert.DeserializeObject<List<GoodsType>>(str);
             return list;
         }
-
     }
 }
