@@ -13,7 +13,7 @@ namespace Brewmaster.Alcohol.Repository
     public class GoodscollectReposity : IGoodsCollectReposity
     {
         //数据库连接
-        private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=wangsenyu;Pwd=123456;";
+        private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=laishaoqian;Pwd=123456;";
         /// <summary>
         /// 商品详情页显示
         /// </summary>
@@ -36,9 +36,9 @@ namespace Brewmaster.Alcohol.Repository
             {
                 goodscollectDto.Conllect = con.ExecuteScalar<int>(sql1);
                 goodscollectDto.Imgs = con.Query<img>(sql2).ToList();
-                goodscollectDto.Goods = con.QueryFirst<GoodsDto1>(sql2);
+                goodscollectDto.Goods = con.QueryFirst<GoodsDto1>(sql3);
             }
-            return null;
+            return goodscollectDto;
         }
 
     }
