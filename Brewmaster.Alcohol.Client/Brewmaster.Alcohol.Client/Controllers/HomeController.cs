@@ -24,6 +24,11 @@ namespace Brewmaster.Alcohol.Client.Controllers
             settings.ContractResolver = new DefaultContractResolver();
             return Json(list, settings);
         }
+
+        public IActionResult Index1()
+        {
+            return View();
+        }
     }
 }
 
