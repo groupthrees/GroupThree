@@ -1359,38 +1359,16 @@
         $.ajax({
             url: 'http://localhost:50169/api/goods/getgoodslist',
             success: function (data) {
-                console.log(data)
+                 
                 $(data).each(function () {
-                    //$("#await").append('<li>1</li>');
+                 
                     $("#await").append('<img src=' + this.goodsImg + ' width="160" height="160" onclick="fun(' + this.id + ')" /><span class="video_icon"></span>' + this.goodsName + '<span>' + this.priceNow + '</span>');
                 })
 
             }
         })
     }
-    function fun(id) {
-        alert(id)
-    }
+    
 </script>
 
-@*<script>
-    var vm = new Vue({
-        el:"#goodsdate",
-        data: {
-            goodslist: [],
-        },
-        mounted() {
-            this.goods();
-        },
-        methods: {
-            goods: function () {
-                axios.get("@Url.Action("Index", "Home")").then((response) => {
-                    console.log(response.data)
-                    this.goodslist = response.data;
-                    console.log(this.goodslist)
-                })
-            }
-        }
-    })
-
-</script>*@
+ 
