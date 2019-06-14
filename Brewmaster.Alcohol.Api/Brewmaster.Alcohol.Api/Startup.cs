@@ -49,6 +49,8 @@ namespace Brewmaster.Alcohol.Api
             //收藏页面
             services.AddScoped<ICollectionRepository, CollectionRepository>();
 
+            //我的优惠券
+            services.AddScoped<ICouponRepository, CouponRepository>();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
