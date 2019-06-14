@@ -121,11 +121,17 @@
                 UsersPwd: "",
             },
             methods: {
-                addUser: function () {
+                addUser: function () {
+
+
                     var params = new URLSearchParams();
                     params.append('UsersName', this.UsersName);
-                    params.append('UsersPwd', this.UsersPwd);
-                    axios.post("/User/Regist", params).then((response) => {                        alert("登录成功")
+                    params.append('UsersPwd', this.UsersPwd);
+
+
+                    axios.post("/User/Regist", params).then((response) => {
+                        alert("注册成功")
+
                     }, (response) => {
                         alert(response.status);
                     }
