@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Brewmaster.Alcohol.Api.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class DefaultController : ControllerBase
     {

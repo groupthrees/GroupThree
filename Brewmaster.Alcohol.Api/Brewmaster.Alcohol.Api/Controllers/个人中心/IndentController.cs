@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Brewmaster.Alcohol.Api.Controllers.个人中心
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class IndentController : ControllerBase
     {

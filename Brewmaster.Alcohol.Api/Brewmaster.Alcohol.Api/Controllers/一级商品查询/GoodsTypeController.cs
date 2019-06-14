@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Brewmaster.Alcohol.Api.Controllers.一级商品查询
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class GoodsTypeController : ControllerBase
     {

@@ -13,7 +13,7 @@ using MySql.Data.MySqlClient;
 
 namespace Brewmaster.Alcohol.Api.Controllers.搜索商品
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class GoodsAllController : ControllerBase
     {

@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Brewmaster.Alcohol.Api.Controllers.品牌名称查询
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class BrandController : ControllerBase
     {
