@@ -32,6 +32,7 @@ namespace Brewmaster.Alcohol.Api.Controllers.一级商品查询
         /// 查询品牌名称
         /// </summary>
         /// <returns></returns>
+        [HttpGet("GetGoodsTypeName")]
         public List<GoodsType> GetGoodsTypeName()
         {
             var list = _goodsTypeRepository.GetGoodsTypeName();

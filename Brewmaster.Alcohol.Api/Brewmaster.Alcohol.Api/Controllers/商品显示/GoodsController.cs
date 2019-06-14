@@ -33,6 +33,7 @@ namespace Brewmaster.Alcohol.Api.Controllers.商品显示
         /// 首页商品显示
         /// </summary>
         /// <returns></returns>
+        [HttpGet("getGoodslist")]
         public List<GoodsDto> getGoodslist()
         {
             return _GoodsRepository.getGoodslist();

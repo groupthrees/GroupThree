@@ -33,6 +33,7 @@ namespace Brewmaster.Alcohol.Api.Controllers.品牌名称查询
         /// 查询品牌名称
         /// </summary>
         /// <returns></returns>
+        [HttpGet("GetBrandName")]
         public List<Brand> GetBrandName()
         {
             var list = _brandRepository.GetBrandName();

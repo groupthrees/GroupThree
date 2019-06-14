@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
+using Swashbuckle.AspNetCore.Swagger;
+
 namespace Brewmaster.Alcohol.Api
 {
     public class Startup
@@ -42,6 +44,16 @@ namespace Brewmaster.Alcohol.Api
             services.AddScoped<IPlaceRepository, PlaceRepository>();
             //商品详情页
             services.AddScoped<IGoodsCollectReposity,GoodscollectReposity>();
+
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
+
+
+
             //自动生成 设置MVC 兼容性版本
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //注册跨域服务，允许所有来源
@@ -68,6 +80,20 @@ namespace Brewmaster.Alcohol.Api
                     name: "default",
                     template: "{controller=User}/{action=Resigt}/{id?}");
             });
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
+
+
+
         }
     }
 }

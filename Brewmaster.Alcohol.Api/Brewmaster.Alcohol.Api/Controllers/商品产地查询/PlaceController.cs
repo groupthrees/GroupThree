@@ -32,6 +32,8 @@ namespace Brewmaster.Alcohol.Api.Controllers.商品产地查询
         /// 查询品牌名称
         /// </summary>
         /// <returns></returns>
+        /// 
+        [HttpGet("GetPlaceName")]
         public List<Place> GetPlaceName()
         {
             var list = _placeRepository.GetPlaceName();
