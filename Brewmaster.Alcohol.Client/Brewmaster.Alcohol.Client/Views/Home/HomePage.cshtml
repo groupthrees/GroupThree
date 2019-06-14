@@ -175,6 +175,7 @@
             <script type="text/javascript">
                 //临时 调整页头位置
                 $(function () {
+
                        getgoodsdata();
                     //临时 调整页头位置URL
                     try {
@@ -1354,12 +1355,12 @@
 <script>
   
     function getgoodsdata() {
-        var id = 1;
-        alert(11)
+
+        alert(1111)
         $.ajax({
             url: 'http://localhost:50169/api/goods/getgoodslist',
             success: function (data) {
-                 
+                 console.log(data)
                 $(data).each(function () {
                  
                     $("#await").append('<img src=' + this.goodsImg + ' width="160" height="160" onclick="fun(' + this.id + ')" /><span class="video_icon"></span>' + this.goodsName + '<span>' + this.priceNow + '</span>');
@@ -1368,7 +1369,10 @@
             }
         })
     }
-    
+    function fun(id) {
+        console.log(id);
+        }
+
 </script>
 
  
