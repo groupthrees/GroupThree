@@ -17,8 +17,8 @@ namespace Brewmaster.Alcohol.Client.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewBag.data=GetBrand();
-            ViewBag.list=GetGoodsType();
+            //ViewBag.data=GetBrand();
+           // ViewBag.list=GetGoodsType();
             return View();
         }
 
