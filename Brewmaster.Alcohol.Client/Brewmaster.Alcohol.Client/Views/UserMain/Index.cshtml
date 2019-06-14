@@ -3,6 +3,11 @@
     Layout = null;
 }
 
+
+@{
+    Layout = null;
+}
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,7 +21,7 @@
     <meta name="save" content="history" />
     <meta http-equiv="Expires" content="0" />
     <meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
-  
+
     <script src="~/Wine/我的酒仙网 ) 基本信息_files/usercenter-web-pc.js" type="text/javascript"></script>
     <title>我的酒仙网 &gt; 基本信息 </title>
     <link href="~/Wine/我的酒仙网 ) 基本信息_files/base.css" type="text/css" rel="stylesheet" />
@@ -85,7 +90,7 @@
                     <li class="hd-n4"><a href="#" target="_blank">CLUB会员</a><s></s></li>
                     <li class="hd-n6"><a href="#" target="_blank">招商入驻</a><s></s></li>
                     <li class="hd-n5"><a href="#" target="_blank"><i class="publicIcon"></i>手机逛酒仙</a><s></s><div class="erm2015922"><img alt="手机酒仙网" src="~/Wine/我的酒仙网 ) 基本信息_files/jxPho-code_002.jpg" width="80" height="80" /></div></li>
-                   
+
                 </ul>
             </div>
         </div>
@@ -107,9 +112,9 @@
                         <input class="search-btn" type="submit" name="" value="搜&nbsp;索" />
                         <input id="area" name="area" type="hidden" value="2" />
                     </form>
-                   
+
                 </div>
-                
+
 
 
 
@@ -1058,106 +1063,7 @@
                 <a class="bottomClub" href="#" title="会员俱乐部" target="_blank"><i></i><span>会员俱乐部</span></a>
                 <!-- 左下会员俱乐部end -->
             </div><!-- 左侧导航end -->
-            <!-- 右侧 -->
-            <div class="rightBox">
-                <div class="rightTit"><h2><i></i>基本信息</h2> <span class="rt-couponInt">完善个人信息，可获得<strong class="redStrong">50</strong>金币！金币可以兑换商品哦，赶快行动吧</span></div>
-                <div class="rightCon">
-                    <div class="zpBaseInfo">
-
-                        <div class="zpBaseInfoTitle">
-                            <ul class="clearfix"><li class="on">个人信息</li><li>头像照片</li><li>更多个人信息</li></ul>
-                        </div>
-                        <div class="zpPart1 clearfix" id="allInput" style="display:block;">
-                            <input type="hidden" id="offenDrink" value="" />
-                            <form id="ajaxForm" action="/myaccount/saveUserInfo.htm" method="post" novalidate="novalidate">
-                                <input type="hidden" name="cateIds" id="cateIds" />
-                                <div class="zpInfo">
-                                    <ul class="basePart">
-                                        <li class="clearfix">
-                                            <p class="zpName">用户名：</p>
-                                            <span class="userCheckContact">jxw37733774</span>
-                                        </li>
-                                        <li class="baseInfoTip">为了您的账户安全，请<a href="#" target="_blank">验证邮箱</a>，现在验证还赠送金币哦。</li>
-                                        <li class="clearfix">
-                                            <p class="zpName"><strong>*</strong>昵称：</p>
-                                            <input type="text" class="name" name="anotherName" id="anotherName" maxlength="20" />
-                                            <div class="acc">
-                                                <div class="accNotic" style="display:none"><i></i><span>请输入昵称</span></div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <p class="zpName">真实姓名：</p>
-                                            <input type="text" class="realName" name="realName" id="realName" maxlength="20" />
-                                            <div class="acc">
-                                                <div id="realNameTS" class="accNotic" style="display:none"><i></i><span>请输入真实姓名</span></div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <p class="zpName"><strong>*</strong>性别：</p>
-                                            <input class="zpSex" type="radio" name="sex" checked="checked" value="1" /><span class="zpSexText">男</span>
-                                            <input class="zpSex" type="radio" name="sex" value="2" /><span class="zpSexText">女</span>
-                                        </li>
-                                        <li class="clearfix">
-                                            <p class="zpName"><strong>*</strong>生日：</p>
-
-                                            <input type="text" name="birthday" class="birthday Wdate hasDatepicker" id="setBirthday" 　readonly="readonly" />
-                                            <input type="hidden" name="birthday" id="birthday" />
-                                            <div class="bDay">填写生日有惊喜哦~，只有一次填写机会！</div>
-                                            <div class="acc">
-                                                <div class="accNotic" style="display:none"><i></i><span>请选择生日</span></div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li class="clearfix">
-                                            <p class="zpName">手机：</p>
-                                             <input  type="text" id="phone"/>
-                                        </li>
-
-                                        <li class="clearfix">
-                                            <p class="zpName">地区：</p>
-                                            <select name="province" id="province">
-                                                <option value="" selected="selected">请选择</option>
-
-                                            </select>
-                                            <select name="city" id="city">
-                                                <option value="" selected="selected">请选择</option>
-                                            </select>
-                                            <select name="district" id="district">
-                                                <option value="" selected="selected">请选择</option>
-                                            </select>
-                                            <select name="street" id="street">
-                                                <option value="" selected="selected">请选择</option>
-                                            </select>
-                                            <div id="streetDiv" class="acc">
-                                                <div class="accNotic" style="display:none"><i></i><span>请选择地区</span></div>
-                                            </div>
-                                        </li>
-                                        <li class="zpTags clearfix">
-                                            <p class="zpName">常喝的酒：</p>
-
-                                        </li>
-                                        <li class="clearfix">
-                                            <p class="zpName">喜欢的酒类品牌：</p>
-                                            <textarea name="likeBrand" id="likeBrand" maxlength="60"></textarea>
-                                        </li>
-                                        <li class="clearfix">
-                                            <p class="zpName">详细地址：</p>
-                                            <input class="detailAdd" type="text" id="addressMore" name="addressMore" maxlength="60" />
-                                            <div class="acc"><div id="addressMoreTS" class="accNotic" style="display:none"><i></i><span></span></div></div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                                <input type="submit" class="submitZpInfo" value="提&nbsp;交" id="saveInfo" />
-                                <input type="hidden" id="addressId" value="" />
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- 右侧 -->
+        
 
         </div>
 
