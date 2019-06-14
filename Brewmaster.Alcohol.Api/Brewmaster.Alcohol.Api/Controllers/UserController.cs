@@ -33,7 +33,7 @@ namespace Brewmaster.Alcohol.Api.Controllers
         /// </summary>
         /// <param name="users"></param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost("Resigt")]
         public int Resigt(Users users)
         {
             int result = _UserRepository.Resigt(users);
@@ -47,7 +47,7 @@ namespace Brewmaster.Alcohol.Api.Controllers
         /// <param name="UserName"></param>
         /// <param name="UserPwd"></param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost("Login")]
         public object Login(string UsersName, string UsersPwd)
         {
             object result = _UserRepository.Login(UsersName, UsersPwd);

@@ -25,7 +25,7 @@ namespace Brewmaster.Alcohol.Api.Controllers
         {
             _TestRepository = TestRepository;
         }
-        [HttpGet]
+        [HttpGet("Get")]
         public int Get(int id)
         {
             return _TestRepository.test(id);

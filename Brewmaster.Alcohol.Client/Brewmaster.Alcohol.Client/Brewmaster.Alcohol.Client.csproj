@@ -1,10 +1,18 @@
-
+﻿
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
+
+
+  <ItemGroup>
+    <Compile Remove="Controllers\新文件夹商品详情\**" />
+    <Content Remove="Controllers\新文件夹商品详情\**" />
+    <EmbeddedResource Remove="Controllers\新文件夹商品详情\**" />
+    <None Remove="Controllers\新文件夹商品详情\**" />
+  </ItemGroup>
 
   <ItemGroup>
  
