@@ -96,24 +96,24 @@
             <div class="topHeaderLeft" name="_new_login_status_panel">
                 <div class="clearfix">
                     <p class="greeting">欢迎来酒仙网！</p>
-                    <a class="headerLogin" href="https://login.jiuxian.com/login.htm" rel="nofollow">请登录</a>
-                    <a class="headerReg" href="https://login.jiuxian.com/register.htm" rel="nofollow">免费注册</a>
+                    <a class="headerLogin" href="/User/Login" rel="nofollow">请登录</a>
+                    <a class="headerReg" href="/User/Regist" rel="nofollow">免费注册</a>
                 </div>
             </div>
             <div class="topHeaderRight">
                 <ul>
                     <li class="hd-n1 dropTitle">
-                        <div class="myJiuxian"><a href="/UsersMessage/index" target="_blank" rel="nofollow">我的酒仙</a><s class="publicIcon"></s></div>
+                        <div class="myJiuxian"><a href="/UserMain/index" target="_blank" rel="nofollow">我的酒仙</a><s class="publicIcon"></s></div>
                         <div class="myJiuxianBox dropTitleBox clearfix">
-                            <a href="http://member.jiuxian.com/trademanage/my_order-9.htm" target="_blank" rel="nofollow">我的订单</a>
-                            <a href="http://member.jiuxian.com/trademanage/my_order-9.htm" target="_blank" rel="nofollow">物流跟踪</a><a href="/MyCoupon/index" target="_blank" rel="nofollow">我的优惠券</a>
+                            <a href="#" target="_blank" rel="nofollow">我的订单</a>
+                            <a href="#" target="_blank" rel="nofollow">物流跟踪</a><a href="/MyCoupon/index" target="_blank" rel="nofollow">我的优惠券</a>
                         </div>
                     </li>
-                    <li class="hd-n2"><a href="http://sale.jiuxian.com/feedback.htm" target="_blank" rel="nofollow">CEO邮箱</a></li>
+                    <li class="hd-n2"><a href="#" target="_blank" rel="nofollow">CEO邮箱</a></li>
                     <li class="hd-n3"><i class="publicIcon"></i><a href="http://cart.jiuxian.com/" target="_blank" rel="nofollow">购物车<b class="qty jx_car_num">&nbsp;0&nbsp;</b>件</a></li>
-                    <li class="hd-n4"><a href="http://member.jiuxian.com/clubUser/index.htm" target="_blank">CLUB会员</a><s></s></li>
-                    <li class="hd-n6"><a href="http://shop.jiuxian.com/index-1171/activity-1577.htm" target="_blank">招商入驻</a><s></s></li>
-                    <li class="hd-n5"><a href="http://special.jiuxian.com/mobile/sjgjx/index.html" target="_blank"><i class="publicIcon"></i>手机逛酒仙</a><s></s><div class="erm2015922"><img alt="手机酒仙网" src="~/Wine/酒仙网-白酒、红酒、洋酒、保健酒、黄酒、酒具官方旗舰店_files/jxPho-code.jpg" width="80" height="80" /></div></li>
+                    <li class="hd-n4"><a href="#" target="_blank">CLUB会员</a><s></s></li>
+                    <li class="hd-n6"><a href="#" target="_blank">招商入驻</a><s></s></li>
+                    <li class="hd-n5"><a href="#" target="_blank"><i class="publicIcon"></i>手机逛酒仙</a><s></s><div class="erm2015922"><img alt="手机酒仙网" src="~/Wine/酒仙网-白酒、红酒、洋酒、保健酒、黄酒、酒具官方旗舰店_files/jxPho-code.jpg" width="80" height="80" /></div></li>
                     <li class="hd-n7 dropTitle">
                         <div class="subNav"><i class="publicIcon"></i><a href="javascript:;">网站导航</a><s class="publicIcon"></s></div>
                         <div class="subNavBox dropTitleBox">
@@ -1347,44 +1347,28 @@
 
 
         @*<div class="newGuests" style="background: rgba(0, 0, 0, 0) url(&quot;http://img08.jiuxian.com/bill/2018/0309/cc27f927eb2f4004ae68d57472303f18.png&quot;) no-repeat scroll center top;"><div class="newGuestsBox"><a href="http://special.jiuxian.com/topic/newcomer/index.html" target="_blank" class="newGuestsLink"></a><i class="newClose"></i></div></div>*@
-    </div>
+    </div>  @*//dfdfsfsdfs*@
 </body>
 </html>
 
 <script>
   
     function getgoodsdata() {
+        var id = 1;
+        alert(11)
         $.ajax({
             url: 'http://localhost:50169/api/goods/getgoodslist',
             success: function (data) {
+                 
                 $(data).each(function () {
-                    //$("#await").append('<li>1</li>');
-                    $("#await").append('<img src=' + this.goodsImg +' width="160" height="160" /><span class="video_icon"></span>'+this.goodsName+'<span>' + this.priceNow + '</span>');
+                 
+                    $("#await").append('<img src=' + this.goodsImg + ' width="160" height="160" onclick="fun(' + this.id + ')" /><span class="video_icon"></span>' + this.goodsName + '<span>' + this.priceNow + '</span>');
                 })
 
             }
         })
     }
+    
 </script>
 
-@*<script>
-    var vm = new Vue({
-        el:"#goodsdate",
-        data: {
-            goodslist: [],
-        },
-        mounted() {
-            this.goods();
-        },
-        methods: {
-            goods: function () {
-                axios.get("@Url.Action("Index", "Home")").then((response) => {
-                    console.log(response.data)
-                    this.goodslist = response.data;
-                    console.log(this.goodslist)
-                })
-            }
-        }
-    })
-
-</script>*@
+ 
