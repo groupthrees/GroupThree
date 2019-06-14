@@ -38,7 +38,7 @@ namespace Brewmaster.Alcohol.Repository
                 goodscollectDto.Imgs = con.Query<img>(sql2).ToList();
                 goodscollectDto.Goods = con.QueryFirst<GoodsDto1>(sql2);
             }
-            return null;
+            return goodscollectDto;
         }
 
     }
