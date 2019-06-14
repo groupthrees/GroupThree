@@ -34,7 +34,7 @@ namespace Brewmaster.Alcohol.Api.Controllers
         /// <param name="users"></param>
         /// <returns></returns>
         [HttpPost("Resigt")]
-        public int Resigt(Users users)
+        public int Resigt([FromBody]Users users)
         {
             int result = _UserRepository.Resigt(users);
             return result;
