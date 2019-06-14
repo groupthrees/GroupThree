@@ -14,7 +14,6 @@ namespace Brewmaster.Alcohol.Client.Controllers
         ApiHelper client = new ApiHelper();
         public IActionResult HomePage()
         {
-
             return View(); 
         }
         public IActionResult Index()
@@ -25,10 +24,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
             return Json(list, settings);
         }
 
-        public IActionResult Index1()
-        {
-            return View();
-        }
+    
     }
 }
 
