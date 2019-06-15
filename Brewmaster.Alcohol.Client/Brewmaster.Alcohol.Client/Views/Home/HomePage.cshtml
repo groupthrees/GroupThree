@@ -48,40 +48,7 @@
 
     <div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>
 
-    <!-- 全站公共url变量 -->
-    <script type="text/javascript">
-        window.jxdomain = {
-            misc: "http://misc.jiuxian.com",
-            list: "http://list.jiuxian.com",
-            pub: "http://public.jiuxian.com",
-            detail: "http://www.jiuxian.com",
-            home: "http://www.jiuxian.com",
-            wine: "http://wine.jiuxian.com",
-            spirits: "http://spirits.jiuxian.com",
-            clear: "http://clear.jiuxian.com",
-            tuan: "http://tuan.jiuxian.com",
-            tehui: "http://tehui.jiuxian.com",
-            happy: "http://www.jiuxian.com",
-            special: "http://special.jiuxian.com",
-            sale: "http://sale.jiuxian.com",
-            brand: "http://brand.jiuxian.com",
-            dingzhi: "http://dingzhi.jiuxian.com",
-            order: "http://order.jiuxian.com",
-            pay: "https://pay.jiuxian.com",
-            cart: "http://cart.jiuxian.com",
-            login: "https://login.jiuxian.com",
-            member: "http://member.jiuxian.com",
-            jifen: "http://jifen.jiuxian.com",
-            help: "http://help.jiuxian.com",
-            cps: "http://cps.jiuxian.com",
-            iosapi: "http://iosapi.jiuxian.com",
-            info: "http://info.jiuxian.com",
-            shop: "http://shop.jiuxian.com",
-            forum: "http://forum.jiuxian.com",
-            act: "http://act.jiuxian.com",
-            miaosha: "http://miaosha.jiuxian.com"
-        };
-    </script>
+  
 
     <script src="~/Wine/酒仙网-白酒、红酒、洋酒、保健酒、黄酒、酒具官方旗舰店_files/skipmobileweb.js"></script>
     <script type="text/javascript">isMobile();</script>
@@ -103,8 +70,8 @@
             <div class="topHeaderRight">
                 <ul>
                     <li class="hd-n1 dropTitle">
-                        <div class="myJiuxian"><a href="/UserMain/index" target="_blank" rel="nofollow">我的酒仙</a><s class="publicIcon"></s></div>
-                        <div class="myJiuxianBox dropTitleBox clearfix">
+                        <div class="myJiuxian"><a href="/UserMain/Index" target="_blank" rel="nofollow">我的酒仙</a><s class="publicIcon"></s></div>
+                        <div class="myJiuxianBox dropTitleBox clearfix">    
                             <a href="#" target="_blank" rel="nofollow">我的订单</a>
                             <a href="#" target="_blank" rel="nofollow">物流跟踪</a><a href="/MyCoupon/index" target="_blank" rel="nofollow">我的优惠券</a>
                         </div>
@@ -1355,7 +1322,7 @@
   
     function getgoodsdata() {
         var id = 1;
-        alert(11)
+    
         $.ajax({
             url: 'http://localhost:50169/api/goods/getgoodslist',
             success: function (data) {
