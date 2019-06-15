@@ -19,7 +19,7 @@ namespace Brewmaster.Alcohol.Model
     }
     public class img
     {
-        public string Image_Url { get; set; }
+        public string pictureUrl { get; set; }
     }
     public class GoodsDto1
     {
