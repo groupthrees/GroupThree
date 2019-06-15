@@ -11,5 +11,27 @@
     <title>Index</title>
 </head>
 <body>
+    @*<div>
+            <img  src="@ViewBag.goods.pictureUrl"/>
+        </div>*@
+    <table>
+        <tr>
+            <td>
+                @if (ViewBag.conllect == 1)
+                {
+                    <a>已收藏</a>
+                }
+                else
+                {
+                    <a>未收藏</a>
+                }
+            </td>
+        </tr>
+
+    </table>
+    @foreach (var item in ViewBag.imgs)
+    {
+        <img src="@item.pictureUrl" alt="" />
+    }
 </body>
 </html>

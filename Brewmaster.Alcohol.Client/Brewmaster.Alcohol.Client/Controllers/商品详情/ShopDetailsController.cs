@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Brewmaster.Alcohol.Catch;
-namespace Brewmaster.Alcohol.Client.Controllers.商品详情
+using Newtonsoft.Json;
+using Brewmaster.Alcohol.Client.Models;
+namespace Brewmaster.Alcohol.Client.Controllers
 {
     public class ShopDetailsController : Controller
     {
@@ -12,7 +14,11 @@ namespace Brewmaster.Alcohol.Client.Controllers.商品详情
         {
             int id = 1;
             ApiHelper apiHelper = new ApiHelper();
-            apiHelper.GetApiResult("get", "Goodscollect/GetGoodscollectDto?id=1&goodsId="+id,null);
+            string str=  apiHelper.GetApiResult("get", "Goodscollect/GetGoodscollectDto?id=1&goodsId="+id,null);
+            GoodscollectDto GoodscollectDto = JsonConvert.DeserializeObject<GoodscollectDto>(str);
+            ViewBag.goods = GoodscollectDto.Goods;
+            ViewBag.imgs = GoodscollectDto.Imgs;
+            ViewBag.conllect = GoodscollectDto.Conllect;
             return View();
         }
     }

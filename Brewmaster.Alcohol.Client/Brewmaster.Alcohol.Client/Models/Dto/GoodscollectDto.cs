@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Brewmaster.Alcohol.Client.Models.Dto
+namespace Brewmaster.Alcohol.Client.Models
 {
     //商品详情页 Dto
     /// <summary>
@@ -19,7 +19,7 @@ namespace Brewmaster.Alcohol.Client.Models.Dto
     }
     public class img
     {
-        public string Image_Url { get; set; }
+        public string pictureUrl { get; set; }
     }
     public class GoodsDto1
     {
