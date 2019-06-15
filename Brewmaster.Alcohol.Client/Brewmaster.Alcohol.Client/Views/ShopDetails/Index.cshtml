@@ -11,13 +11,17 @@
     <title>Index</title>
 </head>
 <body>
-    @*<div>
-            <img  src="@ViewBag.goods.pictureUrl"/>
-        </div>*@
+    <div>
+        <img src="@ViewBag.goods.GoodsImg" style="position:relative;top:200px;left:200px" />
+    </div>
     <table>
         <tr>
             <td>
-                <div></div>
+                <div> @ViewBag.goods.GoodsName</div>
+                <div>@ViewBag.goods.GoodsDegree</div>
+                <div>@ViewBag.goods.AromaName</div>
+                <div>产地： @ViewBag.goods.PlaceName</div>
+                <div>品牌： @ViewBag.goods.BrandName</div>
                 @if (ViewBag.conllect == 1)
                 {
                     <a>已收藏</a>
@@ -30,9 +34,12 @@
         </tr>
 
     </table>
+    <br />    <br />    <br />    <br />
+
     @foreach (var item in ViewBag.imgs)
     {
         <img src="@item.pictureUrl" alt="" />
     }
+    <input id="Button1" type="button" value="添加到购物车" />
 </body>
 </html>
