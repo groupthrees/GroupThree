@@ -16,5 +16,6 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="goodsId">商品Id</param>
         /// <returns></returns>
         GoodscollectDto GetGoodscollectDto(int id,int goodsId);
+        int SetCollect(int goodsId, int userId);
     }
 }

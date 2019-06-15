@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+</head>
+<body>
+    <div>
+        <img src="@ViewBag.goods.GoodsImg" style="position:relative;top:200px;left:200px" />
+    </div>
+    <table>
+        <tr>
+            <td>
+                <div> @ViewBag.goods.GoodsName</div>
+                <div>@ViewBag.goods.GoodsDegree</div>
+                <div>@ViewBag.goods.AromaName</div>
+                <div>产地： @ViewBag.goods.PlaceName</div>
+                <div>品牌： @ViewBag.goods.BrandName</div>
+                @if (ViewBag.conllect == 1)
+                {
+                    <input id="Button1" type="button" value="已收藏" class="isConllect" />
+
+                }
+                else
+                {
+                    <input id="Button1" type="button" value="未收藏" class="isConllect" />
+                }
+            </td>
+        </tr>
+
+    </table>
+    <br />    <br />    <br />    <br />
+
+    @foreach (var item in ViewBag.imgs)
+    {
+        <img src="@item.pictureUrl" alt="" />
+    }
+    <input id="Button1" type="button" value="添加到购物车" />
+</body>
+</html>
+<script>
+    $(function () {
+        $(".isConllect").onclick(function () {
+            alert(11)
+            fun(1,@ViewBag.goods.id);
+        })
+    })
+    function fun(userId, goodsId) {
+        alert(112)
+        $.ajax({
+            type: "post",
+            url: 'http://localhost:50169/api/Goodscollect/SetCollect',
+            data: { userId: userId, goodsId: goodsId},
+            success: function (result) {
+                //if (result == 1)
+                //    $(".isConllect").html(<span class="isConllect">已收藏</span>);
+                //else {
+                //  $(".isConllect").html(<span class="isConllect">未收藏</span>);
+                //}
+            }
+        })
+    }
+</script>

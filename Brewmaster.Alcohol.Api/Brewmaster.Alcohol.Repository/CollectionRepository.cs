@@ -13,7 +13,7 @@ namespace Brewmaster.Alcohol.Repository
     public class CollectionRepository : ICollectionRepository
     {
         //数据库连接
-        private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=fantaotao;Pwd=123456;";
+        private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=root;Pwd=1064519100;";
 
         public CollectionPageList GetCollectionPageList(int pageIndex, int pageSize)
         {
