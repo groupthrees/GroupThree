@@ -12,7 +12,7 @@ namespace Brewmaster.Alcohol.Repository
 {
     public class CouponRepository: ICouponRepository
     {
-        private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=huakunkun;Pwd=123456;";
+        private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=root;Pwd=1064519100;";
 
         /// <summary>
         /// 根据UsersId查询优惠券
