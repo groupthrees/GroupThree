@@ -40,6 +40,32 @@ namespace Brewmaster.Alcohol.Repository
             }
             return goodscollectDto;
         }
+        /// <summary>
+        /// 添加收藏；返回1为收藏；返回2为取消收藏
+        /// </summary>
+        /// <param name="goodsId"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>     
+        public int SetCollect(int goodsId, int userId)
+         {
+            using (MySqlConnection Conn =new MySqlConnection(connStr))
+            {
+                    var result = 1;
+                    var sql = $"select * from collection where goodsId={goodsId} and userId={userId}";
+                    var query = Conn.QueryFirst<int>(sql, null);
+                    if (query > 0)
+                    {
+                        result = 2;
+                        sql = "delete Collect where userId=" + userId + " and  goodsId=" + goodsId;
+                    }
+                    else
+                    {
+                        sql = $@"insert into Collect (userId,goodsId) values('{userId}','{goodsId}')";
+                    }
+                    Conn.Execute(sql);
+                    return result;
+             }
+         }
 
     }
 }
