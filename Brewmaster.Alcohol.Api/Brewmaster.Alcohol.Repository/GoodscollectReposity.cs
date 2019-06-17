@@ -56,11 +56,11 @@ namespace Brewmaster.Alcohol.Repository
                     if (query > 0)
                     {
                         result = 2;
-                        sql = "delete collection where userId=" + userId + " and  goodsId=" + goodsId;
+                        sql = "delete collection where usersId=" + userId + " and  goodsId=" + goodsId;
                     }
                     else
                     {
-                        sql = $@"insert into collection (userId,goodsId) values('{userId}','{goodsId}')";
+                        sql = $@"insert into collection (usersId,goodsId) values('{userId}','{goodsId}')";
                     }
                     Conn.Execute(sql);
                     return result;
