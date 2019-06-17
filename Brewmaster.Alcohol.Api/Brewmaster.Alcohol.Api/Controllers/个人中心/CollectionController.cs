@@ -18,7 +18,7 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         /// <summary>
         /// 定义私有变量
         /// </summary>
-        private readonly ICollectionRepository _collectionRepository;
+        private readonly ICollectionRepository _CollectionRepository;
 
         /// <summary>
         /// 构造函数注入
@@ -26,13 +26,20 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         /// <param name="studentRepository"></param>
         public CollectionController(ICollectionRepository CollectionRepository)
         {
-            _collectionRepository = CollectionRepository;
+            _CollectionRepository = CollectionRepository;
         }
-        [HttpGet("GetCollectionPageList")]
-        public CollectionPageList GetCollectionPageList(int pageIndex = 1, int pageSize = 3)
+
+        /// <summary>
+        /// 根据UserId,GoodsId查询收藏的商品
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        [HttpGet("GetCollectionlist")]
+        public CollectionPageList GetCollectionlist(int id, int pageIndex, int pageSize)
         {
-            var list = _collectionRepository.GetCollectionPageList(pageIndex, pageSize);
-            return list;
+            return _CollectionRepository.GetCollectionlist(id, pageIndex, pageSize);
         }
     }
 }

@@ -6,8 +6,12 @@ namespace Brewmaster.Alcohol.Model.Dto.收藏表
 {
     public class CollectionPageList
     {
-        public List<CollectionDto> GetCollectionDto { get; set; }
-        public int total { get; set; }
+        public List<CollectionDto> CollectionList { get; set; }
+
+        /// <summary>
+        /// 总记录数
+        /// </summary>
+        public int Total { get; set; }
 
     }
 }
