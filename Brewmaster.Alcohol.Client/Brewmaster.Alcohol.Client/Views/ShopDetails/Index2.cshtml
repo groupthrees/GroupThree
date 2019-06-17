@@ -1145,49 +1145,78 @@
                 <li><a name="home_zhudao8" class="channel" id="httpshopjiuxiancombrand-381activity-2207htm" href="http://shop.jiuxian.com/brand-381/activity-2207.htm" target="_blank">CLUB</a></li>
             </ul>
 
-            <script type="text/javascript">jQuery("#" + stripscript(window.location.href)).parent("li").addClass("on");</script>
-            <div class="navPromotion">
-                <a name="home_zhugif" href="http://shop.jiuxian.com/index-1597.htm" target="_blank" rel="nofollow">
-                    <img src="~/Wine/商品详情/商品详情显示_files/9c21bc8f1b774ce1af6c628657574cd5.gif" height="34" width="120">
-                </a>
-            </div>
+          
+            
         </div>
     </div>
 
-    <div style="margin-left:25%;margin-right:25%;">
+    <div style="margin-left:25%;margin-right:25%;position:relative;top:-250px;left:50px">
+        
         <div>
-            <img src="@ViewBag.goods.GoodsImg" style="position:relative;top:200px;left:200px" />
+            <div style="position:relative;top:450px;left:200px">
+                <table style="margin-left:230px;">
+                    <tr>
+                        <td style="font-size:25px;"> 名称:@ViewBag.goods.GoodsName</td>
+                    </tr>
+                    <tr>
+                        <td  style="font-size:25px;"> 度数:@ViewBag.goods.GoodsDegree</td>
+                    </tr>
+                    <tr>
+                        <td  style="font-size:25px;">香型:@ViewBag.goods.AromaName</td>
+                    </tr>
+                    <tr >
+                        <td  style="font-size:25px;"> 产地： @ViewBag.goods.PlaceName</td>
+                    </tr>
+                    <tr  >
+                        <td style="font-size:25px;"> 品牌：@ViewBag.goods.BrandName</td>
+                    </tr>
+                    <tr>
+                        <td  style="font-size:25px;">
+                            @if (ViewBag.conllect == 1)
+                            {
+                                <img src="~/images/xin1.png" class="isConllect" />
+                                @*<input id="Button1" type="button" value="已收藏" class="isConllect" />*@
+
+                            }
+                            else
+                            {
+                                <img src="~/images/xin2.png" class="isConllect" />
+                                @*<input id="Button1" type="button" value="未收藏" class="isConllect" />*@
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="Button1" type="button" value="添加到购物车" class="btn-primary" style="height:10px;width:20px;" />
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+
+
+
+            <table>
+                <tr>
+                    <td>
+                        <img src="@ViewBag.goods.GoodsImg" style="height:600px;width:350px;" />
+                    </td>
+                </tr>
+
+            </table>
+
         </div>
-        <table>
-            <tr>
-                <td>
-                    <div> @ViewBag.goods.GoodsName</div>
-                    <div>@ViewBag.goods.GoodsDegree</div>
-                    <div>@ViewBag.goods.AromaName</div>
-                    <div>产地： @ViewBag.goods.PlaceName</div>
-                    <div>品牌： @ViewBag.goods.BrandName</div>
-                    @if (ViewBag.conllect == 1)
-                    {
-                        <img src="~/images/xin1.png" class="isConllect" />
-                        @*<input id="Button1" type="button" value="已收藏" class="isConllect" />*@
 
-                    }
-                    else
-                    {
-                        <img src="~/images/xin2.png" class="isConllect" />
-                        @*<input id="Button1" type="button" value="未收藏" class="isConllect" />*@
-                    }
-                </td>
-            </tr>
+        <div style="margin-top:25px;">
+            @foreach (var item in ViewBag.imgs)
+            {
+                <img src="@item.pictureUrl" alt="" />
+            }
 
-        </table>
-        <br />    <br />    <br />    <br />
-
-        @foreach (var item in ViewBag.imgs)
-        {
-            <img src="@item.pictureUrl" alt="" />
-        }
-        <input id="Button1" type="button" value="添加到购物车" />
+        </div>
+       
+          
+  
     </div>
 
     <script>
