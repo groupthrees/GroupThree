@@ -55,7 +55,7 @@
     function fun(userId, goodsId) {
         alert(112)
         $.ajax({
-            type: "post",
+            type: "get",
             url: 'http://localhost:50169/api/Goodscollect/SetCollect',
             data: { userId: userId, goodsId: goodsId},
             success: function (result) {

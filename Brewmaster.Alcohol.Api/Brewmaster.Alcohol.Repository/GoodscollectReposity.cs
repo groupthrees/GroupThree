@@ -51,16 +51,16 @@ namespace Brewmaster.Alcohol.Repository
             using (MySqlConnection Conn =new MySqlConnection(connStr))
             {
                     var result = 1;
-                    var sql = $"select * from collection where goodsId={goodsId} and userId={userId}";
+                    var sql = $"select * from collection where goodsId={goodsId} and usersId={userId}";
                     var query = Conn.QueryFirst<int>(sql, null);
                     if (query > 0)
                     {
                         result = 2;
-                        sql = "delete Collect where userId=" + userId + " and  goodsId=" + goodsId;
+                        sql = "delete collection where userId=" + userId + " and  goodsId=" + goodsId;
                     }
                     else
                     {
-                        sql = $@"insert into Collect (userId,goodsId) values('{userId}','{goodsId}')";
+                        sql = $@"insert into collection (userId,goodsId) values('{userId}','{goodsId}')";
                     }
                     Conn.Execute(sql);
                     return result;
