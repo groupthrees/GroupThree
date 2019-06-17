@@ -77,8 +77,6 @@
                 <thead>
                     <tr>
                         <th class="mycT0" width="130"><input name='smallBox' id="selectAll" type="checkbox" value="" />全选  <input type="button" value="反选" id="selectNo" /></th>
-                        <th class="mycT4" width="225">商品ID</th>
-                        <th class="mycT4" width="225">用户ID</th>
                         <th class="mycT2" width="330"><span>图片</span></th>
                         <th class="mycT2" width="330"><span>商品</span></th>
                         <th class="mycT4" width="225">当前价格</th>
@@ -94,7 +92,7 @@
             <a href="javascript:void(0)" onclick="last()">尾页</a>
             <input type="hidden" id="currRecordSize" value="2" />
         </div>
-      
+
     </div>
     <!-- 右侧 -->
 
@@ -124,7 +122,7 @@
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的收藏_files/p_code.js"></script>
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的收藏_files/FAI84qYjQk.txt"></script>
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的收藏_files/o_code.js"></script>
-   
+
 </body>
 </html>
 
@@ -145,13 +143,13 @@
         });
         //反选
         $("#selectNo").click(function () {
-           
-                $("input[name='smallBox']").each(function () {
-                  
-                    $(this).attr("checked", !$(this).attr("checked"))
-                })
+
+            $("input[name='smallBox']").each(function () {
+
+                $(this).attr("checked", !$(this).attr("checked"))
             })
-       
+        })
+
     })
 
     function getCoupon(index) {
@@ -160,21 +158,19 @@
             url: 'http://localhost:50169/api/Collection/GetCollectionlist',
             data: { id: 1, pageIndex: index, pageSize: pageSize },
             success: function (result) {
-                
+
                 console.log(result);
                 var tmphtml = "";
                 $("#await").empty();
-               
+
                 for (var i = 0; i < result.collectionList.length; i++) {
                     tmphtml += "<tr>";
-                
+
                     tmphtml += "<td><input type='checkbox' name='smallBox' value='' /></td>";
-                    tmphtml += "<td>" + result.collectionList[i].goodsId + "</td>";
-                    tmphtml += "<td>" + result.collectionList[i].usersId + "</td>";
                     tmphtml += "<td><img src=" + result.collectionList[i].goodsImg + "  width='50' height='50' ></td>";
                     tmphtml += "<td> " + result.collectionList[i].goodsName + "</td>";
                     tmphtml += "<td>" + result.collectionList[i].priceNow + "</td>";
-                    tmphtml += "<td><input type='button' value='加入购物车' onclick='joinshopCar()'/><input type='button' value='取消收藏' onclick=' cancelcollect()'/></td>";
+                    tmphtml += "<td><input type='button' value='加入购物车' onclick='joinshopCar(" + result.collectionList[i].goodsId + ")'/><input type='button' value='取消收藏' onclick='cancelcollect(" + result.collectionList[i].goodsId + ")'/></td>";
                     tmphtml += "</tr>";
                 }
                 $("#await").append(tmphtml);
@@ -184,19 +180,58 @@
     }
 
     //加入购物车
-    function joinshopCar() {
-        location.href = "/MyCollect/InsertShopCart/";
+    function joinshopCar(goodsId) {
+        var date = {
+            "id": 0,
+            "goodsId": goodsId,
+            "usersId": 1
+        };
+        var val = JSON.stringify(date);
+        $.ajax({
+            url: 'http://localhost:50169/api/Collection/InsertShopCart',
+            data: val,
+            type: "post",
+            contentType: "application/json; charset=utf-8",
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                if (data > 0) {
+                    alert("添加购物车成功");
+                }
+                else {
+                    alert("添加购物车失败");
+                }
+            }
+        })
     }
 
     //取消收藏
-    function joinshopCar() {
-        $.ajax({
-            url: 'http://localhost:50169/api/Goodscollect/SetCollect',
-            success: function (result) {
+    //function cancelcollect() {
+    //    $.ajax({
+    //        url: 'http://localhost:50169/api/Goodscollect/SetCollect',
+    //        success: function (result) {
 
+    //        }
+    //    })
+
+    //}
+
+
+    function cancelcollect(goodsId) {
+        alert("111");
+        $.ajax({
+            type: "get",
+            url: 'http://localhost:50169/api/Goodscollect/SetCollect',
+            data: { userId: 1, goodsId: goodsId },
+            success: function (result) {
+                if (result == 2) {
+                    getCoupon(index);
+                }
+                else {
+                    alert("错了")
+                }
             }
         })
-
     }
     //查询
     function search() {

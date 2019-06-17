@@ -50,7 +50,7 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         /// <returns></returns>
         [HttpPost("InsertShopCart")]
 
-        public int InsertShopCart(ShopCart shopCart)
+        public int InsertShopCart([FromBody]ShopCart shopCart)
         {
             return _CollectionRepository.InsertShopCart(shopCart);
         }
