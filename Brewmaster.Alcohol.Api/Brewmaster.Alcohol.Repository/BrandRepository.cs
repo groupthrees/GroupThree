@@ -22,7 +22,7 @@ namespace Brewmaster.Alcohol.Repository
             {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string sql = "select BrandName from Brand";
+                string sql = "select * from Brand";
                 var result = conn.Query<Brand>(sql).ToList();
                 return result;
             }
