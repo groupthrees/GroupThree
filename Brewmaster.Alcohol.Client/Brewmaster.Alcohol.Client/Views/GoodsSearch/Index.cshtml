@@ -1382,89 +1382,9 @@
 
 
                     </div>
-                    <!--排序end-->
-                    <!-- 商品列表begin -->
-                    <!-- 搜索结果显示 start -->
-                    @*<div class="proListSearch" >
-                            <ul class="clearfix" id="SearchGoods">
-                                <li product-box="84242">
-                                    <div class="frameA"><div class="frameB left"></div><div class="frameB right"></div><div class="frameB top"></div><div class="frameB bottom"></div></div>
-                                    <div class="content clearfix">
-                                        <div class="collect_box">
-                                            <span class="collect collect2" id="cell_84242" style="display: none;"><i></i>收藏</span>
-                                            <a class="img clearfix" href="http://www.jiuxian.com/goods-84242.html" title="西班牙安徒生·夜莺干红葡萄酒750ml" target="_blank">
-                                                <img proimgid="84242" src="~/Wine/酒-商品搜索-酒仙网_files/8ff27752af0d4358a8456913a00502d64.jpg" alt="西班牙安徒生·夜莺干红葡萄酒750ml" title="西班牙安徒生·夜莺干红葡萄酒750ml" />
-                                                <span id="mark_84242" class="sIcon cxtag tj" style="display:none"></span>
-                                            </a>
-                                        </div>
-
-                                        <div class="priceArea clearfix">
-                                            <p class="price" id="product_84242">¥<span>399.00</span></p>
-                                            <p class="clubPrice" id="product_clubPrice_84242"><span></span></p>
-                                        </div>
-                                        <div class="proName">
-                                            <a href="http://www.jiuxian.com/goods-84242.html" title="西班牙安徒生·夜莺干红葡萄酒750ml" target="_blank">
-                                                西班牙安徒生·夜莺干红葡萄酒750ml <span id="promote_84242" class="slogan">由于采购批次不同，包装略有不同，请您见谅，谢谢~</span>
-                                            </a>
-                                        </div>
-                                        <div class="judgeAdv clearfix">
-                                            <a class="judge" href="http://www.jiuxian.com/goods-84242.html#answerArea" title="" target="_blank"><span>38443</span>评价</a>
-                                        </div>
-
-                                        <div class="seller">
-                                        </div>
-
-                                        <div id="activity_84242" class="cuxiao">
-                                            <i class="projx sIcon"></i>
-                                        </div>
-
-
-                                        <div class="buyArea clearfix" id="buyover_84242" style="display:none;">
-                                            <div class="edit">
-                                                <a class="increaseNot off" href="javascript:;">-</a><span>1</span><a class="decreaseNot off" href="javascript:;">+</a>
-                                            </div>
-                                            <a name="_buyover" class="lack sIcon" pidflag="84242" href="javascript:void(0)">到货通知</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>*@
+                   
                     <div class="proListSearch">
                         <ul class="clearfix" id="SearchGoods">
-
-                            <li>
-                                <img src="~/Wine/酒-商品搜索-酒仙网_files/8ff27752af0d4358a8456913a00502d64.jpg" />
-                                <div>西班牙安徒生·夜莺干红葡萄酒750ml</div>
-                                <div>999yuan</div>
-
-                            </li>
-                            <li product-box="84242">
-                                <div class="frameA">
-                                    <div class="frameB left"></div>
-                                    <div class="frameB right"></div>
-                                    <div class="frameB top"></div>
-                                    <div class="frameB bottom"></div>
-                                </div>
-                                <div class="content clearfix">
-                                    <div class="collect_box">
-                                        <span class="collect collect2" id="cell_84242" style="display: none;"><i></i>收藏</span>
-                                        <a class="img clearfix" href="http://www.jiuxian.com/goods-84242.html" title="西班牙安徒生·夜莺干红葡萄酒750ml" target="_blank">
-                                            <img proimgid="84242" src="~/Wine/酒-商品搜索-酒仙网_files/8ff27752af0d4358a8456913a00502d64.jpg" alt="西班牙安徒生·夜莺干红葡萄酒750ml" title="西班牙安徒生·夜莺干红葡萄酒750ml" />
-                                            <span id="mark_84242" class="sIcon cxtag tj" style="display: none"></span>
-                                        </a>
-                                    </div>
-
-                                    <div class="priceArea clearfix">
-                                        <p class="price" id="product_84242">¥<span>399.00</span></p>
-                                        <p class="clubPrice" id="product_clubPrice_84242"><span></span></p>
-                                    </div>
-                                    <div class="proName">
-                                        <a href="http://www.jiuxian.com/goods-84242.html" title="西班牙安徒生·夜莺干红葡萄酒750ml" target="_blank">
-                                            西班牙安徒生·夜莺干红葡萄酒750ml <span id="promote_84242" class="slogan">由于采购批次不同，包装略有不同，请您见谅，谢谢~</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                     <!-- 搜索结果显示 end -->
@@ -2263,7 +2183,7 @@
 </html>
 <script>
     var pageIndex = 1;
-    var pageSize = 6;
+    var pageSize = 5;
     var total = 0;
     var priceNowNumber = 123;
     $(function () {
@@ -2274,14 +2194,12 @@
 
     //获取价格排序条件
     $("#OrderByPrice").change(function () {
-        alert($(this).val());
         GetGoodsAll($(this).val());
     });
     function GetGoodsType() {
         $.ajax({
             url: 'http://localhost:50169/api/GoodsType/GetGoodsTypeName',
             success: function (result) {
-                console.log(result);
                 var tmphtml = "";
                 $("#GetGoodsType").empty();
                 for (var i = 0; i < result.length; i++) {
@@ -2290,43 +2208,6 @@
                     tmphtml += "</ul>";
                 }
                 $("#GetGoodsType").append(tmphtml);
-            }
-        })
-    }
-    function GetGoodsAll(priceNow) {
-        priceNowNumber = priceNow;
-        var name = $("#GoodsName").val();
-        $.ajax({
-            url: 'http://localhost:50169/api/GoodsAll/GetGoodsAllListPage?PriceNow=' + priceNow + '&GoodsName=' + name + '&pageIndex=' + pageIndex + '&pageSize=' + pageSize,
-            success: function (result) {
-                var i = 0;
-                $("#SearchGoods").empty();
-                $(result.goodsAll).each(function() {
-                    alert(this.aromaName);
-                    $("#SearchGoods").append('<li>' +
-                        '<img src="' +this.goodsImg +'" />'
-                        + '<div>' + this.goodsName+'</div>'
-                        +'<div>'+this.priceNow+'</div>'
-                        +'</li>');
-
-                    i++;
-                });
-
-
-                //$.each(result.GoodsAll, function (i, row) {
-
-                //    alert(88888
-
-                //        );
-
-                //    //alert(row.Commodity_Id + "----------" + row.Image_Url)
-                //    $("#SearchGoods").append('<li>'
-                //        + '<img src="' + row.GoodsAll[i].goodsImg+'" />'
-                //        + '<div>' + row.GoodsAll[i].goodsName+'</div>'
-                //        +'<div>'+row.GoodsAll[i].priceNow+'</div>'
-                //        +'</li>');
-                //    total = data.total;
-                //});
             }
         })
     }
@@ -2345,6 +2226,27 @@
             }
         })
     }
+    function GetGoodsAll(priceNow) {
+        priceNowNumber = priceNow;
+        var name = $("#GoodsName").val();
+        $.ajax({
+            url: 'http://localhost:50169/api/GoodsAll/GetGoodsAllListPage?PriceNow=' + priceNow + '&GoodsName=' + name + '&pageIndex=' + pageIndex + '&pageSize=' + pageSize,
+            success: function (result) {
+                var i = 0;
+                $("#SearchGoods").empty();
+                $(result.goodsAll).each(function() {
+                    $("#SearchGoods").append('<li>' +
+                        '<img src="' +this.goodsImg +'" />'
+                        + '<div>' + this.goodsName+'</div>'
+                        +'<div>'+this.priceNow+'</div>'
+                        +'</li>');
+                    i++;
+                    total = result.total;
+                });
+            }
+        })
+    }
+    
     //首页
     function first() {
         pageIndex = 1;
