@@ -25,12 +25,14 @@
                 <div>品牌： @ViewBag.goods.BrandName</div>
                 @if (ViewBag.conllect == 1)
                 {
-                    <input id="Button1" type="button" value="已收藏" class="isConllect" />
+                    <img src="~/images/xin1.png"  class="isConllect"/>
+                    @*<input id="Button1" type="button" value="已收藏" class="isConllect" />*@
 
                 }
                 else
                 {
-                    <input id="Button1" type="button" value="未收藏" class="isConllect" />
+                    <img src="~/images/xin2.png"  class="isConllect"/>
+                    @*<input id="Button1" type="button" value="未收藏" class="isConllect" />*@
                 }
             </td>
         </tr>
@@ -58,10 +60,14 @@
             data: { userId: userId, goodsId: goodsId},
             success: function (result) {
                 alert(result)
-                if (result == 1)
-                    $(".isConllect").html('<input id="Button1" type="button" value="已收藏" class="isConllect" />');
-                else if(result == 2) {
-                    $(".isConllect").html('<input id="Button1" type="button" value="未收藏" class="isConllect" />');
+                if (result == 1) {
+                    $(".isConllect").attr("src","/images/xin1.png");
+                }
+                else if (result == 2) {
+                      $(".isConllect").attr("src","/images/xin2.png");
+                }
+                else {
+                    alert(11)
                 }
             }
         })
