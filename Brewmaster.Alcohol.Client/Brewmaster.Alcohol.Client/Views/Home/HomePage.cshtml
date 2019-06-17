@@ -44,7 +44,7 @@
 
 </head>
 <body>
-
+    <input id="Hidden1" type="hidden"  value="1"/>
 
     <div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>
 
@@ -1335,7 +1335,10 @@
             }
         })
     }
-    
+    function fun(id) {
+        var usersId = $('#Hidden1').val();
+        location.href = '/ShopDetails/index?goodsId=' + id + '&usersId=' + usersId + '';
+    }
 </script>
 
  
