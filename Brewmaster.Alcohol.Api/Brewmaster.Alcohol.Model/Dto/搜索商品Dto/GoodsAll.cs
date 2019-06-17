@@ -17,5 +17,7 @@ namespace Brewmaster.Alcohol.Model.Dto
         public string BrandName { get; set; }
         public string PlaceName { get; set; }
         public string AromaName { get; set; }
+        public string GoodsImg { get; set; }
+
     }
 }
