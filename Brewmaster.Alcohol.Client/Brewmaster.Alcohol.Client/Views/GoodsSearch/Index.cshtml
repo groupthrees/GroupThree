@@ -116,7 +116,7 @@
         var header1200 = ""; var header1000 = "";
 
 
-/**/</script>
+        /**/</script>
     <div class="topHeader">
         <div class="topHeaderCon">
             <div class="topHeaderLeft" name="_new_login_status_panel">
@@ -289,7 +289,7 @@
                                 }, "json");
                         }, 1000);
 
-                    });
+                                        });
                     </script>
                 </div><div class="headerProtect"><a rel="nofollow"></a><a rel="nofollow"></a><a rel="nofollow"></a></div>
             </div>
@@ -1267,7 +1267,7 @@
                             o.onerror = null; //控制不要一直跳动
                         }
 
-/**/</script>
+                        /**/</script>
 
                     <!--店铺信息begin-->
                     <!--店铺信息end-->
@@ -1570,8 +1570,8 @@
         <!--到货通知弹窗end-->
 
         <script type="text/javascript">
-    <!--        处理输入价格回显-- >
-        var price = $.trim($("#price").val());
+    <!--    处理输入价格回显-- >
+                var price = $.trim($("#price").val());
             if (price.indexOf("|") >= 0) {
                 var priceMinMax = price.split("|");
                 var minPrice = priceMinMax[0];
@@ -2164,12 +2164,11 @@
         $.ajax({
             url: 'http://localhost:50169/api/GoodsType/GetGoodsTypeName',
             success: function (result) {
-                console.log(result);
                 var tmphtml = "";
                 $("#GetGoodsType").empty();
                 for (var i = 0; i < result.length; i++) {
                     tmphtml += "<ul>";
-                    tmphtml += "<li>" + '<a onclick="fun1(' + result[i].id + ')">' + result[i].typeName +"</a>"+"</li>";
+                    tmphtml += "<li>" + '<a onclick="GetGoodsAll(789,0,' + result[i].id + ')"">' + result[i].typeName + "</a>" + "</li>";
                     tmphtml += "</ul>";
                 }
                 $("#GetGoodsType").append(tmphtml);
@@ -2183,12 +2182,11 @@
             url: 'http://localhost:50169/api/Brand/GetBrandName',
 
             success: function (result) {
-                console.log(result);
                 var tmphtml = "";
                 $("#brandAll").empty();
                 for (var i = 0; i < result.length; i++) {
                     tmphtml += "<ul>";
-                    tmphtml += "<li>" + '<a onclick="fun2(' + result[i].id + ')" >' + result[i].brandName + '</a>' + "</li>";
+                    tmphtml += "<li>" + '<a onclick="GetGoodsAll(789,' + result[i].id + ',0)" >' + result[i].brandName + '</a>' + "</li>";
 
                     tmphtml += "</ul>";
                 }
@@ -2196,17 +2194,17 @@
             }
         })
     }
-    function GetGoodsAll(priceNow) {
+    function GetGoodsAll(priceNow, typeId, brandId) {
         priceNowNumber = priceNow;
+        alert(brandId);
         var name = $("#GoodsName").val();
         $.ajax({
-            url: 'http://localhost:50169/api/GoodsAll/GetGoodsAllListPage?PriceNow=' + priceNow + '&GoodsName=' + name +'&BrandName='+name+ '&pageIndex=' + pageIndex + '&pageSize=' + pageSize,
+            url: 'http://localhost:50169/api/GoodsAll/GetGoodsAllListPage?PriceNow=' + priceNow + '&GoodsName=' + name + '&typeId=' + typeId +'&brandId='+brandId+ '+&pageIndex=' + pageIndex + '&pageSize=' + pageSize,
             success: function (result) {
-                console.log(result)
                 var i = 0;
                 $("#SearchGoods").empty();
                 $(result.goodsAll).each(function () {
-                    $("#SearchGoods").append('<li onclick="fun('+this.id+')">' +
+                    $("#SearchGoods").append('<li onclick="fun(' + this.id + ')">' +
                         '<img src="' + this.goodsImg + '" />'
                         + '<div>' + this.goodsName + '</div>'
                         + '<div>' + this.priceNow + '</div>'
@@ -2217,15 +2215,12 @@
             }
         })
     }
-        //跳转到详情页面
+    //跳转到详情页面
     function fun(id) {
-            alert(id)
         var usersId = $('#Hidden1').val();
         location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
     }
-    function fun1(data) {
-        alert(data)
-    }
+   
 
     //首页
     function first() {

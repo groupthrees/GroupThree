@@ -32,9 +32,9 @@ namespace Brewmaster.Alcohol.Api.Controllers.搜索商品
         }
 
         [HttpGet("GetGoodsAllListPage")]
-        public GoodsAllListPage GetGoodsAllListPage(string goodsName = "", string goodsDegree = "", int priceNow = 789, string brandName = "", string placeName = "", string aromaName = "", string typeName = "", int pageIndex = 1, int pageSize = 3)
+        public GoodsAllListPage GetGoodsAllListPage(string goodsName = "", string goodsDegree = "", int priceNow = 789, string brandName = "", string placeName = "", string aromaName = "", int typeId = 0, int brandId = 0, int pageIndex = 1, int pageSize = 3)
         {
-            var list = _goodsAllRepository.GetGoodsAll(goodsName, goodsDegree, priceNow, brandName, placeName, aromaName, typeName, pageIndex, pageSize);
+            var list = _goodsAllRepository.GetGoodsAll(goodsName, goodsDegree, priceNow, brandName, placeName, aromaName, typeId, brandId, pageIndex, pageSize);
             return list;
         }
     }
