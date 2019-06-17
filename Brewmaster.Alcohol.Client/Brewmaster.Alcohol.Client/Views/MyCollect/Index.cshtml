@@ -205,27 +205,14 @@
         })
     }
 
-    //取消收藏
-    //function cancelcollect() {
-    //    $.ajax({
-    //        url: 'http://localhost:50169/api/Goodscollect/SetCollect',
-    //        success: function (result) {
-
-    //        }
-    //    })
-
-    //}
-
-
     function cancelcollect(goodsId) {
-        alert("111");
         $.ajax({
             type: "get",
             url: 'http://localhost:50169/api/Goodscollect/SetCollect',
             data: { userId: 1, goodsId: goodsId },
             success: function (result) {
                 if (result == 2) {
-                    getCoupon(index);
+                    location.href = "/MyCollect/index";
                 }
                 else {
                     alert("错了")
