@@ -6,6 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
     <script type="text/javascript" async="" charset="utf-8" src="~/Wine/我的酒仙网 ) 我的收藏_files/pushData.txt"></script>
     <script type="text/javascript" async="" src="~/Wine/我的酒仙网 ) 我的收藏_files/mv.js"></script>
     <script type="text/javascript" async="" src="~/Wine/我的酒仙网 ) 我的收藏_files/mba.js"></script>
@@ -54,100 +55,52 @@
 </head>
 <body>
 
-    
-    
+
+
 
     <script src="~/Wine/我的酒仙网 ) 我的收藏_files/skipmobileweb.js"></script>
     <script type="text/javascript">isMobile();</script>
-    
-        <!-- 右侧 -->
-        <div>
-            <div class="rightTit"><h2><i></i>我的收藏</h2></div>
-            <div class="rightCon">
-                <ul class="mycolNav clearfix">
-                    <li id="all" onclick="javascript:document.getElementById('whole').click();" class="mctOn">全部<a id="whole" href="#"></a></li>
-                    <li id="baijiu" onclick="javascript:document.getElementById(1).click();">
-                        <a id="1" href="#" display:none=""></a>
-                    </li>
-                   
-                </ul>
-                <table class="mycolBox" cellspacing="0" cellpadding="0" border="0">
-                    <tbody>
-                        <tr>
-                            <th class="mycT0" width="60"><input class="checkAll" name="" type="checkbox" value="" /></th>
-                            <th class="mycT1" width="70"><span class="mycT2All">全选</span></th>
-                            <th class="mycT2" width="330"><span>商品</span></th>
-                            <th class="mycT3" width="135">收藏时间</th>
-                            <th class="mycT4" width="225">当前价格</th>
-                            <th class="mycT5" width="165">操作</th>
-                        </tr>
-                        <tr class="first">
-                            <td class="mycT0"><input name="items" type="checkbox" value="4397911" data="" is-sale=" y " /></td>
-                            <input id="4397911" type="hidden" value="15715" />
-                            <td class="mycT2" colspan="2">
-                                <div class="mycConPic">
-                                    <a href="http://www.jiuxian.com/goods-15715.html" target="_blank">
-                                        <img alt="" onerror="this.src='http://misc.jiuxian.com/img/goods/hytb.jpg';" title="【领津贴再下单】52°酒鬼酒珍藏特酿500ml" src="~/Wine/我的酒仙网 ) 我的收藏_files/82466bee639a4aa79d8858d04ea9061b1.jpg" width="60" height="60" />
-                                    </a>
-                                </div>
-                                <div class="mycConInt">
-                                    <a href="http://www.jiuxian.com/goods-15715.html" title="【领津贴再下单】52°酒鬼酒珍藏特酿500ml" target="_blank">【领津贴再下单】52°酒鬼酒珍藏特酿500ml</a>
-                                </div>
-                            </td>
-                            <td class="mycT3">2019-06-12</td>
-                            <td class="mycT4"><p><span class="mycT4Txt" name="userCollect_nowPrice_15715">￥258.00</span> <span class="clubPrice">￥245.10</span><i class="clubIcon"></i> </p></td>
-                            <td class="mycT5">
-                                <p>
-                                    <a class="cart" href="javascript:addcart(15715);"> 加入购物车  </a>
-                                </p><p><a class="mycol-can" href="javascript:deleteCollect('4397911','all','1');">取消收藏</a></p>
-                            </td>
-                        </tr>
-                        <tr class="trCol">
-                            <td class="mycT0"><input name="items" type="checkbox" value="4397913" data="0" is-sale=" y " /></td>
-                            <input id="4397913" type="hidden" value="83810" />
-                            <td class="mycT2" colspan="2">
-                                <div class="mycConPic">
-                                    <a href="http://www.jiuxian.com/goods-83810.html" target="_blank">
-                                        <img alt="" onerror="this.src='http://misc.jiuxian.com/img/goods/hytb.jpg';" title="53°茅台猪年纪念酒500ml" src="~/Wine/我的酒仙网 ) 我的收藏_files/8884b9a6e2e04013bad5bd2c6fe816971.jpg" width="60" height="60" />
-                                    </a>
-                                </div>
-                                <div class="mycConInt">
-                                    <a href="http://www.jiuxian.com/goods-83810.html" title="53°茅台猪年纪念酒500ml" target="_blank">53°茅台猪年纪念酒500ml</a>
-                                </div>
-                            </td>
-                            <td class="mycT3">2019-06-12</td>
-                            <td class="mycT4"><p><span class="mycT4Txt" name="userCollect_nowPrice_83810">￥2999.00</span></p></td>
-                            <td class="mycT5">
-                                <p>
-                                    <a class="cart" href="javascript:addcart(83810);"> 加入购物车  </a>
-                                </p><p><a class="mycol-can" href="javascript:deleteCollect('4397913','all','1');">取消收藏</a></p>
-                            </td>
-                            <input id="ids" value="15715,83810" type="hidden" />
-                        </tr>
-                    </tbody>
-                </table>
-                <input type="hidden" id="currRecordSize" value="2" />
-            </div>
-            <!-- 翻页begin -->
-            <div class="uPageBox clearfix">
-                <div class="uAll-Del"><input class="checkAll" name="" type="checkbox" value="" /><span class="mycT2All">全选</span><a href="javascript:addtoCart('all','1');">加入购物车</a><a class="colCancel" href="javascript:deleteCollectByIds('all','1');">取消收藏</a></div>
 
-                <div class="uPageBox clearfix">
-                    <div class="uPage clearfix">
-                        <a href="javascript:void(0);" class="uPrevpage">上一页</a>
-
-
-                        <a class="num on">1</a>
-
-                        <a href="javascript:void(0)" class="uNnextpage">下一页</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 翻页end -->
-        </div>
     <!-- 右侧 -->
-   
-    
+    <div>
+        <div class="rightTit"><h2><i></i>我的收藏</h2></div>
+        <div class="rightCon">
+            <ul class="mycolNav clearfix">
+                <li id="all" onclick="javascript:document.getElementById('whole').click();" class="mctOn">全部<a id="whole" href="#"></a></li>
+                <li id="baijiu" onclick="javascript:document.getElementById(1).click();">
+                    <a id="1" href="#" display:none=""></a>
+                </li>
+
+            </ul>
+            <table class="mycolBox" cellspacing="0" cellpadding="0" border="0">
+
+                <thead>
+                    <tr>
+                        <th class="mycT0" width="130"><input name='smallBox' id="selectAll" type="checkbox" value="" />全选  <input type="button" value="反选" id="selectNo" /></th>
+                        <th class="mycT2" width="330"><span>图片</span></th>
+                        <th class="mycT2" width="330"><span>商品</span></th>
+                        <th class="mycT4" width="225">当前价格</th>
+                        <th class="mycT5" width="165">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="await"></tbody>
+
+            </table>
+            <a href="javascript:void(0)" onclick="first()">首页</a>
+            <a href="javascript:void(0)" onclick="prve()">上一页</a>
+            <a href="javascript:void(0)" onclick="next()">下一页</a>
+            <a href="javascript:void(0)" onclick="last()">尾页</a>
+            <input type="hidden" id="currRecordSize" value="2" />
+        </div>
+        <!-- 翻页begin -->
+        <div class="uPageBox clearfix">
+            <div class="uAll-Del"><a href="javascript:addtoCart('all','1');">加入购物车</a><a class="colCancel" href="javascript:deleteCollectByIds('all','1');">取消收藏</a></div>
+        </div>
+        <!-- 翻页end -->
+    </div>
+    <!-- 右侧 -->
+
+
 
     <style type="text/css">
         .footerBotLeft .footerInfo {
@@ -166,13 +119,99 @@
             color: #666;
         }
     </style>
-  
 
-    
+
+
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的收藏_files/recommend_99.js"></script>
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的收藏_files/p_code.js"></script>
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的收藏_files/FAI84qYjQk.txt"></script>
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的收藏_files/o_code.js"></script>
-
+   
 </body>
 </html>
+
+
+<script>
+
+    var pageIndex = 1;
+    var pageSize = 3;
+    var total = 0;
+
+    $(function () {
+
+        getCoupon(pageIndex);
+        //全选
+        $("#selectAll").click(function () {
+
+            $("input[name='smallBox']").attr('checked', true);
+        });
+        //反选
+        $("#selectNo").click(function () {
+           
+                $("input[name='smallBox']").each(function () {
+                  
+                    $(this).attr("checked", !$(this).attr("checked"))
+                })
+            })
+       
+    })
+
+    function getCoupon(index) {
+        $.ajax({
+            type: "get",
+            url: 'http://localhost:50169/api/Collection/GetCollectionlist',
+            data: { id: 1, pageIndex: index, pageSize: pageSize },
+            success: function (result) {
+                
+                console.log(result);
+                var tmphtml = "";
+                $("#await").empty();
+               
+                for (var i = 0; i < result.collectionList.length; i++) {
+                    tmphtml += "<tr>";
+                    tmphtml += "<td><input type='checkbox' name='smallBox' value='' /></td>";
+                    tmphtml += "<td><img src=" + result.collectionList[i].goodsImg + "  width='50' height='50' ></td>";
+                    tmphtml += "<td> " + result.collectionList[i].goodsName + "</td>";
+                    tmphtml += "<td>" + result.collectionList[i].priceNow + "</td>";
+                    tmphtml += "<td><a href='javascript:void(0); '>加入购物车</a><a href='javascript:void(0);'>取消收藏</a></td>";
+                
+                    tmphtml += "</tr>";
+                }
+                $("#await").append(tmphtml);
+                total = result.total;
+            }
+        })
+    }
+   
+    //查询
+    function search() {
+        getCoupon(pageIndex);
+    }
+
+    //首页
+    function first() {
+        pageIndex = 1;
+
+        getCoupon(pageIndex);
+    }
+
+    //上页
+    function prve() {
+        pageIndex = pageIndex > 1 ? pageIndex - 1 : 1;
+        getCoupon(pageIndex);
+    }
+
+    //下页
+    function next() {
+        var nums = Math.ceil(total / pageSize);
+        pageIndex = pageIndex < nums ? pageIndex + 1 : pageIndex;
+        getCoupon(pageIndex);
+    }
+
+    //尾页
+    function last() {
+        pageIndex = Math.ceil(total / pageSize);
+        getCoupon(pageIndex);
+    }
+
+</script>

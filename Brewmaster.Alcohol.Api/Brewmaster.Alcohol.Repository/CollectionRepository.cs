@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Brewmaster.Alcohol.IRepository;
+using Brewmaster.Alcohol.Model;
 using Brewmaster.Alcohol.Model.Dto.收藏表;
 using Brewmaster.Alcohol.Model.Dto.订单Dto;
 using Dapper;
 using MySql.Data.MySqlClient;
+
+
 
 namespace Brewmaster.Alcohol.Repository
 {
@@ -15,24 +18,36 @@ namespace Brewmaster.Alcohol.Repository
         //数据库连接
         private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=root;Pwd=1064519100;";
 
-        public CollectionPageList GetCollectionPageList(int pageIndex, int pageSize)
+        /// <summary>
+        /// 根据UserId,GoodsId查询收藏的商品
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+
+        public CollectionPageList GetCollectionlist(int id,  int pageIndex, int pageSize)
         {
-            CollectionPageList collectionPageList = new CollectionPageList();
-            var sql = "";
-            var sqlCount = "";
-            int sum = (pageIndex - 1) * pageSize;
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                sql = string.Format("select GoodsName,GoodsDegree,GoodsImg,PriceNow from  Goods inner join  valence on goods.Id = valence.GoodsId inner join price on price.GoodsId = Goods.Id limit  {0},{1}  ", sum, pageSize);
-                sqlCount = string.Format("select Count(Goods.Id) from  Goods inner join  valence on goods.Id = valence.GoodsId inner join price on price.GoodsId = Goods.Id");
-                var result = conn.Query<CollectionDto>(sql).ToList();
-                collectionPageList.GetCollectionDto = result;
-                collectionPageList.total= conn.ExecuteScalar<int>(sqlCount);
-                return collectionPageList;
+                string strSql1 = string.Format("select count(1) from collection join goods on collection.GoodsId = goods.Id join price on goods.Id=price.Goodsid where  UsersId={0}", id);
+                var total = conn.ExecuteScalar<int>(strSql1);
+                int index = (pageIndex - 1) * pageSize;
+                var strSql2 = string.Format("select * from collection join goods on collection.GoodsId = goods.Id join price on goods.Id=price.Goodsid where UsersId={0} limit  {1},{2}", id, index, pageSize);
+
+                var collectionlist = conn.Query<CollectionDto>(strSql2);
+                if (collectionlist == null)
+                {
+                    return new CollectionPageList();
+                }
+                var collectionDto = new CollectionPageList
+                {
+                    CollectionList = collectionlist.ToList(),
+                    Total = total
+                };
+                return collectionDto;
             }
         }
     }
-
-
 }
 

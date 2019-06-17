@@ -111,24 +111,7 @@
                 </div>
 
 
-                @*<div class="rightCon-content">
 
-            <table style=" border:1px solid #e4e4e4; border-top:none; width:100%;" cellspacing="0" cellpadding="0" border="0">
-                <thead>
-                    <tr class="rightCon-trth">
-                        <th class="li1">名称</th>
-                        <th class="li2">优惠金额</th>
-                        <th class="li3">满足金额</th>
-                        <th class="li4">截止时间</th>
-                    </tr>
-                </thead>
-                <tbody id="await"></tbody>
-            </table>
-            <a href="javascript:void(0)" onclick="first()">首页</a>
-            <a href="javascript:void(0)" onclick="prve()">上一页</a>
-            <a href="javascript:void(0)" onclick="next()">下一页</a>
-            <a href="javascript:void(0)" onclick="last()">尾页</a>
-        </div>*@
             </div>
         </div>
 
@@ -166,7 +149,7 @@
     $(function () {
 
         getCoupon(pageIndex);
-     
+
 
     })
 
@@ -223,73 +206,8 @@
         pageIndex = Math.ceil(total / pageSize);
         getCoupon(pageIndex);
     }
-    
+
 </script>
 
 
-@*<script>
-
-        var pageIndex = 1;
-        var pageSize = 6;
-        var total = 0;
-
-        $(function () {
-
-            getCoupon(pageIndex);
-
-        })
-
-        function getCoupon(index) {
-
-            $.ajax({
-                type: "get",
-                url: 'http://localhost:50169/api/Coupon/Getcouponlist',
-                data: { id:1, pageIndex: index, pageSize: pageSize },
-                success: function (result) {
-                    var tmphtml = "";
-                    $("#await").empty();
-                    for (var i = 0; i < result.couponList.length; i++) {
-                        //var endTime = dateFormat(result.couponList[i].couponEndTime);
-                        tmphtml += "<tr>";
-                        tmphtml += "<td>" + result.couponList[i].couponName + "</td>";
-                        tmphtml += "<td>" + result.couponList[i].couponMoney + "</td>";
-                        tmphtml += "<td>" + result.couponList[i].couponCondition  + "</td>";
-                        tmphtml += "<td>" + result.couponList[i].couponEndTime + "</td>";
-                        tmphtml += "</tr>";
-                    }
-                    $("#await").append(tmphtml);
-                    total = result.Total;
-                }
-            })
-        }
-
-        //查询
-        function search() {
-            getCoupon(pageIndex);
-        }
-
-        //首页
-        function first() {
-            pageIndex = 1;
-            getCoupon(pageIndex);
-        }
-
-        //上页
-        function prve() {
-            pageIndex = pageIndex > 1 ? pageIndex - 1 : 1;
-            getCoupon(pageIndex);
-        }
-
-        //下页
-        function next() {
-            var nums = Math.ceil(total / pageSize);
-            pageIndex = pageIndex < nums ? pageIndex + 1 : pageIndex;
-            getCoupon(pageIndex);
-        }
-
-        //尾页
-        function last() {
-            pageIndex = Math.ceil(total/pageSize);
-            getCoupon(pageIndex);
-        }
-    </script>*@
+ 
