@@ -37,7 +37,7 @@ namespace Brewmaster.Alcohol.Repository
 
             {
                 var orderByPriceSql = "";
-                string sql = "select GoodsName,PriceNow,GoodsImg ,BrandName, PlaceName,AromaName ,TypeName ,SpecificationsName from Goods inner join Price on Goods.Id=Price.GoodsId inner join Brand on Brand.GoodsId = Goods.Id inner join Place on Place.GoodsId = Goods.Id inner join Aroma on Aroma.GoodsId = Goods.Id inner join GoodsType on Place.GoodsTypeId = GoodsType.Id inner join specifications on Specifications.GoodsId=Goods.Id where 1 =1";
+                string sql = "select Goods.Id,GoodsName,PriceNow,GoodsImg ,BrandName, PlaceName,AromaName ,TypeName ,SpecificationsName from Goods inner join Price on Goods.Id=Price.GoodsId inner join Brand on Brand.GoodsId = Goods.Id inner join Place on Place.GoodsId = Goods.Id inner join Aroma on Aroma.GoodsId = Goods.Id inner join GoodsType on Place.GoodsTypeId = GoodsType.Id inner join specifications on Specifications.GoodsId=Goods.Id where 1 =1";
                 string sqlCount =
                     "select count(Goods.Id) from Goods inner join Price on Goods.Id=Price.GoodsId  inner join Brand on   Goods.Id = Brand.GoodsId inner join Place on   Goods.Id = Place.GoodsId inner join Aroma on  Goods.Id = Aroma.GoodsId inner join GoodsType on Place.GoodsTypeId = GoodsType.Id inner join specifications on Specifications.GoodsId=Goods.Id where 1=1";
                 if (!string.IsNullOrWhiteSpace(goodsName))
