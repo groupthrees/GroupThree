@@ -6,20 +6,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" async="" charset="utf-8" src="~/Wine/先领券，再下单_files/pushData.txt"></script>
     <script type="text/javascript" async="" src="~/Wine/先领券，再下单_files/mv.js"></script>
     <script type="text/javascript" async="" src="~/Wine/先领券，再下单_files/mba.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>领券中心</title>
-    <meta name="Keywords" content="优惠券">
-    <meta name="Description" content="优惠券">
-    <link href="~/Wine/先领券，再下单_files/base.css" type="text/css" rel="stylesheet">
-    <link href="~/Wine/先领券，再下单_files/header.css" rel="stylesheet" type="text/css">
-    <link href="~/Wine/先领券，再下单_files/footer.css" rel="stylesheet" type="text/css">
+    <meta name="Keywords" content="优惠券" />
+    <meta name="Description" content="优惠券" />
+    <link href="~/Wine/先领券，再下单_files/base.css" type="text/css" rel="stylesheet" />
+    <link href="~/Wine/先领券，再下单_files/header.css" rel="stylesheet" type="text/css" />
+    <link href="~/Wine/先领券，再下单_files/footer.css" rel="stylesheet" type="text/css" />
 
 
-    <link href="~/Wine/先领券，再下单_files/templateDefault.css" type="text/css" rel="stylesheet">
-    <link href="~/Wine/先领券，再下单_files/templateDefault_5.css" type="text/css" rel="stylesheet">
+    <link href="~/Wine/先领券，再下单_files/templateDefault.css" type="text/css" rel="stylesheet" />
+    <link href="~/Wine/先领券，再下单_files/templateDefault_5.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" async="" src="~/Wine/先领券，再下单_files/visittrack.js"></script>
     <script type="text/javascript" async="" src="~/Wine/先领券，再下单_files/mvl.js"></script>
     <script src="~/Wine/先领券，再下单_files/jquery.js" type="text/javascript"></script>
@@ -1098,19 +1099,16 @@
                     </div>
                     <div class="modulesBox" modulesname="优惠券" poptype="couponPop">
 
-                        <img src="~/Wine/优惠券图片/10块.jpg" />
-                        <img src="~/Wine/优惠券图片/30块.jpg" />
-                        <img src="~/Wine/优惠券图片/60块.jpg" />
-                        <img src="~/Wine/优惠券图片/100块.jpg" />
+                        <img src="~/Wine/优惠券图片/10块.jpg" onclick="couponTen();"/>
+                        <img src="~/Wine/优惠券图片/30块.jpg" onclick="couponThirty();"/>
+                        <img src="~/Wine/优惠券图片/60块.jpg" onclick="couponSixty();"/>
+                        <img src="~/Wine/优惠券图片/100块.jpg" onclick="couponHundred();"/>
                  
                     </div>
             </div>
         
     </div>
     <script src="~/Wine/先领券，再下单_files/price.js" type="text/javascript"></script>
-
- 
-    
 
     <style type="text/css">
         .footerBotLeft .footerInfo {
@@ -1143,3 +1141,52 @@
 
 </body>
 </html>
+
+<script>
+
+    //加入购物车
+    function couponTen() {
+       
+        var myDate = new Date;
+        var year = myDate.getFullYear();//获取当前年
+        var yue = myDate.getMonth() + 1;//获取当前月
+        var date = myDate.getDate();//获取当前日
+        var h = myDate.getHours();//获取当前小时数(0-23)
+        var m = myDate.getMinutes();//获取当前分钟数(0-59)
+        var s = myDate.getSeconds();//获取当前秒
+        alert("111");
+        alert(year + "-" + yue + "-" + date + " " + h + ":" + m + ":" + s);
+       
+
+        var date = {
+            "id": 0,
+            "couponName": "全场通用",
+            "couponMoney": 10,
+            "couponBeginTime": time,
+            "couponEndTime": "2019-06-22 20:43:32",
+            "couponCondition":199,
+            "couponStatu": 1,
+            "usersId": 1
+        };
+        var val = JSON.stringify(date);
+        $.ajax({
+            url: 'http://localhost:50169/api/Coupon/Insertcoupon',
+            data: val,
+            type: "post",
+            contentType: "application/json; charset=utf-8",
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+          
+                console.log(data);
+                if (data > 0) {
+                    alert("领取成功");
+                }
+                else {
+                    alert("领取失败");
+                }
+            }
+        })
+    }
+
+</script>

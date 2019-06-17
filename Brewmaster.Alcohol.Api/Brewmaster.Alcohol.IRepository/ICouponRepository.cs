@@ -1,4 +1,5 @@
-﻿using Brewmaster.Alcohol.Model.Dto;
+﻿using Brewmaster.Alcohol.Model;
+using Brewmaster.Alcohol.Model.Dto;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,5 +17,12 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="pageSize"></param>
         /// <returns></returns>
         CouponDto Getcouponlist(int id, int pageIndex, int pageSize);
+
+        /// <summary>
+        /// 领取优惠券
+        /// </summary>
+        /// <param name="coupon"></param>
+        /// <returns></returns>
+        int Insertcoupon(Coupon coupon);
     }
 }
