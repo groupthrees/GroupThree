@@ -24,7 +24,7 @@ namespace Brewmaster.Alcohol.Repository
         {
             GoodscollectDto goodscollectDto = new GoodscollectDto();
             //是否收藏
-            string sql1 = $"select * from collection where GoodsId={goodsId} and UsersId={id}";
+            string sql1 = $"select count(1) from collection where GoodsId={goodsId} and UsersId={id}";
             //根据商品Id查询该商品的图片
             string sql2 = $"select pictureUrl from picture where GoodsId={goodsId} ";
             string sql3 = $@"select goods.*,Aroma.AromaName,place.PlaceName,brand.BrandName from goods 
