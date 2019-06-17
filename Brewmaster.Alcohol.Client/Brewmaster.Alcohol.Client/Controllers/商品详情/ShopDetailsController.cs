@@ -10,11 +10,17 @@ namespace Brewmaster.Alcohol.Client.Controllers
 {
     public class ShopDetailsController : Controller
     {
-        public IActionResult Index()
+        /// <summary>
+        /// 商品详情页
+        /// </summary>
+        /// <param name="goodsId">商品id</param>
+        /// <param name="usersId">用户id</param>
+        /// <returns></returns>
+        public IActionResult Index(int goodsId,int usersId)
         {
-            int id = 1;
+            goodsId = goodsId == 0?1: goodsId;
             ApiHelper apiHelper = new ApiHelper();
-            string str=  apiHelper.GetApiResult("get", "Goodscollect/GetGoodscollectDto?id=1&goodsId="+id,null);
+            string str=  apiHelper.GetApiResult("get", $"Goodscollect/GetGoodscollectDto?id={usersId}&goodsId="+ goodsId, null);
             GoodscollectDto GoodscollectDto = JsonConvert.DeserializeObject<GoodscollectDto>(str);
             ViewBag.goods = GoodscollectDto.Goods;
             ViewBag.imgs = GoodscollectDto.Imgs;
