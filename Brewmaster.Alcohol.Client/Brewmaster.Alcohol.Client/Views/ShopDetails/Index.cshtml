@@ -44,7 +44,7 @@
     {
         <img src="@item.pictureUrl" alt="" />
     }
-    <input id="Button1" type="button" value="添加到购物车" />
+    <input id="Button1" type="button" value="添加到购物车"  onclick="joinshopCar(@ViewBag.goods.id)"/>
 </body>
 </html>
 <script>
@@ -68,6 +68,33 @@
                 }
                 else {
                     alert(11)
+                }
+            }
+        })
+    }
+     //加入购物车
+    function joinshopCar(goodsId) {
+        alert(11)
+        alert(goodsId)
+        var date = {
+            "id": 0,
+            "goodsId": goodsId,
+            "usersId": 1
+        };
+        var val = JSON.stringify(date);
+        $.ajax({
+            url: 'http://localhost:50169/api/Collection/InsertShopCart',
+            data: val,
+            type: "post",
+            contentType: "application/json; charset=utf-8",
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                if (data > 0) {
+                    alert("添加购物车成功");
+                }
+                else {
+                    alert("添加购物车失败");
                 }
             }
         })
