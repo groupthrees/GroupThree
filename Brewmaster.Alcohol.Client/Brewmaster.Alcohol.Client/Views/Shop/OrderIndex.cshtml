@@ -1,0 +1,325 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/pushData.txt" charset="utf-8" async="" type="text/javascript"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>订单结算-酒仙网</title>
+    <link href="~/Wine/购物车/购物车-确认订单信息_files/base_002.css" rel="stylesheet" type="text/css">
+    <link href="~/Wine/购物车/购物车-确认订单信息_files/header_cart_new.css" rel="stylesheet" type="text/css">
+    <link href="~/Wine/购物车/购物车-确认订单信息_files/footer.css" rel="stylesheet" type="text/css">
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/mv.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/mba.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/visittrack.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/mvl.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/jquery.js" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/jquery_002.js" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/base.js" type="text/javascript"></script>
+
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/public.js" type="text/javascript"></script>
+
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/jquery-1.js" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/address.js" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/slider_1.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="~/Wine/购物车/购物车-确认订单信息_files/base.css">
+    <link rel="stylesheet" type="text/css" href="~/Wine/购物车/购物车-确认订单信息_files/order.css">
+
+    
+</head>
+<body>
+
+
+
+    <div class="topHeaderWrap">
+        <div class="topHeader">
+            <div class="topCollect">
+                <ul>
+                    <li name="_login_status_panel"><span> hi，<span class="userName" title="jxw52743765">jxw52743765</span><span><a href="https://login.jiuxian.com/logout.htm" class="cartlogout">退出</a><a class="newsNum" href="http://member.jiuxian.com/jxcircle/info_center-0.htm" target="_blank"><em>消息</em><i class="mesNum">5</i></a><a class="newsNum" href="http://member.jiuxian.com/purse/my_gold_coin-1.htm" target="_blank"><em>金币</em><i class="mesNum">60</i></a></span></span><i></i></li>
+                </ul>
+            </div>
+            <div class="topRight">
+                <ul>
+                    <li><a class="myOrder" target="_blank" href="http://member.jiuxian.com/trademanage/my_order-9.htm">我的订单</a><i></i></li>
+                    <li><a class="userCenter" target="_blank" href="http://member.jiuxian.com/index.htm">我的酒仙网</a><i></i></li>
+                    <li class="hotTel"><span>客服热线</span><strong>400-617-9999</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="midHeader">
+        <div class="midHeaderBox">
+            <div class="jxwLogo"><p style="background:url(http://img06.jiuxian.com/bill/2014/1226/a347f6723d3141fd9b9b9d464eff6fc7.png) no-repeat;" class="jxwIndex"><a href="http://www.jiuxian.com/"></a></p></div>
+            <div class="bayProcess">
+                <div class="proPic"></div>
+                <div class="proTex"><span class="on">我的购物车</span><span class="on2">确认订单信息</span><span class="on3">成功提交订单</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="orderWrap">
+        <div class="orderBody">
+            <!-- 标题 -->
+            <!-- 收货地址信息 -->
+            <div id="addressListDiv" class="pubWrap">
+                <div class="pubTitle">
+                    <h3>选择收货地址</h3>
+                </div>
+                <div name="addAddressDiv" class="defaultAddrBox">
+                    <div class="defaultAddr">
+                        <div id="addAddressRegion" class="d-item clearfix">
+                            <div class="title"><em>*</em><span>所在地区</span></div>
+                            <div class="d-item-right">
+                                <div class="addrSelect">
+                                    <div class="areaBox" id="_shdz">
+                                       
+                                        <select id="Select1">
+                                            <option>北京</option>
+
+                                        </select>
+                                        <select id="Select1">
+                                            <option>海淀区</option>
+
+                                        </select>
+                                        <select id="Select1">
+                                            <option>上地七街</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="d-item clearfix" id="addAddressDetail">
+                            <div class="title"><em>*</em><span>详细地址</span></div>
+                            <div class="d-item-right">
+                                <textarea maxlength="52" id="addrTextarea" name="" cols="" rows="" class="form-2" placeholder="请填写详细地址，无需重复填写省市区"></textarea>
+                                <div class="pubPrompt" id="addrDetailPrompt"><i class="orderIcon"></i><span>请填写详细地址，不得少于5个字</span></div>
+                            </div>
+                        </div>
+                        <div class="d-item clearfix" id="addAddressConsignee">
+                            <div class="title"><em>*</em><span>收货人姓名</span></div>
+                            <div class="d-item-right">
+                                <input id="addressconsignee" name="" class="form-1" placeholder="请填写收货人姓名" maxlength="10" type="text" />
+                                <div class="pubPrompt" id="addrNamePrompt"><i class="orderIcon"></i><span>请填写收货人姓名</span></div>
+                            </div>
+                        </div>
+                        <div class="d-item clearfix" id="addAddressMobile">
+                            <div class="title"><em>*</em><span>手机</span></div>
+                            <div class="d-item-right">
+                                <input id="addressmobile" name="" class="form-1" maxlength="11" placeholder="请填写手机号码" type="text" />
+                                <div class="pubPrompt" id="addrPhonePrompt"><i class="orderIcon"></i><span>请填写收货人手机号</span></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="addrBtn"><a href="javascript:;" name="saveAddress">保存地址</a></div>
+                </div>
+                
+            </div>
+            <!-- 支付方式信息 -->
+            
+            <!-- 商品信息 -->
+            <div class="pubWrap">
+                <div class="pubTitle">
+                    <h3>确认订单信息</h3>
+                    <div class="confirmRemind"><i class="orderIcon"></i><span>若商品来自不同商家和仓库，将按照仓库最优进行配送</span></div>
+                </div>
+                <div class="orderTable">
+                    <div class="tHead">
+                        <div class="oTd item-1">商品信息</div>
+                        <div class="oTd item-2">单价</div>
+                        <div class="oTd item-3">数量</div>
+                        <div class="oTd item-4">状态</div>
+
+                        <div class="oTd item-5">小计</div>
+                    </div>
+                    <div id="shopInfos"><div class="tBody"><div class="shopTitle"><a><i class="orderIcon jxzy"></i><span>酒仙自营</span></a></div><div class="tMain"><div class="oTr"><div class="mainProduct "><div class="oTd item-1"><div class="img"><a href="http://www.jiuxian.com/goods-42069.html" target="_blank"><img src="~/Wine/购物车/购物车-确认订单信息_files/0d24c88a779f4f3285765b03cb877ad62.jfif" height="60" width="60" /></a></div><div class="name"><a href="http://www.jiuxian.com/goods-42069.html" target="_blank" style="text-align: left;"><img class="zhenxuan" src="~/Wine/购物车/购物车-确认订单信息_files/zx.jfif" />澳大利亚奔富BIN2西拉马塔罗干红葡萄酒750ml</a><div class="promptBox"><div class="unUsed"><i class="orderIcon"></i><span>此商品不能使用优惠券</span></div></div></div></div><div class="oTd item-2">￥188.00</div><div class="oTd item-3">x1</div><div class="oTd item-4">有货</div><div class="oTd item-5">￥188.00</div></div></div><div class="oTr"><div class="mainProduct "><div class="oTd item-1"><div class="img"><a href="http://www.jiuxian.com/goods-17311.html" target="_blank"><img src="~/Wine/购物车/购物车-确认订单信息_files/80241712abc841a2b7192468dc37fe032.jfif" height="60" width="60" /></a></div><div class="name"><a href="http://www.jiuxian.com/goods-17311.html" target="_blank" style="text-align: left;">【赠品】时间都去哪儿了（乐享）</a><div class="promptBox"></div></div></div><div class="oTd item-2">￥0.00</div><div class="oTd item-3">x1</div><div class="oTd item-4">有货</div><div class="oTd item-5">￥0.00</div></div></div></div></div></div>
+                </div>
+            </div>
+         
+            
+
+        
+            <div class="pubWrap">
+                <div class="settlementWrap">
+                    <!-- 金额信息 -->
+                    <div class="settlementBox clearfix">
+                      
+                   
+                        <div class="comTotalBox">
+                            <div class="totalList"><span><em id="goodsCountInfo">2</em>件商品，商品金额：</span><span class="comTotalSum" id="totalPriceInfo">￥188.00</span></div>
+                            <div class="totalList" id="settlDiscountPrice" style="display: none;"><span>活动优惠：</span><span class="comTotalSum" id="discountPriceInfo">-￥0.00</span></div>
+                            <div class="totalList" id="settlConponPrice" style="display: none;"><span>优惠券：</span><span class="comTotalSum" id="couponPriceInfo">-￥0.00</span></div>
+                            <div class="totalList" id="settlJintiePrice" style="display: none;"><span>津贴：</span><span class="comTotalSum" id="jintiePriceInfo">-￥0.00</span></div>
+                            <div class="totalList" id="settlBackPrice" style="display: none;"><span>返现：</span><span class="comTotalSum" id="backPriceInfo">-￥0.00</span></div>
+                            <div class="totalList" id="settlGiftCardPrice" style="display: none;"><span>礼品卡金额：</span><span class="comTotalSum" id="giftCardPriceInfo">-￥0.00</span></div>
+                            <div class="totalList" id="settlFreight">
+                                <span>运费：</span><span class="comTotalSum yunfei" id="freightPriceInfo">+￥0.00</span>
+
+                                <div id="shopFreightInfo" class="orderIcon">
+                                    <div class="freightPad">
+                                        <div class="freightPop">
+                                            <i class="orderIcon cor"></i>
+                                            <div class="freightTitle">店铺运费明细</div>
+                                            <div id="freightInfoList" class="freightCon"><div class="freightBox"></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="totalList" id="settlLgsCouponPrice" style="display: none;"><span>运费券：</span><span class="comTotalSum" id="lgsPriceInfo">-￥0.00</span></div>
+                        </div>
+                    </div>
+                    <div class="settlementBox settlementBg">
+                        <div class="settlementAmount">
+                            <p><span>应付总金额：</span><em class="totleNum">￥188.00</em></p>
+                            <p style="display: none;" id="settlAddress"><span>寄送至：</span><em id="settlAddressInfo"></em></p>
+                            <p style="display: none;" id="settlConsignee"><span>收货人：</span><em id="settlConsigneeInfo"></em><em class="phoneNunber" id="settlMobleInfo"></em></p>
+                        </div>
+                        <!-- 错误信息提示 -->
+                        <div class="deliveryPop" style="display: none;">
+                            <span>所选商品或所在地区不支持货到付款</span>
+                            <i class="orderIcon"></i>
+                        </div>
+                        <div><input id="Button1" type="button" value="返回购物车" /><input id="Button1" type="button" value="提交订单"  onclick="Ti()"/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--半透明遮罩层-->
+    <div class="maskLayer"></div>
+    <div class="pubPop pop-1">
+        <div class="pubInside">
+            <input id="addaddressid" value="" type="hidden" />
+            <div class="pubInsideTitle">
+                <span id="addressTitleDiv">新增收货地址</span>
+                <i class="orderIcon pubClose"></i>
+            </div>
+            <div name="addAddressDiv" class="pubInsideBody">
+                <div class="defaultAddr">
+                    <div id="addAddressRegion" class="d-item clearfix wrong">
+                        <div class="title"><em>*</em><span>所在地区</span></div>
+                        <div class="d-item-right">
+                            <div class="addrSelect">
+                                <div class="areaBox" id="_shdz">
+                                    <a href="javascript:;" class="selectArea"><b>请选择省市区</b><b></b><b></b><i class="orderIcon"></i></a>
+                                    <div style="display: none;" class="areaDetail">
+                                        <div class="selectedBox">
+                                            <a href="javascript:;" pid="1" class=""><em>请选择省</em></a><!-- 省 -->
+                                            <a href="javascript:;" class="selectCity"><em>请选择市</em></a><!-- 市 -->
+                                            <a href="javascript:;" class="selectCounty"><em>请选择县/区</em></a><!-- 县 -->
+                                        </div>
+                                        <!-- 省列表 -->
+                                        <div class="areaList provinceList" style="display:none;"><ul class="clearfix"></ul></div>
+                                        <!-- 省名 -->
+                                        <div class="areaList cityList" style="display: none;"><ul class="clearfix"></ul></div>
+                                        <!-- 省会名 -->
+                                        <div class="areaList countyList" style="display: none;"><ul class="clearfix"></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pubPrompt" id="addrAreaPrompt"><i class="orderIcon"></i><span>请选择省市区</span></div>
+                        </div>
+                    </div>
+                    <div class="d-item clearfix" id="addAddressDetail">
+                        <div class="title"><em>*</em><span>详细地址</span></div>
+                        <div class="d-item-right">
+                            <textarea maxlength="52" id="addrTextarea" name="" cols="" rows="" class="form-2 nonEmpty" placeholder="请填写详细地址，无需重复填写省市区"></textarea>
+                            <div class="pubPrompt" id="addrDetailPrompt"><i class="orderIcon"></i><span>请填写详细地址，不得少于5个字</span></div>
+                        </div>
+                    </div>
+                    <div class="d-item clearfix" id="addAddressConsignee">
+                        <div class="title"><em>*</em><span>收货人姓名</span></div>
+                        <div class="d-item-right">
+                            <input maxlength="10" id="addressconsignee" name="" class="form-1 nonEmpty" placeholder="请填写收货人姓名" type="text" />
+                            <div class="pubPrompt" id="addrNamePrompt"><i class="orderIcon"></i><span>请填写收货人姓名</span></div>
+                        </div>
+                    </div>
+                    <div class="d-item clearfix" id="addAddressMobile">
+                        <div class="title"><em>*</em><span>手机</span></div>
+                        <div class="d-item-right">
+                            <input maxlength="11" id="addressmobile" name="" class="form-1 nonEmpty" placeholder="请填写手机号码" type="text" />
+                            <div class="pubPrompt" id="addrPhonePrompt"><i class="orderIcon"></i><span>请填写收货人手机号</span></div>
+                        </div>
+                    </div>
+                    <div class="d-item clearfix" id="addAddressPhone">
+                        <div class="title"><span>固定电话</span></div>
+                        <div class="d-item-right">
+                            <input id="addressphone" name="" class="form-3" placeholder="区号" type="text" /><em class="bor">-</em><input id="addressPhoneAfter" name="" class="form-4" placeholder="固定电话号码" type="text" /><div class="pubPrompt"><i class="orderIcon"></i><span>请选择省市区</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="addrBtn"><a href="javascript:;" name="saveAddress">保存并使用</a><a href="javascript:;" class="cancel">取消</a></div>
+            </div>
+        </div>
+    </div>
+    <!--新增收货地址 end-->
+    <!--删除地址列表comfirm-->
+    <div class="pubPop pop-4">
+        <div class="pubInside">
+            <div class="pubInsideTitle">
+                <span>删除</span>
+                <i class="orderIcon pubClose"></i>
+            </div>
+            <div class="pubInsideBody">
+                <div class="warningText"><i class="orderIcon"></i><span>确定要删除该地址吗？</span></div>
+                <div class="addrBtn"><a href="javascript:;" class="sure">确定</a><a href="javascript:;" class="cancel">取消</a></div>
+            </div>
+        </div>
+    </div>
+   
+ 
+  
+
+
+
+
+    
+ 
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/order.js" type="text/javascript"></script>
+    <!--页脚-->
+    
+
+    <style type="text/css">
+        .footerBotLeft .footerInfo {
+            margin-left: -8px;
+        }
+
+        .footerBotLeft p {
+            font-family: Arial, Helvetica, sans-serif, "宋体";
+        }
+
+        .footerBotLeft .footerInfo a {
+            color: #666;
+        }
+
+        .footerBotLeft .copyright {
+            color: #666;
+        }
+    </style>
+
+
+
+
+    <script type="text/javascript" src="~/Wine/购物车/购物车-确认订单信息_files/recommend_99.js"></script>
+    <script type="text/javascript" src="~/Wine/购物车/购物车-确认订单信息_files/p_code.js"></script>
+    <script type="text/javascript" src="~/Wine/购物车/购物车-确认订单信息_files/o_code.js"></script>
+    <script src="~/js/jquery-3.2.1.js"></script>
+
+    <script src="~/Wine/购物车/购物车-确认订单信息_files/region.js" type="text/javascript"></script>
+    <script>
+        function Ti() {
+            location.href ='/Shop/PaymentIndex'
+        }
+
+    </script>
+
+</body>
+</html>

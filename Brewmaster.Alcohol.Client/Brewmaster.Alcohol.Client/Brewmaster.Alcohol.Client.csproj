@@ -16,6 +16,64 @@
 
   <ItemGroup>
  
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\a" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\a_002" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\bs-engine.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\bshareS1.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\bshareS887.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\bsMore.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\bsPlatforms.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\bsStatic.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\cart.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\chat.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\detail.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\detail_function_v2.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\icon3.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\mba.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\mqtt.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\mqtt31.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\mv.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\mvl.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\ntkfstat.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\o_code.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\p_code.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\recommend_99.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\seallogo.dll" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\sidebar.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\skipmobileweb.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\swiper.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\userinfo.php" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\visittrack.js" />
+ 
+    <None Include="wwwroot\Wine\商品详情\商品详情显示_files\zh_cn.js" />
+ 
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\alert.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\base.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的优惠券_files\bonus.js" />
@@ -97,6 +155,51 @@
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\userinfo.php" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\visittrack.js" />
     <None Include="wwwroot\Wine\我的酒仙网 %29 我的订单_files\zh_cn.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\a" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\cart.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\icon3.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\mba.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\mv.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\mvl.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\o_code.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\p_code.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\recommend_99.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\seallogo.dll" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\security.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\shopping-cart-web-pc.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\slider.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-我的购物车_files\visittrack.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\address.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\base.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\icon3.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\jquery-1.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\jquery.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\jquery_002.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\mba.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\mv.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\mvl.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\order.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\o_code.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\public.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\p_code.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\recommend_99.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\region.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\seallogo.dll" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\slider_1.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-确认订单信息_files\visittrack.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\base.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\icon3.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\jquery-1.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\mba.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\mv.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\mvl.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\o_code.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\pay.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\public.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\p_code.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\recommend_99.js" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\seallogo.dll" />
+    <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\visittrack.js" />
   </ItemGroup>
 
   <ItemGroup>

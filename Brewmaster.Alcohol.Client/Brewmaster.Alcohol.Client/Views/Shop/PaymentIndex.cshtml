@@ -1,0 +1,150 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="~/Wine/购物车/购物车-订单支付_files/pushData.txt" charset="utf-8" async="" type="text/javascript"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+
+    <title>酒仙网-订单支付</title>
+    <script src="~/Wine/购物车/购物车-订单支付_files/mv.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-订单支付_files/mba.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-订单支付_files/visittrack.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-订单支付_files/mvl.js" async="" type="text/javascript"></script>
+    <script type="text/javascript" src="~/Wine/购物车/购物车-订单支付_files/jquery-1.js"></script>
+    <link href="~/Wine/购物车/购物车-订单支付_files/base.css" rel="stylesheet" type="text/css">
+    <link href="~/Wine/购物车/购物车-订单支付_files/header_cart_new.css" rel="stylesheet" type="text/css">
+    <link href="~/Wine/购物车/购物车-订单支付_files/pcpay.css" rel="stylesheet" type="text/css">
+    <link href="~/Wine/购物车/购物车-订单支付_files/footer.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="~/Wine/购物车/购物车-订单支付_files/pay.js"></script>
+    <script src="~/Wine/购物车/购物车-订单支付_files/base.js" type="text/javascript"></script>
+    
+    <script src="~/Wine/购物车/购物车-订单支付_files/public.js" type="text/javascript"></script>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+    <!-- 全站公共url变量 -->
+    
+
+    <div class="topHeaderWrap">
+        <div class="topHeader">
+            <div style="display: none;" class="topCollect">
+                <ul>
+                    <li name="_login_status_panel"><div class="topLoginBox"><span><a href="javascript:;" class="loginNow">Hi 请登录</a><a style="padding:0 3px" href="javascript:;" class="regNow">免费注册</a></span><i></i></div></li>
+                </ul>
+            </div>
+            <div class="topRight">
+                <ul>
+                    <li><a class="myOrder" target="_blank" href="http://member.jiuxian.com/trademanage/my_order-9.htm">我的订单</a><i></i></li>
+                    <li><a class="userCenter" target="_blank" href="http://member.jiuxian.com/index.htm">我的酒仙网</a><i></i></li>
+                    <li class="hotTel"><span>客服热线</span><strong>400-617-9999</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;" class="midHeader">
+        <div class="midHeaderBox">
+            <div class="jxwLogo"><p style="background:url(http://img06.jiuxian.com/bill/2014/1226/a347f6723d3141fd9b9b9d464eff6fc7.png) no-repeat;" class="jxwIndex"><a href="http://www.jiuxian.com/"></a></p></div>
+            <div class="bayProcess">
+                <div class="proPic"></div>
+                <div class="proTex"><span class="on">我的购物车</span><span class="on2">确认订单信息</span><span class="on3">成功提交订单</span></div>
+            </div>
+        </div>
+    </div>
+    <!--页头end-->
+
+    
+
+    <div class="midHeader">
+        <div class="midHeaderBox">
+            <div class="jxwLogo">
+                <p style="background:url(http://misc.jiuxian.com/img/newIndexImg/logo.png?20160405) no-repeat;" class="jxwIndex">
+                    <a href="http://www.jiuxian.com/"></a>
+                </p>
+                <p class="payCash">收银台</p>
+            </div>
+        </div>
+    </div>
+    <!--页头end-->
+    <form id="paymentInfo" action="/cashier/pay" method="post">
+        <input name="payType" value="ORDER" type="hidden">
+        <input name="orderSN" value="17190616205204946641" type="hidden">
+        <input name="systemType" value="B2C" type="hidden">
+        <input name="sign" value="f39d791e584fd6d878cd34999fab006a" type="hidden">
+        <input name="platform" value="0" type="hidden">
+        <input id="payWay" name="payWay" value="" type="hidden">
+    </form>
+    <div class="payBox">
+        <div class="payMain">
+            <div class="successWrap">
+                <ul class="successCon">
+                    <li class="sucTit">
+                        <i class="payIcon"></i>
+                        订单已提交成功，请您尽快付款，我们将为您闪电送达！
+                    </li>
+                    <li class="sucPro">请您在<span>24小时</span>内付款，逾期订单将被取消！</li>
+                    <li class="sucCon">
+                        应付金额：<b>￥188.00</b>
+                        订单编号：<em>17190616205204946641</em>
+                    </li>
+                </ul>
+            </div>
+            <div class="payWrap">
+                <div class="payCon">
+                    <div style="top: 60px;" class="payAmount" id="payAmount"><span>支付金额：</span><b>￥188.00</b></div>
+                </div>
+                <div class="payBtnBox"><input id="btnPay" type="button" value="立即支付"  class="btn-danger"/></div>
+            </div>
+            <div class="payProWrap"><h3>注意事项：</h3><p>"订单提交成功"仅表明酒仙网收到您的订单，只有您的订单通过审核后，才代表订单正式生效；</p><p>选择货到付款的客户，请您务必认真检查所有货物，如有不符，您可以拒收；</p><p>选择其他方式的客户，请您认真检查外包装。如有明显损坏迹象，您可以拒收该货品，并及时通知我们。</p></div>
+        </div>
+    </div>
+    
+
+    <style type="text/css">
+        .footerBotLeft .footerInfo {
+            margin-left: -8px;
+        }
+
+        .footerBotLeft p {
+            font-family: Arial, Helvetica, sans-serif, "宋体";
+        }
+
+        .footerBotLeft .footerInfo a {
+            color: #666;
+        }
+
+        .footerBotLeft .copyright {
+            color: #666;
+        }
+    </style>
+    <!--页脚end-->
+    <!-- 邮件订阅  start-->
+    
+
+    
+
+    
+    <script type="text/javascript" src="~/Wine/购物车/购物车-订单支付_files/recommend_99.js"></script>
+    <script type="text/javascript" src="~/Wine/购物车/购物车-订单支付_files/p_code.js"></script>
+    <script type="text/javascript" src="~/Wine/购物车/购物车-订单支付_files/o_code.js"></script>
+ 
+    
+
+
+    
+
+
+</body>
+</html>
