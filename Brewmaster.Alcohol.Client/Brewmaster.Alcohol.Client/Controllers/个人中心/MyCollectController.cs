@@ -17,5 +17,14 @@ namespace Brewmaster.Alcohol.Client.Controllers.个人中心
         {
             return View();
         }
+
+        /// <summary>
+        /// 添加购物车
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult InsertShopCart()
+        {
+            return View();
+        }
     }
 }
