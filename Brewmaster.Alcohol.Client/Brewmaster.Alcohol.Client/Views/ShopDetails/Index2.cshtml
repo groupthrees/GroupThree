@@ -155,7 +155,7 @@
                     <tr>
                         <br />
                         <td>
-                            <input id="Button1" type="button" value="添加到购物车" class="btn btn-danger"  />
+                            <input id="Button1" type="button" value="添加到购物车" class="btn btn-danger"  onclick="joinshopCar()"/>
                         </td>
 
                     </tr>
@@ -188,7 +188,7 @@
     </div>
 
     <script>
-           $(function () {
+   $(function () {
         $(".isConllect").click(function () {
             fun(1,@ViewBag.goods.id);
         })
