@@ -72,16 +72,12 @@
                             <ul class="clearfix"><li class="on">个人信息</li></ul>
                         </div>
                         <div class="zpPart1 clearfix" id="allInput" style="display:block;">
-                            <input type="hidden" id="offenDrink" value="" />
-                            <form id="ajaxForm" action="/myaccount/saveUserInfo.htm" method="post" novalidate="novalidate">
-                                <input type="hidden" name="cateIds" id="cateIds" />
                                 <div class="zpInfo">
                                     <ul class="basePart">
                                         <li class="clearfix">
                                             <p class="zpName">用户名：</p>
                                             <input type="text" class="realName" name="realName" id="realName" maxlength="20" />
                                         </li>
-                                        <li class="baseInfoTip">为了您的账户安全，请<a href="#" target="_blank">验证邮箱</a>，现在验证还赠送金币哦。</li>
                                         <li class="clearfix">
                                             <p class="zpName"><strong>*</strong>昵称：</p>
                                             <input type="text" class="name" name="anotherName" id="anotherName" maxlength="20" />
@@ -113,10 +109,7 @@
                                         </li>
                                     </ul>
                                     <ul>
-                                        <li class="clearfix">
-                                            <p class="zpName">手机：</p>
-                                             <input  type="text" id="phone"/>
-                                        </li>
+                                        
 
                                         <li class="clearfix">
                                             <p class="zpName">地区：</p>
@@ -130,17 +123,8 @@
                                             <select name="district" id="district">
                                                 <option value="" selected="selected">请选择</option>
                                             </select>
-                                            <select name="street" id="street">
-                                                <option value="" selected="selected">请选择</option>
-                                            </select>
-                                            <div id="streetDiv" class="acc">
-                                                <div class="accNotic" style="display:none"><i></i><span>请选择地区</span></div>
-                                            </div>
                                         </li>
-                                        <li class="zpTags clearfix">
-                                            <p class="zpName">常喝的酒：</p>
-
-                                        </li>
+                                      
                                         <li class="clearfix">
                                             <p class="zpName">喜欢的酒类品牌：</p>
                                             <textarea name="likeBrand" id="likeBrand" maxlength="60"></textarea>
@@ -153,9 +137,7 @@
 
                                     </ul>
                                 </div>
-                                <input type="submit" class="submitZpInfo" value="提&nbsp;交" id="saveInfo" />
-                                <input type="hidden" id="addressId" value="" />
-                            </form>
+                                <input type="button" class="submitZpInfo" value="提&nbsp;交" id="saveInfo" onclick="save()" />
                         </div>
 
                     </div>

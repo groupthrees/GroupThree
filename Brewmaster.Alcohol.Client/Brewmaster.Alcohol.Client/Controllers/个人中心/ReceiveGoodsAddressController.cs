@@ -9,9 +9,15 @@ namespace Brewmaster.Alcohol.Client.Controllers
     //收货地址
     public class ReceiveGoodsAddressController : Controller
     {
+        /// <summary>
+        /// 收货地址
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             return View();
         }
+
+        
     }
 }
