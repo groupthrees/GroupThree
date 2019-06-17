@@ -8,9 +8,13 @@
 
 
   <ItemGroup>
+    <Compile Remove="Controllers\商品详情页\**" />
     <Compile Remove="Controllers\新文件夹商品详情\**" />
+    <Content Remove="Controllers\商品详情页\**" />
     <Content Remove="Controllers\新文件夹商品详情\**" />
+    <EmbeddedResource Remove="Controllers\商品详情页\**" />
     <EmbeddedResource Remove="Controllers\新文件夹商品详情\**" />
+    <None Remove="Controllers\商品详情页\**" />
     <None Remove="Controllers\新文件夹商品详情\**" />
   </ItemGroup>
 
