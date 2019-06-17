@@ -52,7 +52,7 @@ namespace Brewmaster.Alcohol.Repository
             {
                     var result = 1;
                     var sql = $"select * from collection where goodsId={goodsId} and usersId={userId}";
-                    var query = Conn.QueryFirst<int>(sql, null);
+                    var query = Conn.ExecuteScalar<int>(sql);
                     if (query > 0)
                     {
                         result = 2;

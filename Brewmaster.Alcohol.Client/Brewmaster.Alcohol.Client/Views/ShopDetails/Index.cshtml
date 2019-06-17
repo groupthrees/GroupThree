@@ -59,10 +59,11 @@
             url: 'http://localhost:50169/api/Goodscollect/SetCollect',
             data: { userId: userId, goodsId: goodsId},
             success: function (result) {
+                alert(result)
                 //if (result == 1)
-                //    $(".isConllect").html(<span class="isConllect">已收藏</span>);
+                //    $(".isConllect").html("<span class='isConllect'>已收藏</span>");
                 //else {
-                //  $(".isConllect").html(<span class="isConllect">未收藏</span>);
+                //    $(".isConllect").html("<span class='isConllect'>已收藏</span>");
                 //}
             }
         })
