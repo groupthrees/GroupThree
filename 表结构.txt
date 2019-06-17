@@ -152,3 +152,6 @@ create table Journal
   Operation int,-- 用户进行的操作
   CreateTiem datetime -- 创建时间
 )auto_increment=1;
+
+
+--购物车表
