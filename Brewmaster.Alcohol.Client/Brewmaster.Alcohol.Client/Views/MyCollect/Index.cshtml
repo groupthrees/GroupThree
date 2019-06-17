@@ -77,6 +77,8 @@
                 <thead>
                     <tr>
                         <th class="mycT0" width="130"><input name='smallBox' id="selectAll" type="checkbox" value="" />全选  <input type="button" value="反选" id="selectNo" /></th>
+                        <th class="mycT4" width="225">商品ID</th>
+                        <th class="mycT4" width="225">用户ID</th>
                         <th class="mycT2" width="330"><span>图片</span></th>
                         <th class="mycT2" width="330"><span>商品</span></th>
                         <th class="mycT4" width="225">当前价格</th>
@@ -92,11 +94,7 @@
             <a href="javascript:void(0)" onclick="last()">尾页</a>
             <input type="hidden" id="currRecordSize" value="2" />
         </div>
-        <!-- 翻页begin -->
-        <div class="uPageBox clearfix">
-            <div class="uAll-Del"><a href="javascript:addtoCart('all','1');">加入购物车</a><a class="colCancel" href="javascript:deleteCollectByIds('all','1');">取消收藏</a></div>
-        </div>
-        <!-- 翻页end -->
+      
     </div>
     <!-- 右侧 -->
 
@@ -169,12 +167,14 @@
                
                 for (var i = 0; i < result.collectionList.length; i++) {
                     tmphtml += "<tr>";
+                
                     tmphtml += "<td><input type='checkbox' name='smallBox' value='' /></td>";
+                    tmphtml += "<td>" + result.collectionList[i].goodsId + "</td>";
+                    tmphtml += "<td>" + result.collectionList[i].usersId + "</td>";
                     tmphtml += "<td><img src=" + result.collectionList[i].goodsImg + "  width='50' height='50' ></td>";
                     tmphtml += "<td> " + result.collectionList[i].goodsName + "</td>";
                     tmphtml += "<td>" + result.collectionList[i].priceNow + "</td>";
-                    tmphtml += "<td><a href='javascript:void(0); '>加入购物车</a><a href='javascript:void(0);'>取消收藏</a></td>";
-                
+                    tmphtml += "<td><input type='button' value='加入购物车' onclick='joinshopCar()'/><input type='button' value='取消收藏' onclick=' cancelcollect()'/></td>";
                     tmphtml += "</tr>";
                 }
                 $("#await").append(tmphtml);
@@ -182,7 +182,22 @@
             }
         })
     }
-   
+
+    //加入购物车
+    function joinshopCar() {
+        location.href = "/MyCollect/InsertShopCart/";
+    }
+
+    //取消收藏
+    function joinshopCar() {
+        $.ajax({
+            url: 'http://localhost:50169/api/Goodscollect/SetCollect',
+            success: function (result) {
+
+            }
+        })
+
+    }
     //查询
     function search() {
         getCoupon(pageIndex);

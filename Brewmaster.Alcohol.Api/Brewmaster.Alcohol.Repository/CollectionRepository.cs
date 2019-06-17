@@ -25,7 +25,6 @@ namespace Brewmaster.Alcohol.Repository
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-
         public CollectionPageList GetCollectionlist(int id,  int pageIndex, int pageSize)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -46,6 +45,21 @@ namespace Brewmaster.Alcohol.Repository
                     Total = total
                 };
                 return collectionDto;
+            }
+        }
+
+        /// <summary>
+        /// 加入购物车
+        /// </summary>
+        /// <param name="shopCart"></param>
+        /// <returns></returns>
+        public int InsertShopCart(ShopCart shopCart)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string strsql = string.Format("insert into shopcart(Id,GoodsId,UsersId) values({0},{1},{2})", shopCart.Id,shopCart.GoodsId, shopCart.UsersId);
+                var result = conn.Execute(strsql);
+                return result;
             }
         }
     }

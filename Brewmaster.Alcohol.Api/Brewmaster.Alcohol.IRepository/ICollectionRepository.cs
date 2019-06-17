@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Brewmaster.Alcohol.Model;
 using Brewmaster.Alcohol.Model.Dto.收藏表;
 using Brewmaster.Alcohol.Model.Dto.订单Dto;
 
@@ -16,6 +17,13 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="pageSize"></param>
         /// <returns></returns>
          CollectionPageList GetCollectionlist(int id, int pageIndex, int pageSize);
+
+        /// <summary>
+        /// 加入购物车
+        /// </summary>
+        /// <param name="shopCart"></param>
+        /// <returns></returns>
+        int InsertShopCart(ShopCart shopCart);
 
     }
 }

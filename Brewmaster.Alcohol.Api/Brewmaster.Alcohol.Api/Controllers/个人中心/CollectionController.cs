@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Brewmaster.Alcohol.IRepository;
+using Brewmaster.Alcohol.Model;
 using Brewmaster.Alcohol.Model.Dto.收藏表;
 using Brewmaster.Alcohol.Model.Dto.订单Dto;
 using Brewmaster.Alcohol.Repository;
@@ -40,6 +41,18 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         public CollectionPageList GetCollectionlist(int id, int pageIndex, int pageSize)
         {
             return _CollectionRepository.GetCollectionlist(id, pageIndex, pageSize);
+        }
+
+        /// <summary>
+        /// 加入购物车
+        /// </summary>
+        /// <param name="shopCart"></param>
+        /// <returns></returns>
+        [HttpPost("InsertShopCart")]
+
+        public int InsertShopCart(ShopCart shopCart)
+        {
+            return _CollectionRepository.InsertShopCart(shopCart);
         }
     }
 }
