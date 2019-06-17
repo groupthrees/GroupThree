@@ -56,7 +56,7 @@ namespace Brewmaster.Alcohol.Repository
                     if (query > 0)
                     {
                         result = 2;
-                        sql = "delete collection where usersId=" + userId + " and  goodsId=" + goodsId;
+                        sql = "delete from collection where usersId=" + userId + " and  goodsId=" + goodsId;
                     }
                     else
                     {
