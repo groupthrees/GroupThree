@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+/*购物车头部*/
+.bayProcess .proPic{ background-position:0 -60px;}
+.bayProcess .proTex .on2{  color:#666;}
+.bayProcess .proTex .on3{  color:#666;}
+/*购物车头部结束*/
+.payBox{ width:100%; margin-top:18px;}
+.payMain{ width:1000px; margin:0 auto;}
+.payIcon{ background:url(/resources/images/payIcon-24.png) no-repeat; _background:url(/resources/images/payIcon-8.png) no-repeat;}
+/*文字信息*/
+.successWrap{ border:1px solid #e4e4e4; background:#fbfcff; margin-bottom:10px;}
+.successWrap .successCon{ padding:0 70px 8px 70px;}
+.successCon li{ height:inherit; line-height:30px;}
+.successCon .sucTit{ color:#339933; font-size:20px; position:relative; font-family:'Microsoft YaHei'; padding-top:22px;}
+.successCon .sucTit i{ display:inline-block; position:absolute; left:-46px; top:21px; width:32px; height:32px;}
+.payFail .sucTit i{ background-position:-62px 0;}
+.successCon .sucTit span{ color:#000;}
+.successCon .sucPro{ padding:2px 0 8px;}
+.successCon .sucPro span{ color:#cc0000; font-weight:bold; padding:0 2px;}
+.successCon .sucCon{ border-top:1px dotted #ccc; padding:8px 0 5px;}
+.successCon .sucCon em{ font-style:normal; padding-right:8px;}
+.successCon .sucCon b{ height:30px; color:#cc0000; font-family:'Microsoft YaHei'; font-size:14px; margin-right:25px;}
+.successCon .sucCon2{ line-height:22px; height:auto; padding:15px 0 12px; position:relative;}
+.successCon .sucCon2 i{ display:block; position:absolute; left:0px; top:19px; z-index:1; width:12px; height:12px; overflow:hidden; background-position:-188px -88px;}
+.successCon .sucCon2 p{ margin-left:21px; color:#666; line-height:22px;}
+.successCon .sucCon2 p span{ color:#c00;}
+.successCon .sucCon3{ border-top:1px dotted #ccc; padding-top:10px; height:auto; margin-top:8px;}
+.successCon .sucCon3 .tt{ color:#c00;padding-bottom: 10px;}
+.successCon .sucCon3 .pp{ padding-left:95px;}
+.successCon .sucCon3 .pp .cod{width: 106px;height: 106px;border: 1px solid #e4e4e4;padding: 3px;}
+.successCon .sucCon3 .pp .tex{width: 114px;text-align: center;color: #999;line-height: 18px;padding-top: 8px;}
+.sucCon .sucCon-pro{ display:inline-block; height:26px; line-height:26px; background:#fffbe8; border: 1px solid #ffe9c7; color: #ff9933; padding:0 15px 0 10px; margin-left:18px; position:relative; top:-2px; }
+.sucCon .sucCon-pro i{ display:inline-block; width:7px; height:14px; background-position:-83px -40px; position:absolute; left:-7px; top:6px;}
+.sucCon .sucCon-pro a{ color:#0066cc;}
+.successCon .sucOther a{ color:#0066cc; margin-left:15px;}
+/*文字信息end*/
+/*支付*/
+.payWrap{ border:1px solid #e4e4e4; background:#fff; margin-bottom:18px;}
+.payWrap .payCon{ padding-bottom:30px; position:relative;}
+.paymentList li{ height:60px; padding:0 70px;}
+.paymentList li label{ float:left; display:inline-block; height:60px; margin-right:26px;}
+.paymentList li .radioIcon{ display:inline-block; float:left; width:14px; height:14px; background-position:-40px -16px; margin:23px 38px 0 0;}
+.paymentList li.checked .radioIcon{ background-position:-40px -1px;}
+.paymentList li.checked{ background-color:#f8faff;}
+.Payment{ display:inline-block; float:left; width:120px; height:40px; position:relative; background:url(/resources/images/Payment.png) no-repeat; margin-top:9px;}
+.Payment.payment_alipay_pc{ background-position:0 5px;}/*支付宝*/
+.Payment.payment_weixin_pc{ background-position:0 -35px;}/*微信支付*/
+.Payment.payment_unionpay_pc{ background-position:0 -75px;}/*银联支付*/
+.Payment.payment_bestpay_pc{ background-position:0 -115px;}/*翼支付*/
+.Payment.payment_jd_pc{ background-position:0 -160px;}/*jd支付*/
+.paymentList li em{ float:left; line-height:60px; display:inline-block; color:#999; font-style:normal;}
+.paymentList li font{ display:inline-block; color:#e6393d; border:1px solid #e6393d; height:16px; line-height:16px; padding:0 2px; margin:20px 10px 0 0;}
+.payCon .payAmount{ height:60px; line-height:60px; position:absolute; top:0; right:40px; font-family:'Microsoft YaHei';}
+.payAmount span{ position:relative; top:-1px; font-size:14px; color:#252525;}
+.payAmount b{ color:#cc0000; font-size:16px;}
+.payBtnBox{ height:40px; margin:0 0 40px 70px;}
+.payBtnBox a{ display:inline-block; width:105px; height:40px; border-radius:3px; background:#cf010e;}
+.payBtnBox a i{ display: inline-block; width: 80px; height: 20px; background-position: 0 -37px; cursor: pointer; margin: 10px 0 0 13px;}
+/*支付end*/
+/*微信支付*/
+.payWeixin{ border:1px solid #e4e4e4; position:relative; margin-top:10px; padding:20px 0;}
+.payWeixin .weixinLeft{ float:left; width:185px; padding:40px 0 0 230px;}
+.weixinLeft .wxTit{ height:26px; text-align:center; padding-bottom:25px;}
+.wxTit i{ display:inline-block; width:128px; height:26px; background-position:0 -62px;}
+.weixinLeft .payCode{ width:185px; height:185px; margin-bottom:20px;}
+.weixinLeft .weixin-pro{ width:183px; border:1px solid #ffecce; background:#fffbe9; margin-bottom:50px;}
+.weixinPro .pro-icon{ width:23px; height:23px; margin:20px 0 0 18px; background-position:-177px -24px; float:left; display:inline;}
+.weixinPro .pro-text{ padding:9px 0 9px 12px; line-height:22px; font-size:14px; color:#999; float:left;}
+.payWeixin .weixinRight{ float:left; width:320px; height:383px; position:relative; background:url(/resources/images/payPic.jpg) no-repeat 80px 28px; margin-left:80px;}
+.weixinRight .leftborder{ height:280px; width:1px; background:#eee; position:absolute; top:66px; left:0;}
+.payWeixin .comebackBox{ width:150px; height:20px; line-height:20px; position:absolute; right:18px; top:12px; text-align:right;}
+.comebackBox a,.comebackBox a:hover{ color:#0066cc;}
+/*微信支付end*/
+/*支付成功页面*/
+.successWrap .paySuc,.successWrap .payFail{ float:left; width:623px; padding:0 0 10px 115px;}
+.successWrap .jxwCode{ float:right; width:260px; text-align:right; margin-top:26px; margin-bottom:30px; overflow:hidden;}
+.successWrap .jxwCode .cod{ width:106px; height:106px; border:1px solid #e4e4e4; padding:3px; margin:0 auto;}
+.successWrap .jxwCode .tex{ text-align:center; color:#999; line-height:18px; padding-top:8px;}
+/*支付成功页面end*/
+/*温馨提示*/
+.payProWrap{ margin-bottom:50px; line-height:24px;}
+.payProWrap h3{ font-weight:normal; color:#cc0000; font-size:12px;}
+/*温馨提示end*/

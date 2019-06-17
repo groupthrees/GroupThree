@@ -1,0 +1,380 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="~/Wine/购物车/购物车-我的购物车_files/pushData.txt" charset="utf-8" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-我的购物车_files/mv.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-我的购物车_files/mba.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-我的购物车_files/mvl.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-我的购物车_files/visittrack.js" async="" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-我的购物车_files/mvl.js" async="" type="text/javascript"></script>
+    <title>购物车-酒仙网</title>
+    <link href="~/Wine/购物车/购物车-我的购物车_files/a.css" type="text/css" rel="stylesheet">
+    <link href="~/Wine/购物车/购物车-我的购物车_files/cart.css" type="text/css" rel="stylesheet">
+    <script src="~/Wine/购物车/购物车-我的购物车_files/a" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-我的购物车_files/shopping-cart-web-pc.js" type="text/javascript"></script>
+    <script src="~/Wine/购物车/购物车-我的购物车_files/slider.js"></script>
+    <script async="" src="~/Wine/购物车/购物车-我的购物车_files/security.js"></script>
+    <script src="~/Wine/购物车/购物车-我的购物车_files/cart.js"></script>
+    <script type="text/javascript">
+    var recommend_99_Args = {'pageName':'cart','productIds':['-']};
+    </script>
+</head>
+<body>
+   
+    <div class="topHeaderWrap">
+        <div class="topHeader">
+            <div class="topCollect">
+                <ul>
+                    <li name="_login_status_panel"><span> hi，<span class="userName" title="jxw52743765">jxw52743765</span><span><a href="https://login.jiuxian.com/logout.htm" class="cartlogout">退出</a><a class="newsNum" href="http://member.jiuxian.com/jxcircle/info_center-0.htm" target="_blank"><em>消息</em><i class="mesNum">5</i></a><a class="newsNum" href="http://member.jiuxian.com/purse/my_gold_coin-1.htm" target="_blank"><em>金币</em><i class="mesNum">60</i></a></span></span><i></i></li>
+                </ul>
+            </div>
+            <div class="topRight">
+                <ul>
+                    <li><a class="myOrder" target="_blank" href="http://member.jiuxian.com/trademanage/my_order-9.htm">我的订单</a><i></i></li>
+                    <li><a class="userCenter" target="_blank" href="http://member.jiuxian.com/index.htm">我的酒仙网</a><i></i></li>
+                    <li class="hotTel"><span>客服热线</span><strong>400-617-9999</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="midHeader">
+        <div class="midHeaderBox">
+            <div class="jxwLogo"><p style="background:url(http://img06.jiuxian.com/bill/2014/1226/a347f6723d3141fd9b9b9d464eff6fc7.png) no-repeat;" class="jxwIndex"><a href="http://www.jiuxian.com/"></a></p></div>
+            <div class="bayProcess">
+                <div class="proPic"></div>
+                <div class="proTex"><span class="on">我的购物车</span><span class="on2">确认订单信息</span><span class="on3">成功提交订单</span></div>
+            </div>
+        </div>
+    </div>
+    <!--页头end-->
+
+    <input id="isLogin" value="true" "=" " type="hidden">
+    <div class="cartMain">
+        <div id="cart_container">
+            <div class="f-Prompt"><i class="cartIcon"></i><span>温馨提示：自营商品实付满100元免运费，偏远地区满500免运费</span></div>	<div class="cart-t">
+                <div class="cart-filter-bar">
+                    <div class="my-cart-tit">我的购物车<span>3</span></div>
+                    <div class="areaBox" id="_shdz">
+                        <a href="javascript:;" class="selectArea"><b pid="2">北京</b><b></b><b></b><i class="cartIcon"></i></a>
+                        <div class="areaDetail">
+                            <h5 class="selectedBox">
+                                <a pid="2" href="javascript:;" class="selectProvince"><em>北京</em><i class="cartIcon"></i></a><!-- 省 -->
+                                <a href="javascript:;" class="selectCity"><em>请选择市</em><i class="cartIcon"></i></a><!-- 市 -->
+                                <a href="javascript:;" class="selectCounty"><em>请选择县/区</em><i class="cartIcon"></i></a><!-- 县 -->
+                            </h5>
+                            <div class="areaList provinceList" style="display: none;">
+                                <ul class="clearfix"><li><a href="javascript:;" pid="2">北京</a></li><li><a href="javascript:;" pid="3">安徽省</a></li><li><a href="javascript:;" pid="4">福建省</a></li><li><a href="javascript:;" pid="5">甘肃省</a></li><li><a href="javascript:;" pid="6">广东省</a></li><li><a href="javascript:;" pid="7">广西省</a></li><li><a href="javascript:;" pid="8">贵州省</a></li><li><a href="javascript:;" pid="9">海南省</a></li><li><a href="javascript:;" pid="10">河北省</a></li><li><a href="javascript:;" pid="11">河南省</a></li><li><a href="javascript:;" pid="12">黑龙江省</a></li><li><a href="javascript:;" pid="13">湖北省</a></li><li><a href="javascript:;" pid="14">湖南省</a></li><li><a href="javascript:;" pid="15">吉林省</a></li><li><a href="javascript:;" pid="16">江苏省</a></li><li><a href="javascript:;" pid="17">江西省</a></li><li><a href="javascript:;" pid="18">辽宁省</a></li><li><a href="javascript:;" pid="19">内蒙古省</a></li><li><a href="javascript:;" pid="20">宁夏</a></li><li><a href="javascript:;" pid="21">青海省</a></li><li><a href="javascript:;" pid="22">山东省</a></li><li><a href="javascript:;" pid="23">山西省</a></li><li><a href="javascript:;" pid="24">陕西省</a></li><li><a href="javascript:;" pid="25">上海</a></li><li><a href="javascript:;" pid="26">四川省</a></li><li><a href="javascript:;" pid="27">天津</a></li><li><a href="javascript:;" pid="28">西藏</a></li><li><a href="javascript:;" pid="29">新疆</a></li><li><a href="javascript:;" pid="30">云南省</a></li><li><a href="javascript:;" pid="31">浙江省</a></li><li><a href="javascript:;" pid="32">重庆</a></li></ul>
+                            </div>
+                            <!-- 省名 -->
+                            <div class="areaList cityList" style="display: none;">
+                                <ul class="clearfix"><li><a href="javascript:;" pid="52">北京市</a></li></ul>
+                            </div>
+                            <!-- 省会名 -->
+                            <div class="areaList countyList" style="display: none;">
+                                <ul class="clearfix"></ul>
+                            </div>
+                            <!-- 县名 -->
+                        </div>
+                    </div>		    <div class="my-distri-addr">配送至</div>
+                </div>
+                <div class="cart-thead">
+                    <div class="cTab-tr cart-checkbox">
+                        <label class="check-all "><i class="cartIcon"></i><input name="" value="" type="checkbox"></label>
+                        <span class="checkAllText">全选</span>
+                    </div>
+                    <div class="cTab-tr cart-goods">商品信息</div>
+                    <div class="cTab-tr cart-price">单价</div>
+                    <div class="cTab-tr cart-gold">送金币</div>
+                    <div class="cTab-tr cart-quantity">数量</div>
+                    <div class="cTab-tr cart-subtotal">小计</div>
+                    <div class="cTab-tr cart-operating">操作</div>
+                </div>
+                <div class="cart-tbody">
+                    <div class="cart-shop">
+                        <div class="cTab-tr cart-checkbox">
+                            <label class="check-all checkbox-checked "><i class="cartIcon"></i><input name="" value="" type="checkbox"></label>
+                        </div>
+                        <div class="shop-type">
+                            <i class="cartIcon jxzy "></i>
+                            <span>酒仙自营</span>
+                        </div>
+                        <div class="gifts-btn voucher-btn-box">
+                            <div class="voucher-btn-wrap">
+                                <em class="cartIcon"></em>
+                                <div class="voucher-btn-shell">
+                                    <span>优惠券</span>
+                                    <i class="cartIcon"></i>
+                                </div>
+                            </div>
+                            <div class="cart-pub-pop cart-gifts-voucher-pop" productids="30081"></div>
+                        </div>
+                        <div class="cart-postage">自营实付金额满<span>100元</span>包邮</div>
+                    </div>
+                    <div class="cart-list-wrap">
+                        <div class="p-type" proid="">
+                            <div class="cart-list  " itemid="item-30081" proid="30081">
+                                <div class="clearfix">
+                                    <div class="cTab-tr cart-checkbox noMt">
+                                        <label class="click-checkbox  "><i class="cartIcon"></i><input name="" value="" type="checkbox"></label>
+                                       
+                                    </div>
+                                    <div class="cTab-tr cart-goods">
+
+                                        <div class="goods-info">
+                                            <div class="goods-img">
+                                                <a href="http://www.jiuxian.com/goods-30081.html" target="_blank"><img src="~/Wine/购物车/购物车-我的购物车_files/e3160f2d3f0f4e6da7f1c3d696b82f4f4.jfif" height="80" width="80"></a>
+                                                <p class="stock-status">库存不足</p>
+                                            </div>
+                                            <div class="goods-right">
+                                                <div class="goods-name">
+                                                    <a href="http://www.jiuxian.com/goods-30081.html" target="_blank">
+                                                        <img class="zhenxuan" src="~/Wine/购物车/购物车-我的购物车_files/zhenxuan.jfif">
+                                                        54°董酒尊享封藏大坛1500ml
+                                                    </a>
+                                                </div>
+                                                <div class="cart-tag">
+                                                    <span>限时抢购</span>
+                                                    <span>买赠</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cTab-tr cart-price">
+                                        <div class="goods-price">￥499.00</div>
+                                    </div>
+                                    <div class="cTab-tr cart-gold">
+                                        <div class="goods-gold">249金币</div>
+                                    </div>
+                                    <div class="cTab-tr cart-quantity">
+                                        <div class="goods-num">
+                                            <p><i class="cartIcon cut "></i></p>
+                                            <input name="" class="num" value="99" autocomplete="off" minnum="1" type="text">
+                                            <p><i class="cartIcon add max"></i></p>
+                                        </div>
+                                        <div class="cart-stock">库存不足</div>
+                                    </div>
+                                    <div class="cTab-tr cart-subtotal">
+                                        <div class="goods-total-price">￥49401.00</div>
+                                    </div>
+                                    <div class="cTab-tr cart-operating">
+                                        <div class="goods-operating">
+                                            <p><a href="javascript:;" class="list-del">删除</a></p>
+                                            <p><a href="javascript:;" class="move-collect">移入我的收藏</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-list select-bg " itemid="item-42069" proid="42069">
+                                <div class="clearfix">
+                                    <div class="cTab-tr cart-checkbox noMt">
+                                        <label class="click-checkbox  checkbox-checked "><i class="cartIcon"></i><input name="" value="" type="checkbox"></label>
+                                    </div>
+                                    <div class="cTab-tr cart-goods">
+
+                                        <div class="goods-info">
+                                            <div class="goods-img">
+                                                <a href="http://www.jiuxian.com/goods-42069.html" target="_blank"><img src="~/Wine/购物车/购物车-我的购物车_files/0d24c88a779f4f3285765b03cb877ad64.jfif" height="80" width="80"></a>
+                                            </div>
+                                            <div class="goods-right">
+                                                <div class="goods-name">
+                                                    <a href="http://www.jiuxian.com/goods-42069.html" target="_blank">
+                                                        <img class="zhenxuan" src="~/Wine/购物车/购物车-我的购物车_files/zhenxuan.jfif">
+                                                        澳大利亚奔富BIN2西拉马塔罗干红葡萄酒750ml
+                                                    </a>
+                                                </div>
+                                                <div class="cart-tag">
+                                                    <span>限时抢购</span>
+                                                    <span>买赠</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cTab-tr cart-price">
+                                        <div class="goods-price">￥188.00</div>
+                                        <div class="cart-offer">
+                                            <p>已优惠￥10.00</p>
+                                            <div class="cartIcon cart-tips" style="display: none;">商品比加入购物车时优惠<span>￥10.00</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="cTab-tr cart-gold">
+                                        <div class="goods-gold">94金币</div>
+                                    </div>
+                                    <div class="cTab-tr cart-quantity">
+                                        <div class="goods-num">
+                                            <p><i class="cartIcon cut min"></i></p>
+                                            <input name="" class="num" value="1" autocomplete="off" minnum="1" type="text">
+                                            <p><i class="cartIcon add "></i></p>
+                                        </div>
+                                        <div class="cart-stock">仅剩1件</div>
+                                    </div>
+                                    <div class="cTab-tr cart-subtotal">
+                                        <div class="goods-total-price">￥188.00</div>
+                                    </div>
+                                    <div class="cTab-tr cart-operating">
+                                        <div class="goods-operating">
+                                            <p><a href="javascript:;" class="list-del">删除</a></p>
+                                            <p><a href="javascript:;" class="move-collect">移入我的收藏</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-subgoods-wrap">
+                                    <div class="subgoods-item ">
+                                        <div class="cTab-tr cart-goods">
+                                            <div class="goods-info">
+                                                <div class="goods-img">
+                                                    <a href="http://www.jiuxian.com/goods-17311.html" target="_blank"><img src="~/Wine/购物车/购物车-我的购物车_files/80241712abc841a2b7192468dc37fe034.jfif" height="38" width="38"></a>
+                                                </div>
+                                                <div class="goods-right">
+                                                    <div class="goods-name"><a href="http://www.jiuxian.com/goods-17311.html" target="_blank">【赠】时间都去哪儿了（乐享）</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cTab-tr cart-price">
+                                            <div class="goods-price">￥0.00</div>
+                                        </div>
+                                        <div class="cTab-tr cart-gold">
+                                            <div class="goods-gold">0金币</div>
+                                        </div>
+                                        <div class="cTab-tr cart-quantity">
+                                            <div class="goods-num-fixed">x1</div>
+                                        </div>
+                                        <div class="cTab-tr cart-subtotal">
+                                            <div class="goods-total-price">￥0.00</div>
+                                        </div>
+                                        <div class="cTab-tr cart-operating">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-tbody">
+                    <div class="cart-shop">
+                        <div class="cTab-tr cart-checkbox">
+                            <label class="check-all "><i class="cartIcon"></i><input name="" value="" type="checkbox"></label>
+                        </div>
+                        <div class="shop-type">
+                            <i class="cartIcon  party-shop "></i>
+                            <span>洋河官方旗舰店</span>
+                        </div>
+                    </div>
+                    <div class="cart-list-wrap">
+                        <div class="p-type" proid="">
+                            <div class="cart-list  " itemid="item-51820" proid="51820">
+                                <div class="clearfix">
+                                    <div class="cTab-tr cart-checkbox noMt">
+                                        <label class="click-checkbox  "><i class="cartIcon"></i><input name="" value="" type="checkbox"></label>
+                                    </div>
+                                    <div class="cTab-tr cart-goods">
+
+                                        <div class="goods-info">
+                                            <div class="goods-img">
+                                                <a href="http://www.jiuxian.com/goods-51820.html" target="_blank"><img src="~/Wine/购物车/购物车-我的购物车_files/bce6bb4392e742c3b288614a9022c9894.jfif" height="80" width="80"></a>
+                                            </div>
+                                            <div class="goods-right">
+                                                <div class="goods-name">
+                                                    <a href="http://www.jiuxian.com/goods-51820.html" target="_blank">
+                                                        【爆款特卖】52°洋河蓝色经典梦之蓝M3 500ml
+                                                    </a>
+                                                </div>
+                                                <div class="cart-tag">
+                                                    <span>限时抢购</span>
+                                                    <span>多买多赠</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cTab-tr cart-price">
+                                        <div class="goods-price">￥429.00</div>
+                                    </div>
+                                    <div class="cTab-tr cart-gold">
+                                        <div class="goods-gold">214金币</div>
+                                    </div>
+                                    <div class="cTab-tr cart-quantity">
+                                        <div class="goods-num">
+                                            <p><i class="cartIcon cut min"></i></p>
+                                            <input name="" class="num" value="1" autocomplete="off" minnum="1" type="text">
+                                            <p><i class="cartIcon add "></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="cTab-tr cart-subtotal">
+                                        <div class="goods-total-price">￥429.00</div>
+                                    </div>
+                                    <div class="cTab-tr cart-operating">
+                                        <div class="goods-operating">
+                                            <p><a href="javascript:;" class="list-del">删除</a></p>
+                                            <p><a href="javascript:;" class="move-collect">移入我的收藏</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-gopay-bottom">
+                <div class="cart-gopay-left">
+                    <label class="check-all "><i class="cartIcon "></i><input name="" value="" type="checkbox"><span class="checkAllText">全选</span></label>
+                    <a href="javascript:;" id="delChecked">删除选中商品</a>
+                    <a href="javascript:;" id="delFail">清除失效商品</a>
+                    <a href="javascript:;" id="delToCollect">移入我的收藏</a>
+                </div>
+                <div class="cart-count">
+                    <div class="cart-count-total"><span class="pieces">已选商品<em>2</em>件</span><span class="total">总价（不含运费）：<em>￥188.00</em></span></div>
+                    <div class="cart-count-offer"><span>活动优惠：<em>￥0.00</em></span><span>赠送金币：<em>94</em>个</span></div>
+                </div>
+                <div class="cart-gopay-btn"><input id="Button1" type="button" value="去结算" onclick="Close()"/></div>
+            </div>
+           
+
+        </div>
+        
+    </div>
+   
+    
+    <div id="loginPopCon"></div>
+
+    <!--页脚-->
+    
+
+    <style type="text/css">
+        .footerBotLeft .footerInfo {
+            margin-left: -8px;
+        }
+
+        .footerBotLeft p {
+            font-family: Arial, Helvetica, sans-serif, "宋体";
+        }
+
+        .footerBotLeft .footerInfo a {
+            color: #666;
+        }
+
+        .footerBotLeft .copyright {
+            color: #666;
+        }
+    </style>
+ 
+    <script src="~/js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="~/Wine/购物车/购物车-我的购物车_files/recommend_99.js"></script>
+    <script type="text/javascript" src="~/Wine/购物车/购物车-我的购物车_files/p_code.js"></script>
+    <script type="text/javascript" src="~/Wine/购物车/购物车-我的购物车_files/FAI84qYjQk.txt"></script>
+    <script type="text/javascript" src="~/Wine/购物车/购物车-我的购物车_files/FAI84qYjQk_002.txt"></script>
+    <script type="text/javascript" src="~/Wine/购物车/购物车-我的购物车_files/o_code.js"></script>
+    <script>
+        function Close() {
+            location.href = '/Shop/OrderIndex';
+        }
+    </script> 
+
+
+    
+
+</body>
+</html>
