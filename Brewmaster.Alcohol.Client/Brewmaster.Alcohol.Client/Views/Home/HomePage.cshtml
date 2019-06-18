@@ -144,6 +144,7 @@
                 //临时 调整页头位置
                 $(function () {
                     getgoodsdata();
+                    getBrand();
                     //临时 调整页头位置URL
                     try {
                         changeHeaderUrl();
@@ -230,23 +231,24 @@
 
                         <li class="catItem bg" id="_nowactstr2">
                             <div class="catItemCon" name="__home_fenleibai">
-                                <h3 name="tagH" pathname="白酒" url="http://list.jiuxian.com/1-0-0-0-0-0-0-0-0-0-0-0.htm?area=2#v2" ishot="false" iszlm="1"><i class="publicIcon liquor"></i><a target="_blank" href="http://list.jiuxian.com/1-0-0-0-0-0-0-0-0-0-0-0.htm?area=2#v2">白酒</a></h3>
-                                <div class="categoryCon">
-                                    <p>
-                                        <a href="http://shop.jiuxian.com/brand-382/activity-3376.htm?area=2" target="_blank">茅台</a>
-                                        <a href="http://list.jiuxian.com/1-2-0-0-0-0-0-0-0-0-0-0.htm?area=2#v2" target="_blank" class="on">五粮液</a>
-                                        <a href="http://shop.jiuxian.com/brand-41/activity-3399.htm?area=2&amp;source=23" target="_blank" class="on">酒鬼</a>
-                                        <a href="http://list.jiuxian.com/1-4-0-0-0-0-0-0-0-0-0-0.htm?area=2#v2" target="_blank">汾酒</a>
-                                    </p>
-                                    <p>
-                                        <a href="http://list.jiuxian.com/1-0-0-0-126-0-0-0-0-0-0-0.htm?area=2#v2" target="_blank">浓香型</a>
-                                        <a href="http://list.jiuxian.com/1-0-0-0-97-0-0-0-0-0-0-0.htm?area=2#v2" target="_blank" class="on">酱香型</a>
-                                        <a href="http://list.jiuxian.com/1-0-0-9500-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0.htm?area=2#v2" target="_blank">贵州</a>
-                                        <a href="http://list.jiuxian.com/1-0-0-9485-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0.htm?area=2#v2" target="_blank">四川</a>
-                                    </p>
+                                <h3 name="tagH" pathname="" url="/GoodsSearch/Index" ishot="false" iszlm="1"><i class="publicIcon liquor"></i><a target="_blank" href="/GoodsSearch/Index">白酒</a></h3>
+                                <div class="categoryCon" id="Branddata">
+                                    
                                 </div>
                             </div>
                         </li>
+
+
+
+
+
+
+
+
+
+
+
+
 
                         <li class="catItem" id="_nowactstr3">
                             <div class="catItemCon" name="__home_fenleipu">
@@ -1327,16 +1329,13 @@
   
     function getgoodsdata() {
         var id = 1;
-
         $.ajax({
             url: 'http://localhost:50169/api/goods/getgoodslist',
             success: function (data) {
-                 
                 $(data).each(function () {
                  
                     $("#await").append('<img src=' + this.goodsImg + ' width="160" height="160" onclick="fun(' + this.id + ')" /><span class="video_icon"></span>' + this.goodsName + '<span>' + this.priceNow + '</span>');
                 })
-
             }
         })
     }
@@ -1347,6 +1346,21 @@
     function jump() {
         alert(132123)
                 location.href = '/GoodsSearch/Index';
+    }
+
+    //显示左侧商品的品牌
+    function getBrand() {
+        alert("555");
+        $.ajax({
+            url: 'http://localhost:50169/api/Brand/GetBrandName',
+            success: function (data) {
+                console.log(data);
+                $(data).each(function () {
+                    alert(this.brandName);
+                    $("#Branddata").append('<p class="video_icon">' + this.brandName + '<p>');
+                })
+            }
+        })
     }
 </script>
 

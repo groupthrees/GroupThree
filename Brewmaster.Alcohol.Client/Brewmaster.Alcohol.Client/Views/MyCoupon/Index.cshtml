@@ -9,7 +9,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery/dist/modernizr-2.8.3.js"></script>
 
-
     <script type="text/javascript" async="" charset="utf-8" src="~/Wine/我的酒仙网 ) 我的优惠券_files/pushData.txt"></script>
     <script type="text/javascript" async="" src="~/Wine/我的酒仙网 ) 我的优惠券_files/mv.js"></script>
     <script type="text/javascript" async="" src="~/Wine/我的酒仙网 ) 我的优惠券_files/mba.js"></script>
@@ -154,21 +153,19 @@
     })
 
     function getCoupon(index) {
-
         $.ajax({
             type: "get",
             url: 'http://localhost:50169/api/Coupon/Getcouponlist',
             data: { id: 1, pageIndex: index, pageSize: pageSize },
             success: function (result) {
-                var tmphtml = "";
+1                var tmphtml = "";
                 $("#await").empty();
                 for (var i = 0; i < result.couponList.length; i++) {
-                    //var endTime = dateFormat(result.couponList[i].couponEndTime);
                     tmphtml += "<tr>";
                     tmphtml += "<td>" + result.couponList[i].couponName + "</td>";
                     tmphtml += "<td>" + result.couponList[i].couponMoney + "</td>";
                     tmphtml += "<td>" + result.couponList[i].couponCondition + "</td>";
-                    tmphtml += "<td>" + result.couponList[i].couponEndTime + "</td>";
+                    tmphtml += "<td>" + result.couponList[i].couponEndTime+ "</td>";
                     tmphtml += "</tr>";
                 }
                 $("#await").append(tmphtml);
