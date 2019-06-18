@@ -27,10 +27,20 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         {
             _indentRepository = IndentRepository;
         }
+
+
+
+        /// <summary>
+        ///订单显示
+        /// </summary>
+        /// <param name="orderSite"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
         [HttpGet("GetIndentPageList")]
-        public IndentPageList GetIndentPageList(int orderSite, int userId, int pageIndex = 1, int pageSize = 3)
+        public IndentPageList GetIndentPageList(int userId, int OrderSite, int pageIndex = 1, int pageSize = 3)
         {
-            var list = _indentRepository.GetIndentPageList(orderSite, userId, pageIndex, pageSize);
+            var list = _indentRepository.GetIndentPageList(userId, OrderSite, pageIndex, pageSize);
             return list;
         }
     }

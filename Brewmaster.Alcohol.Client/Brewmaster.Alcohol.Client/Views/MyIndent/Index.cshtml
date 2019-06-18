@@ -47,7 +47,7 @@
 
     <link href="~/Wine/我的酒仙网 ) 我的订单_files/user_1200.css" id="newLink" rel="stylesheet" type="text/css" />
     <!-- <script src="http://misc.jiuxian.com/js/usercenter/Verification.js" type="text/javascript"></script> -->
-
+    <script src="~/js/jquery-3.2.1.js"></script>
     <script type="text/javascript" async="" charset="utf-8" src="~/Wine/我的酒仙网 ) 我的订单_files/ntkfstat.js"></script>
     <script type="text/javascript" async="async" charset="utf-8" src="~/Wine/我的酒仙网 ) 我的订单_files/userinfo.php"></script>
     <script type="text/javascript" async="async" charset="utf-8" src="~/Wine/我的酒仙网 ) 我的订单_files/zh_cn.js" data-requiremodule="lang"></script>
@@ -95,142 +95,34 @@
             </div>
 
 
-            <div class="filterBox">
-                <span>下单时间：</span>
-                <select name="timeFlag" id="timeFlag" onchange="changeTimeFlag();">
-                    <option value="0" selected="selected">全部时间</option>
-                    <option value="1">最近三个月</option>
-                    <option value="2">今年内</option>
-                    <option value="3">2018年</option>
-                    <option value="4">2017年</option>
-                    <option value="5">2017年以前</option>
-                </select>
-            </div>
+             
 
 
             <div class="rightCon">
-                <div class="myordCon">
-                    <ul class="moConHead">
-                        <li class="moh1">商品信息</li>
-                        <li class="moh2">收货人</li>
-                        <li class="moh3">实付金额</li>
-                        <li class="moh4">订单状态</li>
-                        <li class="moh5">操作</li>
-                        <div class="clear"></div>
-                    </ul>
-                    <div class="moConBox">
-                        <div class="moCon-ord">
-                            <div class="ord-num">
-                                <div class="ord-num-box"><span>订单编号：<a href="http://member.jiuxian.com/trademanage/order_detail-118750578.htm" target="_blank">17190612095310122392</a></span><i>|</i><span class="ord-tim">下单时间：<em>2019-06-12 09:53:10</em></span></div>
+                <div class="rightCon-content">
 
-
-
-                                <div class="shopIcon"><span>酒仙</span><i class="shop-icon jxShop" title="联系酒仙" xnsettingid="jx_1000_1487130563186"></i></div>
-
-
-                            </div>
-                            <table class="ord-detailTab" cellspacing="0" cellpadding="0" border="0">
-                                <tbody>
-                                    <tr>
-                                        <td class="tdmoh1">
-                                            <div class="ordPicBox clearfix">
-
-
-
-                                                <a class="proId" value="28877" href="http://www.jiuxian.com/goods-28877.html" target="_blank" title="53°国台·品鉴15  500ml">
-                                                    <img src="~/Wine/我的酒仙网 ) 我的订单_files/a8aa081133ae4871ab26071d716a31102_002.jpg" alt="" onerror="this.src='http://misc.jiuxian.com/img/goods/hytb.jpg';" title="53°国台·品鉴15  500ml" width="50" height="50" />
-                                                </a>
-
-
-
-                                                <a class="proId" value="28877" href="http://www.jiuxian.com/goods-28877.html" target="_blank" title="53°国台·品鉴15  500ml">
-                                                    <img src="~/Wine/我的酒仙网 ) 我的订单_files/a8aa081133ae4871ab26071d716a31102_002.jpg" alt="" onerror="this.src='http://misc.jiuxian.com/img/goods/hytb.jpg';" title="53°国台·品鉴15  500ml" width="50" height="50" />
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="tdmoh2">订单</td>
-                                        <td class="tdmoh3">
-                                            <!-- TODO ¥$formatUtils.scaleAndRoundHalfUpFormat($!item.payPrice,2)-->
-                                            <p class="ord-price">¥796.0</p>
-                                            <p>
-                                                <!--
-                                                 -->
-                                                支付宝
-                                            </p>
-                                        </td>
-                                        <td class="tdmoh4">
-                                            <div class="opePending">
-                                                <span>等待付款</span>
-                                            </div>
-                                            <div class="opeTracking">
-                                                <input type="hidden" class="_orderId" value="118750578" />
-                                                <div class="TraBtn"><span>跟踪</span><i></i></div>
-                                                <div class="delivery" style="display: none;">
-                                                    <span class="arrow"></span>
-                                                    <div class="headline2 clearfix">
-                                                        <span class="timeD">处理时间</span>
-                                                        <span>处理信息</span>
-                                                        <a href="javascript:;" class="close"></a>
-                                                    </div>
-                                                    正在加载，请稍后...
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="tdmoh5">
-                                            <p><a class="ope01" target="_blank" href="http://member.jiuxian.com/trademanage/order_detail-118750578.htm">查看</a></p>
-                                            <p><a class="ope04" href="javascript:;" onclick="location.href='https://cashier.jiuxian.com//cashier/17190612095310122392/081095041f9856a23ffeae8b257c9164/B2C/0/ORDER'">付款</a></p>
-                                            <p><a class="ope01 ordPointCancle" href="javascript:;" onclick="is_cancel_order(118750578)">取消订单</a></p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="moCon-ord">
-                            <div class="ord-num">
-                                <div class="ord-num-box"><span>订单编号：<a href="http://member.jiuxian.com/trademanage/order_detail-118750553.htm" target="_blank">17190612095108519999</a></span><i>|</i><span class="ord-tim">下单时间：<em>2019-06-12 09:51:09</em></span></div>
-
-
-
-
-
-                            </div>
-                            <table class="ord-detailTab" cellspacing="0" cellpadding="0" border="0">
-                                <tbody>
-                                    <tr>
-                                        <td class="tdmoh1">
-                                            
-                                        </td>
-                                        <td class="tdmoh2">订单</td>
-                                        <td class="tdmoh3">
-                                       
-                                        </td>
-                                        <td class="tdmoh4">
-                                            
-                                            
-                                        </td>
-                                        
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
+                    <table style=" border:1px solid #e4e4e4; border-top:none; width:100%;" cellspacing="0" cellpadding="0" border="0">
+                        <thead>
+                            <tr class="rightCon-trth">
+                                <th class="li1">商品信息</th>
+                                <th class="li2">商品图片</th>
+                                <th class="li3">收货人</th>
+                                <th class="li4">实付金额</th>
+                                <th class="li4">订单状态</th>
+                            </tr>
+                        </thead>
+                        <tbody id="await"></tbody>
+                    </table>
+                    <a href="javascript:void(0)" onclick="first()">首页</a>
+                    <a href="javascript:void(0)" onclick="prve()">上一页</a>
+                    <a href="javascript:void(0)" onclick="next()">下一页</a>
+                    <a href="javascript:void(0)" onclick="last()">尾页</a>
                 </div>
-            </div>     <input id="pageNum" type="hidden" value="1" />
-            <input type="hidden" id="currRecordSize" value="2" />
-            <!-- 翻页begin -->
-
-            <div class="uPageBox clearfix">
-                <div class="uPage clearfix">
-                    <a href="javascript:void(0);" class="uPrevpage">上一页</a>
 
 
-                    <a class="num on">1</a>
-
-                    <a href="javascript:void(0)" class="uNnextpage">下一页</a>
-                </div>
-            </div>
-            <!-- 翻页end -->
+            </div>      
+            
+           
         </div>    
         <!-- 右侧 -->
 
@@ -263,3 +155,69 @@
   
 </body>
 </html>
+<script>
+    var pageIndex = 1;
+    var pageSize = 3;
+    var total = 0;
+
+    $(function () {
+
+        getOrder(pageIndex);
+
+
+    })
+
+    function getOrder(index) {
+        $.ajax({
+            type: "get",
+            url: 'http://localhost:50169/api/Indent/GetIndentPageList',
+            data: { usersId: 1, OrderSite:1, pageIndex: index, pageSize: pageSize },
+            success: function (result) {
+                var tmphtml = "";
+                $("#await").empty();
+                for (var i = 0; i < result.orderList.length; i++) {
+                    tmphtml += "<tr>";
+                    tmphtml += "<td>" + result.orderList[i].GoodsName  + "</td>";
+                    tmphtml += "<td>" + result.orderList[i].GoodsImg  + "</td>";
+                    tmphtml += "<td>" + result.orderList[i].couponCondition + "</td>";
+                    tmphtml += "<td>" + result.orderList[i].PracticalMoney  + "</td>";
+                    tmphtml += "<td>" + result.orderList[i].OrderSite  + "</td>";
+                    tmphtml += "</tr>";
+                }
+                $("#await").append(tmphtml);
+                total = result.total;
+            }
+        })
+    }
+    //查询
+    function search() {
+        getCoupon(pageIndex);
+    }
+
+    //首页
+    function first() {
+        pageIndex = 1;
+
+        getCoupon(pageIndex);
+    }
+
+    //上页
+    function prve() {
+        pageIndex = pageIndex > 1 ? pageIndex - 1 : 1;
+        getCoupon(pageIndex);
+    }
+
+    //下页
+    function next() {
+        var nums = Math.ceil(total / pageSize);
+        pageIndex = pageIndex < nums ? pageIndex + 1 : pageIndex;
+        getCoupon(pageIndex);
+    }
+
+    //尾页
+    function last() {
+        pageIndex = Math.ceil(total / pageSize);
+        getCoupon(pageIndex);
+    }
+
+</script>
