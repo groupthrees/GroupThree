@@ -1344,19 +1344,19 @@
         location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
         }
     function jump() {
-        alert(132123)
+       
                 location.href = '/GoodsSearch/Index';
     }
 
     //显示左侧商品的品牌
     function getBrand() {
-        alert("555");
+      
         $.ajax({
             url: 'http://localhost:50169/api/Brand/GetBrandName',
             success: function (data) {
                 console.log(data);
                 $(data).each(function () {
-                    alert(this.brandName);
+                   
                     $("#Branddata").append('<p class="video_icon">' + this.brandName + '<p>');
                 })
             }
