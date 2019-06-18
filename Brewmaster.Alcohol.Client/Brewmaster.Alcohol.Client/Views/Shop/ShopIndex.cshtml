@@ -61,7 +61,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <td width="330"><input name='smallBox' id="selectAll" value="" type="checkbox" />全选<input type="button" value="反选" id="selectNo" /></td>
+                            <td width="330"><input  id="selectAll" value="" type="checkbox" />全选<input type="button" value="反选" id="selectNo" /></td>
                             <td width="330">商品</td>
                             <td width="330">单价</td>
                             <td width="330">数量</td>
@@ -146,17 +146,17 @@
 
         //全选
         $("#selectAll").click(function () {
-
-            $("input[name='smallBox']").attr('checked', true);
+            alert($("#selectAll").val())
+            $("input[name='smallBox']").attr('checked', $(this).val());
         });
-        //反选
-        $("#selectNo").click(function () {
+        ////反选
+        //$("#selectNo").click(function () {
 
-            $("input[name='smallBox']").each(function () {
+        //    $("input[name='smallBox']").each(function () {
 
-                $(this).attr("checked", !$(this).attr("checked"))
-            })
-        })
+        //        $(this).attr("checked", !$(this).attr("checked"))
+        //    })
+        //})
 
     });
 
