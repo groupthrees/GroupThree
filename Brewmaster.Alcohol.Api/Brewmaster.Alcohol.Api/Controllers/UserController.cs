@@ -65,5 +65,17 @@ namespace Brewmaster.Alcohol.Api.Controllers
             int result = _UserRepository.AddUser(users);
             return result;
         }
+
+        ///// <summary>
+        ///// 验证表添加数据
+        ///// </summary>
+        ///// <param name="code"></param>
+        ///// <returns></returns>
+        //[HttpPost("AddCode")]
+        //public int AddCode([FromBody] Code code)
+        //{
+        //    int result = _UserRepository.AddCode(code);
+        //    return result;
+        //}
     }
 }
