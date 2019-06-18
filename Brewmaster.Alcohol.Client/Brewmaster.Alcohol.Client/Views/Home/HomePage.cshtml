@@ -155,9 +155,9 @@
 
             <div class="headerSearch">
                 <div class="searchHome">
-                    <form action="http://list.jiuxian.com/search.htm" method="get">
+                    <form action="/GoodsSearch/index" method="get">
                         <input id="wd" class="search-form" type="text" name="key" value="畅饮618：每满199减20元" maxlength="50" autocomplete="off" />
-                        <input class="search-btn" type="submit" name="" value="搜&nbsp;索" onclick="jump()"/>
+                        <input class="search-btn" type="submit" name="" value="搜&nbsp;索"/>
                         <input id="area" name="area" type="hidden" value="2" />
                     </form>
                     <div class="searchCon" id="searchCon" style="display: none;">
@@ -1355,6 +1355,7 @@
         var usersId = $('#Hidden1').val();
         location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
         }
+
     function jump() {
         alert(132123)
                 location.href = '/GoodsSearch/Index';

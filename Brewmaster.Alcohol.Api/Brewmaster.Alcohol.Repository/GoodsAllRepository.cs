@@ -70,13 +70,14 @@ namespace Brewmaster.Alcohol.Repository
                     sql = sql + $" and GoodsType.Id={typeId}";
                     sqlCount = sqlCount + $" and GoodsType.Id={typeId}";
                 }
-                sql = sql + $" limit {(pageIndex - 1) * pageSize},{pageSize}";
+
                 switch (priceNow)
                 {
                     case 123: orderByPriceSql += "select * from(" + sql + ") t order by PriceNow desc"; break;
                     case 456: orderByPriceSql += "select * from(" + sql + ") t order by PriceNow"; break;
                     case 789: orderByPriceSql += sql; break;
                 }
+                orderByPriceSql = orderByPriceSql + $" limit {(pageIndex - 1) * pageSize},{pageSize}";
                 var result = conn.Query<GoodsAll>(orderByPriceSql).ToList();
                 goodsAllListPage.GoodsAll = result;
                 goodsAllListPage.Total = conn.ExecuteScalar<int>(sqlCount);
