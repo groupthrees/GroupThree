@@ -19,7 +19,7 @@ namespace Brewmaster.Alcohol.Repository
         /// </summary>
         /// <returns></returns>
         public List<Brand> GetBrandName()
-            {
+        {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 string sql = "select * from Brand";
