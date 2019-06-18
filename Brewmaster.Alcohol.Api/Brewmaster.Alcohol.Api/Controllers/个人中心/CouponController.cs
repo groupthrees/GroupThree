@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Brewmaster.Alcohol.IRepository;
+using Brewmaster.Alcohol.Model;
 using Brewmaster.Alcohol.Model.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -37,5 +38,16 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
             return _CouponRepository.Getcouponlist(id, pageIndex, pageSize);
         }
 
+        /// <summary>
+        /// 领取优惠券
+        /// </summary>
+        /// <param name="shopCart"></param>
+        /// <returns></returns>
+        /// 
+        [HttpPost("Insertcoupon")]
+        public int Insertcoupon([FromBody]Coupon coupon)
+        {
+            return _CouponRepository.Insertcoupon(coupon);
+        }
     }
 }

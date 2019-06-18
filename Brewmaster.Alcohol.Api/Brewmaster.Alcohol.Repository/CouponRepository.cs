@@ -44,13 +44,21 @@ namespace Brewmaster.Alcohol.Repository
                 return couponDto;
             }
         }
+
+        /// <summary>
+        /// 领取优惠券
+        /// </summary>
+        /// <param name="shopCart"></param>
+        /// <returns></returns>
+        public int Insertcoupon(Coupon coupon)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string strsql = string.Format("insert into coupon values({0},'{1}',{2},'{3}','{4}',{5},{6},{7})", coupon.Id, coupon.CouponName, coupon.CouponMoney, coupon.CouponBeginTime, coupon.CouponEndTime, coupon.CouponCondition, coupon.CouponStatu, coupon.UsersId);
+                var result = conn.Execute(strsql);
+                return result;
+            }
+        }
     }
 }
-// sql = string.Format("select OrderNo,OrderSite,OrderDate,OrderMoney,PracticalMoney,GoodsName,GoodsImg from Goods inner join OrderGoods on Goods.Id = OrderGoods.GoodId inner join Orders on Orders.Id = OrderGoods.OrdersId where OrderSite={0} limit {1},{2}  ", orderSite, sum, pageSize);
-//                sqlCount = string.Format("select (Goods.Id) from Goods inner join OrderGoods on Goods.Id = OrderGoods.GoodId inner join Orders on Orders.Id = OrderGoods.OrdersId where OrderSite={0}", orderSite);
-//                var result = conn.Query<IndentPageList>(sql).ToList();
-//                indentPageList.IndentPageListShow = result;
-//                indentPageList.Total = conn.ExecuteScalar<int>(sqlCount);
-//                return indentPageList;
-
 
