@@ -33,9 +33,9 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         /// </summary>
         /// <returns></returns>
         [HttpGet("Getcouponlist")]
-        public CouponDto Getcouponlist(int id, int pageIndex, int pageSize)
+        public CouponDto Getcouponlist(int id, int pageIndex, int pageSize, int statuid = 1)
         {
-            return _CouponRepository.Getcouponlist(id, pageIndex, pageSize);
+            return _CouponRepository.Getcouponlist(id, pageIndex, pageSize,statuid);
         }
 
         /// <summary>

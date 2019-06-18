@@ -129,6 +129,10 @@ create table Orders
   OrderDate    datetime,-- 下单时间
   OrderMoney   varchar(50),-- 订单金额
   PracticalMoney varchar(50)-- 实际支付金额
+  usersId int -- 用户id外键
+  AreaId int -- 地区id外键
+  CouponMoney  varchar(5) -- 优惠金额（默认0）
+  ApplyMethod  varchar(50) -- 支付方式 
 )auto_increment=1;
 -- 地区表
 create table Area
@@ -143,6 +147,8 @@ create table OrderGoods
   Id int primary key auto_increment,
   GoodId  int,-- 商品id（外键）
   OrdersId int-- 订单id（外键）
+  GoodNum int -- 购买数量
+  BuyPrice int -- 购买该商品时的单价
 )auto_increment=1;
 -- 日志表
 create table Journal

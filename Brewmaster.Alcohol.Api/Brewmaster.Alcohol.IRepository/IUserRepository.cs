@@ -28,5 +28,13 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="users"></param>
         /// <returns></returns>
         int AddUser(Users users);
+
+        ///// <summary>
+        ///// 添加验证码表
+        ///// </summary>
+        ///// <param name="code"></param>
+        ///// <returns></returns>
+        //int AddCode(Code code);
+        
     }
 }
