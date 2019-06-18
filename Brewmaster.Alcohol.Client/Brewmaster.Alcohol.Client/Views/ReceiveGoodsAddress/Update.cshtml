@@ -1,0 +1,96 @@
+﻿
+@{
+    Layout = null;
+}
+@model Brewmaster.Alcohol.Client.Models.Address
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>修改页面</title>
+    <script src="~/js/jquery-3.2.1.js"></script>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+ 
+    <table class="table table-bordered" style="width:50%;margin:0 auto;">
+        <tr>
+            <td>
+                收货人:
+            </td>
+            <td>
+                <input id="id" type="hidden" value="@Model.Id" />
+                <input id="people" type="text" value="@Model.AddressPerson" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                详细地址:
+            </td>
+            <td>
+                <input id="address" type="text" value="@Model.DetailAddress" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                手机号/电话:
+            </td>
+            <td>
+                <input id="iphone" type="text" value="@Model.AddressPhone" />
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input id="btnUpt" type="button" value="修改" class="btn-primary" onclick="upt()" />
+                <input id="btnReturn" type="button" value="返回" class="btn-primary" onclick="ret()" />
+            </td>
+            
+        </tr>
+    </table>
+ 
+</body>
+</html>
+<script>
+    //添加收货地址
+    function upt() {
+        var id = $("#id").val();
+        var addressPerson = $("#people").val();
+        var detailAddress = $("#address").val();
+        var addressPhone = $("#iphone").val();
+    
+
+        alert(id);
+        var date = {
+            "Id": id,
+            "addressPerson": addressPerson,
+            "detailAddress": detailAddress,
+            "addressPhone": addressPhone
+
+        };
+        var val = JSON.stringify(date);
+        $.ajax({
+            url: 'http://localhost:50169/api/Address/UpdateAddress',
+            data: val,
+            type: "post",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                if (data > 0) {
+                    alert("修改收货地址成功");
+                    location.href = '/ReceiveGoodsAddress/Index';
+                }
+                else {
+                    alert("修改收货地址失败");
+                }
+            }
+        })
+    }
+
+    function ret() {
+        location.href = '/ReceiveGoodsAddress/Index';
+    }
+</script>
