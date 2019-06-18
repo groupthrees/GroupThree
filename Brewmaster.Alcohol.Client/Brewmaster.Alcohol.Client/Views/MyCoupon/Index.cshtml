@@ -65,18 +65,7 @@
     <div>
         <div class="rightTit"><h2><i></i>我的优惠券</h2></div>
         <div class="rightCon">
-            <div class="right-content">
-                <div class="inputBox" id="allInput">
-                    <b>优惠券序列号：</b>
-                    <div class="codeNum"><input type="text" name="bonus_sn" id="bonus_sn" autocomplete="off" /><p class="valuePopC">请输入优惠券序列号</p></div>
-                    <div class="codeYzm"><input type="text" name="cap" id="cap" autocomplete="off" /><p class="valuePopY">验证码</p></div>
-                    <div class="yzmImg"><img id="checkCodeId" src="~/Wine/我的酒仙网 ) 我的优惠券_files/getCheckCode.jpg" onclick="changeCheckCode();" /></div>
-                    <span>看不清？</span>
-                    <a href="javascript:void(0);" onclick="javascript:changeCheckCode();">换一张</a>
-                    <div id="active" class="codeBtn">激活优惠券</div>
-                </div>
-                <div class="accCode"><span class="accNotic"><i></i><span>请输入优惠券序列号</span></span><span class="accNotic accNoticCode"><i></i><span>请输入验证码</span></span></div>
-            </div>
+           
             <div class="myRedBox">
                 <div class="myRedTit clearfix">
                     <ul>
@@ -146,14 +135,10 @@
     var total = 0;
 
     $(function () {
-
         getCoupon(pageIndex);
-
-
     })
 
     function getCoupon(index) {
-        alert("111");
         $.ajax({
             type: "get",
             url: 'http://localhost:50169/api/Coupon/Getcouponlist',
@@ -163,7 +148,6 @@
                 $("#await").empty();
                 for (var i = 0; i < result.couponList.length; i++) {
                     var endTime = dateFormat(result.couponList[i].couponEndTime);
-                    alert(endTime);
                     tmphtml += "<tr>";
                     tmphtml += "<td>" + result.couponList[i].couponName + "</td>";
                     tmphtml += "<td>" + result.couponList[i].couponMoney + "</td>";
