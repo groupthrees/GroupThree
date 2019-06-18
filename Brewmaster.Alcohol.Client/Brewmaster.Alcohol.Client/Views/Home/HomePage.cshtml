@@ -229,10 +229,22 @@
                         </li>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                         <li class="catItem bg" id="_nowactstr2">
                             <div class="catItemCon" name="__home_fenleibai">
                                 <h3 name="tagH" pathname="" url="/GoodsSearch/Index" ishot="false" iszlm="1"><i class="publicIcon liquor"></i><a target="_blank" href="/GoodsSearch/Index">白酒</a></h3>
-                                <div class="categoryCon" id="Branddata">
+                                <div id="Branddata">
                                     
                                 </div>
                             </div>
@@ -1344,23 +1356,24 @@
         location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
         }
     function jump() {
-       
+        alert(132123)
                 location.href = '/GoodsSearch/Index';
     }
 
     //显示左侧商品的品牌
     function getBrand() {
-      
         $.ajax({
             url: 'http://localhost:50169/api/Brand/GetBrandName',
             success: function (data) {
-                console.log(data);
                 $(data).each(function () {
-                   
-                    $("#Branddata").append('<p class="video_icon">' + this.brandName + '<p>');
+                    $("#Branddata").append('<a href="#" onclick="brand()">' + this.brandName + '</a>').append('&nbsp; &nbsp;');
                 })
             }
         })
+    }
+    //点击左侧商品的品牌
+    function brand() {
+        location.href = '/GoodsSearch/Index';
     }
 </script>
 
