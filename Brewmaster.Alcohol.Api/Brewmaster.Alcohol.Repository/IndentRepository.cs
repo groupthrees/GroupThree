@@ -17,27 +17,38 @@ namespace Brewmaster.Alcohol.Repository
         private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=root;Pwd=1064519100;";
 
         /// <summary>
-        /// 订单状态查询
+        ///订单显示
         /// </summary>
         /// <param name="orderSite"></param>
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        public IndentPageList GetIndentPageList(int orderSite, int userId, int pageIndex, int pageSize)
+        public IndentPageList GetIndentPageList( int userId, int OrderSite, int pageIndex, int pageSize)
         {
-            IndentPageList indentPageList = new IndentPageList();
-            var sql = "";
-            var sqlCount = "";
-            int sum = (pageIndex - 1) * pageSize;
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                sql = string.Format("select OrderNo,OrderSite,OrderDate,OrderMoney,PracticalMoney,GoodsName,GoodsImg from Goods inner join OrderGoods on Goods.Id = OrderGoods.GoodId inner join Orders on Orders.Id = OrderGoods.OrdersId inner join Users on Users.Id=Orders.UsersId where OrderSite={0} and UsersId={1} limit {2},{3}  ", orderSite, userId, sum, pageSize);
-                sqlCount = string.Format("select count(Goods.Id) from Goods inner join OrderGoods on Goods.Id = OrderGoods.GoodId inner join Orders on Orders.Id = OrderGoods.OrdersId inner join Users on Users.Id=Orders.UsersId where OrderSite={0} and UsersId={1}", orderSite, orderSite);
-                var result = conn.Query<IndentDto>(sql).ToList();
-                indentPageList.IndentPageListShow = result;
-                indentPageList.Total = conn.ExecuteScalar<int>(sqlCount);
-                return indentPageList;
+                string strSql1 = string.Format("select count(1)  from orders join address on orders.addressId = address.Id join ordergoods on ordergoods.OrdersId = orders.Id join goods on goods.Id = ordergoods.GoodId where orders.usersId = {0} and orders.OrderSite={1} ",userId,OrderSite);
+                var total = conn.ExecuteScalar<int>(strSql1);
+                int index = (pageIndex - 1) * pageSize;
+                var strSql2 = string.Format("select  orders.Id,goods.GoodsName,goods.GoodsImg,orders.ApplyMethod,orders.PracticalMoney,address.AddressPerson from orders join address on orders.addressId = address.Id join ordergoods on ordergoods.OrdersId = orders.Id join goods on goods.Id = ordergoods.GoodId where orders.usersId = {0} and orders.OrderSite = {1} limit  {2},{3}",userId,OrderSite,pageIndex,pageSize);
+
+                var orderlist = conn.Query<IndentDto>(strSql2);
+                if (orderlist == null)
+                {
+                    return new IndentPageList();
+                }
+                var IndentDto = new IndentPageList
+                {
+                    IndentPageListShow = orderlist.ToList(),
+                    Total = total
+                };
+                return IndentDto;
             }
+
         }
+
+     
+
+
     }
 }
