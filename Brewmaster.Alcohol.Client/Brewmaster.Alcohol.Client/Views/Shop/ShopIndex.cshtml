@@ -61,7 +61,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <td width="330"><input  id="selectAll" value="" type="checkbox" />全选<input type="button" value="反选" id="selectNo" /></td>
+                            <td width="330"><input name='smallBox' id="selectAll" type="checkbox" onclick="setchecked(this.checked)" />全选 </td>
                             <td width="330">商品</td>
                             <td width="330">单价</td>
                             <td width="330">数量</td>
@@ -81,10 +81,8 @@
             </div>
             <div class="cart-gopay-bottom">
                 <div class="cart-gopay-left">
-                    <label class="check-all "><i class="cartIcon "></i><input name="" value="" type="checkbox" /><span class="checkAllText">全选</span></label>
+                    <label class="check-all "><i class="cartIcon "></i><input name="" value="" type="checkbox" onclick="setchecked(this.checked)"/><span class="checkAllText">全选</span></label>
                     <a href="javascript:;" id="delChecked">删除选中商品</a>
-                    <a href="javascript:;" id="delFail">清除失效商品</a>
-                    <a href="javascript:;" id="delToCollect">移入我的收藏</a>
                 </div>
                 <div class="cart-count">
                     <div class="cart-count-total"><span class="pieces">已选商品<em>2</em>件</span><span class="total">总价（不含运费）：<em>￥188.00</em></span></div>
@@ -144,21 +142,13 @@
 
         getShopCart(pageIndex);
 
-        //全选
-        $("#selectAll").click(function () {
-            alert($("#selectAll").val())
-            $("input[name='smallBox']").attr('checked', $(this).val());
-        });
-        ////反选
-        //$("#selectNo").click(function () {
-
-        //    $("input[name='smallBox']").each(function () {
-
-        //        $(this).attr("checked", !$(this).attr("checked"))
-        //    })
-        //})
+  
 
     });
+    //全选 反选
+    function setchecked(checked) {
+        $("input[type=checkbox]").attr("checked", checked)
+    }
 
     function getShopCart(index) {
         $.ajax({
@@ -174,7 +164,7 @@
                     tmphtml += "<td><input type='checkbox' name='smallBox' value='' /></td>";
                     tmphtml += "<td><img src=" + result.shopCartList[i].goodsImg + "  width='50' height='50' >" + result.shopCartList[i].goodsName + "</td>";
                     tmphtml += "<td>" + result.shopCartList[i].priceNow + "</td>";
-                    tmphtml += "<td>数量</td>";
+                    tmphtml += "<td><input id='Button1' type='button' value='-' onclick='addNum("+this+")' /><input id='Text1' type='text' value='1' /><input id='Button1' type='button' value='+' onclick='addNum(" + this+  ")' /></td>";
                     tmphtml += "<td>小计</td>";
                     tmphtml += "<td><input type='button' value='删除' onclick='joinshopCar(" + result.shopCartList[i].goodsId + ")'/><input type='button' value='移我的收藏' onclick='cancelcollect(" + result.shopCartList[i].goodsId + ")'/></td>";
                     tmphtml += "</tr>";
@@ -185,7 +175,9 @@
         })
     }
 
-
+    function addNum(obj) {
+     alert(obj)
+    }
     //查询
     function search() {
         getShopCart(pageIndex);

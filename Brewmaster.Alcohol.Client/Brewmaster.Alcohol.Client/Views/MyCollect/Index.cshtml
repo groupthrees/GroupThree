@@ -76,7 +76,7 @@
 
                 <thead>
                     <tr>
-                        <th class="mycT0" width="130"><input name='smallBox' id="selectAll" type="checkbox" value="" />全选  <input type="button" value="反选" id="selectNo" /></th>
+                        <th class="mycT0" width="130"><input name='smallBox' id="selectAll" type="checkbox" onclick="setchecked(this.checked)" />全选  </th>
                         <th class="mycT2" width="330"><span>图片</span></th>
                         <th class="mycT2" width="330"><span>商品</span></th>
                         <th class="mycT4" width="225">当前价格</th>
@@ -136,21 +136,15 @@
     $(function () {
 
         getCoupon(pageIndex);
-        //全选
-        $("#selectAll").click(function () {
-
-            $("input[name='smallBox']").attr('checked', true);
-        });
-        //反选
-        $("#selectNo").click(function () {
-
-            $("input[name='smallBox']").each(function () {
-
-                $(this).attr("checked", !$(this).attr("checked"))
-            })
-        })
+       
 
     })
+
+    //全选 反选
+    function setchecked(checked) {
+        $("input[type=checkbox]").attr("checked", checked)
+    }
+
 
     function getCoupon(index) {
         $.ajax({
