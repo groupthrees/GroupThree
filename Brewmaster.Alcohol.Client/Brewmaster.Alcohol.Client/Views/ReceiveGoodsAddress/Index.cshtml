@@ -63,35 +63,8 @@
         <div>
             <div class="rightTit"><h2><i></i>收货地址</h2> <a href="#allInput" class="addressTrue">添加新地址</a> </div>
             <div class="rightCon">
-                <div class="ln_addressBox1" style="display:block;position:relative">
-                    <table class="ln_addressBoxTit" cellspacing="0" cellpadding="0" border="0">
-                        <tbody>
-                            <tr>
-                                <th class="men"><p>收货人</p></th>
-                                <th class="adr">地址</th>
-                                <th class="pho">电话/手机</th>
-                                <th class="control">操作</th>
-                            </tr>
-                            <tr>
-                                <td class="men">
-                                    <p>
-                                        订单
-                                    </p>
-                                </td>
-                                <td class="adr">
-                                    <p class="adr-td">
-                                        湖南省岳阳市平江县<span style=" margin-left:10px">  电饭锅 </span>
-                                    </p>
-
-                                </td>
-                                <td class="pho">
-                                    182****4665
-                                </td>
-                                <td class="control"><a href="http://member.jiuxian.com/myaccount/address.htm?id=112275035#allInput" class="controlChange">修改</a>  | <a href="javascript:;" class="controlRemove" onclick="javascript:deleteAddress(112275035);">删除</a></td>
-                            </tr>
-
-                        </tbody>
-                    </table>
+                <div class="ln_addressBox1" style="display:block;position:relative" id="list">
+                     
 
                 </div>
                 <div class="ln_addressBox" id="allInput">
@@ -160,7 +133,7 @@
             </div>
 
         </div>
-
+ 
     <style type="text/css">
         .footerBotLeft .footerInfo {
             margin-left: -8px;
@@ -197,6 +170,7 @@
 
     $(function () {
         getarea();
+        bindGoods();
     })
 
     function getarea() {
@@ -222,8 +196,92 @@
             }
         })
     }
-   
+    function bindGoods() {
 
+        $.ajax({
+            url: 'http://localhost:50169/api/Address/GetAddressesList',
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                $("#list").empty();
+                if (data.length>0) {
+                    var html = "<table class='ln_addressBoxTit' cellspacing='0' cellpadding='0' border='0'>";
+                    html += "<tr>";
+                    html += "<td>收货人</td>";
+                    html += "<td>地址</td>";
+                    html += "<td>电话/手机</td>";
+                    html += "<td>操作</td>";
+                    html += "</tr>";
+                    for (var i = 0; i < data.length; i++) {
+                        html += "<tr>";
+                        html += "<td>" + data[i].addressPerson+"</td>";
+                        html += "<td>" + data[i].detailAddress + "</td>";
+                        html += "<td>" + data[i].addressPhone + "</td>";
+                        html += "<td><input id='btnUpt' type='button' value='修改' onclick=upt(" + data[i].id + ") /><input id='btnDel' type='button' value='删除' onclick=del(this," + data[i].id +") /></td>";
+                        html += "</tr>";
+                    }
+                    html += "</table>";
+                    $("#list").append(html);
+                }
+
+            }
+        })
+    }
+
+    function upt(Id) {
+    
+        $.ajax({
+            url: 'http://localhost:50169/api/Address/GetAreaList',
+            data: { pid: pid },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                $("#district").empty();
+                var html = "";
+                $("#district").append('<option value="" selected="selected">请选择</option>');
+
+                $(data).each(function () {
+                    html += ' <option value="' + this.id + '" >' + this.areaName + '</option>';
+                })
+                $("#district").append(html);
+
+            }
+        })
+    }
+
+    function del(obj, id) {
+        if (confirm('确认要删除吗?')) {
+             
+            var date = {
+                "id": id
+            };
+            var val = JSON.stringify(date);
+            $.ajax({
+                url: 'http://localhost:50169/api/Address/DelAddress',
+                type: "post",
+                data: val,
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                crossDomain: true,
+                dataType: 'json',
+                success: function (data) {
+                    if (data>0) {
+                        $(obj).parent().parent().remove();
+
+                        //alert('删除成功');
+                    }
+                 
+                }
+            })
+        }
+
+    }
     function city(pid) {
         pid = $("#province").val();
         alert(pid)

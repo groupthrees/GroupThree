@@ -23,14 +23,14 @@ namespace Brewmaster.Alcohol.Repository
         /// <returns></returns>
         public int AddUser(Users users)
         {
-            //using (MySqlConnection conn = new MySqlConnection(connStr))
-            //{
-            //    string sql = string.Format("insert into users(Id,UsersName,UsersNickname,UsersRealName,UsersSex,UsersBirthday,UsersAreaId,UsersHeadPortrait,UsersDetailedAddress) values(null,'{0}','{1}','{2}',{3},'{4}',{5},'{6}','{7}')", address.AddressPerson, address.AreaId, address.UsersId, address.DetailAddress, address.PostalCode, address.AddressPhone);
-            //    int result = conn.Execute(sql);
-            //    return result;
-            //}
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = string.Format("insert into users(Id,UsersName,UsersNickname,UsersRealName,UsersSex,UsersBirthday,UsersAreaId,UsersHeadPortrait,UsersDetailedAddress) values(null,'{0}','{1}','{2}',{3},'{4}',{5},'{6}','{7}')",users.UsersName, users.UsersNickname, users.UsersRealName, users.UsersSex, users.UsersBirthday, users.UsersAreaId,users.UsersHeadPortrait,users.UsersDetailedAddress);
+                int result = conn.Execute(sql);
+                return result;
+            }
 
-            return 1;
+       
         }
 
 
