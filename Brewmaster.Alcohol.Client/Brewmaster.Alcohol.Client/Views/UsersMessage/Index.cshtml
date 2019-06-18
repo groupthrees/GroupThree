@@ -261,6 +261,7 @@
         var realyName = $("#realyName").val();
         var setBirthday = $("#setBirthday").val();
         var areaId = $("#province").val();
+        var usersSex = $("[name=sex]:checked").val();
         var likeBrand = $("#likeBrand").val();
         var addressMore = $("#addressMore").val();
         if (realName == "") {
@@ -298,7 +299,7 @@
             "usersName": realName,
             "usersNickname": anotherName,
             "usersRealName": realyName,
-            "usersSex": 0,
+            "usersSex": usersSex,
             "usersBirthday": setBirthday,
             "usersDetailedAddress": addressMore,
             "usersAreaId": areaId,
