@@ -49,10 +49,9 @@
     <link rel="stylesheet" type="text/css" href="~/Wine/我的酒仙网 ) 基本信息_files/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="~/Wine/我的酒仙网 ) 基本信息_files/jquery.css" />
     <script src="~/Wine/我的酒仙网 ) 基本信息_files/md5.js" type="text/javascript"></script>
-    <script type="text/javascript" src="~/Wine/我的酒仙网 ) 基本信息_files/user_info.js"></script>
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 基本信息_files/jquery_003.js"></script>
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 基本信息_files/jquery-ui-datepicker.js"></script>
-
+    <script src="~/js/jquery-3.2.1.js"></script>
     <link href="~/Wine/我的酒仙网 ) 基本信息_files/user_1200.css" id="newLink" rel="stylesheet" type="text/css" />
     <!-- <script src="http://misc.jiuxian.com/js/usercenter/Verification.js" type="text/javascript"></script> -->
 
@@ -87,7 +86,7 @@
                                         </li>
                                         <li class="clearfix">
                                             <p class="zpName">真实姓名：</p>
-                                            <input type="text" class="realName" name="realName" id="realName" maxlength="20" />
+                                            <input type="text" class="realName" name="realName" id="realyName" maxlength="20" />
                                             <div class="acc">
                                                 <div id="realNameTS" class="accNotic" style="display:none"><i></i><span>请输入真实姓名</span></div>
                                             </div>
@@ -113,12 +112,12 @@
 
                                         <li class="clearfix">
                                             <p class="zpName">地区：</p>
-                                            <select name="province" id="province">
-                                                <option value="" selected="selected">请选择</option>
+                                            <select name="province" id="province" onchange="city()">
+                                                <option value="" selected="selected" >请选择</option>
 
                                             </select>
-                                            <select name="city" id="city">
-                                                <option value="" selected="selected">请选择</option>
+                                            <select name="city" id="city" onchange="district()">
+                                                <option value="" selected="selected" >请选择</option>
                                             </select>
                                             <select name="district" id="district">
                                                 <option value="" selected="selected">请选择</option>
@@ -177,3 +176,153 @@
 
 </body>
 </html>
+<script>
+    $(function () {
+        getarea();
+    })
+
+    function getarea() {
+
+        $.ajax({
+            url: 'http://localhost:50169/api/Address/GetAreaList',
+            data: { pid: 0 },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                $("#province").empty();
+                var html = "";
+                $("#province").append('<option value="" >请选择</option>');
+
+                $(data).each(function () {
+                    html += ' <option value="' + this.id + '"  >' + this.areaName + '</option>';
+                })
+                $("#province").append(html);
+
+            }
+        })
+    }
+    function city(pid) {
+        pid = $("#province").val();
+     
+        $.ajax({
+            url: 'http://localhost:50169/api/Address/GetAreaList',
+            data: { pid: pid },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                $("#city").empty();
+                var html = "";
+                $("#city").append('<option value="" selected="selected">请选择</option>');
+
+                $(data).each(function () {
+                    html += ' <option value="' + this.id + '" >' + this.areaName + '</option>';
+                })
+                $("#city").append(html);
+
+            }
+        })
+    }
+
+    function district(pid) {
+        pid = $("#city").val();
+  
+        $.ajax({
+            url: 'http://localhost:50169/api/Address/GetAreaList',
+            data: { pid: pid },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                $("#district").empty();
+                var html = "";
+                $("#district").append('<option value="" selected="selected">请选择</option>');
+
+                $(data).each(function () {
+                    html += ' <option value="' + this.id + '" >' + this.areaName + '</option>';
+                })
+                $("#district").append(html);
+
+            }
+        })
+    }
+
+    //添加个人信息
+    function save() {
+        var realName = $("#realName").val();
+        var anotherName = $("#anotherName").val();
+        var realyName = $("#realyName").val();
+        var setBirthday = $("#setBirthday").val();
+        var areaId = $("#province").val();
+        var likeBrand = $("#likeBrand").val();
+        var addressMore = $("#addressMore").val();
+        if (realName == "") {
+            alert("用户名不能为空!");
+            return false;
+        }
+
+        if (anotherName == "") {
+            alert("昵称不能为空!");
+            return false;
+        }
+
+        if (realyName == "") {
+            alert("真实姓名不能为空!");
+            return false;
+        }
+
+        if (setBirthday == "") {
+            alert("生日不能为空!");
+            return false;
+        }
+
+        if (likeBrand == "") {
+            alert("喜欢的酒类品牌不能为空!");
+            return false;
+        }
+
+        if (addressMore == "") {
+            alert("详细地址不能为空!");
+            return false;
+        }
+
+        var date = {
+            "id": 0,
+            "usersName": realName,
+            "usersNickname": anotherName,
+            "usersRealName": realyName,
+            "usersSex": 0,
+            "usersBirthday": setBirthday,
+            "usersDetailedAddress": addressMore,
+            "usersAreaId": areaId,
+            "usersHeadPortrait": likeBrand
+        };
+        var val = JSON.stringify(date);
+        $.ajax({
+            url: 'http://localhost:50169/api/User/AddUser',
+            data: val,
+            type: "post",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                if (data > 0) {
+                    alert("添加个人信息成功");
+                  
+                }
+                else {
+                    alert("添加个人信息失败");
+                }
+            }
+        })
+    }
+
+</script>

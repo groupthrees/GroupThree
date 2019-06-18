@@ -74,7 +74,7 @@ namespace Brewmaster.Alcohol.Repository
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 string strSql1 = string.Format("select  AddressPerson,DetailAddress,AddressPhone from address where Id={0}", id);
-                var result = conn.Query<Address>(strSql1).FirstOrDefault();
+                var result = conn.Query<Address>(strSql1).SingleOrDefault();
                 return result;
             }
         }
@@ -88,7 +88,7 @@ namespace Brewmaster.Alcohol.Repository
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string sql = string.Format("update address(Id,AddressPerson,DetailAddress,AddressPhone) set AddressPerson='{0}',DetailAddress='{1}',AddressPhone='{2}' where Id={3})", address.AddressPerson,address.DetailAddress,address.AddressPhone,address.Id);
+                string sql = string.Format("update address  set AddressPerson='{0}',DetailAddress='{1}',AddressPhone='{2}' where Id={3}", address.AddressPerson, address.DetailAddress, address.AddressPhone, address.Id);
                 int result = conn.Execute(sql);
                 return result;
             }

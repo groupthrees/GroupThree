@@ -69,8 +69,8 @@ namespace Brewmaster.Alcohol.Api.Controllers.收货地址
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpPost("DelAddress")]
-        public int DelAddress([FromBody]int id)
+        [HttpDelete("DelAddress")]
+        public int DelAddress(int id)
         {
             int result = _addressRepository.DelAddress(id);
             return result;
