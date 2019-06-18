@@ -174,7 +174,7 @@
                     tmphtml += "<td><input type='checkbox' name='smallBox' value='' /></td>";
                     tmphtml += "<td><img src=" + result.shopCartList[i].goodsImg + "  width='50' height='50' >" + result.shopCartList[i].goodsName + "</td>";
                     tmphtml += "<td>" + result.shopCartList[i].priceNow + "</td>";
-                    tmphtml += "<td>数量</td>";
+                    tmphtml += "<td><input id='Button1' type='button' value='-' onclick='addNum("+this+")' /><input id='Text1' type='text' value='1' /><input id='Button1' type='button' value='+' onclick='addNum(" + this+  ")' /></td>";
                     tmphtml += "<td>小计</td>";
                     tmphtml += "<td><input type='button' value='删除' onclick='joinshopCar(" + result.shopCartList[i].goodsId + ")'/><input type='button' value='移我的收藏' onclick='cancelcollect(" + result.shopCartList[i].goodsId + ")'/></td>";
                     tmphtml += "</tr>";
@@ -185,7 +185,9 @@
         })
     }
 
-
+    function addNum(obj) {
+     alert(obj)
+    }
     //查询
     function search() {
         getShopCart(pageIndex);
