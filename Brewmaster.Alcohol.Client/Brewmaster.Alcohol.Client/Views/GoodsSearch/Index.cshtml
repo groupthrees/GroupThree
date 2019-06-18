@@ -2153,12 +2153,12 @@
     $(function () {
         GetGoodsType();
         GetBrandName();
-        GetGoodsAll(789);
+        GetGoodsAll(789,0,0);
     });
 
     //分类显示
     $("#OrderByPrice").change(function () {
-        GetGoodsAll($(this).val());
+        GetGoodsAll($(this).val(),0,0);
     });
     function GetGoodsType() {
         $.ajax({
@@ -2196,7 +2196,6 @@
     }
     function GetGoodsAll(priceNow, typeId, brandId) {
         priceNowNumber = priceNow;
-        alert(brandId);
         var name = $("#GoodsName").val();
         $.ajax({
             url: 'http://localhost:50169/api/GoodsAll/GetGoodsAllListPage?PriceNow=' + priceNow + '&GoodsName=' + name + '&typeId=' + typeId +'&brandId='+brandId+ '+&pageIndex=' + pageIndex + '&pageSize=' + pageSize,
@@ -2225,13 +2224,13 @@
     //首页
     function first() {
         pageIndex = 1;
-        GetGoodsAll(priceNowNumber);
+        GetGoodsAll(priceNowNumber, 0, 0);
     }
 
     //上页
     function prve() {
         pageIndex = pageIndex > 1 ? pageIndex - 1 : 1;
-        GetGoodsAll(priceNowNumber);
+        GetGoodsAll(priceNowNumber, 0, 0);
     }
 
     //下页
@@ -2239,12 +2238,12 @@
 
         var nums = Math.ceil(total / pageSize);
         pageIndex = pageIndex <= nums ? pageIndex + 1 : pageIndex;
-        GetGoodsAll(priceNowNumber);
+        GetGoodsAll(priceNowNumber, 0, 0);
     }
 
     //尾页
     function last() {
         pageIndex = Math.ceil(total / pageSize);
-        GetGoodsAll(priceNowNumber);
+        GetGoodsAll(priceNowNumber, 0, 0);
     }
 </script>
