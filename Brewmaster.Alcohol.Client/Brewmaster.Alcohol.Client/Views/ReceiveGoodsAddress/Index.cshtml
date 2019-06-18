@@ -244,7 +244,7 @@
 
     //收货地址的修改
     function upt(id) {
-        alert(id);
+        
         location.href = '/ReceiveGoodsAddress/Update?id=' + id;
     }
 
@@ -273,7 +273,7 @@
     }
     function city(pid) {
         pid = $("#province").val();
-        alert(pid)
+    
         $.ajax({
             url: 'http://localhost:50169/api/Address/GetAreaList',
             data: { pid: pid },
@@ -298,7 +298,7 @@
 
     function district(pid) {
         pid = $("#city").val();
-        alert(pid)
+       
         $.ajax({
             url: 'http://localhost:50169/api/Address/GetAreaList',
             data: { pid: pid },
@@ -342,7 +342,7 @@
             return false;
         }
 
-        if (addressPerson == "") {
+        if (addressPhone == "") {
             alert("手机不能为空!");
             return false;
         }
