@@ -20,7 +20,7 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="UserName"></param>
         /// <param name="UserPwd"></param>
         /// <returns></returns>
-        object Login(string UserName, string UserPwd);
+        int Login(string UserName, string UserPwd);
 
         /// <summary>
         /// 添加个人信息

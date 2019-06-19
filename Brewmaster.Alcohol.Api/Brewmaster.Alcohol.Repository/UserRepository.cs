@@ -65,12 +65,12 @@ namespace Brewmaster.Alcohol.Repository
         /// <param name="UserName"></param>
         /// <param name="UserPwd"></param>
         /// <returns></returns>
-        public object Login(string UsersName, string UsersPwd)
+        public int Login(string UsersName, string UsersPwd)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string sql = string.Format("select count(1) from Users where UsersName='{0}' and UsersPwd='{1}'",UsersName,UsersPwd);
-                object result = conn.ExecuteScalar(sql);
+                string sql = string.Format("select * from Users where UsersName='{0}' and UsersPwd='{1}'", UsersName,UsersPwd);
+                int result = Convert.ToInt32( conn.ExecuteScalar(sql));
                 return result;
             }
         }
