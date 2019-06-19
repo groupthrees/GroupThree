@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Brewmaster.Alcohol.Client.Models.Dto.订单Dto
+namespace Brewmaster.Alcohol.Model.Dto.订单Dto
 {
     /// <summary>
     /// 分页显示

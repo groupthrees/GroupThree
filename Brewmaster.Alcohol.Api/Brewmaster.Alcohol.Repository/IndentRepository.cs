@@ -7,8 +7,9 @@ using Brewmaster.Alcohol.IRepository;
 using Brewmaster.Alcohol.Model.Dto;
 using Brewmaster.Alcohol.Model.Dto.订单Dto;
 using Dapper;
+using System.Linq;
 using MySql.Data.MySqlClient;
-
+using Brewmaster.Alcohol.Model;
 namespace Brewmaster.Alcohol.Repository
 {
     public class IndentRepository : IIndentRepository
@@ -24,32 +25,42 @@ namespace Brewmaster.Alcohol.Repository
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        public IndentPageList GetIndentPageList( int userId, int OrderSite, int pageIndex, int pageSize)
+        public List<IndentDto> GetIndentPageList( int userId, int OrderSite)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string strSql1 = string.Format("select count(1)  from orders join address on orders.addressId = address.Id join ordergoods on ordergoods.OrdersId = orders.Id join goods on goods.Id = ordergoods.GoodId where orders.usersId = {0} and orders.OrderSite={1} ",userId,OrderSite);
-                var total = conn.ExecuteScalar<int>(strSql1);
-                int index = (pageIndex - 1) * pageSize;
-                var strSql2 = string.Format("select  orders.Id,goods.GoodsName,goods.GoodsImg,orders.ApplyMethod,orders.PracticalMoney,address.AddressPerson from orders join address on orders.addressId = address.Id join ordergoods on ordergoods.OrdersId = orders.Id join goods on goods.Id = ordergoods.GoodId where orders.usersId = {0} and orders.OrderSite = {1} limit  {2},{3}",userId,OrderSite,pageIndex,pageSize);
+                string sql1 = string.Format("select orders.*,address.detailaddress from address join orders on address.Id = orders.addressId  where orders.usersId = {0} and orders.OrderSite={1}", userId,OrderSite);
+                var orderlist = conn.Query<IndentDto>(sql1).ToList();
+                string sql2 = string.Format("select goods.goodsimg as img,ordergoods.ordersid  from ordergoods join goods on ordergoods.GoodsId=goods.Id   where UsersId={0}", userId);
+                var goodslist = conn.Query<orderImg>(sql2).ToList();
+                List< IndentDto> indent =new List<IndentDto>();
+                foreach (var item in orderlist)
+                {
+                    IndentDto indentDto = new IndentDto();
 
-                var orderlist = conn.Query<IndentDto>(strSql2);
-                if (orderlist == null)
-                {
-                    return new IndentPageList();
+                    indentDto.Id = item.Id;
+                    indentDto.AddressPerson = item.AddressPerson;
+                    indentDto.PracticalMoney = item.PracticalMoney;
+                    indentDto.OrderSite = item.OrderSite;
+                    List<string> imgs = new List<string>();
+                    foreach (var item1 in goodslist.Where(a=>a.ordersid==item.Id))
+                    {
+
+                        imgs.Add(item1.img);
+                    }
+                    indentDto.imgs = imgs;
+                    indent.Add(indentDto);
+
                 }
-                var IndentDto = new IndentPageList
-                {
-                    IndentPageListShow = orderlist.ToList(),
-                    Total = total
-                };
-                return IndentDto;
+
+                return indent;
+
             }
 
         }
 
      
 
-
     }
+    
 }
