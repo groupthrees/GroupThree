@@ -20,6 +20,10 @@
 
   <ItemGroup>
  
+    <None Include="wwwroot\Wine\jQuery仿淘宝商城购物车结算界面代码\js\carts.js" />
+ 
+    <None Include="wwwroot\Wine\jQuery仿淘宝商城购物车结算界面代码\js\jquery.min.js" />
+ 
     <None Include="wwwroot\Wine\商品详情\商品详情显示_files\a" />
  
     <None Include="wwwroot\Wine\商品详情\商品详情显示_files\a_002" />
