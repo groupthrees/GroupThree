@@ -28,9 +28,22 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         }
 
         [HttpGet("GetShopCartlist")]
-        public ShopCartPageList GetShopCartlist(int id, int pageIndex, int pageSize)
+        public List<ShopCartDto> GetShopCartlist(int id)
         {
-            return _ShopCartRepository.GetShopCartlist(id, pageIndex, pageSize);
+            return _ShopCartRepository.GetShopCartlist(id);
+        }
+
+
+        /// <summary>
+        /// 删除购物车商品
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// 
+        [HttpDelete("DeleteShopCart")]
+        public int DeleteShopCart(int id)
+        {
+            return _ShopCartRepository.DeleteShopCart(id);
         }
     }
 }

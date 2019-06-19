@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using Brewmaster.Alcohol.Model;
 namespace Brewmaster.Alcohol.IRepository
 {
     public interface IShopCartRepository
@@ -14,6 +14,13 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        ShopCartPageList GetShopCartlist(int id, int pageIndex, int pageSize);
+        List<ShopCartDto> GetShopCartlist(int id);
+
+        /// <summary>
+        /// 删除购物车商品
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        int DeleteShopCart(int id);
     }
 }
