@@ -64,14 +64,16 @@
     <script type="text/javascript">isMobile();</script>
     <div>
         <div class="rightTit"><h2><i></i>我的优惠券</h2></div>
-        <div class="rightCon">   <input id="Hidden1" type="hidden" value="1" />
-           
+        <div class="rightCon">
+            <input id="Hidden1" type="hidden" value="1" />
+
             <div class="myRedBox">
                 <div class="myRedTit clearfix">
                     <ul>
-                        <li id="unused" class="reduce wrapinner" onclick="getCoupon(1,1);">未使用</li>
-                        <li id="used" class="reduce" onclick="getCoupon(1,0);">已使用</li>
-                 
+                        <li id="notcoupon" onclick="getCoupon(1,1,'notcoupon');">未使用</li>
+                        <li id="alreadycoupon" onclick="getCoupon(1,0,'alreadycoupon');">已使用</li>
+
+
                     </ul>
                     <a id="11" href="http://member.jiuxian.com/purse/my_coupon-11.htm" display:none=""></a>
                     <a id="12" href="http://member.jiuxian.com/purse/my_coupon-12.htm" display:none=""></a>
@@ -131,14 +133,17 @@
 <script>
     //var statu = $("#Hidden1").val();
     var pageIndex = 1;
-    var pageSize = 10;
+    var pageSize = 3;
     var total = 0;
 
     $(function () {
         getCoupon(1, 1);
     })
 
-    function getCoupon(index,statu) {
+    function getCoupon(index, statu,id) {
+        $("#notcoupon").css("background-color", "white");
+        $("#alreadycoupon").css("background-color", "white");
+        $("#" + id).css("background-color", "red");
         $.ajax({
             type: "get",
             url: 'http://localhost:50169/api/Coupon/Getcouponlist',
@@ -161,20 +166,20 @@
             }
         })
     }
-  
+
     /**************************************时间格式化处理************************************/
-    function dateFormat(tmpDate) { //author: meizz   
+    function dateFormat(tmpDate) { //author: meizz
 
         var fmt = "yyyy-MM-dd hh:mm:ss";
         var date = new Date(tmpDate)
         var o = {
-            "M+": date.getMonth() + 1,                 //月份   
-            "d+": date.getDate(),                    //日   
-            "h+": date.getHours(),                   //小时   
-            "m+": date.getMinutes(),                 //分   
-            "s+": date.getSeconds(),                 //秒   
-            "q+": Math.floor((date.getMonth() + 3) / 3), //季度   
-            "S": date.getMilliseconds()             //毫秒   
+            "M+": date.getMonth() + 1,                 //月份
+            "d+": date.getDate(),                    //日
+            "h+": date.getHours(),                   //小时
+            "m+": date.getMinutes(),                 //分
+            "s+": date.getSeconds(),                 //秒
+            "q+": Math.floor((date.getMonth() + 3) / 3), //季度
+            "S": date.getMilliseconds()             //毫秒
         };
         if (/(y+)/.test(fmt))
             fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
@@ -218,4 +223,3 @@
 </script>
 
 
- 
