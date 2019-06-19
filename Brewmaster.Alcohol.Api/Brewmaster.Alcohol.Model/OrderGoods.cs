@@ -30,5 +30,13 @@ namespace Brewmaster.Alcohol.Model
         {
             get; set;
         }
+        /// <summary>
+        /// 购买商品数量
+        /// </summary>
+        public int BuyNum { get; set; }
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        public int usersId { get; set; }
     }
 }

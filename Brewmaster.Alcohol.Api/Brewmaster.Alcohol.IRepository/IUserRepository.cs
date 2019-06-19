@@ -42,7 +42,7 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="usersName"></param>
         /// <param name="codeNumber"></param>
         /// <returns></returns>
-        object UpdatePwd(string usersName, string codeNumber);
+        object LocationToPwd(string usersName, string codeNumber);
         
     }
 }
