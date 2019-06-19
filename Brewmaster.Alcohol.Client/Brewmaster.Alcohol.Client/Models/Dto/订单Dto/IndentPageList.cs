@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Brewmaster.Alcohol.Client.Models.Dto.订单Dto;
 
 namespace Brewmaster.Alcohol.Model.Dto.订单Dto
 {

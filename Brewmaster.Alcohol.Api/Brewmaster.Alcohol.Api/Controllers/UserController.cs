@@ -77,5 +77,18 @@ namespace Brewmaster.Alcohol.Api.Controllers
             string result = _UserRepository.AddCode(code);
             return result;
         }
+
+        /// <summary>
+        /// 跳转到修改密码界面
+        /// </summary>
+        /// <param name="usersName"></param>
+        /// <param name="codeNumber"></param>
+        /// <returns></returns>
+        [HttpPost("LocationToPwd")]
+        public object LocationToPwd(string usersName, string codeNumber)
+        {
+            object result = _UserRepository.LocationToPwd(usersName, codeNumber);
+            return result;
+        }
     }
 }

@@ -82,7 +82,7 @@
                             <div class="moreChoice clearfix">
 
                                 <a class="freeReg" href="/User/Regist">免费注册</a>
-                                <a class="forgetPwd" id="foget" href="">忘记密码</a>
+                                <a class="forgetPwd" id="foget" href="/User/Password">忘记密码</a>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,6 @@
             <a class="a1" target="_blank" href="#"></a><a class="a2" target="_blank" href="#"></a><a class="a3" target="_blank" href="#"></a><a class="a4" target="_blank" href="#"></a><a class="a5" target="_blank" href="#"></a>
         </div>
     </div>
-
     <script type="text/javascript">
         var vm = new Vue({
             el: "#app",
@@ -108,7 +107,6 @@
                 UsersName: "",
                 UsersPwd: "",
             },
-
             methods: {
                 addUser: function () {
                     if (!this.UsersName) {
@@ -119,18 +117,11 @@
                         alert('密码不能为空');
                         return false;
                     }
-
                     var params = new URLSearchParams();
                     params.append('UsersName', this.UsersName);
                     params.append('UsersPwd', this.UsersPwd);
-
-
                     axios.post("/User/Login", params).then((response) => {
-
                         location.href = '/Home/HomePage';
-
-
-
                     }, (response) => {
                         alert(response.status);
                     }
@@ -140,13 +131,6 @@
                 }
             }
         });
-
-
     </script>
-
-
-
-
 </body>
- 
 </html>

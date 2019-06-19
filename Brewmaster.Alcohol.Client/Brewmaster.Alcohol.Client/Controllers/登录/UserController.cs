@@ -171,7 +171,14 @@ namespace Brewmaster.Alcohol.Client.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        /// 修改密码界面
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult UptPassword()
+        {
+            return View();
+        }
     }
     #endregion
 

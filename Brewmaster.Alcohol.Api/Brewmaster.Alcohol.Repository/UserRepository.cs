@@ -29,8 +29,6 @@ namespace Brewmaster.Alcohol.Repository
                 int result = conn.Execute(sql);
                 return result;
             }
-
-       
         }
 
         /// <summary>
@@ -48,7 +46,6 @@ namespace Brewmaster.Alcohol.Repository
                 {
                   str+=rn.Next(0,10);                    
                 }
-
                 string sql =
                     string.Format(
                         "insert into codes(Id,usersName,codeNumber) values(null,'{0}','{1}')",
@@ -57,17 +54,10 @@ namespace Brewmaster.Alcohol.Repository
                 if (result == 1)
                 {
                     return str;
-
                 }
-
-
                 return "失败";
             }
         }
-
-
-
-
 
         /// <summary>
         /// 登录
@@ -84,8 +74,6 @@ namespace Brewmaster.Alcohol.Repository
                 return result;
             }
         }
-
-        
 
         /// <summary>
         /// 注册
@@ -108,7 +96,7 @@ namespace Brewmaster.Alcohol.Repository
         /// <param name="usersName"></param>
         /// <param name="codeNumber"></param>
         /// <returns></returns>
-        public object UpdatePwd(string usersName, string codeNumber)
+        public object LocationToPwd(string usersName, string codeNumber)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
