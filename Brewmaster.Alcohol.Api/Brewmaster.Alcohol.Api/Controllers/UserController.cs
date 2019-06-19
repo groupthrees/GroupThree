@@ -72,9 +72,9 @@ namespace Brewmaster.Alcohol.Api.Controllers
         /// <param name="code"></param>
         /// <returns></returns>
         [HttpPost("AddCode")]
-        public int AddCode([FromBody] Code code)
+        public string AddCode([FromBody] Code code)
         {
-            int result = _UserRepository.AddCode(code);
+            string result = _UserRepository.AddCode(code);
             return result;
         }
     }

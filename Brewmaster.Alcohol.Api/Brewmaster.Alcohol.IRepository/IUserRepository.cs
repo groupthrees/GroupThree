@@ -17,8 +17,8 @@ namespace Brewmaster.Alcohol.IRepository
         /// <summary>
         /// 登录
         /// </summary>
-        /// <param name="LoginName"></param>
-        /// <param name="LoginPwd"></param>
+        /// <param name="UserName"></param>
+        /// <param name="UserPwd"></param>
         /// <returns></returns>
         object Login(string UserName, string UserPwd);
 
@@ -34,7 +34,15 @@ namespace Brewmaster.Alcohol.IRepository
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        int AddCode(Code code);
+        string AddCode(Code code);
 
+        /// <summary>
+        /// 验证手机号与验证码跳转到修改密码界面
+        /// </summary>
+        /// <param name="usersName"></param>
+        /// <param name="codeNumber"></param>
+        /// <returns></returns>
+        object UpdatePwd(string usersName, string codeNumber);
+        
     }
 }
