@@ -32,24 +32,38 @@ namespace Brewmaster.Alcohol.Repository
 
        
         }
-        
-        ///// <summary>
-        ///// 添加验证码表
-        ///// </summary>
-        ///// <param name="code"></param>
-        ///// <returns></returns>
-        //public int AddCode(Code code)
-        //{
-        //    using (MySqlConnection conn = new MySqlConnection(connStr))
-        //    {
-        //        string sql =
-        //            string.Format(
-        //                "insert into codes(Id,usersName,codeNumber) values(null,'{0}',(select substring(MD5(RAND()),1,6)))",
-        //                code.UserName);
-        //        int result = conn.Execute(sql);
-        //        return result;
-        //    }
-        //}
+
+        /// <summary>
+        /// 添加验证码表
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public string AddCode(Code code)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                Random rn=new Random();
+                string str = "";
+                for (int i = 0; i < 6; i++)
+                {
+                  str+=rn.Next(0,10);                    
+                }
+
+                string sql =
+                    string.Format(
+                        "insert into codes(Id,usersName,codeNumber) values(null,'{0}','{1}')",
+                        code.UserName,str);
+                int result = conn.Execute(sql);
+                if (result == 1)
+                {
+                    return str;
+
+                }
+
+
+                return "失败";
+            }
+        }
 
 
 
@@ -71,6 +85,8 @@ namespace Brewmaster.Alcohol.Repository
             }
         }
 
+        
+
         /// <summary>
         /// 注册
         /// </summary>
@@ -86,6 +102,20 @@ namespace Brewmaster.Alcohol.Repository
             }
         }
 
-
+        /// <summary>
+        /// 验证手机号与验证码跳转到修改密码界面
+        /// </summary>
+        /// <param name="usersName"></param>
+        /// <param name="codeNumber"></param>
+        /// <returns></returns>
+        public object UpdatePwd(string usersName, string codeNumber)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = string.Format("select count(1) from codes where usersName='{0}' and codeNumber='{1}'", usersName, codeNumber);
+                object result = conn.ExecuteScalar(sql);
+                return result;
+            }
+        }
     }
 }
