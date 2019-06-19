@@ -47,11 +47,11 @@ namespace Brewmaster.Alcohol.Api.Controllers
         /// <param name="UserName"></param>
         /// <param name="UserPwd"></param>
         /// <returns></returns>
-        [HttpPost("Login")]
-        public object Login(string UsersName, string UsersPwd)
+        [HttpGet("Login")]
+        public string Login(string UsersName, string UsersPwd)
         {
-            object result = _UserRepository.Login(UsersName, UsersPwd);
-            return result;
+            var result = _UserRepository.Login(UsersName, UsersPwd);
+            return result.ToString();
         }
 
         /// <summary>

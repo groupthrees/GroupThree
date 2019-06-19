@@ -20,7 +20,7 @@
     <script src="~/Wine/酒仙网-登录-注册_files/reg-login.js"></script>
     <script src="~/Wine/酒仙网-登录-注册_files/analytics.js"></script>
     <script src="~/Wine/酒仙网-登录-注册_files/base.js"></script>
-
+    <script src="~/js/jquery-3.2.1.js"></script>
 
     <script src="~/js/vue.js"></script>
     <script src="~/js/axios.js"></script>
@@ -117,16 +117,18 @@
                         alert('密码不能为空');
                         return false;
                     }
-                    var params = new URLSearchParams();
-                    params.append('UsersName', this.UsersName);
-                    params.append('UsersPwd', this.UsersPwd);
-                    axios.post("/User/Login", params).then((response) => {
-
+                    //var params = new URLSearchParams();
+                    //params.append('UsersName', this.UsersName);
+                    //params.append('UsersPwd', this.UsersPwd);
+                    axios.get("http://localhost:50169/api/User/Login?UsersName=" + this.UsersName + "&UsersPwd=" + this.UsersPwd).then((respose) => {
+                        console.log(respose.data);
+                        if (respose.data == "1") {
                             location.href = '/Home/HomePage';
-
-                    }, (response) => {
-                        alert(response.status);
-                    }
+                        }
+                        else {
+                            alert("登录失败!");
+                        }                          
+                    }            
                     ).catch(function (response) {
                         alert(response);
                     });
