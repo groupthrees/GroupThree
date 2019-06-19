@@ -90,5 +90,18 @@ namespace Brewmaster.Alcohol.Api.Controllers
             object result = _UserRepository.LocationToPwd(usersName, codeNumber);
             return result;
         }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="usersPwd"></param>
+        /// <param name="usersName"></param>
+        /// <returns></returns>
+        [HttpPost("UpdatePwd")]
+        public int UpdatePwd(string usersPwd, string usersName)
+        {
+            int resule = _UserRepository.Update(usersPwd, usersName);
+            return resule;
+        }
     }
 }
