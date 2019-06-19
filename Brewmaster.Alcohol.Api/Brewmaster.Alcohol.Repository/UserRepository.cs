@@ -105,5 +105,21 @@ namespace Brewmaster.Alcohol.Repository
                 return result;
             }
         }
+
+        /// <summary>
+        /// 通过输入手机号查询并修改对应密码
+        /// </summary>
+        /// <param name="usersPwd"></param>
+        /// <param name="usersName"></param>
+        /// <returns></returns>
+        public int Update(string usersPwd,string usersName)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = string.Format("Update users set UsersPwd='{0}' where UsersName='{1}'", usersPwd, usersName);
+                int result = conn.Execute(sql);
+                return result;
+            }
+        }
     }
 }
