@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Brewmaster.Alcohol.IRepository;
+using Brewmaster.Alcohol.Model.Dto;
 using Brewmaster.Alcohol.Model.Dto.订单Dto;
 using Brewmaster.Alcohol.Repository;
 using Microsoft.AspNetCore.Http;
@@ -38,9 +39,9 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         /// <param name="pageSize"></param>
         /// <returns></returns>
         [HttpGet("GetIndentPageList")]
-        public IndentPageList GetIndentPageList(int userId, int OrderSite, int pageIndex = 1, int pageSize = 3)
+        public List<IndentDto> GetIndentPageList(int userId, int OrderSite)
         {
-            var list = _indentRepository.GetIndentPageList(userId, OrderSite, pageIndex, pageSize);
+            var list = _indentRepository.GetIndentPageList(userId, OrderSite);
             return list;
         }
     }

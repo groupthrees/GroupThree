@@ -147,7 +147,7 @@
     </style>
    
  
-    <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的订单_files/recommend_99.js"></script>
+    @*<script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的订单_files/recommend_99.js"></script>*@
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的订单_files/p_code.js"></script>
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的订单_files/FAI84qYjQk.txt"></script>
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 我的订单_files/o_code.js"></script>
@@ -158,6 +158,8 @@
 <script>
     var pageIndex = 1;
     var pageSize = 3;
+    var usersId = 1;
+    var orderSite = 0;
     var total = 0;
 
     $(function () {
@@ -166,33 +168,35 @@
 
 
     })
-
+ 
     function getOrder(index) {
         $.ajax({
             type: "get",
             url: 'http://localhost:50169/api/Indent/GetIndentPageList',
-            data: { usersId: 1, OrderSite:1, pageIndex: index, pageSize: pageSize },
+            data: { usersId: usersId, orderSite: orderSite, pageIndex: index, pageSize: pageSize },
             success: function (result) {
+                console.log(result);
                 var tmphtml = "";
                 $("#await").empty();
-                for (var i = 0; i < result.orderList.length; i++) {
+              
+                for (var i = 0; i < result.length; i++) {
                     tmphtml += "<tr>";
-                    tmphtml += "<td>" + result.orderList[i].GoodsName  + "</td>";
-                    tmphtml += "<td>" + result.orderList[i].GoodsImg  + "</td>";
-                    tmphtml += "<td>" + result.orderList[i].couponCondition + "</td>";
-                    tmphtml += "<td>" + result.orderList[i].PracticalMoney  + "</td>";
-                    tmphtml += "<td>" + result.orderList[i].OrderSite  + "</td>";
+                    tmphtml += "<td>" + result[i].GoodsName  + "</td>";
+                    tmphtml += "<td>" + result[i].GoodsImg  + "</td>";
+                    tmphtml += "<td>" + result[i].couponCondition + "</td>";
+                    tmphtml += "<td>" + result[i].PracticalMoney  + "</td>";
+                    tmphtml += "<td>" + result[i].OrderSite  + "</td>";
                     tmphtml += "</tr>";
+                    for (var i = 0; i < length; i++) {
+
+                    }
                 }
                 $("#await").append(tmphtml);
                 total = result.total;
             }
         })
     }
-    //查询
-    function search() {
-        getCoupon(pageIndex);
-    }
+   
 
     //首页
     function first() {
