@@ -58,12 +58,12 @@
                     i++;
                     <ul class="order_lists">
                         <li class="list_chk">
-                            <input type="checkbox" id="checkbox_@i" class="son_check" />
+                            <input type="checkbox" name="checkboxid" value="@item.GoodsId" id="checkbox_@i" class="son_check" />
                             <label for="checkbox_@i"></label>
                         </li>
                         <li class="list_con">
-                            <div class="list_img"><a href="javascript:;"><img src="@item.GoodsImg" alt="" /></a></div>
-                            <div class="list_text"><a href="javascript:;">@item.GoodsName</a></div>
+                            <div class="list_img"><a href="javascript:;"><img src="@item.GoodsImg" alt="" onclick="fun(' + @item.Id + ')" /></a></div>
+                            <div class="list_text"><a href="javascript:;" onclick="fun(' @item.Id ')">@item.GoodsName</a></div>
                         </li>
                         <li class="list_info">
                             <p>规格：默认</p>
@@ -83,20 +83,21 @@
                             <p class="sum_price">￥@item.PriceNow</p>
                         </li>
                         <li class="list_op">
-                            <p class="del"><a href="javascript:;" class="delBtn">移除商品</a><a href="javascript:;" class="delBtn">移入我的收藏</a></p>
+                            <p class="del"><a href="javascript:;" class="delBtn" onclick="deletegoods(@item.Id)">移除商品</a><a href="javascript:;" class="delBtn" onclick="movecollect(@item.Id)">移入我的收藏</a></p> 
                         </li>
                     </ul>
-                }
+                    }
+            <input id="Button1" type="button" value="移除商品" onclick="deletegoods()"/>
 
-        <!--底部-->
-        <div class="bar-wrapper">
-            <div class="bar-right">
-                <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
-                <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
-                <div class="calBtn"><a href="javascript:;">结算</a></div>
-            </div>
-        </div>
-    </section>
+                    <!--底部-->
+                    <div class="bar-wrapper">
+                        <div class="bar-right">
+                            <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
+                            <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
+                            <div class="calBtn"><a href="javascript:;">结算</a></div>
+                        </div>
+                    </div>
+                </div></section>
     <section class="model_bg"></section>
     <section class="my_model">
         <p class="title">删除宝贝<span class="closeModel">X</span></p>
@@ -112,3 +113,17 @@
     </div>
 </body>
 </html>
+<script>
+    function fun(id) {
+        var usersId = $('#Hidden1').val();
+        location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
+    }
+
+    function deletegoods() {
+        alert("111");
+        text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
+            return $(elem).val();
+        }).get().join(',');
+        alert("选中的checkbox的值为：" + text);
+    }
+</script>

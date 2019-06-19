@@ -41,9 +41,14 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         /// <returns></returns>
         /// 
         [HttpDelete("DeleteShopCart")]
-        public int DeleteShopCart(int id)
+        /// <summary>
+        /// 删除购物车商品
+        /// </summary>
+        /// <param name = "id" ></ param >
+        /// < returns ></ returns >
+        public int DeleteShopCart(string goodsid)
         {
-            return _ShopCartRepository.DeleteShopCart(id);
+            return _ShopCartRepository.DeleteShopCart(goodsid);
         }
     }
 }

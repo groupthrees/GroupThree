@@ -19,7 +19,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         /// <returns></returns>
         public IActionResult ShopIndex()
         {
-            var list = client.GetApiResult("get", "ShopCart/GetShopCartlist?id=1", null);
+            var list = client.GetApiResult("get","ShopCart/GetShopCartlist?id=1", null);
             var json = JsonConvert.DeserializeObject<List<ShopCartDto>>(list);
             return View(json);
         }

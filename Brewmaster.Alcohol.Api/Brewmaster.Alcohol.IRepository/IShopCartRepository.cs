@@ -21,6 +21,6 @@ namespace Brewmaster.Alcohol.IRepository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        int DeleteShopCart(int id);
+        int DeleteShopCart(string goodsid);
     }
 }
