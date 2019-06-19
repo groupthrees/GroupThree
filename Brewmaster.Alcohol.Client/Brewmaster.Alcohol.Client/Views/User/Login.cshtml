@@ -126,10 +126,9 @@
 
 
                     axios.post("/User/Login", params).then((response) => {
-
-                        location.href = '/Home/HomePage';
-
-
+                     
+                            location.href = '/Home/HomePage';
+ 
 
                     }, (response) => {
                         alert(response.status);
