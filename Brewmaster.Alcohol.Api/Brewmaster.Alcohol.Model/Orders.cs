@@ -5,7 +5,7 @@ using System.Text;
 namespace Brewmaster.Alcohol.Model
 {
     /// <summary>
-    /// 订单表
+    /// 订单表 dto
     /// </summary>
     public class Orders
     {
@@ -67,6 +67,17 @@ namespace Brewmaster.Alcohol.Model
         /// 优惠金额
         /// </summary>
         public string CouponMoney { get; set; }
-
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        public int UserId { get; set; }
+        /// <summary>
+        /// 商品（多个）id
+        /// </summary>
+        public string GoodsId { get; set; }
+        /// <summary>
+        /// 购买数量（多个）
+        /// </summary>
+        public string BuyNums { get; set; }
     }
 }
