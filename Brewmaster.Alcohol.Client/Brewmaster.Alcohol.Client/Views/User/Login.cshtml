@@ -13,12 +13,7 @@
     <script src="~/Wine/酒仙网-登录-注册_files/fm.js"></script>
     <script src="~/Wine/酒仙网-登录-注册_files/passport-web-pc.js"></script>
     <title>用户登录</title>
-    <script type="text/javascript">
-        var mobileRegex_o = "^1[3-9][0-9]{9}$";// 对象 new RegExp
-        var mobileRegex_s = /^1[3-9][0-9]{9}$/;// 字符串
-        var mobileRegex_s_star = /^1[3-9][0-9]{9}$|^([0-9]{3}\*{4}[0-9]{4})$/;
-        var mobileRegex_o_star = "^1[3-9][0-9]{9}$|^([0-9]{3}\\*{4}[0-9]{4})$";
-    </script>
+    
     <link href="~/Wine/酒仙网-登录-注册_files/base.css" rel="stylesheet" />
     <link href="~/Wine/酒仙网-登录-注册_files/reg-login.css" rel="stylesheet" />
     <script src="~/Wine/酒仙网-登录-注册_files/jquery.js"></script>
@@ -75,14 +70,14 @@
 
                                     <tr>
                                         <td><b>密码</b></td>
-                                        <td><input maxlength="20" id="password" class="text" type="password" v-model="UsersPwd"  /></td>
+                                        <td><input maxlength="20" id="password" class="text" type="password" v-model="UsersPwd" /></td>
                                     </tr>
                                 </table>
 
                             </div>
 
                             <div class="loginBtn">
-                                <input name="bi_Usuallogin" type="button" id="save" v-on:click="addUser()"  value="登录" />
+                                <input name="bi_Usuallogin" type="button" id="save" v-on:click="addUser()" value="登录" />
                             </div>
                             <div class="moreChoice clearfix">
 
@@ -93,6 +88,16 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+    </div>
+    <div class="jx-footer" style="height: 90px;">
+        <div class="jx-foot">
+            <p>© &nbsp;酒仙网&nbsp; 2011 jiuxian.com All &nbsp;Rights Reserved&nbsp;&nbsp;<a target="_blank" href="#">京ICP证110141号</a>&nbsp;&nbsp;京公网安备1101050188221</p>
+            <p class="red">购买前请确认达到法定饮酒年龄！酒仙网不销售任何含酒精产品给18岁以下人士！</p>
+        </div>
+        <div class="copybot">
+            <a class="a1" target="_blank" href="#"></a><a class="a2" target="_blank" href="#"></a><a class="a3" target="_blank" href="#"></a><a class="a4" target="_blank" href="#"></a><a class="a5" target="_blank" href="#"></a>
         </div>
     </div>
 
@@ -103,7 +108,7 @@
                 UsersName: "",
                 UsersPwd: "",
             },
-  
+
             methods: {
                 addUser: function () {
                     if (!this.UsersName) {
@@ -121,10 +126,10 @@
 
 
                     axios.post("/User/Login", params).then((response) => {
-                      
+
                         location.href = '/Home/HomePage';
-              
-                  
+
+
 
                     }, (response) => {
                         alert(response.status);

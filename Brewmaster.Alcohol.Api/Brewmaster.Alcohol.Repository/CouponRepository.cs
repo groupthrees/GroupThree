@@ -21,15 +21,15 @@ namespace Brewmaster.Alcohol.Repository
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        public CouponDto Getcouponlist(int id, int pageIndex, int pageSize)
+        public CouponDto Getcouponlist(int id, int pageIndex, int pageSize, int statuid=1)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string strSql1 = string.Format("select count(1) from coupon where UsersId={0}", id);
+                string strSql1 = string.Format("select count(1) from coupon where UsersId={0} and CouponStatu ={1}", id, statuid);
                 var total = conn.ExecuteScalar<int>(strSql1);
 
                 int index = (pageIndex - 1) * pageSize;
-                  var strSql2 = string.Format("select * from coupon where UsersId={0} limit  {1},{2}", id, index, pageSize);
+                  var strSql2 = string.Format("select * from coupon where UsersId={0} and CouponStatu ={1}  limit  {2},{3}", id, statuid,index, pageSize);
 
                 var couponlist = conn.Query<Coupon>(strSql2);
                 if (couponlist == null)

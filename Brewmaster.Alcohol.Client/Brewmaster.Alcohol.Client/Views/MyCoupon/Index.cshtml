@@ -64,14 +64,14 @@
     <script type="text/javascript">isMobile();</script>
     <div>
         <div class="rightTit"><h2><i></i>我的优惠券</h2></div>
-        <div class="rightCon">
+        <div class="rightCon">   <input id="Hidden1" type="hidden" value="1" />
            
             <div class="myRedBox">
                 <div class="myRedTit clearfix">
                     <ul>
-                        <li id="unused" class="reduce wrapinner" onclick="javascript:document.getElementById('11').click();">未使用</li>
-                        <li id="used" class="reduce" onclick="javascript:document.getElementById('12').click();">已使用</li>
-                        <li id="offeffect" class="reduce" onclick="javascript:document.getElementById('13').click();">已过期</li>
+                        <li id="unused" class="reduce wrapinner" onclick="getCoupon(1,1);">未使用</li>
+                        <li id="used" class="reduce" onclick="getCoupon(1,0);">已使用</li>
+                 
                     </ul>
                     <a id="11" href="http://member.jiuxian.com/purse/my_coupon-11.htm" display:none=""></a>
                     <a id="12" href="http://member.jiuxian.com/purse/my_coupon-12.htm" display:none=""></a>
@@ -129,20 +129,20 @@
 </html>
 
 <script>
-
+    //var statu = $("#Hidden1").val();
     var pageIndex = 1;
-    var pageSize = 3;
+    var pageSize = 10;
     var total = 0;
 
     $(function () {
-        getCoupon(pageIndex);
+        getCoupon(1, 1);
     })
 
-    function getCoupon(index) {
+    function getCoupon(index,statu) {
         $.ajax({
             type: "get",
             url: 'http://localhost:50169/api/Coupon/Getcouponlist',
-            data: { id: 1, pageIndex: index, pageSize: pageSize },
+            data: { id: 1, pageIndex: index, pageSize: pageSize, statuid: statu },
             success: function (result) {
                 var tmphtml = "";
                 $("#await").empty();
@@ -155,12 +155,13 @@
                     tmphtml += "<td>" + endTime+ "</td>";
                     tmphtml += "</tr>";
                 }
+                $("#Hidden1").val(statu);
                 $("#await").append(tmphtml);
                 total = result.total;
             }
         })
     }
-
+  
     /**************************************时间格式化处理************************************/
     function dateFormat(tmpDate) { //author: meizz   
 
@@ -192,26 +193,26 @@
     function first() {
         pageIndex = 1;
 
-        getCoupon(pageIndex);
+        getCoupon(pageIndex, $("#Hidden1").val());
     }
 
     //上页
     function prve() {
         pageIndex = pageIndex > 1 ? pageIndex - 1 : 1;
-        getCoupon(pageIndex);
+        getCoupon(pageIndex, $("#Hidden1").val());
     }
 
     //下页
     function next() {
         var nums = Math.ceil(total / pageSize);
         pageIndex = pageIndex < nums ? pageIndex + 1 : pageIndex;
-        getCoupon(pageIndex);
+        getCoupon(pageIndex, $("#Hidden1").val());
     }
 
     //尾页
     function last() {
         pageIndex = Math.ceil(total / pageSize);
-        getCoupon(pageIndex);
+        getCoupon(pageIndex, $("#Hidden1").val());
     }
 
 </script>

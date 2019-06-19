@@ -16,7 +16,7 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        CouponDto Getcouponlist(int id, int pageIndex, int pageSize);
+        CouponDto Getcouponlist(int id, int pageIndex, int pageSize, int statuid = 1);
 
         /// <summary>
         /// 领取优惠券
