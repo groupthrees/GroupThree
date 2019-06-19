@@ -42,6 +42,11 @@ namespace Brewmaster.Alcohol.Model.Dto
         /// 收货人
         /// </summary>
         public string AddressPerson { get; set; }
+
+        /// <summary>
+        /// 支付方式
+        /// </summary>
+        public string ApplyMethod { get; set; }
         /// <summary>
         /// 用户Id
         /// </summary>

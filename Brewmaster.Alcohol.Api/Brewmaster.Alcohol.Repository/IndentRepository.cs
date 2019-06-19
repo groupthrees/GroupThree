@@ -29,15 +29,15 @@ namespace Brewmaster.Alcohol.Repository
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string sql1 = string.Format("select orders.*,address.detailaddress from address join orders on address.Id = orders.addressId  where orders.usersId = {0} and orders.OrderSite={1}", userId,OrderSite);
+                string sql1 = string.Format("select orders.*,address.detailaddress,address.AddressPerson from address join orders on address.Id = orders.addressId  where orders.usersId = {0} and orders.OrderSite={1}", userId,OrderSite);
                 var orderlist = conn.Query<IndentDto>(sql1).ToList();
-                string sql2 = string.Format("select goods.goodsimg as img,ordergoods.ordersid  from ordergoods join goods on ordergoods.GoodsId=goods.Id   where UsersId={0}", userId);
+                string sql2 = string.Format("select goods.goodsimg as img,goods.GoodsName,ordergoods.ordersid  from ordergoods join goods on ordergoods.GoodsId=goods.Id   where UsersId={0}", userId);
                 var goodslist = conn.Query<orderImg>(sql2).ToList();
                 List< IndentDto> indent =new List<IndentDto>();
                 foreach (var item in orderlist)
                 {
                     IndentDto indentDto = new IndentDto();
-
+                    indentDto.ApplyMethod = item.ApplyMethod;
                     indentDto.Id = item.Id;
                     indentDto.AddressPerson = item.AddressPerson;
                     indentDto.PracticalMoney = item.PracticalMoney;
