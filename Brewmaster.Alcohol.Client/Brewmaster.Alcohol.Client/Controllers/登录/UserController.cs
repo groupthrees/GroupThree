@@ -146,7 +146,6 @@ namespace Brewmaster.Alcohol.Client.Controllers
             int result = Convert.ToInt32(new ApiHelper().GetApiResult("post", "User/Login?UsersName=" + UsersName + " &UsersPwd=" + UsersPwd));
             return result;
         }
-
         //[HttpPost]
         //public int Login(string UsersName, string UsersPwd)
         //{
