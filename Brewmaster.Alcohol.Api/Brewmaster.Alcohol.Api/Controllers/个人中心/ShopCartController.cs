@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Brewmaster.Alcohol.IRepository;
+using Brewmaster.Alcohol.Model;
 using Brewmaster.Alcohol.Model.Dto.我的购物车;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -44,6 +45,11 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         public int DeleteShopCart(int id)
         {
             return _ShopCartRepository.DeleteShopCart(id);
+        }
+        [HttpPost("MakeOrders")]
+        public int MakeOrders(Orders orders)
+        {
+            return _ShopCartRepository.MakeOrders(orders);
         }
     }
 }

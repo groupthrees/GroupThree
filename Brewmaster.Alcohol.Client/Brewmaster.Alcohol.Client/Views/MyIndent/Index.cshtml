@@ -181,12 +181,14 @@
               
                 for (var i = 0; i < result.length; i++) {
                     tmphtml += "<tr>";
-                    for (var j = 0; j < result.imgs.length; j++) {
-                        tmphtml += "<td><img src=" + result[i].imgs[j].imgs + "  width='50' height='50' ></td>";
+                    for (var j = 0; j < result[i].imgs.length; j++) {
+                        tmphtml += "<td><img src=" + result[i].imgs[j] + "  width='50' height='50' ></td>";
+                        
                     }                   
                     tmphtml += "<td>" + result[i].addressPerson + "</td>";
                     tmphtml += "<td>" + result[i].practicalMoney + "</br>" + result[i].applyMethod + "</td>";
                     tmphtml += "</tr>";
+                   
                 }
                 $("#await").append(tmphtml);
                 total = result.total;
