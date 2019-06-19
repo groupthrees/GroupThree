@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Brewmaster.Alcohol.Catch;
 using Brewmaster.Alcohol.Client.Models;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using Brewmaster.Alcohol.Catch;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Protocols;
+using System;
+using System.IO;
+using System.Net;
+using System.Text;
+
 namespace Brewmaster.Alcohol.Client.Controllers
 {
     public class UserController : Controller
@@ -21,8 +21,8 @@ namespace Brewmaster.Alcohol.Client.Controllers
         [HttpPost]
         public int Login(string UsersName, string UsersPwd)
         {
-            
-            int result =Convert.ToInt32(new ApiHelper().GetApiResult("post", "User/Login?UsersName="+UsersName+ " &UsersPwd="+UsersPwd));
+
+            int result = Convert.ToInt32(new ApiHelper().GetApiResult("post", "User/Login?UsersName=" + UsersName + " &UsersPwd=" + UsersPwd));
             return result;
         }
         #endregion
@@ -50,9 +50,9 @@ namespace Brewmaster.Alcohol.Client.Controllers
         {
             return View();
         }
-       
-        #endregion
 
     }
+    #endregion
 
 }
+
