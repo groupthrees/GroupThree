@@ -14,6 +14,11 @@ namespace Brewmaster.Alcohol.Repository
         //数据库连接
         private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=root;Pwd=1064519100;";
 
+        public int DeleteShopCart(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 根据UserId,GoodsId查询购物车的商品
         /// </summary>
@@ -37,17 +42,17 @@ namespace Brewmaster.Alcohol.Repository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int DeleteShopCart(string[] goodsid)
-        {
-            using (MySqlConnection conn = new MySqlConnection(connStr))
-            {
-                string strSql = string.Format("delete  from shopcart where goodsid IN ()", id);
-                int result = conn.Execute(strSql);
-                return result;
+        //public int DeleteShopCart(string[] goodsid)
+        //{
+        //    using (MySqlConnection conn = new MySqlConnection(connStr))
+        //    {
+        //        string strSql = string.Format("delete  from shopcart where goodsid IN ({0})", goodsid);
+        //        int result = conn.Execute(strSql);
+        //        return result;
 
               
-            }
-        }
+        //    }
+        //}
 
     }
 }
