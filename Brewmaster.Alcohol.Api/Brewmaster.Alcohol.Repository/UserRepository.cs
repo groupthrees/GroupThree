@@ -32,24 +32,24 @@ namespace Brewmaster.Alcohol.Repository
 
        
         }
-        
-        ///// <summary>
-        ///// 添加验证码表
-        ///// </summary>
-        ///// <param name="code"></param>
-        ///// <returns></returns>
-        //public int AddCode(Code code)
-        //{
-        //    using (MySqlConnection conn = new MySqlConnection(connStr))
-        //    {
-        //        string sql =
-        //            string.Format(
-        //                "insert into codes(Id,usersName,codeNumber) values(null,'{0}',(select substring(MD5(RAND()),1,6)))",
-        //                code.UserName);
-        //        int result = conn.Execute(sql);
-        //        return result;
-        //    }
-        //}
+
+        /// <summary>
+        /// 添加验证码表
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public int AddCode(Code code)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql =
+                    string.Format(
+                        "insert into codes(Id,usersName,codeNumber) values(null,'{0}',(select substring(MD5(RAND()),1,6)))",
+                        code.UserName);
+                int result = conn.Execute(sql);
+                return result;
+            }
+        }
 
 
 
