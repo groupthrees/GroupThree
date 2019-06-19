@@ -38,9 +38,9 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
         /// <param name="pageSize"></param>
         /// <returns></returns>
         [HttpGet("GetIndentPageList")]
-        public IndentPageList GetIndentPageList(int userId, int OrderSite, int pageIndex = 1, int pageSize = 3)
+        public IndentPageList GetIndentPageList(int userId, int orderSite, int pageIndex = 1, int pageSize = 3)
         {
-            var list = _indentRepository.GetIndentPageList(userId, OrderSite, pageIndex, pageSize);
+            var list = _indentRepository.GetIndentPageList(userId, orderSite, pageIndex, pageSize);
             return list;
         }
     }
