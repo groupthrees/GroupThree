@@ -61,6 +61,9 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         {
             return View();
         }
-
+        public int redis()
+        {
+            return 1;
+        }
     }
 }

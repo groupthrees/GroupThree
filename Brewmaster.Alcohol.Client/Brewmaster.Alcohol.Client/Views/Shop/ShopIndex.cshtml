@@ -169,5 +169,24 @@
             });
         }
 
+        }
+    function redis() {
+        text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
+            return $(elem).val();
+        }).get().join(',');
+                    $.ajax({
+                type: "delete",
+                url: "/Shop/redis?text=" + text,
+                success: function (data) {
+                    if (data > 0) {
+                        alert("删除成功!");
+                        location.reload();
+                    }
+                    else {
+                        alert("删除失败!");
+                    }
+                }
+
+            });
     }
 </script>
