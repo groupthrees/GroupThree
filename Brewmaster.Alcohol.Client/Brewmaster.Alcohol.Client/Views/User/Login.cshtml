@@ -122,7 +122,7 @@
                     //params.append('UsersPwd', this.UsersPwd);
                     axios.get("http://localhost:50169/api/User/Login?UsersName=" + this.UsersName + "&UsersPwd=" + this.UsersPwd).then((respose) => {
                         console.log(respose.data);
-                        if (respose.data == "1") {
+                        if (respose.data>0) {
                             location.href = '/Home/HomePage';
                         }
                         else {
