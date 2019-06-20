@@ -170,8 +170,9 @@ namespace Brewmaster.Alcohol.Client.Controllers
         /// 修改密码界面
         /// </summary>
         /// <returns></returns>
-        public IActionResult UptPassword()
+        public IActionResult UptPassword(string userName)
         {
+            ViewBag.list = userName;
             return View();
         }
     }
