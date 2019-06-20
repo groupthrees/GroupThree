@@ -52,5 +52,12 @@ namespace Brewmaster.Alcohol.IRepository
         /// <returns></returns>
         int Update(string usersPwd,string usersName);
 
+        /// <summary>
+        /// 验证手机号码是否存在
+        /// </summary>
+        /// <param name="usersName"></param>
+        /// <returns></returns>
+        object IsNotUserTel(string usersName);
+
     }
 }

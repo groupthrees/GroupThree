@@ -103,5 +103,17 @@ namespace Brewmaster.Alcohol.Api.Controllers
             int resule = _UserRepository.Update(usersPwd, usersName);
             return resule;
         }
+
+        /// <summary>
+        /// 验证手机号码是否存在
+        /// </summary>
+        /// <param name="usersName"></param>
+        /// <returns></returns>
+        [HttpGet("IsNotUserTel")]
+        public object IsNotUserTel(string usersName)
+        {
+            object result = _UserRepository.IsNotUserTel(usersName);
+            return result;
+        }
     }
 }
