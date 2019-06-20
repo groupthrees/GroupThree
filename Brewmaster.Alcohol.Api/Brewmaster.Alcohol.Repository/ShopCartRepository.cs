@@ -27,8 +27,9 @@ namespace Brewmaster.Alcohol.Repository
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string strSql1 = string.Format("select * from shopcart join goods on shopcart.GoodsId = goods.Id join price on goods.Id=price.Goodsid where  UsersId={0}", id);
-
+                string strSql1 = string.Format(@"select goods.GoodsImg,goods.GoodsName,price.PriceNow,shopcart.Id,goods.Id 
+                AS Goodsid from shopcart join goods on shopcart.GoodsId = goods.Id
+                join price on goods.Id = price.Goodsid  where  UsersId ={0}", id);
                 var result = conn.Query<ShopCartDto>(strSql1).ToList();
                 return result;
             }
