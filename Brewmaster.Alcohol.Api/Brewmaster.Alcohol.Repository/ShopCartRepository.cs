@@ -77,6 +77,7 @@ namespace Brewmaster.Alcohol.Repository
             }
         }
 
+
         /// <param name="id"></param>
         /// <returns></returns>
         //public int DeleteShopCart(string[] goodsid)
