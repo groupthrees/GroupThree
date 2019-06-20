@@ -77,10 +77,10 @@
                                 <a href="javascript:;" class="reduce reSty">-</a>
                                 <input type="text" value="@item.Num" class="sum" />
                                 <a href="javascript:;" class="plus">+</a>
-                            </div> 
+                            </div>
                         </li>
                         <li class="list_sum">
-                            <p class="sum_price">￥@(item.PriceNow* item.Num)</p>
+                            <p class="sum_price">￥@(item.PriceNow * item.Num)</p>
                         </li>
                         <li class="list_op">
                             <p class="del"> <input id="Button1" type="button" value="移除商品" onclick="deletegoods('@item.Id')" /></p>
@@ -125,16 +125,16 @@
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
             return $(elem).val();
         }).get().join(',');
-       
+
 
         var msg = "确定要删除吗？"
         if (confirm(msg) == true) {
             //异步访问批量删除方法， 把数组传入controller层
             $.ajax({
                 type: "delete",
-                url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id="+text,
+                url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id=" + text,
                 success: function (data) {
-                    if (data>0) {
+                    if (data > 0) {
                         alert("删除成功!");
                         location.reload();
                     }
@@ -154,7 +154,7 @@
             //异步访问批量删除方法， 把数组传入controller层
             $.ajax({
                 type: "delete",
-                url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id="+id,
+                url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id=" + id,
                 data: { id: id },
                 success: function (data) {
                     if (data > 0) {
