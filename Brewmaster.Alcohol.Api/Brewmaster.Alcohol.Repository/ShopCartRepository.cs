@@ -65,11 +65,11 @@ namespace Brewmaster.Alcohol.Repository
 
         /// <param name = "id" ></ param >
         /// < returns ></ returns >
-        public int DeleteShopCart(string goodsid)
+        public int DeleteShopCart(string id)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string strSql = string.Format("delete  from shopcart where goodsid IN ({0})", goodsid);
+                string strSql = string.Format("delete  from shopcart where Id IN ({0})", id);
                 int result = conn.Execute(strSql);
                 return result;
 
