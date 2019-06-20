@@ -25,7 +25,7 @@ namespace Brewmaster.Alcohol.Repository
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        public CollectionPageList GetCollectionlist(int id,  int pageIndex, int pageSize)
+        public CollectionPageList GetCollectionlist(int id, int pageIndex, int pageSize)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
@@ -57,9 +57,15 @@ namespace Brewmaster.Alcohol.Repository
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string strsql = string.Format("insert into shopcart(Id,GoodsId,UsersId) values({0},{1},{2})", shopCart.Id,shopCart.GoodsId, shopCart.UsersId);
-                var result = conn.Execute(strsql);
-                return result;
+              
+                
+                    string strsql = string.Format("insert into shopcart(GoodsId,UsersId,Num) values({0},{1},{2})", shopCart.GoodsId, shopCart.UsersId, shopCart.Num);
+                    var result = conn.Execute(strsql);
+                    return result;
+                
+
+
+               
             }
         }
     }

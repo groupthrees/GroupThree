@@ -75,15 +75,15 @@
                         <li class="list_amount">
                             <div class="amount_box">
                                 <a href="javascript:;" class="reduce reSty">-</a>
-                                <input type="text" value="1" class="sum" />
+                                <input type="text" value="@item.Num" class="sum" />
                                 <a href="javascript:;" class="plus">+</a>
-                            </div>
+                            </div> 
                         </li>
                         <li class="list_sum">
-                            <p class="sum_price">￥@item.PriceNow</p>
+                            <p class="sum_price">￥@(item.PriceNow* item.Num)</p>
                         </li>
                         <li class="list_op">
-                            <p class="del"> <input id="Button1" type="button" value="移除商品" onclick="deletegoods('@item.Id')" /> <input id="Button1" type="button" value="移入收藏" onclick="movecollect()"/></p>
+                            <p class="del"> <input id="Button1" type="button" value="移除商品" onclick="deletegoods('@item.Id')" /></p>
                         </li>
                     </ul>
                 }
@@ -125,7 +125,7 @@
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
             return $(elem).val();
         }).get().join(',');
-        alert("选中的checkbox的值为：" + text);
+       
 
         var msg = "确定要删除吗？"
         if (confirm(msg) == true) {
@@ -134,7 +134,6 @@
                 type: "delete",
                 url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id="+text,
                 success: function (data) {
-                    console.log(data);
                     if (data>0) {
                         alert("删除成功!");
                         location.reload();
@@ -150,7 +149,6 @@
 
 
     function deletegoods(id) {
-        alert(id);
         var msg = "确定要删除吗？"
         if (confirm(msg) == true) {
             //异步访问批量删除方法， 把数组传入controller层
@@ -159,7 +157,6 @@
                 url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id="+id,
                 data: { id: id },
                 success: function (data) {
-              
                     if (data > 0) {
                         alert("删除成功!");
                         location.reload();
