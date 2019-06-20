@@ -121,5 +121,20 @@ namespace Brewmaster.Alcohol.Repository
                 return result;
             }
         }
+
+        /// <summary>
+        /// 验证手机号码是否存在
+        /// </summary>
+        /// <param name="usersName"></param>
+        /// <returns></returns>
+        public object IsNotUserTel(string usersName)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = string.Format("select count(1) from users where usersName='{0}'", usersName);
+                object result = conn.ExecuteScalar(sql);
+                return result;
+            }
+        }
     }
 }

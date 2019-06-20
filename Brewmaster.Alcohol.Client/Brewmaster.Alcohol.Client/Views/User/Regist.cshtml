@@ -144,6 +144,7 @@
                     params.append('UsersPwd', this.UsersPwd);
                     axios.post("/User/Regist", params).then((response) => {
                         alert("注册成功")
+                        location.href = '/User/Login';
                     }, (response) => {
                         alert(response.status);
                     }

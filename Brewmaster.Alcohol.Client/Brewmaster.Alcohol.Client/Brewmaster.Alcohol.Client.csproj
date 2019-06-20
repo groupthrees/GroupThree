@@ -222,6 +222,24 @@
     <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\recommend_99.js" />
     <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\seallogo.dll" />
     <None Include="wwwroot\Wine\购物车\购物车-订单支付_files\visittrack.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\address.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\base.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\icon3.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\jquery-1.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\jquery.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\jquery_002.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\mba.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\mv.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\mvl.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\order.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\o_code.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\public.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\p_code.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\recommend_99.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\region.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\seallogo.dll" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\slider_1.js" />
+    <None Include="wwwroot\Wine\酒仙网-确认订单页面\订单结算-酒仙网_files\visittrack.js" />
   </ItemGroup>
 
   <ItemGroup>
