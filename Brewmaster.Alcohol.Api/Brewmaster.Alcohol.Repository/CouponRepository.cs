@@ -54,7 +54,7 @@ namespace Brewmaster.Alcohol.Repository
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string strsql = string.Format("insert into coupon values({0},'{1}',{2},'{3}','{4}',{5},{6},{7})", coupon.Id, coupon.CouponName, coupon.CouponMoney, coupon.CouponBeginTime, coupon.CouponEndTime, coupon.CouponCondition, coupon.CouponStatu, coupon.UsersId);
+                string strsql = string.Format("insert into coupon(CouponName,CouponMoney,CouponEndTime,CouponCondition,CouponStatu,UsersId) values('{0}',{1},'{2}',{3},{4},{5})", coupon.CouponName, coupon.CouponMoney,  coupon.CouponEndTime, coupon.CouponCondition, coupon.CouponStatu, coupon.UsersId);
                 var result = conn.Execute(strsql);
                 return result;
             }
