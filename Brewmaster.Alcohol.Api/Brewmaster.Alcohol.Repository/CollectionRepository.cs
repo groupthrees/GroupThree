@@ -57,15 +57,13 @@ namespace Brewmaster.Alcohol.Repository
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-              
+                
                 
                     string strsql = string.Format("insert into shopcart(GoodsId,UsersId,Num) values({0},{1},{2})", shopCart.GoodsId, shopCart.UsersId, shopCart.Num);
                     var result = conn.Execute(strsql);
                     return result;
                 
 
-
-               
             }
         }
     }
