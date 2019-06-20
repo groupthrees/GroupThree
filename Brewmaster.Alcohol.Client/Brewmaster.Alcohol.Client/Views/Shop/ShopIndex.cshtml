@@ -58,11 +58,11 @@
                     i++;
                     <ul class="order_lists">
                         <li class="list_chk">
-                            <input type="checkbox" name="checkboxid" value="@item.GoodsId" id="checkbox_@i" class="son_check" />
+                            <input type="checkbox" name="checkboxid" value="@item.UsersId" id="checkbox_@i" class="son_check" />
                             <label for="checkbox_@i"></label>
                         </li>
                         <li class="list_con">
-                            <div class="list_img"><a href="javascript:;"><img src="@item.GoodsImg" alt="" onclick="fun(' + @item.Id + ')" /></a></div>
+                            <div class="list_img"><a href="javascript:;"><img src="@item.GoodsImg" alt="" onclick="fun('@item.Id')" /></a></div>
                             <div class="list_text"><a href="javascript:;" onclick="fun(' @item.Id ')">@item.GoodsName</a></div>
                         </li>
                         <li class="list_info">
@@ -83,21 +83,23 @@
                             <p class="sum_price">￥@item.PriceNow</p>
                         </li>
                         <li class="list_op">
-                            <p class="del"><a href="javascript:;" class="delBtn" onclick="deletegoods(@item.Id)">移除商品</a><a href="javascript:;" class="delBtn" onclick="movecollect(@item.Id)">移入我的收藏</a></p> 
+                            <p class="del"> <input id="Button1" type="button" value="移除商品" onclick="deletegoods('@item.UsersId')" /> <input id="Button1" type="button" value="移入收藏" onclick="movecollect()"/></p>
                         </li>
                     </ul>
-                    }
-            <input id="Button1" type="button" value="移除商品" onclick="deletegoods()"/>
+                }
+                <input id="Button1" type="button" value="移除商品" onclick="batchdeletegoods()" />
 
-                    <!--底部-->
-                    <div class="bar-wrapper">
-                        <div class="bar-right">
-                            <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
-                            <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
-                            <div class="calBtn"><a href="javascript:;">结算</a></div>
-                        </div>
+                <!--底部-->
+                <div class="bar-wrapper">
+                    <div class="bar-right">
+                        <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
+                        <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
+                        <div class="calBtn"><a href="javascript:;">结算</a></div>
                     </div>
-                </div></section>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="model_bg"></section>
     <section class="my_model">
         <p class="title">删除宝贝<span class="closeModel">X</span></p>
@@ -109,7 +111,7 @@
     <script src="~/Wine/jQuery仿淘宝商城购物车结算界面代码/js/carts.js"></script>
 
     <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-        
+
     </div>
 </body>
 </html>
@@ -119,11 +121,56 @@
         location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
     }
 
-    function deletegoods() {
-        alert("111");
+    function batchdeletegoods() {
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
             return $(elem).val();
         }).get().join(',');
         alert("选中的checkbox的值为：" + text);
+
+        var msg = "确定要删除吗？"
+        if (confirm(msg) == true) {
+            //异步访问批量删除方法， 把数组传入controller层
+            $.ajax({
+                type: "delete",
+                url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id="+text,
+                success: function (data) {
+                    console.log(data);
+                    if (data>0) {
+                        alert("删除成功!");
+                        location.reload();
+                    }
+                    else {
+                        alert("删除失败!");
+                    }
+                }
+
+            });
+        }
+    }
+
+
+    function deletegoods(id) {
+        alert(id);
+        var msg = "确定要删除吗？"
+        if (confirm(msg) == true) {
+            //异步访问批量删除方法， 把数组传入controller层
+            $.ajax({
+                type: "delete",
+                url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id="+id,
+                data: { id: id },
+                success: function (data) {
+              
+                    if (data > 0) {
+                        alert("删除成功!");
+                        location.reload();
+                    }
+                    else {
+                        alert("删除失败!");
+                    }
+                }
+
+            });
+        }
+
     }
 </script>
