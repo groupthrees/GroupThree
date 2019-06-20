@@ -161,8 +161,8 @@
                     tmphtml += "<tr>";
 
                     tmphtml += "<td><input type='checkbox' name='smallBox' value='' /></td>";
-                    tmphtml += "<td><img src=" + result.collectionList[i].goodsImg + "  width='50' height='50' ></td>";
-                    tmphtml += "<td> " + result.collectionList[i].goodsName + "</td>";
+                    tmphtml += "<td><img src=" + result.collectionList[i].goodsImg + "  width='50' height='50' onclick='fun(" + result.collectionList[i].id + ")'></td>";
+                    tmphtml += "<td> <a  href = '#' onclick ='fun(" + result.collectionList[i].id + ")'>" + result.collectionList[i].goodsName + "</a></td>";
                     tmphtml += "<td>" + result.collectionList[i].priceNow + "</td>";
                     tmphtml += "<td><input type='button' value='加入购物车' onclick='joinshopCar(" + result.collectionList[i].goodsId + ")'/><input type='button' value='取消收藏' onclick='cancelcollect(" + result.collectionList[i].goodsId + ")'/></td>";
                     tmphtml += "</tr>";
@@ -215,6 +215,13 @@
             }
         })
     }
+
+    //商品详情页
+    function fun(id) {
+        var usersId = $('#Hidden1').val();
+        location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
+    }
+
     //查询
     function search() {
         getCoupon(pageIndex);

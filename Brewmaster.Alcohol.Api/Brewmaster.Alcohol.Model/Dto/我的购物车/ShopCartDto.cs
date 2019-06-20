@@ -24,6 +24,13 @@ namespace Brewmaster.Alcohol.Model.Dto.我的购物车
             get; set;
         }
 
+        /// <summary>
+        /// 商品数量
+        /// </summary>
+        public int Num
+        {
+            get; set;
+        }
         public string GoodsName
         {
             get; set;
