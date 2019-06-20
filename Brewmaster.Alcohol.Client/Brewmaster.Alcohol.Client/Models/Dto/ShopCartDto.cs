@@ -30,6 +30,13 @@ namespace Brewmaster.Alcohol.Client.Models.Dto
             get; set;
         }
         /// <summary>
+        /// 商品数量
+        /// </summary>
+        public int Num
+        {
+            get; set;
+        }
+        /// <summary>
         /// 商品度数
         /// </summary>
         public int GoodsDegree

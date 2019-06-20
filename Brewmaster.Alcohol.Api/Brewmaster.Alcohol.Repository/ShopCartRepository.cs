@@ -27,8 +27,9 @@ namespace Brewmaster.Alcohol.Repository
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string strSql1 = string.Format("select * from shopcart join goods on shopcart.GoodsId = goods.Id join price on goods.Id=price.Goodsid where  UsersId={0}", id);
-
+                string strSql1 = string.Format(@"select shopcart.Num,goods.GoodsImg,goods.GoodsName,price.PriceNow,shopcart.Id,goods.Id 
+                AS Goodsid from shopcart join goods on shopcart.GoodsId = goods.Id
+                join price on goods.Id = price.Goodsid  where  UsersId ={0}", id);
                 var result = conn.Query<ShopCartDto>(strSql1).ToList();
                 return result;
             }
@@ -76,22 +77,6 @@ namespace Brewmaster.Alcohol.Repository
 
             }
         }
-
-
-        /// <param name="id"></param>
-        /// <returns></returns>
-        //public int DeleteShopCart(string[] goodsid)
-        //{
-        //    using (MySqlConnection conn = new MySqlConnection(connStr))
-        //    {
-        //        string strSql = string.Format("delete  from shopcart where goodsid IN ({0})", goodsid);
-        //        int result = conn.Execute(strSql);
-        //        return result;
-
-
-        //    }
-        //}
-
 
     }
 }
