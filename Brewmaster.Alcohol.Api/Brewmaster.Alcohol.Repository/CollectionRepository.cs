@@ -14,7 +14,7 @@ using MySql.Data.MySqlClient;
 namespace Brewmaster.Alcohol.Repository
 {
     public class CollectionRepository : ICollectionRepository
-    {        
+    {
         //数据库连接
         private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=root;Pwd=1064519100;";
 
@@ -56,13 +56,23 @@ namespace Brewmaster.Alcohol.Repository
         public int InsertShopCart(ShopCart shopCart)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
-            {
-                
-                
-                    string strsql = string.Format("insert into shopcart(GoodsId,UsersId,Num) values({0},{1},{2})", shopCart.GoodsId, shopCart.UsersId, shopCart.Num);
-                    var result = conn.Execute(strsql);
-                    return result;
-                
+            {                               
+                string strsql1 = string.Format("select count(1) from shopcart where shopcart.GoodsId={0} and shopcart.UsersId={1}", shopCart.GoodsId, shopCart.UsersId);
+                var result1 = conn.Query<int>(strsql1).FirstOrDefault();
+
+                if (result1==0)
+                {
+                   string strsql3 = string.Format("insert into shopcart(GoodsId,UsersId,Num) values({0},{1},{2})", shopCart.GoodsId, shopCart.UsersId, shopCart.Num);
+                    var result3 = conn.Execute(strsql3);
+                    return result3;
+                }
+                else
+                {
+                    string strsql2 = string.Format("update shopcart set Num={0} where GoodsId={1}", shopCart.Num, shopCart.GoodsId);
+                    var result2 = conn.Execute(strsql2);
+                    return result2;
+                }
+
 
             }
         }
