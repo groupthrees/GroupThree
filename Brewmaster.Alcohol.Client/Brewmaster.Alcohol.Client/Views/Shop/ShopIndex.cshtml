@@ -58,11 +58,11 @@
                     i++;
                     <ul class="order_lists">
                         <li class="list_chk">
-                            <input type="checkbox" name="checkboxid" value="@item.Id" id="checkbox_@i" class="son_check" />
+                            <input type="checkbox" name="checkboxid" value="@item.UsersId" id="checkbox_@i" class="son_check" />
                             <label for="checkbox_@i"></label>
                         </li>
                         <li class="list_con">
-                            <div class="list_img"><a href="javascript:;"><img src="@item.GoodsImg" alt="" onclick="fun(' + @item.Id + ')" /></a></div>
+                            <div class="list_img"><a href="javascript:;"><img src="@item.GoodsImg" alt="" onclick="fun('@item.Id')" /></a></div>
                             <div class="list_text"><a href="javascript:;" onclick="fun(' @item.Id ')">@item.GoodsName</a></div>
                         </li>
                         <li class="list_info">
@@ -83,7 +83,7 @@
                             <p class="sum_price">￥@item.PriceNow</p>
                         </li>
                         <li class="list_op">
-                            <p class="del"> <input id="Button1" type="button" value="移除商品" onclick="deletegoods('+@item.Id+')" /> <input id="Button1" type="button" value="移入收藏" onclick="movecollect()"/></p>
+                            <p class="del"> <input id="Button1" type="button" value="移除商品" onclick="deletegoods('@item.UsersId')" /> <input id="Button1" type="button" value="移入收藏" onclick="movecollect()"/></p>
                         </li>
                     </ul>
                 }
@@ -150,15 +150,16 @@
 
 
     function deletegoods(id) {
+        alert(id);
         var msg = "确定要删除吗？"
         if (confirm(msg) == true) {
             //异步访问批量删除方法， 把数组传入controller层
             $.ajax({
                 type: "delete",
                 url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id="+id,
-
+                data: { id: id },
                 success: function (data) {
-                    console.log(data);
+              
                     if (data > 0) {
                         alert("删除成功!");
                         location.reload();
