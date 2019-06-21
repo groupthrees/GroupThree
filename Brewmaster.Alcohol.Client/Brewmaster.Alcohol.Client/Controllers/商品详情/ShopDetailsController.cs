@@ -25,6 +25,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
             GoodscollectDto GoodscollectDto = JsonConvert.DeserializeObject<GoodscollectDto>(str);
             ViewBag.goods = GoodscollectDto.Goods;
             ViewBag.imgs = GoodscollectDto.Imgs;
+
             ViewBag.conllect = GoodscollectDto.Conllect;
             return View();
         }

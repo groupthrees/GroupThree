@@ -68,7 +68,8 @@ namespace Brewmaster.Alcohol.Repository
                 }
                 else
                 {
-                    string strsql2 = string.Format("update shopcart set Num={0} where GoodsId={1}", shopCart.Num, shopCart.GoodsId);
+                    //update shopcart set Num = Num + { 0} where GoodsId = 41
+                    string strsql2 = string.Format("update shopcart set Num=Num+{0} where GoodsId={1}", shopCart.Num, shopCart.GoodsId);
                     var result2 = conn.Execute(strsql2);
                     return result2;
                 }
