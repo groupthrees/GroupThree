@@ -68,6 +68,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         /// <param name="num"></param>
         public void redis(string ids,string num)
         {
+            //模拟从redis中取出登录用户的id
             int userId = 1;
             RedisHelper.Set<BuyGoods>(userId.ToString(), new BuyGoods { ids = ids,num=num });
         }
