@@ -61,9 +61,20 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         {
             return View();
         }
-        public int redis()
+        /// <summary>
+        /// 把该用户购物车选中的商品和数量存储到redis中
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <param name="num"></param>
+        public void redis(string ids,string num)
         {
-            return 1;
+            int userId = 1;
+            RedisHelper.Set<BuyGoods>(userId.ToString(), new BuyGoods { ids = ids,num=num });
         }
+    }
+    public class BuyGoods
+    {
+        public string ids { get; set; }
+        public string num { get; set; }
     }
 }

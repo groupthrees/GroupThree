@@ -171,11 +171,12 @@
 
         }
     function redis() {
+        var num = "1,2,3,4,5,6";
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
             return $(elem).val();
         }).get().join(',');
                     $.ajax({
-                type: "delete",
+                type: "get",
                 url: "/Shop/redis?text=" + text,
                 success: function (data) {
                     if (data > 0) {
