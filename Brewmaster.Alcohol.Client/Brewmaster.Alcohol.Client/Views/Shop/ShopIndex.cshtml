@@ -117,7 +117,7 @@
 
     <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 
-    </div><input id="Button1" type="button" value="去结算" />
+    </div>
     <input id="Button1" type="button" value="button" onclick="redis()" />
 </body>
 </html>
@@ -215,7 +215,13 @@
         console.log(num);
         console.log(price);
         console.log(sum);
-
+        $.ajax({
+            url: '/Shop/redis',
+            data: { ids: text, onlyGoods: onlyGoods, num: num, price: price, sum: sum },
+            success: function (data) {
+                location.href='/Shop/PaymentIndex'
+            }
+        })
 
     }
 
