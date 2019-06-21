@@ -113,11 +113,12 @@
     </section>
 
     <script src="~/Wine/jQuery仿淘宝商城购物车结算界面代码/js/jquery.min.js"></script>
-    @*<script src="~/Wine/jQuery仿淘宝商城购物车结算界面代码/js/carts.js"></script>*@
+    <script src="~/Wine/jQuery仿淘宝商城购物车结算界面代码/js/carts.js"></script>
 
     <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 
-    </div><input id="Button1" type="button" value="去结算" onclick="redis()" />
+    </div><input id="Button1" type="button" value="去结算"  />
+          <input id="Button1" type="button" value="button" onclick="redis()" />
 </body>
 </html>
 <script>
@@ -199,6 +200,7 @@
 
             return $(elem).val();
         }).get().join(',');
+
 
         $.ajax({
             type: "get",
@@ -480,4 +482,9 @@
 
 
 });
+
+       
+     }
+       
+
 </script>
