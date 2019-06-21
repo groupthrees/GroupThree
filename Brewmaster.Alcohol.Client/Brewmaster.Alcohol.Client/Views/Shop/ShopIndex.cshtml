@@ -128,7 +128,9 @@
         location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
     }
 
+
     function batchdeletegoods() {
+
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
             return $(elem).val();
         }).get().join(',');
@@ -153,6 +155,7 @@
             });
         }
     }
+
 
 
     function deletegoods(id) {
