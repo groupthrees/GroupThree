@@ -16,7 +16,7 @@
     <meta name="save" content="history" />
     <meta http-equiv="Expires" content="0" />
     <meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
-  
+
     <script src="~/Wine/我的酒仙网 ) 基本信息_files/usercenter-web-pc.js" type="text/javascript"></script>
     <title>我的酒仙网 &gt; 基本信息 </title>
     <link href="~/Wine/我的酒仙网 ) 基本信息_files/base.css" type="text/css" rel="stylesheet" />
@@ -24,7 +24,7 @@
     <link href="~/Wine/我的酒仙网 ) 基本信息_files/footer.css" rel="stylesheet" type="text/css" />
 
     <link href="~/Wine/我的酒仙网 ) 基本信息_files/user.css" rel="stylesheet" type="text/css" />
-    <link href="~/Wine/我的酒仙网 ) 基本信息_files/user_nav.css" rel="stylesheet" type="text/css" />
+    <link href="~/wine/我的酒仙网 ) 基本信息_files/user_nav.css" rel="stylesheet" type="text/css" />
 
     <script src="~/Wine/我的酒仙网 ) 基本信息_files/jquery_007.js" type="text/javascript"></script>
     <script src="~/Wine/我的酒仙网 ) 基本信息_files/jquery_002.js" type="text/javascript"></script>
@@ -52,7 +52,11 @@
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 基本信息_files/jquery_003.js"></script>
     <script type="text/javascript" src="~/Wine/我的酒仙网 ) 基本信息_files/jquery-ui-datepicker.js"></script>
     <script src="~/js/jquery-3.2.1.js"></script>
+    <script src="~/My97DatePicker/WdatePicker.js"></script>
+    <link href="~/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" />
+   
     <link href="~/Wine/我的酒仙网 ) 基本信息_files/user_1200.css" id="newLink" rel="stylesheet" type="text/css" />
+
     <!-- <script src="http://misc.jiuxian.com/js/usercenter/Verification.js" type="text/javascript"></script> -->
 
 </head>
@@ -99,12 +103,12 @@
                                         <li class="clearfix">
                                             <p class="zpName"><strong>*</strong>生日：</p>
 
-                                            <input type="text" name="birthday" class="birthday Wdate hasDatepicker" id="setBirthday" 　readonly="readonly" />
-                                            <input type="hidden" name="birthday" id="birthday" />
+                                            <input id="setBirthday"  class="Wdate" onclick="WdatePicker()"   type="text" name="birthday"/>
+                                            @*<input type="hidden" name="birthday" id="birthday" />
                                             <div class="bDay">填写生日有惊喜哦~，只有一次填写机会！</div>
                                             <div class="acc">
                                                 <div class="accNotic" style="display:none"><i></i><span>请选择生日</span></div>
-                                            </div>
+                                            </div>*@
                                         </li>
                                     </ul>
                                     <ul>
