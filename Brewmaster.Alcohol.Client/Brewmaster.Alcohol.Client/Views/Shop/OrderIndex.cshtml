@@ -40,7 +40,7 @@
 <body>
     <iframe id="mediav_cookiemapping" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/b.html" style="width: 1px; border: 0px none; position: absolute; left: -100px; top: -100px; height: 1px;"></iframe>
     <!-- 全站公共url变量 -->
-    
+
 
     <div class="topHeaderWrap">
         <div class="topHeader">
@@ -51,8 +51,8 @@
             </div>
             <div class="topRight">
                 <ul>
-                    <li><a class="myOrder" target="_blank" href="http://member.jiuxian.com/trademanage/my_order-9.htm">我的订单</a><i></i></li>
-                    <li><a class="userCenter" target="_blank" href="http://member.jiuxian.com/index.htm">我的酒仙网</a><i></i></li>
+                    <li><a class="myOrder" target="_blank" href="/MyIndent/Index">我的订单</a><i></i></li>
+                    <li><a class="userCenter" target="_blank" href="/UserMain/Index">我的酒仙网</a><i></i></li>
                     <li class="hotTel"><span>客服热线</span><strong>400-617-9999</strong></li>
                 </ul>
             </div>
@@ -67,9 +67,9 @@
             </div>
         </div>
     </div>
- 
 
-  
+
+
     <div class="orderWrap">
         <div class="orderBody">
             <!-- 标题 -->
@@ -79,13 +79,13 @@
                     <h3>选择收货地址</h3>
                 </div>
                 <div id="list">
-                  
+
                 </div>
                 <div class="addressMoreBox">
                     <div style="display: none;" class="addressMore" flag="off"><a href="javascript:;"><span>展开收货地址</span><i class="orderIcon"></i></a></div>
                     <div class="addressAdd"><a href="javascript:;"><i class="orderIcon"></i><span onclick="Address()">新增收货地址</span></a></div>
                 </div>
-                
+
             </div>
             <!-- 支付方式信息 -->
             <div class="pubWrap">
@@ -97,7 +97,7 @@
                         <span>在线支付</span><i class="orderIcon"></i><s class="orderIcon"></s>
                         <div class="payPrompt">支持支付宝、微信等多种支付平台。<em class="orderIcon"></em></div>
                     </div>
-               
+
                 </div>
             </div>
             <!-- 商品信息 -->
@@ -111,24 +111,28 @@
                         <div class="oTd item-1">商品信息</div>
                         <div class="oTd item-2">单价</div>
                         <div class="oTd item-3">数量</div>
-                        
+
                         <div class="oTd item-4">状态</div>
                         <div class="oTd item-5">小计</div>
                     </div>
                     <div id="shopInfos"><div class="tBody"><div class="shopTitle"><a href="http://shop.jiuxian.com/index-1470.htm" target="_blank"><i class="orderIcon shop"></i><span>洋河官方旗舰店</span></a></div><div class="tMain"><div class="oTr"><div class="mainProduct "><div class="oTd item-1"><div class="img"><a href="http://www.jiuxian.com/goods-51820.html" target="_blank"><img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/bce6bb4392e742c3b288614a9022c9892.jfif" height="60" width="60" /></a></div><div class="name"><a href="http://www.jiuxian.com/goods-51820.html" target="_blank" style="text-align: left;">【爆款特卖】52°洋河蓝色经典梦之蓝M3 500ml</a><div class="promptBox"><div class="unUsed"><i class="orderIcon"></i><span>此商品不能使用优惠券</span></div></div></div></div><div class="oTd item-2">￥449.00</div><div class="oTd item-3">x1</div><div class="oTd item-4">有货</div><div class="oTd item-5">￥449.00</div></div></div><div class="oTr"><div class="mainProduct "><div class="oTd item-1"><div class="img"><a href="http://www.jiuxian.com/goods-85722.html" target="_blank"><img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/c6fafeee526747a484c5a6d18d5a3c552.jfif" height="60" width="60" /></a></div><div class="name"><a href="http://www.jiuxian.com/goods-85722.html" target="_blank" style="text-align: left;">【赠品】星得斯海拔H600赤霞珠干红葡萄酒750ml</a><div class="promptBox"></div></div></div><div class="oTd item-2">￥0.00</div><div class="oTd item-3">x1</div><div class="oTd item-4">有货</div><div class="oTd item-5">￥0.00</div></div></div></div></div></div>
                 </div>
             </div>
-      <table>
-          <tr>
-              <td ></td>
-          </tr>
-      </table>
+            <table>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
             <!-- 结算金额 -->
-            
+            <div id="info" style="background-color:darkgrey;width:400px;height:200px;position:relative;left:600px;">
+
+            </div>
+        
         </div>
+
     </div>
- 
     
+
     <!--新增收货地址 end-->
     <!--删除地址列表comfirm-->
     <div class="pubPop pop-4">
@@ -143,7 +147,7 @@
             </div>
         </div>
     </div>
-  
+
     <div class="pubPop pop-12">
         <div class="pubInside">
             <div class="pubInsideTitle">
@@ -195,11 +199,11 @@
                         </h3>
                         <p>
                             <a href="#" target="_blank" rel="nofollow">红包使用</a>
-                        </p>         
-                        <p>          
+                        </p>
+                        <p>
                             <a href="#" target="_blank" rel="nofollow">返现使用</a>
-                        </p>         
-                        <p>          
+                        </p>
+                        <p>
                             <a href="#" target="_blank" rel="nofollow">兑换码</a>
                         </p>
                     </li>
@@ -237,11 +241,11 @@
                         </h3>
                         <p>
                             <a href="#" target="_blank" rel="nofollow">品质保证</a>
-                        </p>         
-                        <p>          
+                        </p>
+                        <p>
                             <a href="#" target="_blank" rel="nofollow">退换货政策</a>
-                        </p>         
-                        <p>          
+                        </p>
+                        <p>
                             <a href="#" target="_blank" rel="nofollow">退换货流程</a>
                         </p>
                     </li>
@@ -299,7 +303,7 @@
                     <p class="copybot">
                         <script src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/seallogo.dll" type="text/javascript"></script>
                         <script size="0" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/icon3.js" cid="kx_verify" async="" id="kx_script"></script><span id="kx_verify" style="float: left; padding-right: 6px; display: inline-block; position: relative; width: 128px; height: 47px;"><a id="kx_verify_link" href="https://ss.knet.cn/verifyseal.dll?sn=2011040600100007749&amp;a=1&amp;pa=0.6338837876898306" tabindex="-1" target="_blank" kx_type="图标式" rel="nofollow"><img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/cnnic.png" style="border:0; position: absolute; top: 0px; left: 0px;" w="128" h="47" oncontextmenu="return false;" alt="可信网站" height="47" width="128" /></a></span>
-                        
+
                         <a href="#" target="_blank" rel="nofollow"><img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/copyBot03.jfif" height="47" width="128" /></a>
 
                     </p>
@@ -340,12 +344,12 @@
             color: #666;
         }
     </style>
- 
+
     <script type="text/javascript" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/recommend_99.js"></script>
     <script type="text/javascript" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/p_code.js"></script>
     <script type="text/javascript" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/o_code.js"></script>
 
-    
+
     <script src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/region.js" type="text/javascript"></script>
 </body>
 </html>
@@ -368,17 +372,13 @@
             crossDomain: true,
             dataType: 'json',
             success: function (data) {
+                 
                 $("#list").empty();
                 if (data.length > 0) {
                     var html = "<table  class='table table-bordered' cellspacing='0' cellpadding='0' border='0'>";
-                    //html += "<tr>";
-                    //html += "<td>收货人</td>";
-                    //html += "<td>地址</td>";
-                    //html += "<td>电话/手机</td>";
-                    //html += "<td>操作</td>";
-                    //html += "</tr>";
+                 
                     for (var i = 0; i < data.length; i++) {
-                        html += "<tr>";
+                        html += "<tr  onclick=ret(" + data[i].id + ") >";
                         html += "<td  >" + data[i].addressPerson + "</td>";
                         html += "<td>" + data[i].detailAddress + "</td>";
                         html += "<td>" + data[i].addressPhone + "</td>";
@@ -393,8 +393,36 @@
         })
 
     }
-    function Person() {
-        alert(11);  
+    function ret(id) {
+        $.ajax({
+            url: "http://localhost:50169/api/Address/GetAddressById?id=" + id,
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                $("#info").empty();
+
+                    //var html = "<table  class='table table-bordered' cellspacing='0' cellpadding='0' border='0'>";
+                    //    html += "<tr>";
+                    //    html += "<td>寄送至:</td><td>" + data.detailAddress + "</td></br>";
+                    //    html += "<td>收货人:</td><td>" + data.addressPerson + "</td><td>" + data.addressPhone + "</td>";
+                    //    html += "</tr>";
+                //html += "</table>";
+                var html = "<span>";
+                html += "<h2>寄送至:" + data.detailAddress + "</h2>";
+                html += "<h2>收货人:" + data.addressPerson + "  " + data.addressPhone + "</h2>";
+                html += "</br>";
+                html += "</br>";
+                html += "<h2><a href='/Shop/ShopIndex'>返回购物车</a><input id='Button1' type='button' value='提交订单' class='btn-danger' onclick='submit()'/></h2>";
+                html += "</span>";
+                    $("#info").append(html);
+
+
+            }
+        })
+    }
+    function submit() {
+        location.href = '/Shop/PaymentIndex';
     }
 
     function del(obj, id) {
