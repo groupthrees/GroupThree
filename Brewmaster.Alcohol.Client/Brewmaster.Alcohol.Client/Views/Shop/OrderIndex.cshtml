@@ -83,7 +83,7 @@
                 </div>
                 <div class="addressMoreBox">
                     <div style="display: none;" class="addressMore" flag="off"><a href="javascript:;"><span>展开收货地址</span><i class="orderIcon"></i></a></div>
-                    <div class="addressAdd"><a href="javascript:;"><i class="orderIcon"></i><span>新增收货地址</span></a></div>
+                    <div class="addressAdd"><a href="javascript:;"><i class="orderIcon"></i><span onclick="Address()">新增收货地址</span></a></div>
                 </div>
                 
             </div>
@@ -354,7 +354,9 @@
 <script>
 
     $(function () {
+        //getarea();
         bindGoods();
+      
     })
     function bindGoods() {
 
@@ -402,6 +404,7 @@
             $.ajax({
                 url: 'http://localhost:50169/api/Address/DelAddress?id=' + id,
                 type: "delete",
+                async: false,
                 contentType: "application/json; charset=utf-8",
                 async: false,
                 crossDomain: true,
@@ -488,6 +491,175 @@
                 }
                 else {
                     alert("修改收货地址失败");
+                }
+            }
+        })
+    }
+    function getarea() {
+
+        $.ajax({
+            url: 'http://localhost:50169/api/Address/GetAreaList',
+            data: { pid: 0 },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data)
+                $("#province1").empty();
+                var html = "";
+                $("#province1").append('<option value="" >请选择</option>');
+
+                $(data).each(function () {
+                    html += ' <option value="' + this.id + '"  >' + this.areaName + '</option>';
+                })
+                $("#province1").append(html);
+
+            }
+        })
+    }
+    function city(pid) {
+        pid = $("#province1").val();
+
+        $.ajax({
+            url: 'http://localhost:50169/api/Address/GetAreaList',
+            data: { pid: pid },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                $("#city").empty();
+                var html = "";
+                $("#city").append('<option value="" selected="selected">请选择</option>');
+
+                $(data).each(function () {
+                    html += ' <option value="' + this.id + '" >' + this.areaName + '</option>';
+                })
+                $("#city").append(html);
+
+            }
+        })
+    }
+
+    function district(pid) {
+        pid = $("#city").val();
+
+        $.ajax({
+            url: 'http://localhost:50169/api/Address/GetAreaList',
+            data: { pid: pid },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                $("#district").empty();
+                var html = "";
+                $("#district").append('<option value="" selected="selected">请选择</option>');
+
+                $(data).each(function () {
+                    html += ' <option value="' + this.id + '" >' + this.areaName + '</option>';
+                })
+                $("#district").append(html);
+
+            }
+        })
+    }
+    //添加按鈕點擊事件，打開模態窗口
+    function Address() {
+
+        var str = "";
+        str = '<table>'
+            + '<tr>'
+            + '<td>收货人：</td>'
+            + '<td><input id="people" type="text" /></td>'
+            + '</tr>'
+            + '<tr>'
+            + '<td>地区：</td>'
+            + '<td><select name="province" id="province1" onchange="city()"><option value="" selected="selected">请选择</option></select ><select name="city" id="city" onchange="district()"> <option value="" selected="selected">请选择</option> </select> <select name="district" id="district"> <option value="" selected="selected">请选择</option> </select></td>'
+            + '</tr>'
+            + '<tr>'
+            + '<td>详细地址：</td>'
+            + '<td><input id="address" type="text"/></td>'
+            + '</tr>'
+            + '<tr>'
+            + '<td>邮政编码：</td>'
+            + '<td><input id="zipcode" type="text"/></td>'
+            + '</tr>'
+            + '<tr>'
+            + '<td>手机：</td>'
+            + '<td><input id="iphone" type="text"/></td>'
+            + '</tr>'
+            + '<tr>'
+            + '<td></td>'
+            + '<td><input id="Button1" type="button" class="btn btn-default" value="添加" onclick="InsertAddress()" /></td>'
+            + '</tr>'
+            + '</table>';
+        layer.open({
+            type: 0,
+            skin: "layui-layer-rim",
+            title: "收货地址添加",
+            maxmin: true,
+            content: str,
+        })
+        getarea();
+    }
+    //添加收货地址
+    function InsertAddress() {
+        var addressPerson = $("#people").val();
+        var detailAddress = $("#address").val();
+        var postalCode = $("#zipcode").val();
+        var addressPhone = $("#iphone").val();
+        var areaId = $("#province").val();
+        if (addressPerson == "") {
+            alert("收货人不能为空!");
+            return false;
+        }
+
+        if (detailAddress == "") {
+            alert("详细地址不能为空!");
+            return false;
+        }
+
+        if (postalCode == "") {
+            alert("邮政编码不能为空!");
+            return false;
+        }
+
+        if (addressPhone == "") {
+            alert("手机不能为空!");
+            return false;
+        }
+
+        var date = {
+            "id": 0,
+            "addressPerson": addressPerson,
+            "areaId": areaId,
+            "usersId": 1,
+            "detailAddress": detailAddress,
+            "postalCode": postalCode,
+            "addressPhone": addressPhone
+
+        };
+        var val = JSON.stringify(date);
+        $.ajax({
+            url: 'http://localhost:50169/api/Address/AddAddress',
+            data: val,
+            type: "post",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                if (data > 0) {
+                    alert("添加收货地址成功");
+                    bindGoods();
+                }
+                else {
+                    alert("添加收货地址失败");
                 }
             }
         })
