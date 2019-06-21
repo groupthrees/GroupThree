@@ -74,9 +74,9 @@
                         </li>
                         <li class="list_amount">
                             <div class="amount_box">
-                              <a href="javascript:;" class="reduce reSty">-</a>
-                              <input type="text" value="@item.Num" class="sum" />
-                              <a href="javascript:;" class="plus">+</a>
+                                <a href="javascript:;" class="reduce reSty">-</a>
+                                <input type="text" value="@item.Num" class="sum" />
+                                <a href="javascript:;" class="plus">+</a>
                             </div>
 
 
@@ -117,8 +117,8 @@
 
     <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 
-    </div><input id="Button1" type="button" value="去结算"  />
-          <input id="Button1" type="button" value="button" onclick="redis()" />
+    </div><input id="Button1" type="button" value="去结算" />
+    <input id="Button1" type="button" value="button" onclick="redis()" />
 </body>
 </html>
 <script>
@@ -128,9 +128,7 @@
         location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
     }
 
-
     function batchdeletegoods() {
-
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
             return $(elem).val();
         }).get().join(',');
@@ -155,7 +153,6 @@
             });
         }
     }
-
 
 
     function deletegoods(id) {
@@ -189,7 +186,7 @@
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
 
 
-            danjia=$(elem).parent().siblings().next().next().first()[0].innerText;
+            danjia = $(elem).parent().siblings().next().next().first()[0].innerText;
             jiaGe = $(elem).parent().siblings().next().next().next().next().first()[0].innerText
 
             jiaGe = "," + jiaGe;
@@ -198,15 +195,15 @@
             danjia = "," + danjia;
             d = danjia.substr(2, danjia.length - 2);//单价
 
-            num += ","+p / d;
-            console.log("单价：" + d + "数量：" + num + "小计：" + p+"商品id："+$(elem).val());
+            num += "," + p / d;
+            console.log("单价：" + d + "数量：" + num + "小计：" + p + "商品id：" + $(elem).val());
 
             price += "," + p;
 
             return $(elem).val();
         }).get().join(',');
     }
-        
+
 
 
 </script>
