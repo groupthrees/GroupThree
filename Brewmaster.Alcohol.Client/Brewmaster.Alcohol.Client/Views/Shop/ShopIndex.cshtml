@@ -182,10 +182,10 @@
             jiaGe = $(elem).parent().siblings().next().next().next().next().first()[0].innerText
 
             jiaGe = "," + jiaGe;
-            p = jiaGe.substr(2, jiaGe.length - 2);
+            p = jiaGe.substr(2, jiaGe.length - 2);//小计
 
             danjia = "," + danjia;
-            d = danjia.substr(2, danjia.length - 2);
+            d = danjia.substr(2, danjia.length - 2);//单价
 
             num += ","+p / d;
             console.log("单价：" + d + "数量：" + num + "小计：" + p+"商品id："+$(elem).val());
