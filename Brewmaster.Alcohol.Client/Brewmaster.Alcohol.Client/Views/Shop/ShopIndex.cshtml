@@ -179,11 +179,11 @@
 
     }
 
-
     function redis() {
         alert(sum);
         var num = "";
         var price = "";
+        var onlyGoods = "";//商品单价
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
 
 
@@ -203,6 +203,7 @@
 
             return $(elem).val();
         }).get().join(',');
+
 
 
         $.ajax({
@@ -489,6 +490,10 @@
 
 
      }
+
+    }
+        
+
 
 
 </script>
