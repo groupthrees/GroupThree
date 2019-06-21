@@ -74,12 +74,12 @@
                         </li>
                         <li class="list_amount">
                             <div class="amount_box">
-                                    <a href="javascript:;" class="reduce reSty">-</a>
-                                    <input type="text" value="@item.Num" class="sum" />
-                                    <a href="javascript:;" class="plus">+</a>
-                                </div>
+                              <a href="javascript:;" class="reduce reSty">-</a>
+                              <input type="text" value="@item.Num" class="sum" />
+                              <a href="javascript:;" class="plus">+</a>
+                            </div>
 
-                       
+
                         </li>
                         <li class="list_sum">
                             <p class="sum_price" name="@(item.PriceNow * item.Num)">￥@(item.PriceNow * item.Num)</p>
@@ -89,12 +89,12 @@
                         </li>
                     </ul>
                 }
-              
+
 
                 <!--底部-->
                 <div class="bar-wrapper">
                     <div style="float:left;">
-                        <input id="Button1" type="button" value="移除商品"  style="padding: 20px 20px;font-size:16px" onclick="batchdeletegoods()" />
+                        <input id="Button1" type="button" value="移除商品" style="padding: 20px 20px;font-size:16px" onclick="batchdeletegoods()" />
                     </div>
                     <div class="bar-right">
                         <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
@@ -289,7 +289,7 @@
         })
     })
 
-    //=======================================每个店铺checkbox与全选checkbox的关系/每个店铺与其下商品样式的变化===================================================
+    //=======================================每个店铺checkbox与全选checkbox的关系/每个店铺与其下商品样式的变化//===================================================
 
     //店铺有一个未选中，全局全选按钮取消对勾，若店铺全选中，则全局全选按钮打对勾。
     $shopCheckbox.each(function () {
