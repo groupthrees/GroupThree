@@ -20,6 +20,46 @@
 
   <ItemGroup>
  
+    <None Include="wwwroot\layer-v2.4\layer\layer.js" />
+ 
+    <None Include="wwwroot\layer-v2.4\layim.url" />
+ 
+    <None Include="wwwroot\layer-v2.4\文档\jquery下载.url" />
+ 
+    <None Include="wwwroot\layer-v2.4\文档\layer官网.url" />
+ 
+    <None Include="wwwroot\layer-v2.4\文档\layer文档.url" />
+ 
+    <None Include="wwwroot\layer-v2.4\文档\layer社区.url" />
+ 
+    <None Include="wwwroot\My97DatePicker\calendar.js" />
+ 
+    <None Include="wwwroot\My97DatePicker\config.js" />
+ 
+    <None Include="wwwroot\My97DatePicker\lang\en.js" />
+ 
+    <None Include="wwwroot\My97DatePicker\lang\vssver2.scc" />
+ 
+    <None Include="wwwroot\My97DatePicker\lang\zh-cn.js" />
+ 
+    <None Include="wwwroot\My97DatePicker\lang\zh-tw.js" />
+ 
+    <None Include="wwwroot\My97DatePicker\skin\default1\vssver2.scc" />
+ 
+    <None Include="wwwroot\My97DatePicker\skin\vssver2.scc" />
+ 
+    <None Include="wwwroot\My97DatePicker\skin\whyGreen\vssver2.scc" />
+ 
+    <None Include="wwwroot\My97DatePicker\vssver2.scc" />
+ 
+    <None Include="wwwroot\My97DatePicker\WdatePicker.js" />
+ 
+    <None Include="wwwroot\My97DatePicker\开发包\lang\en.js" />
+ 
+    <None Include="wwwroot\My97DatePicker\开发包\lang\zh-cn.js" />
+ 
+    <None Include="wwwroot\My97DatePicker\开发包\lang\zh-tw.js" />
+ 
     <None Include="wwwroot\Wine\jQuery仿淘宝商城购物车结算界面代码\js\carts.js" />
  
     <None Include="wwwroot\Wine\jQuery仿淘宝商城购物车结算界面代码\js\jquery.min.js" />

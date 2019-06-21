@@ -20,14 +20,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
         {
             return View();
         }
-
-        public ActionResult Update(int id)
-        {
-            ViewBag.id = id;
-            var result = new ApiHelper().GetApiResult("get", "Address/GetAddressById?id=" + id);
-            var address = JsonConvert.DeserializeObject<Address>(result);
-            return View(address);
-        }
+     
 
         
     }
