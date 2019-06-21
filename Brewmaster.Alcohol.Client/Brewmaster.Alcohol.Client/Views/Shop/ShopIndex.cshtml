@@ -173,7 +173,7 @@
         }
     function redis() {
         alert(sum);
-        var num = [];
+        var num = "";
         var price = "";
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
 
@@ -187,10 +187,11 @@
             danjia = "," + danjia;
             d = danjia.substr(2, danjia.length - 2);
 
-            num = p / d;
-            console.log("单价：" + d + "数量：" + num + "小计：" + p);
+            num += ","+p / d;
+            console.log("单价：" + d + "数量：" + num + "小计：" + p+"商品id："+$(elem).val());
 
             price += "," + p;
+
             return $(elem).val();
         }).get().join(',');
         price = price.substr(1, price.length-1);
