@@ -74,10 +74,12 @@
                         </li>
                         <li class="list_amount">
                             <div class="amount_box">
-                                <a href="javascript:;" class="reduce reSty">-</a>
-                                <input type="text" value="@item.Num" class="sum" />
-                                <a href="javascript:;" class="plus">+</a>
-                            </div>
+                                    <a href="javascript:;" class="reduce reSty">-</a>
+                                    <input type="text" value="@item.Num" class="sum" />
+                                    <a href="javascript:;" class="plus">+</a>
+                                </div>
+
+                       
                         </li>
                         <li class="list_sum">
                             <p class="sum_price">￥@(item.PriceNow * item.Num)</p>
@@ -87,10 +89,13 @@
                         </li>
                     </ul>
                 }
-                <input id="Button1" type="button" value="移除商品" onclick="batchdeletegoods()" />
+              
 
                 <!--底部-->
                 <div class="bar-wrapper">
+                    <div style="float:left;">
+                        <input id="Button1" type="button" value="移除商品"  style="padding: 20px 20px;font-size:16px" onclick="batchdeletegoods()" />
+                    </div>
                     <div class="bar-right">
                         <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
                         <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
@@ -169,25 +174,25 @@
             });
         }
 
-        }
+    }
     function redis() {
         var num = "1,2,3,4,5,6";
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
             return $(elem).val();
         }).get().join(',');
-                    $.ajax({
-                type: "get",
-                url: "/Shop/redis?text=" + text,
-                success: function (data) {
-                    if (data > 0) {
-                        alert("删除成功!");
-                        location.reload();
-                    }
-                    else {
-                        alert("删除失败!");
-                    }
+        $.ajax({
+            type: "get",
+            url: "/Shop/redis?text=" + text,
+            success: function (data) {
+                if (data > 0) {
+                    alert("删除成功!");
+                    location.reload();
                 }
+                else {
+                    alert("删除失败!");
+                }
+            }
 
-            });
+        });
     }
 </script>

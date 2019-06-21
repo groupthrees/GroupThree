@@ -53,7 +53,38 @@
 
     <script src="~/Wine/商品详情/商品详情显示_files/skipmobileweb.js"></script>
     <script type="text/javascript">isMobile();</script>
+     <style type="text/css">
+        html, body, div, ul, li {
+            margin: 0;
+            padding: 0;
+        }
 
+        a {
+            text-decoration: none;
+        }
+
+        .addcount {
+            width: 200px;
+            margin: 50px auto;
+        }
+
+            .addcount a {
+                width: 20px;
+                height: 24px;
+                line-height: 24px;
+                text-align: center;
+                background: #ffa800;
+                color: #fff;
+                display: inline-block;
+            }
+
+            .addcount input {
+                width: 50px;
+                height: 20px;
+                text-align: center;
+                vertical-align: middle;
+            }
+    </style>
     <div class="topHeader">
         <div class="topHeaderCon">
             <div class="topHeaderLeft" name="_new_login_status_panel">
@@ -183,11 +214,12 @@
                     </tr>
                     <tr>
                         <td>
-                                <div class="amount_box">
-                                    <a href="javascript:;" onclick="min();">-</a>
-                                    <input type="text" value="1" class="sum" style="width: 64px;height: 24px;"/>
-                                    <a href="javascript:;"  onclick="max();">+</a>
-                                </div>
+                            <div class="addcount" style="width: 200px;height: 10px;margin-top: 20px;margin-bottom: 20px;">
+                                <a class="J_minus" href="javascript:;">-</a>
+                                <input type="text"  id="txtnum" class="J_input" value="1" />
+                                <a class="J_add" href="javascript:;">+</a>
+
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -206,7 +238,6 @@
                         </td>
                     </tr>
                     <tr>
-                        <br />
                         <td>
                             <input id="Button1" type="button" value="添加到购物车" class="btn btn-danger" onclick="joinshopCar()" />
                         </td>
@@ -367,12 +398,12 @@
             //加入购物车
     function joinshopCar(goodsId) {
         goodsId=@ViewBag.goods.id;
-
+        var num = $("#txtnum").val();
         var date = {
             "id": 0,
             "goodsId": goodsId,
             "usersId": 1,
-            "num": 1
+            "num": num
         };
         var val = JSON.stringify(date);
         $.ajax({
@@ -393,14 +424,38 @@
         })
         }
 
-        function min() {
+        //数量+1 / -1
+        $('.addcount').each(function () {
+            var _this = $(this);
+            var add = $(_this).find(".J_add");//添加数量
+            var reduce = $(_this).find(".J_minus");//减少数量
+            var num = 1;//数量初始值
+            var num_txt = $(_this).find(".J_input");//接受数量的文本框
+            $(add).click(function () {
+                num = $(num_txt).val();
+                num++;
+                num_txt.val(num);
 
-        }
+            });
+            /*减少数量的方法*/
+            $(reduce).click(function () {
+                //如果文本框的值大于0才执行减去方法
+                num = $(num_txt).val();
+                if (num > 0) {
+                    //并且当文本框的值为1的时候，减去后文本框直接清空值，不显示0
+                    if (num == 1) {
+                        num--;
+                        num_txt.val("1");
+                    }
+                    //否则就执行减减方法
+                    else {
+                        num--;
+                        num_txt.val(num);
+                    }
 
-        function max() {
-
-        }
+                }
+            });
+        })
     </script>
-
 </body>
 </html>
