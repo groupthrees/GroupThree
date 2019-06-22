@@ -11,8 +11,8 @@ namespace Brewmaster.Alcohol.Client.Controllers
 {
     public class UserController : Controller
     {
-        private string THE_UID = "fantaotao";
-        private string THE_KEY = "3490667734";//这里是通过网站发送的用户名和秘钥
+        private string THE_UID = "laishaoqian";
+        private string THE_KEY = "123456789qwe";//这里是通过网站发送的用户名和秘钥
 
 
         /// <summary>
