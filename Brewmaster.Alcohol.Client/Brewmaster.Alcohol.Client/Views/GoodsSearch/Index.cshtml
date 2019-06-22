@@ -2161,9 +2161,7 @@
         GetGoodsAll($(this).val(),0,0);
     });
     function GetGoodsType() {
-        alert(priceNowNumber)
-        alert( typeId1)
-        alert(brandId1)
+
         $.ajax({
             url: 'http://localhost:50169/api/GoodsType/GetGoodsTypeName',
             success: function (result) {
@@ -2181,9 +2179,7 @@
 
     //品牌显示
     function GetBrandName() {
-        alert(priceNowNumber)
-        alert( typeId1)
-        alert(brandId1)
+
         $.ajax({
             url: 'http://localhost:50169/api/Brand/GetBrandName',
 
