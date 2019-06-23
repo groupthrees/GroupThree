@@ -41,24 +41,25 @@ namespace Brewmaster.Alcohol.Repository
         /// <returns></returns>
         public int MakeOrders(Orders orders)
         {
-                       int i = 0;
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 string strOrder = $@"INSERT into orders(OrderNo,OrderSite,OrderMoney,PracticalMoney,usersId,addressId,CouponMoney,ApplyMethod)
-                  values('{orders.OrderNo}', {orders.OrderSite}, '{orders.OrderMoney}', {orders.PracticalMoney}, {orders.UserId}, {orders.addressId}, {orders.CouponMoney},  '{orders.ApplyMethod}')";
-                 i= conn.Execute(strOrder);
-                if (i > 0)
+                  values('{orders.OrderNo}', {orders.OrderSite}, '{orders.OrderMoney}', '{orders.PracticalMoney}', {orders.UserId}, {orders.addressId}, {orders.CouponMoney},  '{orders.ApplyMethod}') ;select @@IDENTITY";
+                var orderId = conn.ExecuteScalar<int>(strOrder);
+
+                if (orderId > 0)
                 {
                     var BuyNums = orders.BuyNums.Split(',');
                     var GoodsId= orders.GoodsId.Split(',');
                     var Price = orders.Price.Split(',');
                     for (int j = 0; j < BuyNums.Length; j++)
                     {
-                        string str = $"INSERT into ordergoods(GoodsId, OrdersId, BuyNum, usersId,price) values({orders.GoodsId}, {Convert.ToInt32(GoodsId[j])}, {Convert.ToInt32(BuyNums[j]) },1,{Convert.ToDecimal(Price[j])})";
+                        string str = $"INSERT into ordergoods(GoodsId, OrdersId, BuyNum, usersId,price) values( {Convert.ToInt32(GoodsId[j])},{orderId}, {Convert.ToInt32(BuyNums[j]) },1,{Convert.ToDecimal(Price[j])})";
+                        int result =conn.Execute(str);
                     }
                 }
             }
-            return i;
+            return 1;
         }
 
         /// <summary>
