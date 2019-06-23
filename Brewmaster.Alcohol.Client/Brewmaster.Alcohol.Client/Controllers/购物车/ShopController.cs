@@ -32,6 +32,23 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         public IActionResult OrderIndex()
         {
 
+            var s = RedisHelper.Get<BuyGoods>("1");
+
+            List<int> onePricelist = new List<int>();//单价
+            List<int> pricelist = new List<int>();//小计
+
+            var onePrice = s.onlyGoods.Split(',');
+            var price = s.price.Split(',');
+            foreach (var item in onePrice)
+            {
+                string p = item.Replace("/n", "");
+                onePricelist.Add(Convert.ToInt32(p));
+            }
+            foreach (var item in price)
+            {
+                string p = item.Substring(0, item.Length - 1);
+                pricelist.Add(Convert.ToInt32(p));
+            }
             return View();
         }
 
@@ -79,15 +96,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
             return View();
         }
 
-        /// <summary>
-        /// 支付界面
-        /// </summary>
-        /// <returns></returns>
-        public IActionResult PaymentIndex()
-        {
-
-            return View();
-        }
+ 
         /// <summary>
         /// 把该用户购物车选中的商品和数量存储到redis中
         /// </summary>
