@@ -7,7 +7,7 @@ using Brewmaster.Alcohol.Client.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-
+using Brewmaster.Alcohol.Client.Models;
 namespace Brewmaster.Alcohol.Client.Controllers.购物车
 {
     public class ShopController : Controller
@@ -32,22 +32,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         public IActionResult OrderIndex()
         {
             var s = RedisHelper.Get<BuyGoods>("1");
-
-            List<int> onePricelist = new List<int>();//单价
-            List<int> pricelist = new List<int>();//小计
-
-            var onePrice = s.onlyGoods.Split(',');
-            var price = s.price.Split(',');
-            foreach (var item in onePrice)
-            {
-                string p = item.Replace("/n", "");
-                onePricelist.Add(Convert.ToInt32(p));
-            }
-            foreach (var item in price)
-            {
-                string p = item.Substring(0, item.Length - 1);
-                pricelist.Add(Convert.ToInt32(p));
-            }
+            ViewBag.sum = s.sum;
             return View();
         }
 
@@ -77,6 +62,28 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
                 onlyGoods = onlyGoods,
                 sum = sum
             });
+        }
+        /// <summary>
+        /// 添加订单
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult AddOrder(int addressId)
+        {
+            var s = RedisHelper.Get<BuyGoods>("1");
+            Orders orders = new Orders();
+            orders.addressId = addressId;
+            orders.OrderMoney = s.sum.ToString();
+            orders.GoodsId = s.ids;
+            orders.PracticalMoney= s.sum.ToString();
+            orders.OrderSite = 0;
+            orders.Price = s.price;
+            orders.UserId = 1;
+            orders.OrderNo = "doooo1";
+            orders.BuyNums = s.num;
+            ApiHelper apiHelper = new ApiHelper();
+            apiHelper.GetApiResult("post", "ShopCart/MakeOrders",orders);
+
+            return View();
         }
     }
     public class BuyGoods
