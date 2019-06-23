@@ -13,7 +13,7 @@ namespace Brewmaster.Alcohol.Repository
     public class ShopCartRepository: IShopCartRepository
     {
         //数据库连接
-        private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=root;Pwd=1064519100;";
+        private static string connStr = "Server=169.254.200.110;Database=alcohol;Uid=root;Pwd=123456;";
 
 
         /// <summary>
@@ -51,9 +51,10 @@ namespace Brewmaster.Alcohol.Repository
                 {
                     var BuyNums = orders.BuyNums.Split(',');
                     var GoodsId= orders.GoodsId.Split(',');
+                    var Price = orders.Price.Split(',');
                     for (int j = 0; j < BuyNums.Length; j++)
                     {
-                        string str = $"INSERT into ordergoods(GoodsId, OrdersId, BuyNum, usersId) values({orders.GoodsId}, {Convert.ToInt32(GoodsId[j])}, {Convert.ToInt32(BuyNums[j]) }, 1)";
+                        string str = $"INSERT into ordergoods(GoodsId, OrdersId, BuyNum, usersId,price) values({orders.GoodsId}, {Convert.ToInt32(GoodsId[j])}, {Convert.ToInt32(BuyNums[j]) },1,{Convert.ToDecimal(Price[j])})";
                     }
                 }
             }
