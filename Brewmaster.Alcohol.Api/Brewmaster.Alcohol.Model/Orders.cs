@@ -79,5 +79,9 @@ namespace Brewmaster.Alcohol.Model
         /// 购买数量（多个）
         /// </summary>
         public string BuyNums { get; set; }
+        /// <summary>
+        /// 商品价格
+        /// </summary>
+        public string Price { get; set; }
     }
 }
