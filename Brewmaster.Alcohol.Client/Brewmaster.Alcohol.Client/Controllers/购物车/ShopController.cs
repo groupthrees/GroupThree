@@ -31,8 +31,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         /// <returns></returns>
         public IActionResult OrderIndex()
         {
-            var s = RedisHelper.Get<BuyGoods>("1");
-            ViewBag.sum = s.sum;
+
             return View();
         }
 
@@ -42,6 +41,44 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         /// <returns></returns>
         public IActionResult PaymentIndex()
         {
+            //var s = RedisHelper.Get<BuyGoods>("1");
+            //List<int> onePricelist = new List<int>();//单价
+            //List<int> pricelist = new List<int>();//小计
+
+            //var onePrice = s.onlyGoods.Split(',');
+            //var price = s.price.Split(',');
+            //foreach (var item in onePrice)
+            //{
+            //    string p = item.Replace("/n","");
+            //    onePricelist.Add(Convert.ToInt32(p));
+            //}
+            //foreach (var item in price)
+            //{
+            //    string p = item.Substring(0, item.Length - 1);
+            //    pricelist.Add(Convert.ToInt32(p));
+            //}
+
+            var s = RedisHelper.Get<BuyGoods>("1");
+
+            ViewBag.sum = s.sum;
+
+
+            List<int> onePricelist = new List<int>();//单价
+            List<int> pricelist = new List<int>();//小计
+
+            var onePrice = s.onlyGoods.Split(',');
+            var price = s.price.Split(',');
+            foreach (var item in onePrice)
+            {
+                string p = item.Replace("/n", "");
+                onePricelist.Add(Convert.ToInt32(p));
+            }
+            foreach (var item in price)
+            {
+                string p = item.Substring(0, item.Length - 1);
+                pricelist.Add(Convert.ToInt32(p));
+            }
+
 
             return View();
         }
