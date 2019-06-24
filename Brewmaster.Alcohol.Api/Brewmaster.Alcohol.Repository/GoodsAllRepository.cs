@@ -59,7 +59,7 @@ namespace Brewmaster.Alcohol.Repository
                 {
                     sql = sql + $" and PlaceName like '%{placeName}%'";
                     sqlCount = sqlCount + $" and PlaceName like '%{placeName}%'";
-                }
+                   }
                 if (brandId != 0)
                 {
                     sql = sql + $" and Brand.Id={brandId}";
