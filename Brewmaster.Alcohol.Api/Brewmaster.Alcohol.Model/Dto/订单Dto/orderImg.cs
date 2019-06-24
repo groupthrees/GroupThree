@@ -14,5 +14,9 @@ namespace Brewmaster.Alcohol.Model.Dto.订单Dto
         /// 图片
         /// </summary>
         public string img { get; set; }
+        /// <summary>
+        /// 商品id
+        /// </summary>
+        public int id { get; set; }
     }
 }

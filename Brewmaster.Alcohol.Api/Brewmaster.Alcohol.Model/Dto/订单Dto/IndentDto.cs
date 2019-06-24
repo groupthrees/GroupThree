@@ -55,6 +55,7 @@ namespace Brewmaster.Alcohol.Model.Dto
         /// 图片
         /// </summary>
         public List<string> imgs { get; set; }
+        public int GoodsId { get; set; }
 
     }
 }

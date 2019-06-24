@@ -14,5 +14,7 @@ namespace Brewmaster.Alcohol.IRepository
         /// </summary>
         /// <returns></returns>
         List<GoodsDto> getGoodslist();
+
+        //List<GoodsDto> GetGoodsById
     }
 }

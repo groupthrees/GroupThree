@@ -14,7 +14,7 @@ namespace Brewmaster.Alcohol.Repository
     {
 
         //数据库连接
-        private static string connStr = "Server=169.254.241.82;Database=alcohol;Uid=root;Pwd=1064519100;";
+        private static string connStr = "Server=169.254.200.110;Database=alcohol;Uid=root;Pwd=123456;";
 
         /// <summary>
         /// 添加个人信息
@@ -70,7 +70,7 @@ namespace Brewmaster.Alcohol.Repository
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 string sql = string.Format("select * from Users where UsersName='{0}' and UsersPwd='{1}'", UsersName,UsersPwd);
-                int result = Convert.ToInt32( conn.ExecuteScalar(sql));
+                int result = Convert.ToInt32( conn.ExecuteScalar<int>(sql));
                 return result;
             }
         }

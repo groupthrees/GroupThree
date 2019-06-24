@@ -120,7 +120,7 @@ namespace Brewmaster.Alcohol.Catch
         /// <summary>
         /// redis配置文件信息
         /// </summary>
-        private readonly string _redisServiceUrl = "169.254.241.82";
+        private readonly string _redisServiceUrl = "169.254.200.110";
         private readonly int _redisServicePortNum = 6379;
 
         //redis缓存对象
