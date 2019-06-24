@@ -58,7 +58,7 @@
                     i++;
                     <ul class="order_lists">
                         <li class="list_chk">
-                            <input type="checkbox" name="checkboxid" value="@item.Id" id="checkbox_@i" class="son_check" />
+                            <input type="checkbox" name="checkboxid" value="@item.GoodsId" id="checkbox_@i" class="son_check" />
                             <label for="checkbox_@i"></label>
                         </li>
                         <li class="list_con">
@@ -100,7 +100,7 @@
                     <div class="bar-right">
                         <div class="piece">已选商品<strong id="acc" class="piece_num">0</strong>件</div>
                         <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
-                        <div class="calBtn"><a href="/Shop/OrderIndex">结算</a></div>
+                        <div class="calBtn"><a href="#" onclick="redis()">结算</a></div>
                     </div>
                 </div>
             </div>
@@ -476,15 +476,17 @@
         num = num.substr(1, num.length - 1)
         //text=text.substr(1, num.length - 1)
         console.log(text);
-        console.log(onlyGoods);
-        console.log(num);
-        console.log(price);
-        console.log(sum);
+        //console.log(onlyGoods);
+        //console.log(num);
+        //console.log(price);
+        //console.log(sum);
+        alert(text)
         $.ajax({
             url: '/Shop/redis',
             data: { ids: text, onlyGoods: onlyGoods, num: num, price: price, sum: sum },
             success: function (data) {
                 location.href = '/Shop/PaymentIndex'
+
             }
         })
 

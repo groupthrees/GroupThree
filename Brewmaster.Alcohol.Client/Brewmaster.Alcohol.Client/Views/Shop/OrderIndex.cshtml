@@ -40,7 +40,8 @@
 <body>
     <iframe id="mediav_cookiemapping" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/b.html" style="width: 1px; border: 0px none; position: absolute; left: -100px; top: -100px; height: 1px;"></iframe>
     <!-- 全站公共url变量 -->
-
+    @*//报存地址id*@
+    <input id="Hidden1" type="hidden" />
 
     <div class="topHeaderWrap">
         <div class="topHeader">
@@ -314,7 +315,7 @@
                         <p class="codePic">
                             <img alt="手机酒仙网" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/jxPho-code.jfif" height="80" width="80" />
                         </p>
-                        <p class="codeText">手机酒仙网</p>
+                        <p class="codeText" >手机酒仙网</p>
                     </div>
                     <div class="jkd-code">
                         <p class="codePic">
@@ -394,6 +395,8 @@
 
     }
     function ret(id) {
+        alert(id)
+        $("#Hidden1").val(id);
         $.ajax({
             url: "http://localhost:50169/api/Address/GetAddressById?id=" + id,
             type: "get",
@@ -411,8 +414,7 @@
                 var html = "<span>";
                 html += "<h2>寄送至:" + data.detailAddress + "</h2>";
                 html += "<h2>收货人:" + data.addressPerson + "  " + data.addressPhone + "</h2>";
-                html += "</br>";
-                html += "</br>";
+                html += "<h2 style='color:#f00;'><b>总金额:￥" +@ViewBag.sum+ "元</b></h2>";
                 html += "<h2><a href='/Shop/ShopIndex'>返回购物车</a><input id='Button1' type='button' value='提交订单' class='btn-danger' onclick='submit()'/></h2>";
                 html += "</span>";
                     $("#info").append(html);
@@ -422,7 +424,23 @@
         })
     }
     function submit() {
-        location.href = '/Shop/PaymentIndex';
+        var addressId = $("#Hidden1").val();
+        alert(addressId);
+        $.ajax({
+            url: '/Shop/AddOrder?addressId=' + addressId,
+            type: "post",
+            //async: false,
+            //contentType: "application/json; charset=utf-8",
+            //crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                if (data > 0) {
+                    location.href = '/Shop/PaymentIndex';
+                }
+
+            }
+        })
+   
     }
 
     function del(obj, id) {

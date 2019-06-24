@@ -60,10 +60,6 @@ namespace Brewmaster.Alcohol.Model
         /// </summary>
         public string ApplyMethod { get; set; }
         /// <summary>
-        /// 用户id
-        /// </summary>
-        public int UsersId { get; set; }
-        /// <summary>
         /// 优惠金额
         /// </summary>
         public string CouponMoney { get; set; }
@@ -79,5 +75,9 @@ namespace Brewmaster.Alcohol.Model
         /// 购买数量（多个）
         /// </summary>
         public string BuyNums { get; set; }
+        /// <summary>
+        /// 商品价格
+        /// </summary>
+        public string Price { get; set; }
     }
 }
