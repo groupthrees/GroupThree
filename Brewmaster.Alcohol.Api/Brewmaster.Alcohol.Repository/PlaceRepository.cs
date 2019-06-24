@@ -15,7 +15,7 @@ namespace Brewmaster.Alcohol.Repository
         private static string connStr = "Server=169.254.200.110;Database=alcohol;Uid=root;Pwd=123456;";
 
         /// <summary>
-        /// 查询商品产地
+        /// 查询商品产地 
         /// </summary>
         /// <returns></returns>
         public List<Place> GetPlaceName()

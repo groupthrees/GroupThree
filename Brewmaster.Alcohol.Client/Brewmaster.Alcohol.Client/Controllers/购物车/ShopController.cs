@@ -24,6 +24,13 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
             return View(json);
         }
 
+        public IActionResult Index()
+        {
+            var list = client.GetApiResult("get", "ShopCart/GetShopCartlist?id=1", null);
+            var json = JsonConvert.DeserializeObject<List<ShopCartDto>>(list);
+            return View(json);
+        }
+
 
         /// <summary>
         /// 订单信息页面
