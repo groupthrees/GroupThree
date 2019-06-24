@@ -7,13 +7,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script src="~/Wine/购物车/购物车-订单支付_files/pushData.txt" charset="utf-8" async="" type="text/javascript"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="format-detection" content="email=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
 
     <title>酒仙网-订单支付</title>
     <script src="~/Wine/购物车/购物车-订单支付_files/mv.js" async="" type="text/javascript"></script>
@@ -21,15 +21,18 @@
     <script src="~/Wine/购物车/购物车-订单支付_files/visittrack.js" async="" type="text/javascript"></script>
     <script src="~/Wine/购物车/购物车-订单支付_files/mvl.js" async="" type="text/javascript"></script>
     <script type="text/javascript" src="~/Wine/购物车/购物车-订单支付_files/jquery-1.js"></script>
-    <link href="~/Wine/购物车/购物车-订单支付_files/base.css" rel="stylesheet" type="text/css">
-    <link href="~/Wine/购物车/购物车-订单支付_files/header_cart_new.css" rel="stylesheet" type="text/css">
-    <link href="~/Wine/购物车/购物车-订单支付_files/pcpay.css" rel="stylesheet" type="text/css">
-    <link href="~/Wine/购物车/购物车-订单支付_files/footer.css" rel="stylesheet" type="text/css">
+    <link href="~/Wine/购物车/购物车-订单支付_files/base.css" rel="stylesheet" type="text/css" />
+    <link href="~/Wine/购物车/购物车-订单支付_files/header_cart_new.css" rel="stylesheet" type="text/css" />
+    <link href="~/Wine/购物车/购物车-订单支付_files/pcpay.css" rel="stylesheet" type="text/css" />
+    <link href="~/Wine/购物车/购物车-订单支付_files/footer.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="~/Wine/购物车/购物车-订单支付_files/pay.js"></script>
     <script src="~/Wine/购物车/购物车-订单支付_files/base.js" type="text/javascript"></script>
-    
+    <script src="~/js/jquery-3.2.1.js"></script>
+    <script src="~/js/layer.js"></script>
     <script src="~/Wine/购物车/购物车-订单支付_files/public.js" type="text/javascript"></script>
     <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/layer-v2.4/layer/skin/layer.css" rel="stylesheet" />
+
 </head>
 
 
@@ -96,17 +99,26 @@
                     </li>
                     <li class="sucPro">请您在<span>24小时</span>内付款，逾期订单将被取消！</li>
                     <li class="sucCon">
-                        应付金额：<b>￥188.00</b>
+                        应付金额：<b>@ViewBag.sum</b><b>元</b>
                         订单编号：<em>17190616205204946641</em>
                     </li>
                 </ul>
             </div>
             <div class="payWrap">
                 <div class="payCon">
-                    <div style="top: 60px;" class="payAmount" id="payAmount"><span>支付金额：</span><b>￥188.00</b></div>
+                    <div style="top: 60px;" class="payAmount" id="payAmount"><span>支付金额：</span><b>@ViewBag.sum</b><b>元</b></div>
                 </div>
-                <div class="payBtnBox"><input id="btnPay" type="button" value="立即支付"  class="btn-danger"/></div>
+                <div class="payBtnBox" style="width:100px;height:450px;">
+                    <input id="btnPay" type="button" value="立即支付" class="btn-danger" onclick="pay()" />
+                    <br />
+                    <br />
+                    <div id="img"  >
+                        <img src="~/images/QQ图片20180509170708.jpg"  style="width:340px;height:400px;"/>
+                    </div>
+                </div>
+               
             </div>
+         
             <div class="payProWrap"><h3>注意事项：</h3><p>"订单提交成功"仅表明酒仙网收到您的订单，只有您的订单通过审核后，才代表订单正式生效；</p><p>选择货到付款的客户，请您务必认真检查所有货物，如有不符，您可以拒收；</p><p>选择其他方式的客户，请您认真检查外包装。如有明显损坏迹象，您可以拒收该货品，并及时通知我们。</p></div>
         </div>
     </div>
@@ -148,3 +160,19 @@
 
 </body>
 </html>
+<script>
+    function pay() {
+        var str = "";
+        str = '<table>'
+            + '<h1>支付已完成,美味的酒很快就会到达您的身边！！！！</h1>'
+            + '</table>';
+        layer.open({
+            type: 0,
+            skin: "layui-layer-rim",
+            title: "支付信息",
+            maxmin: true,
+            content: str,
+        })
+    }
+   
+</script>

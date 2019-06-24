@@ -40,12 +40,13 @@ namespace Brewmaster.Alcohol.Repository
         /// <param name="orders"></param>
         /// <returns></returns>
         public int MakeOrders(Orders orders)
-        {
+         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string strOrder = $@"INSERT into orders(OrderNo,OrderSite,OrderMoney,PracticalMoney,usersId,addressId,CouponMoney,ApplyMethod)
-                  values('{orders.OrderNo}', {orders.OrderSite}, '{orders.OrderMoney}', '{orders.PracticalMoney}', {orders.UserId}, {orders.addressId}, {orders.CouponMoney},  '{orders.ApplyMethod}') ;select @@IDENTITY";
-                var orderId = conn.ExecuteScalar<int>(strOrder);
+                //string strOrder = $@"INSERT into orders(OrderNo,OrderSite,OrderMoney,PracticalMoney,usersId,addressId,CouponMoney,ApplyMethod)
+                //  values('{orders.OrderNo}', {orders.OrderSite}, '{orders.OrderMoney}', '{orders.PracticalMoney}', {orders.UserId}, {orders.addressId}, {orders.CouponMoney},  '{orders.ApplyMethod}') ;select @@IDENTITY";
+                string strOrder = string.Format("insert into orders(OrderNo,OrderSite,OrderMoney,PracticalMoney,usersId,addressId) values ('{0}','{1}','{2}','{3}','{4}','{5}');select @@IDENTITY", orders.OrderNo,orders.OrderSite,orders.OrderMoney,orders.PracticalMoney,orders.UserId,orders.addressId);
+                int orderId = conn.ExecuteScalar<int>(strOrder);
 
                 if (orderId > 0)
                 {
@@ -54,8 +55,9 @@ namespace Brewmaster.Alcohol.Repository
                     var Price = orders.Price.Split(',');
                     for (int j = 0; j < BuyNums.Length; j++)
                     {
-                        string str = $"INSERT into ordergoods(GoodsId, OrdersId, BuyNum, usersId,price) values( {Convert.ToInt32(GoodsId[j])},{orderId}, {Convert.ToInt32(BuyNums[j]) },1,{Convert.ToDecimal(Price[j])})";
-                        int result =conn.Execute(str);
+                        //string str = $"INSERT into ordergoods(GoodsId, OrdersId, BuyNum, usersId,price) values( {Convert.ToInt32(GoodsId[j])},{orderId}, {Convert.ToInt32(BuyNums[j]) },1,{Convert.ToDecimal(Price[j])})";
+                        string str = string.Format("insert into ordergoods(GoodsId,OrdersId,BuyNum,usersId,price) values('{0}','{1}','{2}','{3}','{4}')", Convert.ToInt32(GoodsId[j]), orderId, Convert.ToInt32(BuyNums[j]), orders.UserId, Convert.ToDecimal(Price[j]));
+                         conn.Execute(str);
                     }
                 }
             }

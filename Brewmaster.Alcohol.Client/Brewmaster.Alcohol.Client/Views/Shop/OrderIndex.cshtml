@@ -315,7 +315,7 @@
                         <p class="codePic">
                             <img alt="手机酒仙网" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/jxPho-code.jfif" height="80" width="80" />
                         </p>
-                        <p class="codeText">手机酒仙网</p>
+                        <p class="codeText" >手机酒仙网</p>
                     </div>
                     <div class="jkd-code">
                         <p class="codePic">
@@ -413,8 +413,7 @@
                 var html = "<span>";
                 html += "<h2>寄送至:" + data.detailAddress + "</h2>";
                 html += "<h2>收货人:" + data.addressPerson + "  " + data.addressPhone + "</h2>";
-                html += "</br>"+"总金额:" + @ViewBag.sum;
-                html += "</br>";
+                html += "<h2 style='color:#f00;'><b>总金额:￥" +@ViewBag.sum+ "元</b></h2>";
                 html += "<h2><a href='/Shop/ShopIndex'>返回购物车</a><input id='Button1' type='button' value='提交订单' class='btn-danger' onclick='submit()'/></h2>";
                 html += "</span>";
                     $("#info").append(html);
@@ -424,8 +423,23 @@
         })
     }
     function submit() {
-        var addressId= $("Hidden1").val();
-        location.href = '/Shop/AddOrder?addressId' + addressId;
+        var addressId = $("Hidden1").val();
+        $.ajax({
+            url: '/Shop/AddOrder?addressId' + addressId,
+            type: "post",
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                if (data > 0) {
+                    location.href = '/Shop/PaymentIndex';
+                }
+
+            }
+        })
+   
     }
 
     function del(obj, id) {
