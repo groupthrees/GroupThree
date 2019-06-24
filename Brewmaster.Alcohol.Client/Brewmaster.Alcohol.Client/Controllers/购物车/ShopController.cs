@@ -123,6 +123,8 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
             orders.UserId = 1;
             orders.OrderNo = "doooo1";
             orders.BuyNums = s.num;
+            orders.ApplyMethod = "在线支付";
+            orders.CouponMoney = "0";
             ApiHelper apiHelper = new ApiHelper();
             apiHelper.GetApiResult("post", "ShopCart/MakeOrders",orders);
             return 1;

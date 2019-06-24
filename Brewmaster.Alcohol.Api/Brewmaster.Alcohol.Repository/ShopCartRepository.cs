@@ -43,9 +43,10 @@ namespace Brewmaster.Alcohol.Repository
          {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                //string strOrder = $@"INSERT into orders(OrderNo,OrderSite,OrderMoney,PracticalMoney,usersId,addressId,CouponMoney,ApplyMethod)
-                //  values('{orders.OrderNo}', {orders.OrderSite}, '{orders.OrderMoney}', '{orders.PracticalMoney}', {orders.UserId}, {orders.addressId}, {orders.CouponMoney},  '{orders.ApplyMethod}') ;select @@IDENTITY";
-                string strOrder = string.Format("insert into orders(OrderNo,OrderSite,OrderMoney,PracticalMoney,usersId,addressId) values ('{0}','{1}','{2}','{3}','{4}','{5}');select @@IDENTITY", orders.OrderNo,orders.OrderSite,orders.OrderMoney,orders.PracticalMoney,orders.UserId,orders.addressId);
+                string strOrder = $@"INSERT into orders(OrderNo,OrderSite,OrderMoney,PracticalMoney,usersId,addressId,CouponMoney,ApplyMethod)
+                  values('{orders.OrderNo}', {orders.OrderSite}, '{orders.OrderMoney}', '{orders.PracticalMoney}', {orders.UserId}, {orders.addressId}, {orders.CouponMoney},  '{orders.ApplyMethod}'); select @@IDENTITY";
+                //string strOrder = string.Format("insert into orders(OrderNo,OrderSite,OrderMoney,PracticalMoney,usersId,addressId)" +
+                //    " values ('{0}','{1}','{2}','{3}','{4}','{5}');select @@IDENTITY", orders.OrderNo,orders.OrderSite,orders.OrderMoney,orders.PracticalMoney,orders.UserId,orders.addressId);
                 int orderId = conn.ExecuteScalar<int>(strOrder);
 
                 if (orderId > 0)
