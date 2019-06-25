@@ -7,6 +7,8 @@ using Brewmaster.Alcohol.Client.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+
+
 using Brewmaster.Alcohol.Client.Models;
 namespace Brewmaster.Alcohol.Client.Controllers.购物车
 {
@@ -17,6 +19,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         /// 购物车界面
         /// </summary>
         /// <returns></returns>
+        [AuthorizationActionFilter]
         public IActionResult ShopIndex()
         {
             var list = client.GetApiResult("get", "ShopCart/GetShopCartlist?id=1", null);
