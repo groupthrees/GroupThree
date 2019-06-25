@@ -60,11 +60,11 @@
                         i++;
                         <ul class="order_lists">
                             <li class="list_chk">
-                                <input type="checkbox" name="checkboxid" value="@item.Id" id="checkbox_@i" class="son_check" />
+                                <input type="checkbox" name="checkboxid" value="@item.GoodsId" id="checkbox_@i" class="son_check" />
                                 <label for="checkbox_@i"></label>
                             </li>
                             <li class="list_con">
-                                <div class="list_img"><a href="javascript:;"><img src="@item." alt="" onclick="fun('@item.GoodsId')" /></a></div>
+                                <div class="list_img"><a href="javascript:;"><img src="@item.GoodsImg" alt="" onclick="fun('@item.GoodsId')" /></a></div>
                                 <div class="list_text"><a href="javascript:;" onclick="fun(' @item.Id ')">@item.GoodsName</a></div>
                             </li>
                             <li class="list_info">
@@ -87,20 +87,24 @@
                                 <p class="sum_price" name="@(item.PriceNow * item.Num)">￥@(item.PriceNow * item.Num)</p>
                             </li>
                             <li class="list_op">
-                                <p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>
+                                @*<p class="del"><a href="javascript:;" class="delBtn" onclick="deletegoods(this,'@item.Id')">移除商品</a></p>*@
+                                <p class="del"> <input id="Button1" type="button" value="移除商品" onclick="deletegoods(this,'@item.Id')" /></p>
                             </li>
                         </ul>
                     }
 
 
                     <!--底部-->
-                    <div class="bar-wrapper">
-                        <div class="bar-right">
-                            <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
-                            <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
-                            <div class="calBtn"><a href="javascript:;">结算</a></div>
+                        <div class="bar-wrapper">
+                            <div style="float:left;">
+                                <input id="Button1" type="button" value="移除商品" style="padding: 20px 20px;font-size:16px" onclick="batchdeletegoods(this)" />
+                            </div>
+                            <div class="bar-right">
+                                <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
+                                <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
+                                <div class="calBtn"><a href="javascript:;">结算</a></div>
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -127,5 +131,108 @@
         location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
     }
 
+
+    //多删
+    function batchdeletegoods(obj) {
+        text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
+            return $(elem).val();
+        }).get().join(',');
+
+        var msg = "确定要删除吗？"
+        if (confirm(msg) == true) {
+            //异步访问批量删除方法， 把数组传入controller层
+            $.ajax({
+                type: "delete",
+                url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id=" + text,
+                success: function (data) {
+                    if (data > 0) {
+                        alert("删除成功!");
+                        $(obj).parent().parent().parent().remove();
+                    }
+                    else {
+                        alert("删除失败!");
+                    }
+
+                }
+
+            });
+        }
+    }
+
+    //单删
+    function deletegoods(obj, id) {
+        var msg = "确定要删除吗？"
+        if (confirm(msg) == true) {
+            //异步访问批量删除方法， 把数组传入controller层
+            $.ajax({
+                type: "delete",
+                url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id=" + id,
+                data: { id: id },
+                success: function (data) {
+                    if (data > 0) {
+                        alert("删除成功!");
+                        alert(123);
+                        $(obj).parent().parent().parent().remove();
+
+                    }
+                    else {
+                        alert("删除失败!");
+                    }
+                }
+
+            });
+        }
+
+    }
+
+
+    function redis() {
+        sun = 0;
+        var num = "";
+        var price = "";
+        var onlyGoods = "";//商品单价
+        text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
+
+
+            danjia = $(elem).parent().siblings().next().next().first()[0].innerText;
+            jiaGe = $(elem).parent().siblings().next().next().next().next().first()[0].innerText
+
+            jiaGe = "," + jiaGe;
+            p = jiaGe.substr(2, jiaGe.length - 2);//小计
+
+            danjia = "," + danjia;
+            d = danjia.substr(2, danjia.length - 2);//单价
+
+            num += "," + parseInt(p) / parseInt(d);
+            console.log("单价：" + d + "数量：" + num + "小计：" + p + "商品id：" + $(elem).val());
+
+            sum += parseInt(p);
+
+
+            price += "," + p;
+            onlyGoods += "," + d;
+            return $(elem).val();
+        }).get().join(',');
+
+        price = price.substr(1, price.length - 1)
+        onlyGoods = onlyGoods.substr(1, onlyGoods.length - 1)
+        num = num.substr(1, num.length - 1)
+        //text=text.substr(1, num.length - 1)
+        console.log(text);
+        //console.log(onlyGoods);
+        //console.log(num);
+        //console.log(price);
+        //console.log(sum);
+        alert(text)
+        $.ajax({
+            url: '/Shop/redis',
+            data: { ids: text, onlyGoods: onlyGoods, num: num, price: price, sum: sum },
+            success: function (data) {
+                location.href = '/Shop/PaymentIndex'
+
+            }
+        })
+
+    }
 
 </script>
