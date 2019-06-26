@@ -87,7 +87,7 @@
                         </li>
                         <li class="list_op">
                             @*<p class="del"><a href="javascript:;" class="delBtn" onclick="deletegoods(this,'@item.Id')">移除商品</a></p>*@
-                            <p class="del"> <input id="Button1" type="button" value="移除商品" onclick="deletegoods(this,'@item.Id')" /></p>
+                            <p class="del"> <input id="Button1" type="button"  class="delBtn" value="移除商品" onclick="deletegoods(this,'@item.Id')"/></p>
                         </li>
                     </ul>
                 }
@@ -109,8 +109,8 @@
     </section>
     <section class="model_bg"></section>
     <section class="my_model">
-        <p class="title">删除宝贝<span class="closeModel">X</span></p>
-        <p>您确认要删除该宝贝吗？</p>
+        <p class="title" >删除宝贝<span class="closeModel">X</span></p>
+        @*<p>您确认要删除该宝贝吗？</p>*@
         <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div>
     </section>
     <script src="~/js/jquery.min.js"></script>
@@ -317,37 +317,44 @@
             totalMoney();
         })
 
-        ////======================================移除商品========================================
+        //======================================移除商品========================================
 
-        //var $order_lists = null;
-        //var $order_content = '';
-        //$('.delBtn').click(function () {
-        //    $order_lists = $(this).parents('.order_lists');
-        //    $order_content = $order_lists.parents('.order_content');
-        //    $('.model_bg').fadeIn(300);
-        //    $('.my_model').fadeIn(300);
-        //});
+        var $order_lists = null;
+        var $order_content = '';
+        $('.delBtn').click(function () {
+            $order_lists = $(this).parents('.order_lists');
+            $order_content = $order_lists.parents('.order_content');
+            //$('.model_bg').fadeIn(300);
+            //$('.my_model').fadeIn(300);
+            $order_lists.remove();
+            if ($order_content.html().trim() == null || $order_content.html().trim().length == 0) {
+                $order_content.parents('.cartBox').remove();
+            }
+            closeM();
+            $sonCheckBox = $('.son_check');
+            totalMoney();
+        });
 
-        ////关闭模态框
-        //$('.closeModel').click(function () {
-        //    closeM();
-        //});
-        //$('.dialog-close').click(function () {
-        //    closeM();
-        //});
-        //function closeM() {
-        //    $('.model_bg').fadeOut(300);
-        //    $('.my_model').fadeOut(300);
-        //}
-        ////确定按钮，移除商品
+        //关闭模态框
+        $('.closeModel').click(function () {
+            closeM();
+        });
+        $('.dialog-close').click(function () {
+            closeM();
+        });
+        function closeM() {
+            $('.model_bg').fadeOut(300);
+            $('.my_model').fadeOut(300);
+        }
+        //确定按钮，移除商品
         //$('.dialog-sure').click(function () {
-        //    $order_lists.remove();
-        //    if ($order_content.html().trim() == null || $order_content.html().trim().length == 0) {
-        //        $order_content.parents('.cartBox').remove();
-        //    }
-        //    closeM();
-        //    $sonCheckBox = $('.son_check');
-        //    totalMoney();
+            //$order_lists.remove();
+            //if ($order_content.html().trim() == null || $order_content.html().trim().length == 0) {
+            //    $order_content.parents('.cartBox').remove();
+            //}
+            //closeM();
+            //$sonCheckBox = $('.son_check');
+            //totalMoney();
         //})
 
 
@@ -430,9 +437,7 @@
                 success: function (data) {
                     if (data > 0) {
                         alert("删除成功!");
-                        alert(123);
                         $(obj).parent().parent().parent().remove();
-                     
                     }
                     else {
                         alert("删除失败!");
@@ -492,37 +497,6 @@
             }
         })
 
-    }
-
-
-    //======================================总计==========================================
-
-    function totalMoney() {
-        var total_money = 0;
-        var total_count = 0;
-        var calBtn = $('.calBtn a');
-        $sonCheckBox.each(function () {
-            if ($(this).is(':checked')) {
-                var goods = parseInt($(this).parents('.order_lists').find('.sum_price').html().substring(1));
-                var num = parseInt($(this).parents('.order_lists').find('.sum').val());
-                total_money += goods;
-                total_count += num;
-            }
-        });
-        $('.total_text').html('￥' + total_money);
-        $('.piece_num').html(total_count);
-
-        // console.log(total_money,total_count);
-
-        if (total_money != 0 && total_count != 0) {
-            if (!calBtn.hasClass('btn_sty')) {
-                calBtn.addClass('btn_sty');
-            }
-        } else {
-            if (calBtn.hasClass('btn_sty')) {
-                calBtn.removeClass('btn_sty');
-            }
-        }
     }
 
 
