@@ -395,6 +395,7 @@
 
     }
     function ret(id) {
+        alert(id)
         $("#Hidden1").val(id);
         $.ajax({
             url: "http://localhost:50169/api/Address/GetAddressById?id=" + id,
@@ -423,14 +424,14 @@
         })
     }
     function submit() {
-        var addressId = $("Hidden1").val();
+        var addressId = $("#Hidden1").val();
+        alert(addressId);
         $.ajax({
-            url: '/Shop/AddOrder?addressId' + addressId,
+            url: '/Shop/AddOrder?addressId=' + addressId,
             type: "post",
-            async: false,
-            contentType: "application/json; charset=utf-8",
-            async: false,
-            crossDomain: true,
+            //async: false,
+            //contentType: "application/json; charset=utf-8",
+            //crossDomain: true,
             dataType: 'json',
             success: function (data) {
                 if (data > 0) {

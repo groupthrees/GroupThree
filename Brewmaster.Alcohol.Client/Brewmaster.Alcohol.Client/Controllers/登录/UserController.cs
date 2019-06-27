@@ -3,13 +3,16 @@ using Brewmaster.Alcohol.Client.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace Brewmaster.Alcohol.Client.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private string THE_UID = "laishaoqian";
         private string THE_KEY = "123456789qwe";//这里是通过网站发送的用户名和秘钥
@@ -136,11 +139,41 @@ namespace Brewmaster.Alcohol.Client.Controllers
         #region 登录
         public IActionResult Login()
         {
+            
             return View();
         }
+        public int LoginDo(string UsersName,string UsersPwd)
+        {
+            ApiHelper apiHelper = new ApiHelper();
+            var str= apiHelper.GetApiResult("get",$"User/Login?UsersName={UsersName}&UsersPwd={UsersPwd}");
+            var user = JsonConvert.DeserializeObject<List<Users>>(str);
+            if (user!=null)
+            {
+                WriteCookie(user.First());
+                return 1;
+            }
+            return 0;
+        }
 
+        ///// <summary>
+        ///// 把该用户购物车选中的商品和数量存储到redis中
+        ///// </summary>
+        ///// <param name="ids"></param>
+        ///// <param name="num"></param>
+        //public void redis(string ids, string price, string num, string onlyGoods, int sum)
+        //{
+        //    //模拟从redis中取出登录用户的id
+        //    int userId = 1;
+        //    RedisHelper.Set<Users>(userId.ToString(), new Users
+        //    {
+        //        ids = ids,
+        //        price = price,
+        //        num = num,
+        //        onlyGoods = onlyGoods,
+        //        sum = sum
+        //    });
+        //}
 
-      
         #endregion
 
         #region 注册

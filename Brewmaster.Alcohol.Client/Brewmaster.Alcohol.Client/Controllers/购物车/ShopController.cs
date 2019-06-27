@@ -7,6 +7,8 @@ using Brewmaster.Alcohol.Client.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+
+
 using Brewmaster.Alcohol.Client.Models;
 namespace Brewmaster.Alcohol.Client.Controllers.购物车
 {
@@ -17,7 +19,15 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         /// 购物车界面
         /// </summary>
         /// <returns></returns>
+        //[AuthorizationActionFilter]
         public IActionResult ShopIndex()
+        {
+            var list = client.GetApiResult("get", "ShopCart/GetShopCartlist?id=1", null);
+            var json = JsonConvert.DeserializeObject<List<ShopCartDto>>(list);
+            return View(json);
+        }
+
+        public IActionResult Index()
         {
             var list = client.GetApiResult("get", "ShopCart/GetShopCartlist?id=1", null);
             var json = JsonConvert.DeserializeObject<List<ShopCartDto>>(list);
@@ -123,6 +133,8 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
             orders.UserId = 1;
             orders.OrderNo = "doooo1";
             orders.BuyNums = s.num;
+            orders.ApplyMethod = "在线支付";
+            orders.CouponMoney = "0";
             ApiHelper apiHelper = new ApiHelper();
             apiHelper.GetApiResult("post", "ShopCart/MakeOrders",orders);
             return 1;

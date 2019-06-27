@@ -17,13 +17,13 @@ namespace Brewmaster.Alcohol.Client.Controllers
         /// <summary>
         /// 用户信息
         /// </summary>
-        public UserInfo LoginInfo
+        public Users LoginInfo
         {
             get
             {
                 if (User.Identity.IsAuthenticated)
                 {
-                    var tmpuserInfo = RedisHelper.Get<UserInfo>(User.Identity.Name);
+                    var tmpuserInfo = RedisHelper.Get<Users>(User.Identity.Name);
                     return tmpuserInfo;
                 }
 
@@ -35,18 +35,18 @@ namespace Brewmaster.Alcohol.Client.Controllers
         /// 
         /// </summary>
         /// <param name="tmpUser"></param>
-        public void WriteCookie(UserInfo tmpUser)
+        public void WriteCookie(Users tmpUser)
         {
             var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
-            identity.AddClaim(new Claim(ClaimTypes.Name, tmpUser.UserName));
+            identity.AddClaim(new Claim(ClaimTypes.Name, tmpUser.UsersName));
 
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
 
             //存储redis
-            RedisHelper.Set<UserInfo>(tmpUser.UserName, tmpUser);
+            RedisHelper.Set<Users>(tmpUser.UsersName, tmpUser);
 
             //取Redis-测试
-            var tmpUser1 = RedisHelper.Get<UserInfo>(tmpUser.UserName);
+            var tmpUser1 = RedisHelper.Get<Users>(tmpUser.UsersName);
         }
 
         /// <summary>
