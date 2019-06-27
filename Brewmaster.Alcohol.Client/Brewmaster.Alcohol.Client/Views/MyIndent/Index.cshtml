@@ -158,7 +158,6 @@
 
 
     })
- 
     function getOrder() {
         //var date = {
             
@@ -170,7 +169,7 @@
         $.ajax({
             type: "get",
             url: 'http://localhost:50169/api/Indent/GetIndentPageList',
-            data: { userId: 1, OrderSite:0},
+            data: { userId: @ViewBag.UserId, OrderSite:0},
             success: function (result) {
                 console.log(result);
 
