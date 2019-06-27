@@ -59,7 +59,7 @@
                     i++;
                     <ul class="order_lists">
                         <li class="list_chk">
-                            <input type="checkbox" name="checkboxid" value="@item.GoodsId" id="checkbox_@i" class="son_check" />
+                            <input type="checkbox" name="checkboxid" value="@item.Id" id="checkbox_@i" class="son_check" />
                             <label for="checkbox_@i"></label>
                         </li>
                         <li class="list_con">
@@ -404,7 +404,7 @@
         text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
             return $(elem).val();
         }).get().join(',');
-
+        alert(text);
         var msg = "确定要删除吗？"
         if (confirm(msg) == true) {
             //异步访问批量删除方法， 把数组传入controller层
@@ -412,6 +412,7 @@
                 type: "delete",
                 url: "http://localhost:50169/api/ShopCart/DeleteShopCart?id=" + text,
                 success: function (data) {
+                    console.log(data);
                     if (data > 0) {
                         alert("删除成功!");
                         $(obj).parent().parent().parent().remove();
