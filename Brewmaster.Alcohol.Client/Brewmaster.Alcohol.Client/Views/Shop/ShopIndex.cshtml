@@ -8,6 +8,7 @@
 
 <html lang="en">
 <head>
+    <script src="~/js/jquery.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -85,8 +86,8 @@
                             <p class="sum_price" name="@(item.PriceNow * item.Num)">￥@(item.PriceNow * item.Num)</p>
                         </li>
                         <li class="list_op">
-                            @*<p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>*@
-                            <p class="del"> <input id="Button1" type="button" value="移除商品" onclick="deletegoods(this,'@item.Id')" /></p>
+                            @*<p class="del"><a href="javascript:;" class="delBtn" onclick="deletegoods(this,'@item.Id')">移除商品</a></p>*@
+                            <p class="del"> <input id="Button1" type="button"  class="delBtn" value="移除商品" onclick="deletegoods(this,'@item.Id')"/></p>
                         </li>
                     </ul>
                 }
@@ -108,8 +109,8 @@
     </section>
     <section class="model_bg"></section>
     <section class="my_model">
-        <p class="title">删除宝贝<span class="closeModel">X</span></p>
-        <p>您确认要删除该宝贝吗？</p>
+        <p class="title" >删除宝贝<span class="closeModel">X</span></p>
+        @*<p>您确认要删除该宝贝吗？</p>*@
         <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div>
     </section>
     <script src="~/js/jquery.min.js"></script>
@@ -134,9 +135,14 @@
     }
 
 
+
     /**
- * Created by Administrator on 2017/5/24.
- */
+   * Created by Administrator on 2017/5/24.
+   */
+
+    /**
+     * Created by Administrator on 2017/5/24.
+     */
 
     $(function () {
 
@@ -173,7 +179,7 @@
                 if ($(this).is(':checked')) {
                     //判断：所有单个商品是否勾选
                     var len = $sonCheckBox.length;
-                     num = 0;
+                    var num = 0;
                     $sonCheckBox.each(function () {
                         if ($(this).is(':checked')) {
                             num++;
@@ -271,7 +277,6 @@
                 $priceTotalObj = $(this).parents('.order_lists').find('.sum_price'),
                 $price = $(this).parents('.order_lists').find('.price').html(),  //单价
                 $priceTotal = $count * parseInt($price.substring(1));
-
             $inputVal.val($count);
             $priceTotalObj.html('￥' + $priceTotal);
             if ($inputVal.val() > 1 && $obj.hasClass('reSty')) {
@@ -319,9 +324,15 @@
         $('.delBtn').click(function () {
             $order_lists = $(this).parents('.order_lists');
             $order_content = $order_lists.parents('.order_content');
-            $('.model_bg').fadeIn(300);
-            $('.my_model').fadeIn(300);
-           // totalMoney();
+            //$('.model_bg').fadeIn(300);
+            //$('.my_model').fadeIn(300);
+            $order_lists.remove();
+            if ($order_content.html().trim() == null || $order_content.html().trim().length == 0) {
+                $order_content.parents('.cartBox').remove();
+            }
+            closeM();
+            $sonCheckBox = $('.son_check');
+            totalMoney();
         });
 
         //关闭模态框
@@ -336,30 +347,34 @@
             $('.my_model').fadeOut(300);
         }
         //确定按钮，移除商品
-        $('.dialog-sure').click(function () {
-            $order_lists.remove();
-            if ($order_content.html().trim() == null || $order_content.html().trim().length == 0) {
-                $order_content.parents('.cartBox').remove();
-            }
-            closeM();
-            $sonCheckBox = $('.son_check');
-            totalMoney();
-        })
+        //$('.dialog-sure').click(function () {
+            //$order_lists.remove();
+            //if ($order_content.html().trim() == null || $order_content.html().trim().length == 0) {
+            //    $order_content.parents('.cartBox').remove();
+            //}
+            //closeM();
+            //$sonCheckBox = $('.son_check');
+            //totalMoney();
+        //})
+
+
+
+
 
         //======================================总计==========================================
 
         function totalMoney() {
-             total_money = 0;
-            total_count = 0;
+            var total_money = 0;
+            var total_count = 0;
             var calBtn = $('.calBtn a');
-            $(".sum_price").each(function () {
-                total_money += parseInt($(this).html().substring(1));
+            $sonCheckBox.each(function () {
+                if ($(this).is(':checked')) {
+                    var goods = parseInt($(this).parents('.order_lists').find('.sum_price').html().substring(1));
+                    var num = parseInt($(this).parents('.order_lists').find('.sum').val());
+                    total_money += goods;
+                    total_count += num;
+                }
             });
-
-            $(".sum").each(function () {
-                total_count += parseInt($(this).val());
-            });
-
             $('.total_text').html('￥' + total_money);
             $('.piece_num').html(total_count);
 
@@ -378,7 +393,7 @@
 
 
     });
-  
+
     function closeM() {
         $('.model_bg').fadeOut(300);
         $('.my_model').fadeOut(300);
@@ -400,9 +415,6 @@
                     if (data > 0) {
                         alert("删除成功!");
                         $(obj).parent().parent().parent().remove();
-                        closeM();
-                        $sonCheckBox = $('.son_check');
-                        totalMoney();
                     }
                     else {
                         alert("删除失败!");
@@ -413,7 +425,6 @@
             });
         }
     }
-
 
     function deletegoods(obj, id) {
         var msg = "确定要删除吗？"
@@ -426,11 +437,7 @@
                 success: function (data) {
                     if (data > 0) {
                         alert("删除成功!");
-                        alert(123);
                         $(obj).parent().parent().parent().remove();
-                        closeM();
-                        $sonCheckBox = $('.son_check');
-                        totalMoney();
                     }
                     else {
                         alert("删除失败!");
@@ -492,43 +499,6 @@
 
     }
 
-    function totalMoney() {
-         total_money = 0;
-         total_count = 0;
-        var calBtn = $('.calBtn a');
-        //$sonCheckBox.each(function () {
-        //    if ($(this).is(':checked')) {
-        //        var acc  = parseInt($(this).parents('.order_lists').find('.sum_price').html().substring(1));
-        //       var   bcc = parseInt($(this).parents('.order_lists').find('.sum').val());
-        //        total_money += acc;
-        //        total_count += bcc;
-        //        alert(total_money);
-        //        alert(total_count);
-        //    }
-        //});
-        //$('.total_text').html('￥' + acc);
 
-        //$('.piece_num').html(total_count);
-        $(".sum_price").each(function () {
-            total_money += parseInt($(this).html().substring(1));
-        });
-
-        $(".sum").each(function () {
-            total_count += parseInt($(this).val());
-        });
-
-        $('.total_text').html('￥' + total_money);
-        $('.piece_num').html(total_count);
-
-        if (total_money != 0 && total_count != 0) {
-            if (!calBtn.hasClass('btn_sty')) {
-                calBtn.addClass('btn_sty');
-            }
-        } else {
-            if (calBtn.hasClass('btn_sty')) {
-                calBtn.removeClass('btn_sty');
-            }
-        }
-    }
 
 </script>

@@ -3,13 +3,16 @@ using Brewmaster.Alcohol.Client.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace Brewmaster.Alcohol.Client.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private string THE_UID = "laishaoqian";
         private string THE_KEY = "123456789qwe";//这里是通过网站发送的用户名和秘钥
@@ -136,7 +139,20 @@ namespace Brewmaster.Alcohol.Client.Controllers
         #region 登录
         public IActionResult Login()
         {
+            
             return View();
+        }
+        public int LoginDo(string UsersName,string UsersPwd)
+        {
+            ApiHelper apiHelper = new ApiHelper();
+            var str= apiHelper.GetApiResult("get",$"User/Login?UsersName={UsersName}&UsersPwd={UsersPwd}");
+            var user = JsonConvert.DeserializeObject<List<Users>>(str);
+            if (user!=null)
+            {
+                WriteCookie(user.First());
+                return 1;
+            }
+            return 0;
         }
 
         ///// <summary>

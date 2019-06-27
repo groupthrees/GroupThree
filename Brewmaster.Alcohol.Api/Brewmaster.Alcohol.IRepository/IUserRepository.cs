@@ -20,7 +20,7 @@ namespace Brewmaster.Alcohol.IRepository
         /// <param name="UserName"></param>
         /// <param name="UserPwd"></param>
         /// <returns></returns>
-        int Login(string UserName, string UserPwd);
+        List<Users> Login(string UsersName, string UsersPwd);
 
    
         /// <summary>
