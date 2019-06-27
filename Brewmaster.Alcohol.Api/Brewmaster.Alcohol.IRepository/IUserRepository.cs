@@ -54,6 +54,7 @@ namespace Brewmaster.Alcohol.IRepository
 
         /// <summary>
         /// 验证手机号码是否存在
+        /// 
         /// </summary>
         /// <param name="usersName"></param>
         /// <returns></returns>
