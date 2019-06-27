@@ -147,7 +147,7 @@
         $.ajax({
             type: "get",
             url: 'http://localhost:50169/api/Coupon/Getcouponlist',
-            data: { id: 1, pageIndex: index, pageSize: pageSize, statuid: statu },
+            data: { id: @ViewBag.id, pageIndex: index, pageSize: pageSize, statuid: statu },
             success: function (result) {
                 var tmphtml = "";
                 $("#await").empty();

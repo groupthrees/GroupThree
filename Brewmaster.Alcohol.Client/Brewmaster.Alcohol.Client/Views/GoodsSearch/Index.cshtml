@@ -2196,6 +2196,9 @@
             }
         })
     }
+
+    //按条件查询以及按价格排序
+
     function GetGoodsAll(priceNow, typeId, brandId) {
         priceNowNumber = priceNow;
         if (brandId!= 0) {
@@ -2204,8 +2207,6 @@
         if (typeId != 0) {
         typeId1 = typeId;
         }
-
-
         var name = $("#GoodsName").val();
         $.ajax({
             url: 'http://localhost:50169/api/GoodsAll/GetGoodsAllListPage?PriceNow=' + priceNowNumber + '&GoodsName=' + name + '&typeId=' + typeId1 +'&brandId='+brandId1+ '+&pageIndex=' + pageIndex + '&pageSize=' + pageSize,
@@ -2229,7 +2230,6 @@
         var usersId = $('#Hidden1').val();
         location.href = '/ShopDetails/Index2?goodsId=' + id + '&usersId=' + usersId + '';
     }
-   
 
     //首页
     function first() {

@@ -84,5 +84,6 @@ namespace Brewmaster.Alcohol.Repository
             }
 
         }
+
     }
 }

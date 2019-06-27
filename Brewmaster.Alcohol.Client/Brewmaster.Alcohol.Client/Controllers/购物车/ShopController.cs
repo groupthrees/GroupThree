@@ -14,6 +14,8 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
 {
     public class ShopController : Controller
     {
+        //取Redis
+        Users tmpUser1 = RedisHelper.Get<Users>("UsersName");
         ApiHelper client = new ApiHelper();
         /// <summary>
         /// 购物车界面
@@ -22,18 +24,11 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         //[AuthorizationActionFilter]
         public IActionResult ShopIndex()
         {
-            var list = client.GetApiResult("get", "ShopCart/GetShopCartlist?id=1", null);
+
+            var list = client.GetApiResult("get", $"ShopCart/GetShopCartlist?id={tmpUser1.Id}", null);
             var json = JsonConvert.DeserializeObject<List<ShopCartDto>>(list);
             return View(json);
         }
-
-        public IActionResult Index()
-        {
-            var list = client.GetApiResult("get", "ShopCart/GetShopCartlist?id=1", null);
-            var json = JsonConvert.DeserializeObject<List<ShopCartDto>>(list);
-            return View(json);
-        }
-
 
         /// <summary>
         /// 订单信息页面
@@ -42,23 +37,23 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         public IActionResult OrderIndex()
         {
 
-            var s = RedisHelper.Get<BuyGoods>("1");
+            var s = RedisHelper.Get<BuyGoods>((tmpUser1.Id).ToString());
             ViewBag.sum = s.sum;
-            List<int> onePricelist = new List<int>();//单价
-            List<int> pricelist = new List<int>();//小计
+            //List<int> onePricelist = new List<int>();//单价
+            //List<int> pricelist = new List<int>();//小计
 
-            var onePrice = s.onlyGoods.Split(',');
-            var price = s.price.Split(',');
-            foreach (var item in onePrice)
-            {
-                string p = item.Replace("/n", "");
-                onePricelist.Add(Convert.ToInt32(p));
-            }
-            foreach (var item in price)
-            {
-                string p = item.Substring(0, item.Length - 1);
-                pricelist.Add(Convert.ToInt32(p));
-            }
+            //var onePrice = s.onlyGoods.Split(',');
+            //var price = s.price.Split(',');
+            //foreach (var item in onePrice)
+            //{
+            //    string p = item.Replace("/n", "");
+            //    onePricelist.Add(Convert.ToInt32(p));
+            //}
+            //foreach (var item in price)
+            //{
+            //    string p = item.Substring(0, item.Length - 1);
+            //    pricelist.Add(Convert.ToInt32(p));
+            //}
             return View();
         }
 
@@ -105,7 +100,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         public void redis(string ids, string price, string num, string onlyGoods, int sum)
         {
             //模拟从redis中取出登录用户的id
-            int userId = 1;
+            int userId = tmpUser1.Id;
             RedisHelper.Set<BuyGoods>(userId.ToString(), new BuyGoods
             {
                 ids = ids,
@@ -122,7 +117,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         [HttpPost]
         public int AddOrder(int addressId)
         {
-            var s = RedisHelper.Get<BuyGoods>("1");
+            var s = RedisHelper.Get<BuyGoods>((tmpUser1.Id).ToString());
             Orders orders = new Orders();
             orders.addressId = addressId;
             orders.OrderMoney = s.sum.ToString();
@@ -130,7 +125,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
             orders.PracticalMoney= s.sum.ToString();
             orders.OrderSite = 0;
             orders.Price = s.price;
-            orders.UserId = 1;
+            orders.UserId = tmpUser1.Id;
             orders.OrderNo = "doooo1";
             orders.BuyNums = s.num;
             orders.ApplyMethod = "在线支付";
