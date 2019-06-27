@@ -329,23 +329,23 @@
             $order_lists.remove();
             if ($order_content.html().trim() == null || $order_content.html().trim().length == 0) {
                 $order_content.parents('.cartBox').remove();
-            }
+            } 
             closeM();
             $sonCheckBox = $('.son_check');
             totalMoney();
         });
 
-        //关闭模态框
-        $('.closeModel').click(function () {
-            closeM();
-        });
-        $('.dialog-close').click(function () {
-            closeM();
-        });
-        function closeM() {
-            $('.model_bg').fadeOut(300);
-            $('.my_model').fadeOut(300);
-        }
+        ////关闭模态框
+        //$('.closeModel').click(function () {
+        //    closeM();
+        //});
+        //$('.dialog-close').click(function () {
+        //    closeM();
+        //});
+        //function closeM() {
+        //    $('.model_bg').fadeOut(300);
+        //    $('.my_model').fadeOut(300);
+        //}
         //确定按钮，移除商品
         //$('.dialog-sure').click(function () {
             //$order_lists.remove();
