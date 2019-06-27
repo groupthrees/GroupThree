@@ -20,6 +20,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
         /// <returns></returns>
         public IActionResult Index2(int goodsId, int usersId)
         {
+            ViewBag.usersId = tmpUser1.Id;
             goodsId = goodsId == 0 ? 1 : goodsId;
             ApiHelper apiHelper = new ApiHelper();
             string str = apiHelper.GetApiResult("get", $"Goodscollect/GetGoodscollectDto?id={tmpUser1.Id}&goodsId=" + goodsId, null);

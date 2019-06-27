@@ -375,7 +375,7 @@
     <script>
    $(function () {
         $(".isConllect").click(function () {
-            fun(1,@ViewBag.goods.id);
+            fun(@ViewBag.usersId,@ViewBag.goods.id);
         })
     })
     function fun(userId, goodsId) {
@@ -397,13 +397,14 @@
         })
         }
             //加入购物车
-    function joinshopCar(goodsId) {
+        function joinshopCar(goodsId) {
+        usersId = @ViewBag.usersId;
         goodsId=@ViewBag.goods.id;
         var num = $("#txtnum").val();
         var date = {
             "id": 0,
             "goodsId": goodsId,
-            "usersId": 1,
+            "usersId": usersId,
             "num": num
         };
         var val = JSON.stringify(date);

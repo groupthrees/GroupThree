@@ -24,9 +24,9 @@ if(window.loadRecommend){
     //loadprice();
 }
 
-$(".hotWords").show();
+//$(".hotWords").show();
 
-window._JX_INFO = window._JX_INFO || [];
-_JX_INFO.push(["home"]);
+//window._JX_INFO = window._JX_INFO || [];
+//_JX_INFO.push(["home"]);
 
-var _mvq=_mvq||[];_mvq.push(["$setAccount","m-471-1"]);_mvq.push(["$logConversion"]);(function(){var mvl=document.createElement("script");mvl.type="text/javascript";mvl.async=true;mvl.src=("https:"==document.location.protocol?"https://static-ssl.mediav.com/mvl.js":"http://static.mediav.com/mvl.js");var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(mvl,s)})();	<!-- mediav(访客找回) -->
+//var _mvq=_mvq||[];_mvq.push(["$setAccount","m-471-1"]);_mvq.push(["$logConversion"]);(function(){var mvl=document.createElement("script");mvl.type="text/javascript";mvl.async=true;mvl.src=("https:"==document.location.protocol?"https://static-ssl.mediav.com/mvl.js":"http://static.mediav.com/mvl.js");var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(mvl,s)})();	<!-- mediav(访客找回) -->
