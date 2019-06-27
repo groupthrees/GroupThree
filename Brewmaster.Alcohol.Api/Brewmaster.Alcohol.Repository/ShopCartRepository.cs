@@ -17,7 +17,7 @@ namespace Brewmaster.Alcohol.Repository
 
 
         /// <summary>
-        /// 根据UserId查询购物车的商品
+        /// 根据UserId查询购物车的商品.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="pageIndex"></param>

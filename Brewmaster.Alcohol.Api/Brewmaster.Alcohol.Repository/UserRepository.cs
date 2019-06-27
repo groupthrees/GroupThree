@@ -5,6 +5,8 @@ using Brewmaster.Alcohol.Model;
 using Dapper;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
+
 namespace Brewmaster.Alcohol.Repository
 {
     /// <summary>
@@ -71,6 +73,7 @@ namespace Brewmaster.Alcohol.Repository
             {
                 string sql = string.Format("select * from Users where UsersName='{0}' and UsersPwd='{1}'", UsersName,UsersPwd);
                 int result = Convert.ToInt32( conn.ExecuteScalar<int>(sql));
+
                 return result;
             }
         }
@@ -136,5 +139,6 @@ namespace Brewmaster.Alcohol.Repository
                 return result;
             }
         }
+
     }
 }
