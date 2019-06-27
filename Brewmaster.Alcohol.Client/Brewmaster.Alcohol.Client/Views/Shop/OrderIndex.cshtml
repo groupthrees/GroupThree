@@ -107,16 +107,8 @@
                     <h3>确认订单信息</h3>
                     <div class="confirmRemind"><i class="orderIcon"></i><span>若商品来自不同商家和仓库，将按照仓库最优进行配送</span></div>
                 </div>
-                <div class="orderTable">
-                    <div class="tHead">
-                        <div class="oTd item-1">商品信息</div>
-                        <div class="oTd item-2">单价</div>
-                        <div class="oTd item-3">数量</div>
-
-                        <div class="oTd item-4">状态</div>
-                        <div class="oTd item-5">小计</div>
-                    </div>
-                    <div id="shopInfos"><div class="tBody"><div class="shopTitle"><a href="http://shop.jiuxian.com/index-1470.htm" target="_blank"><i class="orderIcon shop"></i><span>洋河官方旗舰店</span></a></div><div class="tMain"><div class="oTr"><div class="mainProduct "><div class="oTd item-1"><div class="img"><a href="http://www.jiuxian.com/goods-51820.html" target="_blank"><img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/bce6bb4392e742c3b288614a9022c9892.jfif" height="60" width="60" /></a></div><div class="name"><a href="http://www.jiuxian.com/goods-51820.html" target="_blank" style="text-align: left;">【爆款特卖】52°洋河蓝色经典梦之蓝M3 500ml</a><div class="promptBox"><div class="unUsed"><i class="orderIcon"></i><span>此商品不能使用优惠券</span></div></div></div></div><div class="oTd item-2">￥449.00</div><div class="oTd item-3">x1</div><div class="oTd item-4">有货</div><div class="oTd item-5">￥449.00</div></div></div><div class="oTr"><div class="mainProduct "><div class="oTd item-1"><div class="img"><a href="http://www.jiuxian.com/goods-85722.html" target="_blank"><img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/c6fafeee526747a484c5a6d18d5a3c552.jfif" height="60" width="60" /></a></div><div class="name"><a href="http://www.jiuxian.com/goods-85722.html" target="_blank" style="text-align: left;">【赠品】星得斯海拔H600赤霞珠干红葡萄酒750ml</a><div class="promptBox"></div></div></div><div class="oTd item-2">￥0.00</div><div class="oTd item-3">x1</div><div class="oTd item-4">有货</div><div class="oTd item-5">￥0.00</div></div></div></div></div></div>
+                <div class="orderTable" id="list">
+                 
                 </div>
             </div>
             <table>
@@ -359,10 +351,50 @@
 <script>
 
     $(function () {
-        //getarea();
+
+        getOrders();
         bindGoods();
       
     })
+    function getOrders() {
+        $.ajax({
+            url: 'http://localhost:50169/api/ShopCart/GetShopCartlist?id=1',
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                alert(data);
+                $("#list").empty();
+                if (data.length > 0) {
+                    var html = "<table class='ln_addressBoxTit' cellspacing='0' cellpadding='0' border='0'>";
+                    html += "<tr>";
+                    html += "<td>商品信息</td>";
+                    html += "<td>规格参数</td>";
+                    html += "<td>单价</td>";
+                    html += "<td>数量</td>";
+                    html += "<td>金额</td>";
+                    html += "</tr>";
+                    for (var i = 0; i < data.length; i++) {
+                        html += "<tr>";
+                        html += "<td>" + data[i].goodsName + "</td>";
+                        html += "<td>" + data[i].GoodsDegree + "</td>";
+                        html += "<td>" + data[i].priceNow + "</td>";
+                        html += "<td>" + data[i].num + "</td>";
+                        html += "<td>" + data[i].PracticalMoney + "</td>";
+                        html += "</tr>";
+                    }
+                    html += "</table>";
+                    $("#list").append(html);
+                }
+
+            }
+        })
+      
+
+    }
     function bindGoods() {
 
         $.ajax({
@@ -395,7 +427,7 @@
 
     }
     function ret(id) {
-        alert(id)
+     
         $("#Hidden1").val(id);
         $.ajax({
             url: "http://localhost:50169/api/Address/GetAddressById?id=" + id,
@@ -425,7 +457,7 @@
     }
     function submit() {
         var addressId = $("#Hidden1").val();
-        alert(addressId);
+ 
         $.ajax({
             url: '/Shop/AddOrder?addressId=' + addressId,
             type: "post",
