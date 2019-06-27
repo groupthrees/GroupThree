@@ -73,7 +73,7 @@ namespace Brewmaster.Alcohol.Repository
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 string sql = string.Format("select * from Users where UsersName='{0}' and UsersPwd='{1}'", UsersName,UsersPwd);
-                int result = Convert.ToInt32( conn.ExecuteScalar<int>(sql));
+                //int result = Convert.ToInt32( conn.ExecuteScalar<int>(sql));
 
 
                 var result = conn.Query<Users>(sql).ToList();

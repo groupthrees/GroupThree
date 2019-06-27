@@ -43,10 +43,10 @@ namespace Brewmaster.Alcohol.Client.Controllers
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
 
             //存储redis
-            RedisHelper.Set<Users>(tmpUser.UsersName, tmpUser);
+            RedisHelper.Set<Users>("UsersName", tmpUser);
 
             //取Redis-测试
-            var tmpUser1 = RedisHelper.Get<Users>(tmpUser.UsersName);
+            var tmpUser1 = RedisHelper.Get<Users>("UsersName");
         }
 
         /// <summary>
