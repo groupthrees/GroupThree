@@ -10,7 +10,8 @@ namespace Brewmaster.Alcohol.Client.Controllers
 {
     public class ShopDetailsController : Controller
     {
-        
+        //取Redis
+        Users tmpUser1 = RedisHelper.Get<Users>("UsersName");
         /// <summary>
         /// 商品详情页
         /// </summary>
@@ -21,7 +22,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
         {
             goodsId = goodsId == 0 ? 1 : goodsId;
             ApiHelper apiHelper = new ApiHelper();
-            string str = apiHelper.GetApiResult("get", $"Goodscollect/GetGoodscollectDto?id={usersId}&goodsId=" + goodsId, null);
+            string str = apiHelper.GetApiResult("get", $"Goodscollect/GetGoodscollectDto?id={tmpUser1.Id}&goodsId=" + goodsId, null);
             GoodscollectDto GoodscollectDto = JsonConvert.DeserializeObject<GoodscollectDto>(str);
             ViewBag.goods = GoodscollectDto.Goods;
             ViewBag.imgs = GoodscollectDto.Imgs;
