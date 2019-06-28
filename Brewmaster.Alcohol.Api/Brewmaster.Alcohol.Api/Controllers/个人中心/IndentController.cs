@@ -8,7 +8,7 @@ using Brewmaster.Alcohol.Model.Dto.订单Dto;
 using Brewmaster.Alcohol.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+using Brewmaster.Alcohol.Model;
 namespace Brewmaster.Alcohol.Api.Controllers.个人中心
 {
     [Route("api/[controller]")]
@@ -44,5 +44,18 @@ namespace Brewmaster.Alcohol.Api.Controllers.个人中心
             var list = _indentRepository.GetIndentPageList(userId, OrderSite);
             return list;
         }
+
+        /// <summary>
+        /// 根据Id查询商品名称和图片
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("GetIndentById")]
+        public List<Goods> GetIndentById(string id)
+        {
+            var list = _indentRepository.GetIndentById(id);
+            return list;
+        }
+
     }
 }

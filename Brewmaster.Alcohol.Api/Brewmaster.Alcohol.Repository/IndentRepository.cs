@@ -19,6 +19,21 @@ namespace Brewmaster.Alcohol.Repository
         private static string connStr = "Server=169.254.200.110;Database=alcohol;Uid=root;Pwd=123456;";
 
         /// <summary>
+        /// 根据Id查询商品名称和图片
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<Goods> GetIndentById(string id)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = $"select GoodsName,GoodsImg from goods where id in ({id})";
+                var result = conn.Query<Goods>(sql).ToList();
+                return result;
+            }
+        }
+
+        /// <summary>
         ///订单显示
         /// </summary>
         /// <param name="orderSite"></param>

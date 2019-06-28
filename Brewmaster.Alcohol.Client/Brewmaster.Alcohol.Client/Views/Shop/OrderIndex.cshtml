@@ -107,243 +107,266 @@
                     <h3>确认订单信息</h3>
                     <div class="confirmRemind"><i class="orderIcon"></i><span>若商品来自不同商家和仓库，将按照仓库最优进行配送</span></div>
                 </div>
-                <div class="orderTable" id="list">
-                 
-                </div>
-            </div>
-            <table>
-                <tr>
-                    <td></td>
-                </tr>
-            </table>
-            <!-- 结算金额 -->
-            <div id="info" style="background-color:darkgrey;width:400px;height:200px;position:relative;left:600px;">
-
-            </div>
-        
-        </div>
-
-    </div>
-    
-
-    <!--新增收货地址 end-->
-    <!--删除地址列表comfirm-->
-    <div class="pubPop pop-4">
-        <div class="pubInside">
-            <div class="pubInsideTitle">
-                <span>删除</span>
-                <i class="orderIcon pubClose"></i>
-            </div>
-            <div class="pubInsideBody">
-                <div class="warningText"><i class="orderIcon"></i><span>确定要删除该地址吗？</span></div>
-                <div class="addrBtn"><a href="javascript:;" class="sure">确定</a><a href="javascript:;" class="cancel">取消</a></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pubPop pop-12">
-        <div class="pubInside">
-            <div class="pubInsideTitle">
-                <span>提交订单</span>
-                <i class="orderIcon pubClose" type="orderError"></i>
-            </div>
-            <div class="pubInsideBody">
-                <div id="activateFailure" class="warningText failureText"><i class="orderIcon"></i><span>提交失败</span></div>
-                <div class="pubText"></div>
-                <div class="addrBtn"><a href="javascript:;" class="sure">我知道了</a></div>
-            </div>
-        </div>
-    </div>
-    <!--提交订单失败提框-->
-    <script src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/order.js" type="text/javascript"></script>
-    <!--页脚-->
-    <div class="footer">
-        <div class="footerTopBox">
-            <div class="footerTop">
-                <div class="footerContact">
-                    <i class="publicIcon"></i><b>400-617-9999</b><span>客服热线</span><span>9:00-23:00</span><span>贴心服务</span>
-                </div>
-                <div class="footerTopRight">
-                    <div class="ftRight-tit">优惠促销早知道</div>
-                    <div class="ftRight-form">
-                        <input id="subscribe_email" name="" type="text" /><span>请输入您的邮箱地址</span><i class="publicIcon" id="subscribe_but"></i>
+                <div class="orderTable">
+                    <div class="tHead">
+                        <div class="oTd item-1" style="position:relative;left:-200px">商品信息</div>
+                        <div class="oTd item-2" style="position:relative;left:-95px">单价</div>
+                        <div class="oTd item-3" style="position:relative;left:-100px">数量</div>
+                        <div class="oTd item-5" style="position:relative;left:-100px">小计</div>
                     </div>
-                </div>
-            </div>
-            <div class="footerServices">
-                <ul class="clearfix">
-                    <li class="servicesItme01">
-                        <h3>
-                            <i class="publicIcon"></i><span>新手入门</span>
-                        </h3>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">购物保障</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">服务协议</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">发票说明</a>
-                        </p>
-                    </li>
-                    <li class="servicesItme02">
-                        <h3>
-                            <i class="publicIcon"></i><span>常见问题</span>
-                        </h3>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">红包使用</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">返现使用</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">兑换码</a>
-                        </p>
-                    </li>
-                    <li class="servicesItme03">
-                        <h3>
-                            <i class="publicIcon"></i><span>配送说明</span>
-                        </h3>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">配送时间</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">配送费用</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">配送范围</a>
-                        </p>
-                    </li>
-                    <li class="servicesItme04">
-                        <h3>
-                            <i class="publicIcon"></i><span>支付方式</span>
-                        </h3>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">货到付款</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">在线支付</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">线下支付</a>
-                        </p>
-                    </li>
-                    <li class="servicesItme05">
-                        <h3>
-                            <i class="publicIcon"></i><span>售后服务</span>
-                        </h3>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">品质保证</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">退换货政策</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">退换货流程</a>
-                        </p>
-                    </li>
-                    <li class="servicesItme06">
-                        <h3>
-                            <i class="publicIcon"></i><span>特色服务</span>
-                        </h3>
-                        <p>
-                            <a href="#" target="_blank">会员俱乐部</a>
-                        </p>
-                        <p>
-                            <a href="#" target="_blank" rel="nofollow">企业客户</a>
-                        </p>
-                        <p>
-                            <a target="_blank" href="#">酒仙社区</a>
-                        </p>
-                    </li>
-                    <li class="jxMicroblogging">
-                        <div class="item sinaMb">
-                            <div class="sinaMbCom clearfix">
-                                <a href="#" target="_blank" rel="nofollow"><i class="publicIcon"></i></a><a href="#" target="_blank" rel="nofollow">酒仙新浪微博</a>
-                            </div>
+                    <div id="shopInfos">
+                        <div class="tBody">
+                            @{ int A = 0;}
+                            @foreach (var item in ViewBag.list as List<Goods>)
+                            {
+
+                                <div class="mainProduct ">
+
+                                    <div class="oTd item-1">
+                                            <img src="@item.GoodsImg" height="60" width="60" />
+                                            @item.GoodsName
+                                        </div>
+                                    <div class="oTd item-2">￥ @ViewBag.onlyGoods[A]</div>
+                                    <div class="oTd item-3">×@ViewBag.num[A]</div>
+                                        <div class="oTd item-5">￥@ViewBag.price[A]</div>
+                                  
+                                </div> 
+                                A=A+1;
+                            }
+
                         </div>
-                        <div class="item weixin">
-                            <div class="weixinCon clearfix">
-                                <i class="publicIcon"></i><a id="jxWeixin" falg="hide" href="javascript:;" target="_blank" rel="nofollow">酒仙微信</a>
-                            </div>
-                            <div class="weixinCode" id="weixinCode">
-                                <img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/weixin-code.jfif" />
-                            </div>
+                    </div>
+                </div>
+
+                <!-- 结算金额 -->
+                <div id="info" style="background-color:darkgrey;width:450px;height:200px;position:relative;left:600px;margin-top:200px;">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--新增收货地址 end-->
+        <!--删除地址列表comfirm-->
+        <div class="pubPop pop-4">
+            <div class="pubInside">
+                <div class="pubInsideTitle">
+                    <span>删除</span>
+                    <i class="orderIcon pubClose"></i>
+                </div>
+                <div class="pubInsideBody">
+                    <div class="warningText"><i class="orderIcon"></i><span>确定要删除该地址吗？</span></div>
+                    <div class="addrBtn"><a href="javascript:;" class="sure">确定</a><a href="javascript:;" class="cancel">取消</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pubPop pop-12">
+            <div class="pubInside">
+                <div class="pubInsideTitle">
+                    <span>提交订单</span>
+                    <i class="orderIcon pubClose" type="orderError"></i>
+                </div>
+                <div class="pubInsideBody">
+                    <div id="activateFailure" class="warningText failureText"><i class="orderIcon"></i><span>提交失败</span></div>
+                    <div class="pubText"></div>
+                    <div class="addrBtn"><a href="javascript:;" class="sure">我知道了</a></div>
+                </div>
+            </div>
+        </div>
+        <!--提交订单失败提框-->
+        <script src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/order.js" type="text/javascript"></script>
+        <!--页脚-->
+        <div class="footer" style="margin-top:25px;">
+            <div class="footerTopBox">
+                <div class="footerTop">
+                    <div class="footerContact">
+                        <i class="publicIcon"></i><b>400-617-9999</b><span>客服热线</span><span>9:00-23:00</span><span>贴心服务</span>
+                    </div>
+                    <div class="footerTopRight">
+                        <div class="ftRight-tit">优惠促销早知道</div>
+                        <div class="ftRight-form">
+                            <input id="subscribe_email" name="" type="text" /><span>请输入您的邮箱地址</span><i class="publicIcon" id="subscribe_but"></i>
                         </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="footerBotBox">
-            <div class="footerBot clearfix">
-                <div class="footerBotLeft">
-                    <p class="footerInfo">
-                        <a href="#" target="_blank" rel="nofollow">公司简介<i></i></a> <a href="#" target="_blank" rel="nofollow">管理团队<i></i></a>
-                        <a href="#" target="_blank" rel="nofollow">媒体报道<i></i></a> <a href="#" target="_blank" rel="nofollow">联系我们<i></i></a>
-                        <a href="#" target="_blank">网站地图<i></i></a> <a href="#" target="_blank">品牌大全<i></i></a>
-                    </p>
-                    <p class="copyright">
-
-                        北京酒仙网络科技有限公司&nbsp;&nbsp;©&nbsp;&nbsp;酒仙
-                        网&nbsp;&nbsp;&nbsp;2011&nbsp;&nbsp;jiuxian.com&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;Rights&nbsp;Reserved&nbsp;&nbsp;&nbsp;<a href="#" target="_blank" rel="nofollow">京ICP备17043395号</a>&nbsp;&nbsp;&nbsp;京公网安备1101050188221
-                    </p>
-                    <p class="footerAddr" style="color: #999; line-height: 22px; padding-top: 5px;">
-                        <span>统一社会信用代码&nbsp;&nbsp;91110302306646672B&nbsp;&nbsp;&nbsp;食品流通许可证编号&nbsp;&nbsp;JY11131010328793&nbsp;&nbsp;&nbsp;</span>
-                    </p>
-                    <p class="footerAddr" style="color: #999; line-height: 22px; padding-bottom: 7px;">
-                        <span>地址：北京市北京经济技术开发区经海五路58号院8幢4层</span>
-                    </p>
-                    <p class="copybot">
-                        <script src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/seallogo.dll" type="text/javascript"></script>
-                        <script size="0" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/icon3.js" cid="kx_verify" async="" id="kx_script"></script><span id="kx_verify" style="float: left; padding-right: 6px; display: inline-block; position: relative; width: 128px; height: 47px;"><a id="kx_verify_link" href="https://ss.knet.cn/verifyseal.dll?sn=2011040600100007749&amp;a=1&amp;pa=0.6338837876898306" tabindex="-1" target="_blank" kx_type="图标式" rel="nofollow"><img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/cnnic.png" style="border:0; position: absolute; top: 0px; left: 0px;" w="128" h="47" oncontextmenu="return false;" alt="可信网站" height="47" width="128" /></a></span>
-
-                        <a href="#" target="_blank" rel="nofollow"><img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/copyBot03.jfif" height="47" width="128" /></a>
-
-                    </p>
-                    <p class="footerPro" style="padding: 8px 0 6px;">购买前请确认达到法定饮酒年龄！酒仙网不销售任何含酒精产品给18岁以下人士！</p>
-                </div>
-                <div class="footerBotCode">
-                    <div class="jxPho-code">
-                        <p class="codePic">
-                            <img alt="手机酒仙网" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/jxPho-code.jfif" height="80" width="80" />
-                        </p>
-                        <p class="codeText" >手机酒仙网</p>
-                    </div>
-                    <div class="jkd-code">
-                        <p class="codePic">
-                            <img alt="微信公众号" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/jx-wxgzh.png" height="80" width="80" />
-                        </p>
-                        <p class="codeText">微信公众号</p>
                     </div>
                 </div>
+                <div class="footerServices">
+                    <ul class="clearfix">
+                        <li class="servicesItme01">
+                            <h3>
+                                <i class="publicIcon"></i><span>新手入门</span>
+                            </h3>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">购物保障</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">服务协议</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">发票说明</a>
+                            </p>
+                        </li>
+                        <li class="servicesItme02">
+                            <h3>
+                                <i class="publicIcon"></i><span>常见问题</span>
+                            </h3>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">红包使用</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">返现使用</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">兑换码</a>
+                            </p>
+                        </li>
+                        <li class="servicesItme03">
+                            <h3>
+                                <i class="publicIcon"></i><span>配送说明</span>
+                            </h3>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">配送时间</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">配送费用</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">配送范围</a>
+                            </p>
+                        </li>
+                        <li class="servicesItme04">
+                            <h3>
+                                <i class="publicIcon"></i><span>支付方式</span>
+                            </h3>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">货到付款</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">在线支付</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">线下支付</a>
+                            </p>
+                        </li>
+                        <li class="servicesItme05">
+                            <h3>
+                                <i class="publicIcon"></i><span>售后服务</span>
+                            </h3>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">品质保证</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">退换货政策</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">退换货流程</a>
+                            </p>
+                        </li>
+                        <li class="servicesItme06">
+                            <h3>
+                                <i class="publicIcon"></i><span>特色服务</span>
+                            </h3>
+                            <p>
+                                <a href="#" target="_blank">会员俱乐部</a>
+                            </p>
+                            <p>
+                                <a href="#" target="_blank" rel="nofollow">企业客户</a>
+                            </p>
+                            <p>
+                                <a target="_blank" href="#">酒仙社区</a>
+                            </p>
+                        </li>
+                        <li class="jxMicroblogging">
+                            <div class="item sinaMb">
+                                <div class="sinaMbCom clearfix">
+                                    <a href="#" target="_blank" rel="nofollow"><i class="publicIcon"></i></a><a href="#" target="_blank" rel="nofollow">酒仙新浪微博</a>
+                                </div>
+                            </div>
+                            <div class="item weixin">
+                                <div class="weixinCon clearfix">
+                                    <i class="publicIcon"></i><a id="jxWeixin" falg="hide" href="javascript:;" target="_blank" rel="nofollow">酒仙微信</a>
+                                </div>
+                                <div class="weixinCode" id="weixinCode">
+                                    <img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/weixin-code.jfif" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerBotBox">
+                <div class="footerBot clearfix">
+                    <div class="footerBotLeft">
+                        <p class="footerInfo">
+                            <a href="#" target="_blank" rel="nofollow">公司简介<i></i></a> <a href="#" target="_blank" rel="nofollow">管理团队<i></i></a>
+                            <a href="#" target="_blank" rel="nofollow">媒体报道<i></i></a> <a href="#" target="_blank" rel="nofollow">联系我们<i></i></a>
+                            <a href="#" target="_blank">网站地图<i></i></a> <a href="#" target="_blank">品牌大全<i></i></a>
+                        </p>
+                        <p class="copyright">
+
+                            北京酒仙网络科技有限公司&nbsp;&nbsp;©&nbsp;&nbsp;酒仙
+                            网&nbsp;&nbsp;&nbsp;2011&nbsp;&nbsp;jiuxian.com&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;Rights&nbsp;Reserved&nbsp;&nbsp;&nbsp;<a href="#" target="_blank" rel="nofollow">京ICP备17043395号</a>&nbsp;&nbsp;&nbsp;京公网安备1101050188221
+                        </p>
+                        <p class="footerAddr" style="color: #999; line-height: 22px; padding-top: 5px;">
+                            <span>统一社会信用代码&nbsp;&nbsp;91110302306646672B&nbsp;&nbsp;&nbsp;食品流通许可证编号&nbsp;&nbsp;JY11131010328793&nbsp;&nbsp;&nbsp;</span>
+                        </p>
+                        <p class="footerAddr" style="color: #999; line-height: 22px; padding-bottom: 7px;">
+                            <span>地址：北京市北京经济技术开发区经海五路58号院8幢4层</span>
+                        </p>
+                        <p class="copybot">
+                            <script src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/seallogo.dll" type="text/javascript"></script>
+                            <script size="0" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/icon3.js" cid="kx_verify" async="" id="kx_script"></script><span id="kx_verify" style="float: left; padding-right: 6px; display: inline-block; position: relative; width: 128px; height: 47px;"><a id="kx_verify_link" href="https://ss.knet.cn/verifyseal.dll?sn=2011040600100007749&amp;a=1&amp;pa=0.6338837876898306" tabindex="-1" target="_blank" kx_type="图标式" rel="nofollow"><img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/cnnic.png" style="border:0; position: absolute; top: 0px; left: 0px;" w="128" h="47" oncontextmenu="return false;" alt="可信网站" height="47" width="128" /></a></span>
+
+                            <a href="#" target="_blank" rel="nofollow"><img src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/copyBot03.jfif" height="47" width="128" /></a>
+
+                        </p>
+                        <p class="footerPro" style="padding: 8px 0 6px;">购买前请确认达到法定饮酒年龄！酒仙网不销售任何含酒精产品给18岁以下人士！</p>
+                    </div>
+                    <div class="footerBotCode">
+                        <div class="jxPho-code">
+                            <p class="codePic">
+                                <img alt="手机酒仙网" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/jxPho-code.jfif" height="80" width="80" />
+                            </p>
+                            <p class="codeText">手机酒仙网</p>
+                        </div>
+                        <div class="jkd-code">
+                            <p class="codePic">
+                                <img alt="微信公众号" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/jx-wxgzh.png" height="80" width="80" />
+                            </p>
+                            <p class="codeText">微信公众号</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <style type="text/css">
+            .footerBotLeft .footerInfo {
+                margin-left: -8px;
+            }
+
+            .footerBotLeft p {
+                font-family: Arial, Helvetica, sans-serif, "宋体";
+            }
+
+            .footerBotLeft .footerInfo a {
+                color: #666;
+            }
+
+            .footerBotLeft .copyright {
+                color: #666;
+            }
+        </style>
+
+        <script type="text/javascript" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/recommend_99.js"></script>
+        <script type="text/javascript" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/p_code.js"></script>
+        <script type="text/javascript" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/o_code.js"></script>
+
+
+        <script src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/region.js" type="text/javascript"></script>
     </div>
-
-    <style type="text/css">
-        .footerBotLeft .footerInfo {
-            margin-left: -8px;
-        }
-
-        .footerBotLeft p {
-            font-family: Arial, Helvetica, sans-serif, "宋体";
-        }
-
-        .footerBotLeft .footerInfo a {
-            color: #666;
-        }
-
-        .footerBotLeft .copyright {
-            color: #666;
-        }
-    </style>
-
-    <script type="text/javascript" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/recommend_99.js"></script>
-    <script type="text/javascript" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/p_code.js"></script>
-    <script type="text/javascript" src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/o_code.js"></script>
-
-
-    <script src="~/Wine/酒仙网-确认订单页面/订单结算-酒仙网_files/region.js" type="text/javascript"></script>
 </body>
 </html>
 
@@ -354,7 +377,7 @@
 
         getOrders();
         bindGoods();
-      
+
     })
     function getOrders() {
         $.ajax({
@@ -366,10 +389,10 @@
             dataType: 'json',
             success: function (data) {
                 console.log(data);
-                alert(data);
-                $("#list").empty();
+
+                $("#list1").empty();
                 if (data.length > 0) {
-                    var html = "<table class='ln_addressBoxTit' cellspacing='0' cellpadding='0' border='0'>";
+                    var html = "<table  class='table table-bordered' cellspacing='0' cellpadding='0' border='0'>";
                     html += "<tr>";
                     html += "<td>商品信息</td>";
                     html += "<td>规格参数</td>";
@@ -378,8 +401,9 @@
                     html += "<td>金额</td>";
                     html += "</tr>";
                     for (var i = 0; i < data.length; i++) {
+                        var img =
                         html += "<tr>";
-                        html += "<td>" + data[i].goodsName + "</td>";
+                        html += "<td>" + data[i].goodsName + "<img src=" + data[i].goodsImg + "  width='50' height='50' ></td>";
                         html += "<td>" + data[i].GoodsDegree + "</td>";
                         html += "<td>" + data[i].priceNow + "</td>";
                         html += "<td>" + data[i].num + "</td>";
@@ -387,12 +411,12 @@
                         html += "</tr>";
                     }
                     html += "</table>";
-                    $("#list").append(html);
+                    $("#list1").append(html);
                 }
 
             }
         })
-      
+
 
     }
     function bindGoods() {
@@ -405,11 +429,11 @@
             crossDomain: true,
             dataType: 'json',
             success: function (data) {
-                 
+
                 $("#list").empty();
                 if (data.length > 0) {
                     var html = "<table  class='table table-bordered' cellspacing='0' cellpadding='0' border='0'>";
-                 
+
                     for (var i = 0; i < data.length; i++) {
                         html += "<tr  onclick=ret(" + data[i].id + ") >";
                         html += "<td  >" + data[i].addressPerson + "</td>";
@@ -427,7 +451,7 @@
 
     }
     function ret(id) {
-     
+
         $("#Hidden1").val(id);
         $.ajax({
             url: "http://localhost:50169/api/Address/GetAddressById?id=" + id,
@@ -457,7 +481,7 @@
     }
     function submit() {
         var addressId = $("#Hidden1").val();
- 
+
         $.ajax({
             url: '/Shop/AddOrder?addressId=' + addressId,
             type: "post",
@@ -472,7 +496,7 @@
 
             }
         })
-   
+
     }
 
     function del(obj, id) {
@@ -534,7 +558,7 @@
                     maxmin: true,
                     content: str2,
                 })
-             
+
             }
         })
     }
