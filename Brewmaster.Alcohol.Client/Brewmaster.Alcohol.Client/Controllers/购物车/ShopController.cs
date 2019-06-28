@@ -21,7 +21,7 @@ namespace Brewmaster.Alcohol.Client.Controllers.购物车
         /// 购物车界面
         /// </summary>
         /// <returns></returns>
-        //[AuthorizationActionFilter]
+        [AuthorizationActionFilter]
         public IActionResult ShopIndex()
         {
 
