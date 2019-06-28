@@ -52,7 +52,6 @@ namespace Brewmaster.Alcohol.Back.Controllers
                      new Permission{  Id=9, Name="订单查询", Pid=2, Url="/User/index"},
 
                      new Permission{  Id=10, Name="商品列表", Pid=3, Url="/test/test"},
-                     new Permission{  Id=11, Name="库存查询", Pid=3, Url="/Home/index"},
                 }
              };
             ViewBag.PermissionList = tmpUser.PermissionList;
