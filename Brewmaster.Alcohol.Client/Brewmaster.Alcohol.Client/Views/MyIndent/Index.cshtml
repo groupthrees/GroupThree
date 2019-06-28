@@ -73,25 +73,10 @@
                 <div class="orderTabWrap">
                     <div class="orderTab">
                         <a href="http://member.jiuxian.com/trademanage/my_order-9.htm" id="allOrder" class="on">全部订单</a>
-                        <a href="http://member.jiuxian.com/trademanage/my_order-0.htm" id="waitingPay">待付款<span> 2 </span></a>
-                        <a href="http://member.jiuxian.com/trademanage/my_order-5.htm" id="waitingSend">待发货<span> 0 </span></a>
-                        <a href="http://member.jiuxian.com/trademanage/my_order-6.htm" id="waitReceived">待收货<span>      0  </span></a>
-                    </div>
-
-                    <div class="orderRecycle ">
-                        <div class="orderRecycleLin"></div>
-                        <div class="orderRecycleWrap">
-                            <a href="http://member.jiuxian.com/trademanage/garbageStation.htm"><i class="rec"></i><span>订单回收站</span></a>
-                        </div>
-
+                      
                     </div>
                 </div>
-                <form id="orderForm" name="orderForm" action="/trademanage/my_order-9.htm" onkeydown="if(event.keyCode==13) return false;" method="post">
-                    <div class="orderSearch">
-                        <input type="text" placeholder="输入商品名称或者订单号查询" class="orderSearchText" id="orderKey" name="orderKey" />
-                        <input type="submit" value="搜索" class="orderBtn" />
-                    </div>
-                </form>
+            
             </div>
 
 
@@ -183,8 +168,8 @@
                
                     tmphtml += "<td>" + result[i].addressPerson + "</td>";
                     tmphtml += "<td>" + result[i].practicalMoney + "</br>" + result[i].applyMethod + "</td>";
-                    tmphtml += "<div></div>"
-                    tmphtml += "<div></div>"
+                    //tmphtml += "<div></div>"
+                    //tmphtml += "<div></div>"
                     for (var j = 0; j < result[i].imgs.length; j++) {
                         tmphtml += "<td><img src=" + result[i].imgs[j] + "  width='50' height='50' ></td>";
                     }    
@@ -197,7 +182,4 @@
         })
     }
    
-
-     
-
-</script>
+     </script>

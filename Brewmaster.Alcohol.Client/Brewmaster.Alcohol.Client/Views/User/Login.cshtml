@@ -122,7 +122,7 @@
                     //params.append('UsersPwd', this.UsersPwd);
                     var instance = axios.create({ headers: { 'content-type': 'application/x-www-form-urlencoded' } });
                     //instance.post(`url`, params).then(res => res.data);
-                    instance.get("User/LoginDo?UsersName=" + this.UsersName + "&UsersPwd=" + this.UsersPwd).then((respose) => {
+                    instance.get("/User/LoginDo?UsersName=" + this.UsersName + "&UsersPwd=" + this.UsersPwd).then((respose) => {
                         console.log(respose.data);
                         if (respose.data>0) {
                             location.href = '/Home/HomePage';
