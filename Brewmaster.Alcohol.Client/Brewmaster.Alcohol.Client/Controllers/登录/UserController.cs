@@ -142,6 +142,7 @@ namespace Brewmaster.Alcohol.Client.Controllers
             
             return View();
         }
+     
         public int LoginDo(string UsersName,string UsersPwd)
         {
             ApiHelper apiHelper = new ApiHelper();
