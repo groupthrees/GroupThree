@@ -46,6 +46,7 @@ namespace Brewmaster.Alcohol.Repository
                 };
                 return collectionDto;
             }
+
         }
 
         /// <summary>
