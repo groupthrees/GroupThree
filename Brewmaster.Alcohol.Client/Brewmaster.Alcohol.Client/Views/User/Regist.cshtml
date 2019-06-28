@@ -125,6 +125,7 @@
         <div class="jx-foot">
             <p>© &nbsp;酒仙网&nbsp; 2011 jiuxian.com All &nbsp;Rights Reserved&nbsp;&nbsp;<a target="_blank" href="#">京ICP证110141号</a>&nbsp;&nbsp;京公网安备1101050188221</p>
             <p class="red">购买前请确认达到法定饮酒年龄！酒仙网不销售任何含酒精产品给18岁以下人士！</p>
+
         </div>
         <div class="copybot">
             <a class="a1" target="_blank" href="#"></a><a class="a2" target="_blank" href="#"></a><a class="a3" target="_blank" href="#"></a><a class="a4" target="_blank" href="#"></a><a class="a5" target="_blank" href="#"></a>
@@ -143,7 +144,7 @@
                     params.append('UsersName', this.UsersName);
                     params.append('UsersPwd', this.UsersPwd);
                     axios.post("/User/Regist", params).then((response) => {
-                            alert("注册成功");
+                        alert("注册成功");
                         location.href = '/User/Login';
                     }, (response) => {
                         alert(response.status);

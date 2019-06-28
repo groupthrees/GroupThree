@@ -120,22 +120,11 @@
     <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 
     </div>
-    <input id="Button1" type="button" value="test"  onclick="ss()"/>
+
 </body>
 
 </html>
 <script>
-    function ss() {
-
-        text = $("input:checkbox[name='checkboxid']:checked").map(function (index, elem) {
-            danjia = $(elem).siblings()[0].defaultValue;
-            console.log(danjia);
-            return $(elem).val();
-        }).get().join(',');
-
-    }
-
-
     sum = 0;
     var total_money = 0;
     var total_count = 0;
