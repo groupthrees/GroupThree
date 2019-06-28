@@ -20,8 +20,6 @@ namespace Brewmaster.Alcohol.Client.Controllers
         {
             return View();
         }
-     
 
-        
     }
 }

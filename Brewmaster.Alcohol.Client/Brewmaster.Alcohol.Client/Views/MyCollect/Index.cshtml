@@ -96,8 +96,6 @@
     </div>
     <!-- 右侧 -->
 
-
-
     <style type="text/css">
         .footerBotLeft .footerInfo {
             margin-left: -8px;
@@ -164,7 +162,7 @@
                     tmphtml += "<td><img src=" + result.collectionList[i].goodsImg + "  width='50' height='50' onclick='fun(" + result.collectionList[i].id + ")'></td>";
                     tmphtml += "<td> <a  href = '#' onclick ='fun(" + result.collectionList[i].id + ")'>" + result.collectionList[i].goodsName + "</a></td>";
                     tmphtml += "<td>" + result.collectionList[i].priceNow + "</td>";
-                    tmphtml += "<td><input type='button' value='加入购物车' onclick='joinshopCar(" + result.collectionList[i].goodsId + ")'/><input type='button' value='取消收藏' onclick='cancelcollect(" + result.collectionList[i].goodsId + ")'/></td>";
+                    tmphtml += "<td><input type='button' value='加入购物车' onclick='joinshopCar(" + result.collectionList[i].goodsId + ")'/><input type='button' value='取消收藏' onclick='cancelcollect(this," + result.collectionList[i].goodsId + ")'/></td>";
                     tmphtml += "</tr>";
                 }
                 $("#await").append(tmphtml);
@@ -201,14 +199,14 @@
     }
 
     //取消收藏
-    function cancelcollect(goodsId) {
+    function cancelcollect(obj,goodsId) {
         $.ajax({
             type: "get",
             url: 'http://localhost:50169/api/Goodscollect/SetCollect',
             data: { userId: 1, goodsId: goodsId },
             success: function (result) {
                 if (result == 2) {
-                    location.href = "/MyCollect/index";
+                    $(obj).parent().parent().remove();
                 }
                 else {
                     alert("错了")
