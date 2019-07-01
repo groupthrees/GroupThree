@@ -67,6 +67,9 @@ namespace Brewmaster.Alcohol.Repository
                     var result3 = conn.Execute(strsql3);
                     return result3;
                 }
+
+
+
                 else
                 {
                     //update shopcart set Num = Num + { 0} where GoodsId = 41
@@ -74,8 +77,6 @@ namespace Brewmaster.Alcohol.Repository
                     var result2 = conn.Execute(strsql2);
                     return result2;
                 }
-
-
             }
         }
     }
