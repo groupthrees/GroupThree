@@ -17,6 +17,23 @@ namespace Brewmaster.Alcohol.Repository
         private static string connStr = "Server=169.254.200.110;Database=alcohol;Uid=root;Pwd=123456;";
 
         /// <summary>
+        /// 数据删除
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int DeleteGoods(int id)
+        {
+            GoodsAllListPage goodsAllListPage = new GoodsAllListPage();
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "delete from Goods where Id=" + id;
+                int i = conn.Execute(sql, null);
+                return i;
+            }
+        }
+
+        /// <summary>
         /// 商品查询显示分页
         /// </summary>
         /// <param name="goodsName"></param>
