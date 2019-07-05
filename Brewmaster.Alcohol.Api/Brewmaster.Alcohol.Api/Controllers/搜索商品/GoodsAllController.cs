@@ -37,5 +37,11 @@ namespace Brewmaster.Alcohol.Api.Controllers.搜索商品
             var list = _goodsAllRepository.GetGoodsAll(goodsName, goodsDegree, priceNow, brandName, placeName, aromaName, typeId, brandId, pageIndex, pageSize);
             return list;
         }
+        [HttpGet("Delete")]
+        public int Delete(int id)
+        {
+            var result = _goodsAllRepository.DeleteGoods(id);
+            return result;
+        }
     }
 }
