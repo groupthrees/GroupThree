@@ -1,163 +1,0 @@
-赖少乾的ip地址 169.254.241.82
-
-分配的账号 wangsenyu  密码：123456
-
-use alcohol;
-create table Goods  -- 商品表  
-(
-  Id int primary key auto_increment,
-  GoodsName varchar(50),  -- 商品名称
-  GoodsDegree int,  -- 商品度数
-  GoodsImg varchar(200)  -- 商品图片
-)
-create table Price  -- 价格表
-(
-  id int primary key auto_increment,
-  PriceOld int,  -- 原价
-  PriceNow int,  -- 现价
-  Goodsid int  -- 商品Id(外键)
-)
-create table Specifications  -- 规格表
-(
-  id int primary key auto_increment, 
-  SpecificationsName varchar(50),-- 商品规格
-  GoodsId int   -- 商品Id(外键)
-)
-create table Picture  -- 图片表
-(
-  id int primary key auto_increment,
-  PictureUrl varchar(200),-- 图片路径
-  GoodsId int   -- 商品Id(外键)
-)
--- 一级商品表
-create table GoodsType
-( 
-   Id int  primary key auto_increment, -- 主键ID
-   TypeName char(20) -- 类别名称
-);
--- 品牌表
-create table Brand
-(
-   Id int  primary key auto_increment, -- 主键ID
-   BrandName varchar(20), -- 品牌名
-   GoodsTypeId int, -- 1级商品ID
-   GoodsId int -- 商品ID
-);
--- 商品产地表
-create table Place
-(
-   Id int primary key auto_increment, -- 主键ID
-   PlaceName varchar(20), -- 产地名称
-   GoodsTypeId int, -- 一级商品ID
-   GoodsId int -- 商品ID
-);
--- 香型表
-create table Aroma
-(
-   Id int primary key auto_increment, -- 主键ID
-   AromaName varchar(20), -- 香型类型
-   GoodsTypeId int, -- 一级商品ID
-   GoodsId int -- 商品ID
-);
--- 价位表
-create table Valence
-(
-   Id int primary key auto_increment, -- 主键ID
-   MinValence int, -- 最小价格
-   MaxValence int, -- 最大价格
-   GoodsTypeId int, -- 一级商品ID
-   GoodsId int -- 商品ID
-);
--- 收藏表
-create TABLE Collection  
-(
-  Id int  PRIMARY KEY auto_increment,
-  GoodsId int, -- 商品Id（外键）
-  UsersId int-- 用户id(外键）
-)
--- 商品评价表
-create TABLE Evaluate  
-(
-  Id int  PRIMARY KEY auto_increment,
-  EvaluateName VARCHAR(50),-- 评价
-  GoodsId int, -- 商品Id（外键）
-  UsersId int,-- 用户id(外键）
-  EvaluateTime datetime -- 评价时间
-);
--- 用户表
- create TABLE users  
-(
-  Id int  PRIMARY KEY auto_increment,
-  UsersName VARCHAR(50),-- 用户名（手机号）
-  UsersPwd VARCHAR(50), -- 密码
-  UsersNickname VARCHAR(50), -- 昵称
-  UsersRealName VARCHAR(50),-- 真实姓名
-  UsersSex INT,-- 性别
-  UsersBirthday VARCHAR(50),-- 生日
-  UsersDetailedAddress VARCHAR(200),-- 详细地址
-  UsersAreaId int,-- 地区id(外键）
-  UsersHeadPortrait VARCHAR(200) -- 头像Url
-)
--- 优惠券
- create TABLE Coupon  
-(
-  Id int  PRIMARY KEY auto_increment,
-  CouponMoney INT,-- 优惠金额
-  CouponBeginTime datetime,-- 领取时间  
-  CouponEndTime datetime,-- 失效时间
-  CouponCondition INT, -- 用券条件
-  CouponStatu INT,-- 状态
-  UsersId int-- 用户Id（外键）
-)
--- 收货地址表
-create table Address
-(
-  Id int primary key auto_increment,
-  AddressPerson varchar(50),-- 收货人
-  AreaId    int,-- 地区Id（外键）
-  UsersId int,-- 用户Id（外键）
-  DetailAddress varchar(50),-- 详细地址
-  PostalCode varchar(50),-- 邮政编码
-  AddressPhone varchar(50)-- 手机
-)auto_increment=1;
--- 订单表
-create table Orders
-(
-  Id int primary key auto_increment,
-  OrderNo varchar(50),-- 订单编号
-  OrderSite    int,-- 订单状态
-  OrderDate    datetime,-- 下单时间
-  OrderMoney   varchar(50),-- 订单金额
-  PracticalMoney varchar(50)-- 实际支付金额
-  usersId int -- 用户id外键
-  AreaId int -- 地区id外键
-  CouponMoney  varchar(5) -- 优惠金额（默认0）
-  ApplyMethod  varchar(50) -- 支付方式 
-)auto_increment=1;
--- 地区表
-create table Area
-(
-  Id int primary key auto_increment,
-  AreaName varchar(50),-- 地区名称
-  Pid int-- 
-)auto_increment=1;
--- 订单商品关联表
-create table OrderGoods
-(
-  Id int primary key auto_increment,
-  GoodId  int,-- 商品id（外键）
-  OrdersId int-- 订单id（外键）
-  GoodNum int -- 购买数量
-  BuyPrice int -- 购买该商品时的单价
-)auto_increment=1;
--- 日志表
-create table Journal
-(
-  Id int primary key auto_increment,
-  UsersId  int,-- 商品id（外键）
-  Operation int,-- 用户进行的操作
-  CreateTiem datetime -- 创建时间
-)auto_increment=1;
-
-
---购物车表
