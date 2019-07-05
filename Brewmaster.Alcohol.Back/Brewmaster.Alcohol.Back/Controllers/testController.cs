@@ -48,7 +48,7 @@ namespace Brewmaster.Alcohol.Back.Controllers
 
                      new Permission{  Id=6, Name="添加用户", Pid=1, Url="/AfterMarket/index"},
                      new Permission{  Id=7, Name="添加角色", Pid=1, Url="/Stock/index"},
-                     new Permission{  Id=8, Name="添加权限", Pid=1, Url="/test/test"},
+                     new Permission{  Id=8, Name="添加权限", Pid=1, Url="/Home/index"},
                      new Permission{  Id=9, Name="订单查询", Pid=2, Url="/User/index"},
 
                      new Permission{  Id=10, Name="商品列表", Pid=3, Url="/test/test"},
